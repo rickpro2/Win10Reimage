@@ -14,53 +14,47 @@ Write-Host "Installing Chocolatey"
 Write-Host "Installing Chocolatey GUI"
 	choco install chocolateygui -y
 	$wshell.Popup("Operation Completed",0,"Done",0x0)
-
-Write-Host "Installing Google Chrome"
-	choco install googlechrome -y
+	
+Write-Host "Choco Cleaner (Script + Task)"
+	choco install choco-cleaner -y
 	$wshell.Popup("Operation Completed",0,"Done",0x0)
-
-Write-Host "Installing Brave Browser"
-	choco install brave -y
-	$wshell.Popup("Operation Completed",0,"Done",0x0)
-
-Write-Host "Installing Microsoft Silverlight"
-	choco install silverlight -y
+		
+Write-Host "Choco Upgrade All at Startup (Script + Task)"
+	choco install choco-upgrade-all-at-startup -y
 	$wshell.Popup("Operation Completed",0,"Done",0x0)
 
 Write-Host "Installing Adobe Acrobat Reader DC"
 	choco install adobereader -y
 	$wshell.Popup("Operation Completed",0,"Done",0x0)
-
+	
+Write-Host "Installing Google Chrome"
+	choco install googlechrome -y
+	$wshell.Popup("Operation Completed",0,"Done",0x0)
+	
+Write-Host "Installing Brave Browser"
+	choco install brave -y
+	$wshell.Popup("Operation Completed",0,"Done",0x0)
+	
 Write-Host "Installing VLC media player"
 	choco install vlc -y
 	$wshell.Popup("Operation Completed",0,"Done",0x0)
-
+	
 Write-Host "Installing Zoom Client for Meetings"
 	choco install zoom -y
 	$wshell.Popup("Operation Completed",0,"Done",0x0)
-
-Write-Host "Installing Adobe Creative Cloud Client"
-	choco install adobe-creative-cloud -y
-	$wshell.Popup("Operation Completed",0,"Done",0x0)
-
+	
 Write-Host "Installing TeamViewer"
 	choco install teamviewer9 -y
 	$wshell.Popup("Operation Completed",0,"Done",0x0)
-
+	
 Write-Host "Installing 7-Zip"
 	choco install 7zip -y
 	$wshell.Popup("Operation Completed",0,"Done",0x0)
 
 Write-Host "Installing iTunes"
 	choco install itunes -y
-	$wshell.Popup("Operation Completed",0,"Done",0x0)
-
-Write-Host "Choco Cleaner (Script + Task)"
-	choco install choco-cleaner -y
-	$wshell.Popup("Operation Completed",0,"Done",0x0)
+	$wshell.Popup("Operation Completed",0,"Done",0x0)	
 
 Write-Host "AllDup"
 	choco install alldup -y
 	$wshell.Popup("Operation Completed",0,"Done",0x0)
-
-choco install camtasia --version=9.05 -y
