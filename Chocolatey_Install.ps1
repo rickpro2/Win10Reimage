@@ -55,6 +55,11 @@ Write-Host "Installing iTunes"
 	choco install itunes -y
 	$wshell.Popup("Operation Completed",0,"Done",0x0)	
 
-Write-Host "AllDup"
+Write-Host "Installing AllDup"
 	choco install alldup -y
 	$wshell.Popup("Operation Completed",0,"Done",0x0)
+	
+Write-Host "Installing O&O Shutup"
+	choco install shutup10 -y
+	$wshell.Popup("Operation Completed",0,"Done",0x0)
+
