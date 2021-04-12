@@ -44,7 +44,7 @@ Write-Host "Installing Zoom Client for Meetings"
 	$wshell.Popup("Operation Completed",0,"Done",0x0)
 	
 Write-Host "Installing TeamViewer"
-	choco install teamviewer9 -y
+	choco install teamviewer -y
 	$wshell.Popup("Operation Completed",0,"Done",0x0)
 	
 Write-Host "Installing 7-Zip"
