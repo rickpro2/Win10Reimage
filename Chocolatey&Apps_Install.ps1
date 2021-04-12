@@ -19,8 +19,8 @@ Write-Host "Choco Cleaner (Script + Task)"
 	choco install choco-cleaner -y
 	$wshell.Popup("Operation Completed",0,"Done",0x0)
 		
-Write-Host "Choco Upgrade All at Startup (Script + Task)"
-	choco install choco-upgrade-all-at-startup -y
+Write-Host "Choco Upgrade All (Script + Task)"
+	choco install choco-upgrade-all-at -y
 	$wshell.Popup("Operation Completed",0,"Done",0x0)
 
 Write-Host "Installing Adobe Acrobat Reader DC"
