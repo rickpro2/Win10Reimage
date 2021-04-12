@@ -66,3 +66,7 @@ Write-Host "Installing O&O Shutup"
 Write-Host "Installing Adobe Creative Cloud Client"
 	choco install adobe-creative-cloud -y
 	$wshell.Popup("Operation Completed",0,"Done",0x0)
+	
+Write-Host "Installing Git"
+	choco install git -y
+	$wshell.Popup("Operation Completed",0,"Done",0x0)
