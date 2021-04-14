@@ -52,5 +52,11 @@ Write-Host "Installing O&O Shutup"
 Write-Host "Installing Adobe Creative Cloud Client"
 	choco install adobe-creative-cloud -y
 	
+Write-Host "Installing Notepad++"
+	choco install notepadplusplus -y
+	
+Write-Host "Installing Atom"
+	choco install atom -y
+	
 #Write-Host "Installing Git"
 #	choco install git -y
