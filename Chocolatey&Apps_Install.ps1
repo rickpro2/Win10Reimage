@@ -61,8 +61,8 @@ Write-Host "Installing Atom"
 Write-Host "Installing IPVanish"
 	choco install ipvanish -y
 	
-#Write-Host "Installing Office 365 Business"
-#	choco install office365business -y
+Write-Host "Installing Office 365 Business"
+	choco install office365business -y
 
 #Write-Host "Installing Git"
 #	choco install git -y
