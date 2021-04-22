@@ -54,13 +54,13 @@ Write-Host "Installing Adobe Creative Cloud Client"
 	
 Write-Host "Installing Notepad++"
 	choco install notepadplusplus -y
-	
-Write-Host "Installing Atom"
-	choco install atom -y
 		
 Write-Host "Installing IPVanish"
 	choco install ipvanish -y
 	
+#Write-Host "Installing Atom"
+#	choco install atom -y
+
 #Write-Host "Installing Office 365 Business"
 #	choco install office365business -y
 
