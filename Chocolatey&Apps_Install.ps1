@@ -58,6 +58,13 @@ Write-Host "Installing Notepad++"
 Write-Host "Installing IPVanish"
 	choco install ipvanish -y
 	
+#Write-Host "Installing Rufus"
+#	choco install rufus -y
+	
+#Write-Host "Installing Rufus"
+#	choco install rufus -y
+
+	
 #Write-Host "Installing Atom"
 #	choco install atom -y
 
