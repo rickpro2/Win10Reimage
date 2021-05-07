@@ -58,13 +58,17 @@ Write-Host "Installing Notepad++"
 Write-Host "Installing IPVanish"
 	choco install ipvanish -y
 	
-#Write-Host "Installing Rufus"
-#	choco install rufus -y
+Write-Host "Installing Rufus"
+	choco install rufus -y
+	
+Write-Host "Installing Dell Command | Update 4.1.0"
+	choco install dellcommandupdate -y
+	choco install dellcommandupdate-uwp -y
+	
 	
 #Write-Host "Installing Rufus"
 #	choco install rufus -y
 
-	
 #Write-Host "Installing Atom"
 #	choco install atom -y
 
