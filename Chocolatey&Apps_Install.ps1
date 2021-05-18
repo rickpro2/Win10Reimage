@@ -65,6 +65,11 @@ Write-Host "Installing Dell Command | Update 4.1.0"
 	choco install dellcommandupdate -y
 	choco install dellcommandupdate-uwp -y
 	
+Write-Host "Windows 10 Auto Dark Mode"
+	choco install auto-dark-mode -y
+	
+	
+	
 	
 #Write-Host "Installing Rufus"
 #	choco install rufus -y
