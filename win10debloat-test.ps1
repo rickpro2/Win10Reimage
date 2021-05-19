@@ -437,11 +437,13 @@ $installchoco.Add_Click({
 })
 
 $installallapps.Add_Click({
-Write-Host "Installing Chocolatey GUI"
+	Write-Host "Installing Chocolatey GUI"
 	choco install chocolateygui -y
+	Write-Host "Installed Chocolatey GUI"
 	
-Write-Host "Choco Cleaner (Script + Task)"
+Write-Host "Installing Choco Cleaner (Script + Task)"
 	choco install choco-cleaner -y
+	Write-Host "Installed Choco Cleaner (Script + Task)"
 		
 Write-Host "Choco Upgrade All (Script + Task)"
 	choco install choco-upgrade-all-at --params "'/TIME:07:00 /ABORTTIME:11:00'" -y
