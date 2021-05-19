@@ -55,7 +55,7 @@ $installallapps                    = New-Object system.Windows.Forms.Button
 $installallapps.text               = "Install All Apps"
 $installallapps.width              = 200
 $installallapps.height             = 75
-$installallapps.location           = New-Object System.Drawing.Point(16,19)
+$installallapps.location           = New-Object System.Drawing.Point(16,100)
 $installallapps.Font               = New-Object System.Drawing.Font('Microsoft Sans Serif',16)
 
 $brave                           = New-Object system.Windows.Forms.Button
