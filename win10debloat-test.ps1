@@ -52,10 +52,10 @@ $installchoco.location           = New-Object System.Drawing.Point(16,19)
 $installchoco.Font               = New-Object System.Drawing.Font('Microsoft Sans Serif',16)
 
 $allapps                    = New-Object system.Windows.Forms.Button
-$allapps.text               = "Install Chocolatey"
+$allapps.text               = "Install All"
 $allapps.width              = 200
 $allapps.height             = 115
-$allapps.location           = New-Object System.Drawing.Point(100,19)
+$allapps.location           = New-Object System.Drawing.Point(50,50)
 $allapps.Font               = New-Object System.Drawing.Font('Microsoft Sans Serif',16)
 
 
@@ -78,7 +78,7 @@ $installchoco.Add_Click({
 })
 
 $allapps.Add_Click({
-Write-Host "Installing Chocolatey GUI"
+Write-Host "Installing All apps GUI"
 	choco install chocolateygui -y
 	    Write-Host "Installed Firefox"
 	
