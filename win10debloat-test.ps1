@@ -51,12 +51,12 @@ $installchoco.height             = 115
 $installchoco.location           = New-Object System.Drawing.Point(16,19)
 $installchoco.Font               = New-Object System.Drawing.Font('Microsoft Sans Serif',16)
 
-$brave                           = New-Object system.Windows.Forms.Button
-$brave.text                      = "Brave Browser"
-$brave.width                     = 150
-$brave.height                    = 30
-$brave.location                  = New-Object System.Drawing.Point(250,19)
-$brave.Font                      = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
+$allapps                         = New-Object system.Windows.Forms.Button
+$allapps.text                      = "Install All Apps"
+$allapps.width                     = 150
+$allapps.height                    = 30
+$allapps.location                  = New-Object System.Drawing.Point(250,19)
+$allapps.Font                      = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
 
 $firefox                         = New-Object system.Windows.Forms.Button
 $firefox.text                    = "Firefox"
@@ -416,7 +416,7 @@ $lightmode.location              = New-Object System.Drawing.Point(417,45)
 $lightmode.Font                  = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
 
 $Form.controls.AddRange(@($Panel1,$Label1,$Panel2,$Label3,$Panel3,$Label4,$Label15,$Panel4,$Label20,$Label21,$Label23,$PictureBox1))
-$Panel1.controls.AddRange(@($installchoco,$brave,$firefox,$7zip,$irfanview,$adobereader,$notepad,$gchrome,$mpc,$vlc,$powertoys,$winterminal,$vscode,$Label2))
+$Panel1.controls.AddRange(@($installchoco,$allapps,$firefox,$7zip,$irfanview,$adobereader,$notepad,$gchrome,$mpc,$vlc,$powertoys,$winterminal,$vscode,$Label2))
 $Panel2.controls.AddRange(@($essentialtweaks,$backgroundapps,$cortana,$windowssearch,$actioncenter,$darkmode,$visualfx,$onedrive,$Label22,$lightmode))
 $Panel3.controls.AddRange(@($securitylow,$securityhigh,$Label5,$Label6,$Label7,$Label8,$Label9,$Label10,$Label11,$Label12,$Label13))
 $Panel4.controls.AddRange(@($defaultwindowsupdate,$securitywindowsupdate,$Label16,$Label17,$Label18,$Label19))
@@ -429,10 +429,79 @@ $installchoco.Add_Click({
     Write-Host "Installed Chocolatey"
 })
 
-$brave.Add_Click({
-    Write-Host "Installing Brave Browser"
-    choco install brave -y
-    Write-Host "Installed Brave Browser"
+$allapps.Add_Click({
+Write-Host "Installing Chocolatey GUI"
+	choco install chocolateygui -y
+	
+Write-Host "Choco Cleaner (Script + Task)"
+	choco install choco-cleaner -y
+		
+Write-Host "Choco Upgrade All (Script + Task)"
+	choco install choco-upgrade-all-at --params "'/TIME:07:00 /ABORTTIME:11:00'" -y
+
+Write-Host "Installing Adobe Acrobat Reader DC"
+	choco install adobereader -y
+	
+Write-Host "Installing Google Chrome"
+	choco install googlechrome -y
+	
+Write-Host "Installing Brave Browser"
+	choco install brave -y
+	
+Write-Host "Installing VLC media player"
+	choco install vlc -y
+	
+Write-Host "Installing Zoom Client for Meetings"
+	choco install zoom -y
+	
+Write-Host "Installing TeamViewer"
+	choco install teamviewer -y
+	
+Write-Host "Installing 7-Zip"
+	choco install 7zip -y
+
+Write-Host "Installing iTunes"
+	choco install itunes -y
+
+Write-Host "Installing AllDup"
+	choco install alldup -y
+	
+Write-Host "Installing O&O Shutup"
+	choco install shutup10 -y
+
+Write-Host "Installing Adobe Creative Cloud Client"
+	choco install adobe-creative-cloud -y
+	
+Write-Host "Installing Notepad++"
+	choco install notepadplusplus -y
+		
+Write-Host "Installing IPVanish"
+	choco install ipvanish -y
+	
+Write-Host "Installing Rufus"
+	choco install rufus -y
+	
+Write-Host "Installing Dell Command | Update 4.1.0"
+	choco install dellcommandupdate -y
+	choco install dellcommandupdate-uwp -y
+	
+Write-Host "Windows 10 Auto Dark Mode"
+	choco install auto-dark-mode -y
+	
+Write-Host "Installing Rufus"
+	choco install rufus -y
+
+Write-Host "Installing Audacity"
+	choco install audacity -y
+
+#Write-Host "Installing Atom"
+#	choco install atom -y
+
+#Write-Host "Installing Office 365 Business"
+#	choco install office365business -y
+
+#Write-Host "Installing Git"
+#	choco install git -y
 })
 
 $firefox.Add_Click({
