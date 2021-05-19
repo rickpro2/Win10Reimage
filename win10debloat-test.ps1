@@ -44,5 +44,19 @@ $Label1.height                   = 10
 $Label1.location                 = New-Object System.Drawing.Point(10,30)
 $Label1.Font                     = New-Object System.Drawing.Font('Microsoft Sans Serif',30)
 
+$installchoco                    = New-Object system.Windows.Forms.Button
+$installchoco.text               = "Install Chocolatey"
+$installchoco.width              = 200
+$installchoco.height             = 115
+$installchoco.location           = New-Object System.Drawing.Point(16,19)
+$installchoco.Font               = New-Object System.Drawing.Font('Microsoft Sans Serif',16)
+
+$installchoco.Add_Click({
+    Write-Host "Installing Chocolatey"
+    Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+    choco install chocolatey-core.extension -y
+    Write-Host "Installed Chocolatey"
+})
+
 
 [void]$Form.ShowDialog()
