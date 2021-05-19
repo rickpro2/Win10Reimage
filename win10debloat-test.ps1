@@ -51,6 +51,12 @@ $installchoco.height             = 115
 $installchoco.location           = New-Object System.Drawing.Point(16,19)
 $installchoco.Font               = New-Object System.Drawing.Font('Microsoft Sans Serif',16)
 
+$installchoco                    = New-Object system.Windows.Forms.Button
+$installchoco.text               = "Install Chocolatey"
+$installchoco.width              = 200
+$installchoco.height             = 115
+$installchoco.location           = New-Object System.Drawing.Point(100,19)
+$installchoco.Font               = New-Object System.Drawing.Font('Microsoft Sans Serif',16)
 
 
 
