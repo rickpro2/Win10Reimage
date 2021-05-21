@@ -46,14 +46,14 @@ $Label1.Font                     = New-Object System.Drawing.Font('Microsoft San
 
 $installchoco                    = New-Object system.Windows.Forms.Button
 $installchoco.text               = "Install Chocolatey"
-$installchoco.width              = 200
+$installchoco.width              = 125
 $installchoco.height             = 70
 $installchoco.location           = New-Object System.Drawing.Point(16,19)
 $installchoco.Font               = New-Object System.Drawing.Font('Microsoft Sans Serif',16)
 
 $installallapps                    = New-Object system.Windows.Forms.Button
 $installallapps.text               = "Install All Apps"
-$installallapps.width              = 200
+$installallapps.width              = 125
 $installallapps.height             = 70
 $installallapps.location           = New-Object System.Drawing.Point(16,100)
 $installallapps.Font               = New-Object System.Drawing.Font('Microsoft Sans Serif',16)
@@ -70,5 +70,39 @@ $Panel1.controls.AddRange(@($installchoco,$installallapps,$brave,$firefox,$7zip,
 $Panel2.controls.AddRange(@($essentialtweaks,$backgroundapps,$cortana,$windowssearch,$actioncenter,$darkmode,$visualfx,$onedrive,$Label22,$lightmode))
 $Panel3.controls.AddRange(@($securitylow,$securityhigh,$Label5,$Label6,$Label7,$Label8,$Label9,$Label10,$Label11,$Label12,$Label13))
 $Panel4.controls.AddRange(@($defaultwindowsupdate,$securitywindowsupdate,$Label16,$Label17,$Label18,$Label19))
+
+$installchoco.Add_Click({
+    Write-Host "Installing Chocolatey"
+    Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+    choco install chocolatey-core.extension -y
+    Write-Host "Installed Chocolatey"
+})
+
+
+$installallapps.Add_Click({
+    Write-Host "Installing Brave Browser"
+    choco install brave -y
+    Write-Host "Installed Brave Browser"
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+$brave.Add_Click({
+    Write-Host "Installing Brave Browser"
+    choco install brave -y
+    Write-Host "Installed Brave Browser"
+})
 
 [void]$Form.ShowDialog()
