@@ -45,17 +45,17 @@ $Label1.location                 = New-Object System.Drawing.Point(10,30)
 $Label1.Font                     = New-Object System.Drawing.Font('Microsoft Sans Serif',30)
 
 $installchoco                    = New-Object system.Windows.Forms.Button
-$installchoco.text               = "Install Chocolatey"
+$installchoco.text               = "*Install Chocolatey"
 $installchoco.width              = 175
 $installchoco.height             = 70
 $installchoco.location           = New-Object System.Drawing.Point(16,19)
 $installchoco.Font               = New-Object System.Drawing.Font('Microsoft Sans Serif',16)
 
 $installallapps                    = New-Object system.Windows.Forms.Button
-$installallapps.text               = "Install All Apps"
+$installallapps.text               = "*Install All Apps"
 $installallapps.width              = 175
 $installallapps.height             = 70
-$installallapps.location           = New-Object System.Drawing.Point(16,100)
+$installallapps.location           = New-Object System.Drawing.Point(16,90)
 $installallapps.Font               = New-Object System.Drawing.Font('Microsoft Sans Serif',16)
 
 $brave                           = New-Object system.Windows.Forms.Button
@@ -64,6 +64,91 @@ $brave.width                     = 150
 $brave.height                    = 30
 $brave.location                  = New-Object System.Drawing.Point(250,19)
 $brave.Font                      = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
+
+$firefox                         = New-Object system.Windows.Forms.Button
+$firefox.text                    = "Firefox"
+$firefox.width                   = 150
+$firefox.height                  = 30
+$firefox.location                = New-Object System.Drawing.Point(250,61)
+$firefox.Font                    = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
+
+$7zip                            = New-Object system.Windows.Forms.Button
+$7zip.text                       = "7-Zip"
+$7zip.width                      = 150
+$7zip.height                     = 30
+$7zip.location                   = New-Object System.Drawing.Point(584,104)
+$7zip.Font                       = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
+
+$irfanview                       = New-Object system.Windows.Forms.Button
+$irfanview.text                  = "Irfanview"
+$irfanview.width                 = 150
+$irfanview.height                = 30
+$irfanview.location              = New-Object System.Drawing.Point(417,19)
+$irfanview.Font                  = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
+
+$adobereader                     = New-Object system.Windows.Forms.Button
+$adobereader.text                = "Adobe Reader DC"
+$adobereader.width               = 150
+$adobereader.height              = 30
+$adobereader.location            = New-Object System.Drawing.Point(417,61)
+$adobereader.Font                = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
+
+$notepad                         = New-Object system.Windows.Forms.Button
+$notepad.text                    = "Notepad++"
+$notepad.width                   = 150
+$notepad.height                  = 30
+$notepad.location                = New-Object System.Drawing.Point(417,104)
+$notepad.Font                    = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
+
+$gchrome                         = New-Object system.Windows.Forms.Button
+$gchrome.text                    = "Google Chrome"
+$gchrome.width                   = 150
+$gchrome.height                  = 30
+$gchrome.location                = New-Object System.Drawing.Point(250,104)
+$gchrome.Font                    = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
+
+$mpc                             = New-Object system.Windows.Forms.Button
+$mpc.text                        = "Media Player Classic"
+$mpc.width                       = 150
+$mpc.height                      = 30
+$mpc.location                    = New-Object System.Drawing.Point(584,61)
+$mpc.Font                        = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
+
+$vlc                             = New-Object system.Windows.Forms.Button
+$vlc.text                        = "VLC"
+$vlc.width                       = 150
+$vlc.height                      = 30
+$vlc.location                    = New-Object System.Drawing.Point(584,19)
+$vlc.Font                        = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
+
+$powertoys                       = New-Object system.Windows.Forms.Button
+$powertoys.text                  = "PowerToys"
+$powertoys.width                 = 150
+$powertoys.height                = 30
+$powertoys.location              = New-Object System.Drawing.Point(751,105)
+$powertoys.Font                  = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
+
+$winterminal                     = New-Object system.Windows.Forms.Button
+$winterminal.text                = "Windows Terminal"
+$winterminal.width               = 150
+$winterminal.height              = 30
+$winterminal.location            = New-Object System.Drawing.Point(751,61)
+$winterminal.Font                = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
+
+$vscode                          = New-Object system.Windows.Forms.Button
+$vscode.text                     = "VS Code"
+$vscode.width                    = 150
+$vscode.height                   = 30
+$vscode.location                 = New-Object System.Drawing.Point(751,19)
+$vscode.Font                     = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
+
+$Label2                          = New-Object system.Windows.Forms.Label
+$Label2.text                     = "(Chocolatey Required for installs)"
+$Label2.AutoSize                 = $true
+$Label2.width                    = 25
+$Label2.height                   = 10
+$Label2.location                 = New-Object System.Drawing.Point(478,3)
+$Label2.Font                     = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
 
 $Form.controls.AddRange(@($Panel1,$Label1,$Panel2,$Label3,$Panel3,$Label4,$Label15,$Panel4,$Label20,$Label21,$Label23,$PictureBox1))
 $Panel1.controls.AddRange(@($installchoco,$installallapps,$brave,$firefox,$7zip,$irfanview,$adobereader,$notepad,$gchrome,$mpc,$vlc,$powertoys,$winterminal,$vscode,$Label2))
