@@ -79,21 +79,24 @@ $installchoco.Add_Click({
 })
 
 $installallapps.Add_Click({
-    Write-Host "Installing Brave Browser"
-    choco install brave -y
-    Write-Host "Installed Brave Browser"
+    Write-Host "Installing Chocolatey GUI"
+    choco install chocolateygui -y
+    Write-Host "Installing Chocolatey GUI"
+    
+    Write-Host "Choco Cleaner (Script + Task)"
+    choco install choco-cleaner -y
+    Write-Host "Choco Cleaner (Script + Task)"   
+    
+    Write-Host "Choco Upgrade All (Script + Task"
+    choco install choco-upgrade-all-at --params "'/TIME:07:00 /ABORTTIME:11:00'" -y
+    Write-Host "Choco Upgrade All (Script + Task"   
+    
+    Write-Host "Choco Upgrade All (Script + Task"
+    choco install choco-upgrade-all-at --params "'/TIME:07:00 /ABORTTIME:11:00'" -y
+    Write-Host "Choco Upgrade All (Script + Task"   
 })
 
 
-
-Write-Host "Installing Chocolatey GUI"
-	choco install chocolateygui -y
-	
-Write-Host "Choco Cleaner (Script + Task)"
-	choco install choco-cleaner -y
-		
-Write-Host "Choco Upgrade All (Script + Task)"
-	choco install choco-upgrade-all-at --params "'/TIME:07:00 /ABORTTIME:11:00'" -y
 
 Write-Host "Installing Adobe Acrobat Reader DC"
 	choco install adobereader -y
