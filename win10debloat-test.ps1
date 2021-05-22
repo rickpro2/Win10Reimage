@@ -59,7 +59,7 @@ $installallapps.location           = New-Object System.Drawing.Point(16,90)
 $installallapps.Font               = New-Object System.Drawing.Font('Microsoft Sans Serif',14)
 
 $brave                           = New-Object system.Windows.Forms.Button
-$brave.text                      = "Brave Browser"
+$brave.text                      = "*Brave Browser"
 $brave.width                     = 150
 $brave.height                    = 30
 $brave.location                  = New-Object System.Drawing.Point(250,19)
