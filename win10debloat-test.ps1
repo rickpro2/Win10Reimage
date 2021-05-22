@@ -46,14 +46,14 @@ $Label1.Font                     = New-Object System.Drawing.Font('Microsoft San
 
 $installchoco                    = New-Object system.Windows.Forms.Button
 $installchoco.text               = "Install Chocolatey"
-$installchoco.width              = 125
+$installchoco.width              = 175
 $installchoco.height             = 70
 $installchoco.location           = New-Object System.Drawing.Point(16,19)
 $installchoco.Font               = New-Object System.Drawing.Font('Microsoft Sans Serif',16)
 
 $installallapps                    = New-Object system.Windows.Forms.Button
 $installallapps.text               = "Install All Apps"
-$installallapps.width              = 125
+$installallapps.width              = 175
 $installallapps.height             = 70
 $installallapps.location           = New-Object System.Drawing.Point(16,100)
 $installallapps.Font               = New-Object System.Drawing.Font('Microsoft Sans Serif',16)
