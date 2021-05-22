@@ -49,14 +49,14 @@ $installchoco.text               = "*Install Chocolatey"
 $installchoco.width              = 175
 $installchoco.height             = 70
 $installchoco.location           = New-Object System.Drawing.Point(16,19)
-$installchoco.Font               = New-Object System.Drawing.Font('Microsoft Sans Serif',16)
+$installchoco.Font               = New-Object System.Drawing.Font('Microsoft Sans Serif',14)
 
 $installallapps                    = New-Object system.Windows.Forms.Button
 $installallapps.text               = "*Install All Apps"
 $installallapps.width              = 175
 $installallapps.height             = 70
 $installallapps.location           = New-Object System.Drawing.Point(16,90)
-$installallapps.Font               = New-Object System.Drawing.Font('Microsoft Sans Serif',16)
+$installallapps.Font               = New-Object System.Drawing.Font('Microsoft Sans Serif',14)
 
 $brave                           = New-Object system.Windows.Forms.Button
 $brave.text                      = "Brave Browser"
@@ -237,15 +237,6 @@ $installallapps.Add_Click({
     choco install audacity -y
     Write-Host "Installed Audacity" 
 })
-
-
-
-
-
-
-
-
-
 
 $brave.Add_Click({
     Write-Host "Installing Brave Browser"
