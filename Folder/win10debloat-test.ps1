@@ -128,12 +128,108 @@ $Panel1.controls.AddRange(@($InstallAllApps,$installchoco,$Button1,$Button2,$But
 $Panel2.controls.AddRange(@($Customize,$Darkmode,$Lightmode))
 $Panel4.controls.AddRange(@($Debloat1,$Debloat2))
 
-$InstallAllApps.Add_Click({  })
-$installchoco.Add_Click({  })
+$InstallAllApps.Add_Click({
+    Write-Host "Installing Chocolatey"
+    Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+    choco install chocolatey-core.extension -y
+    Write-Host "Installed Chocolatey"
+
+    Write-Host "Installing Chocolatey GUI"
+    choco install chocolateygui -y
+    Write-Host "Installed Chocolatey GUI"
+    
+    Write-Host "Installing Choco Cleaner (Script + Task)"
+    choco install choco-cleaner -y
+    Write-Host "Installed Choco Cleaner (Script + Task)"   
+    
+    Write-Host "Installing Choco Upgrade All (Script + Task)"
+    choco install choco-upgrade-all-at --params "'/TIME:07:00 /ABORTTIME:11:00'" -y
+    Write-Host "Installed Choco Upgrade All (Script + Task)"   
+    
+    Write-Host "Installing Adobe Acrobat Reader DC"
+    choco install adobereader -y
+    Write-Host "Installed Adobe Acrobat Reader DC"   
+    
+    Write-Host "Installing Google Chrome"
+    choco install googlechrome -y
+    Write-Host "Installed Google Chrome"   
+    
+    Write-Host "Installing Brave Browser"
+    choco install brave -y
+    Write-Host "Installed Brave Browser"   
+    
+    Write-Host "Installing VLC Media Player"
+    choco install vlc -y
+    Write-Host "Installed VLC Media Player"  
+    
+    Write-Host "Installing Zoom Client for Meetings"
+    choco install zoom -y
+    Write-Host "Installed Zoom Client for Meetings" 
+    
+    Write-Host "Installing TeamViewer"
+    choco install teamviewer -y
+    Write-Host "Installed TeamViewer" 
+    
+    Write-Host "Installing 7-Zip"
+    choco install 7zip -y
+    Write-Host "Installed 7-Zip" 
+    
+    Write-Host "Installing iTunes"
+    choco install itunes -y
+    Write-Host "Installed iTunes" 
+    
+    Write-Host "Installing AllDup"
+    choco install alldup -y
+    Write-Host "Installed AllDup" 
+    
+    Write-Host "Installing O&O Shutup"
+    choco install shutup10 -y
+    Write-Host "Installed O&O Shutup" 
+    
+    Write-Host "Installing Notepad++"
+    choco install notepadplusplus -y
+    Write-Host "Installed Notepad++" 
+    
+    Write-Host "Installing IPVanish"
+    choco install ipvanish -y
+    Write-Host "Installed IPVanish" 
+    
+    Write-Host "Installing Rufus"
+    choco install rufus -y
+    Write-Host "Installed Rufus" 
+    
+    Write-Host "Installing Dell Command | Update 4.1.0"
+    choco install dellcommandupdate -y
+    choco install dellcommandupdate-uwp -y
+    Write-Host "Installed Dell Command | Update 4.1.0" 
+    
+    Write-Host "Installing Audacity"
+    choco install audacity -y
+    Write-Host "Installed Audacity" 
+})
+
+$installchoco.Add_Click({
+    Write-Host "Installing Chocolatey"
+    Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+    choco install chocolatey-core.extension -y
+    Write-Host "Installed Chocolatey"
+})
+
 $Activate.Add_Click({  })
 $Customize.Add_Click({  })
-$Darkmode.Add_Click({  })
-$Lightmode.Add_Click({  })
+
+$Darkmode.Add_Click({
+    Write-Host "Enabling Dark Mode"
+    Set-ItemProperty -Path HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize -Name AppsUseLightTheme -Value 0
+    Write-Host "Enabled Dark Mode"
+})
+
+$Lightmode.Add_Click({
+    Write-Host "Switching Back to Light Mode"
+    Remove-ItemProperty -Path HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize -Name AppsUseLightTheme
+    Write-Host "Switched Back to Light Mode"
+})
+
 $Debloat1.Add_Click({  })
 $Debloat2.Add_Click({  })
 
