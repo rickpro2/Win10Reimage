@@ -179,19 +179,19 @@ $AllDup.height                   = 30
 $AllDup.location                 = New-Object System.Drawing.Point(666,68)
 $AllDup.Font                     = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
 
-$O&O                             = New-Object system.Windows.Forms.Button
-$O&O.text                        = "O&O Shutup"
-$O&O.width                       = 130
-$O&O.height                      = 30
-$O&O.location                    = New-Object System.Drawing.Point(666,113)
-$O&O.Font                        = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
+$ONO                             = New-Object system.Windows.Forms.Button
+$ONO.text                        = "O&O Shutup"
+$ONO.width                       = 130
+$ONO.height                      = 30
+$ONO.location                    = New-Object System.Drawing.Point(666,113)
+$ONO.Font                        = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
 
-$Notepad++                       = New-Object system.Windows.Forms.Button
-$Notepad++.text                  = "Notepad++"
-$Notepad++.width                 = 130
-$Notepad++.height                = 30
-$Notepad++.location              = New-Object System.Drawing.Point(815,19)
-$Notepad++.Font                  = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
+$notepad                         = New-Object system.Windows.Forms.Button
+$notepad.text                    = "Notepad++"
+$notepad.width                   = 130
+$notepad.height                  = 30
+$notepad.location                = New-Object System.Drawing.Point(815,19)
+$notepad.Font                    = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
 
 $Audacity                        = New-Object system.Windows.Forms.Button
 $Audacity.text                   = "Audacity"
@@ -208,7 +208,7 @@ $Rufus.location                  = New-Object System.Drawing.Point(815,113)
 $Rufus.Font                      = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
 
 $Form.controls.AddRange(@($Panel1,$Activate,$Panel2,$Panel4))
-$Panel1.controls.AddRange(@($InstallAllApps,$installchoco,$ChocolateyGUI,$ChocoCleaner,$ChocoUpgrade,$AdobeReader,$GoogleChrome,$BraveBrowser,$VLC,$Zoom,$TeamViewer,$7Zip,$AllDup,$O&O,$Notepad++,$Audacity,$Rufus))
+$Panel1.controls.AddRange(@($InstallAllApps,$installchoco,$ChocolateyGUI,$ChocoCleaner,$ChocoUpgrade,$AdobeReader,$GoogleChrome,$BraveBrowser,$VLC,$Zoom,$TeamViewer,$7Zip,$AllDup,$ONO,$notepad,$Audacity,$Rufus))
 $Panel2.controls.AddRange(@($Customize,$Darkmode,$Lightmode))
 $Panel4.controls.AddRange(@($Debloat1,$Debloat2))
 
@@ -231,9 +231,10 @@ $Zoom.Add_Click({  })
 $TeamViewer.Add_Click({  })
 $7Zip.Add_Click({  })
 $AllDup.Add_Click({  })
-$O&O.Add_Click({  })
-$Notepad++.Add_Click({  })
+$ONO.Add_Click({  })
+$notepad.Add_Click({  })
 $Audacity.Add_Click({  })
 $Rufus.Add_Click({  })
+
 
 [void]$Form.ShowDialog()
