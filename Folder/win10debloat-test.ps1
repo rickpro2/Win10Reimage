@@ -165,12 +165,12 @@ $TeamViewer.height               = 30
 $TeamViewer.location             = New-Object System.Drawing.Point(515,113)
 $TeamViewer.Font                 = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
 
-$7-Zip                           = New-Object system.Windows.Forms.Button
-$7-Zip.text                      = "7-Zip"
-$7-Zip.width                     = 130
-$7-Zip.height                    = 30
-$7-Zip.location                  = New-Object System.Drawing.Point(666,20)
-$7-Zip.Font                      = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
+$7Zip                            = New-Object system.Windows.Forms.Button
+$7Zip.text                       = "7-Zip"
+$7Zip.width                      = 130
+$7Zip.height                     = 30
+$7Zip.location                   = New-Object System.Drawing.Point(666,20)
+$7Zip.Font                       = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
 
 $AllDup                          = New-Object system.Windows.Forms.Button
 $AllDup.text                     = "AllDup"
@@ -208,7 +208,7 @@ $Rufus.location                  = New-Object System.Drawing.Point(815,113)
 $Rufus.Font                      = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
 
 $Form.controls.AddRange(@($Panel1,$Activate,$Panel2,$Panel4))
-$Panel1.controls.AddRange(@($InstallAllApps,$installchoco,$ChocolateyGUI,$ChocoCleaner,$ChocoUpgrade,$AdobeReader,$GoogleChrome,$BraveBrowser,$VLC,$Zoom,$TeamViewer,$7-Zip,$AllDup,$O&O,$Notepad++,$Audacity,$Rufus))
+$Panel1.controls.AddRange(@($InstallAllApps,$installchoco,$ChocolateyGUI,$ChocoCleaner,$ChocoUpgrade,$AdobeReader,$GoogleChrome,$BraveBrowser,$VLC,$Zoom,$TeamViewer,$7Zip,$AllDup,$O&O,$Notepad++,$Audacity,$Rufus))
 $Panel2.controls.AddRange(@($Customize,$Darkmode,$Lightmode))
 $Panel4.controls.AddRange(@($Debloat1,$Debloat2))
 
@@ -229,7 +229,7 @@ $BraveBrowser.Add_Click({  })
 $VLC.Add_Click({  })
 $Zoom.Add_Click({  })
 $TeamViewer.Add_Click({  })
-$7-Zip.Add_Click({  })
+$7Zip.Add_Click({  })
 $AllDup.Add_Click({  })
 $O&O.Add_Click({  })
 $Notepad++.Add_Click({  })
