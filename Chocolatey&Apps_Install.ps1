@@ -83,7 +83,9 @@ Write-Host "Installing Chocolatey"
     choco install audacity -y
     Write-Host "Installed Audacity" 
 
-
+    Write-Host "Installing Sharex"
+    choco install sharex -y
+    Write-Host "Installed Sharex"
 
 
 #Write-Host "Installing Atom"
