@@ -87,6 +87,16 @@ Write-Host "Installing Chocolatey"
     choco install sharex -y
     Write-Host "Installed Sharex"
 
+    Write-Host "Tor Browser Bundle"
+    choco install tor-browser -y
+    Write-Host "Tor Browser Bundle"
+
+
+
+
+
+
+
 
 #Write-Host "Installing Atom"
 #	choco install atom -y
