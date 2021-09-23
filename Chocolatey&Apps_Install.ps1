@@ -91,9 +91,13 @@ Write-Host "Installing Chocolatey"
     choco install tor-browser -y
     Write-Host "Tor Browser Bundle"
 
+    Write-Host "Inkscape"
+    choco install inkscape -y
+    Write-Host "Inkscape"
 
-
-
+    Write-Host "GIMP"
+    choco install gimp -y
+    Write-Host "GIMP"
 
 
 
