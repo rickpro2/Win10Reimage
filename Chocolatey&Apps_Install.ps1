@@ -99,6 +99,9 @@ Write-Host "Installing Chocolatey"
     choco install gimp -y
     Write-Host "GIMP"
 
+    Write-Host "Spotify"
+    choco install spotify -y
+    Write-Host "Spotify"
 
 
 
