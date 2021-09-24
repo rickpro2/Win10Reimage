@@ -103,6 +103,9 @@ Write-Host "Installing Chocolatey"
     choco install spotify -y
     Write-Host "Spotify"
 
+    Write-Host "qBittorrent"
+    choco install qBittorrent -y
+    Write-Host "qBittorrent"
 
 
 #Write-Host "Installing Atom"
