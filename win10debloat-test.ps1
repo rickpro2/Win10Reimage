@@ -171,6 +171,10 @@ $installchoco.Add_Click({
 })
 
 $installallapps.Add_Click({
+Write-Host "Installing Chocolatey"
+	Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+	choco install chocolatey-core.extension -y
+
     Write-Host "Installing Chocolatey GUI"
     choco install chocolateygui -y
     Write-Host "Installed Chocolatey GUI"
@@ -243,6 +247,30 @@ $installallapps.Add_Click({
     Write-Host "Installing Audacity"
     choco install audacity -y
     Write-Host "Installed Audacity" 
+
+    Write-Host "Installing Sharex"
+    choco install sharex -y
+    Write-Host "Installed Sharex"
+
+    Write-Host "Tor Browser Bundle"
+    choco install tor-browser -y
+    Write-Host "Tor Browser Bundle"
+
+    Write-Host "Inkscape"
+    choco install inkscape -y
+    Write-Host "Inkscape"
+
+    Write-Host "GIMP"
+    choco install gimp -y
+    Write-Host "GIMP"
+
+    Write-Host "Spotify"
+    choco install spotify -y
+    Write-Host "Spotify"
+
+    Write-Host "qBittorrent"
+    choco install qBittorrent -y
+    Write-Host "qBittorrent"
 })
 
 $brave.Add_Click({
