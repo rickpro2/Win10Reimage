@@ -94,3 +94,4 @@ if ($actStatus -eq $False) {
 $actStatus = ((cscript /Nologo "cscript /Nologo "$env:SystemRoot\system32\slmgr.vbs" -xpr) -join '')
 # Exit Successfully (0) if activated, or Unsuccessfully (1) if not activated.
 if ($actStatus -like "*Volume activation will expire *") {exit(0)} else {exit(1)}
+}
