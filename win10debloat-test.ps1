@@ -244,33 +244,13 @@ Write-Host "Installing Chocolatey"
     choco install dellcommandupdate-uwp -y
     Write-Host "Installed Dell Command | Update 4.1.0" 
     
-    Write-Host "Installing Audacity"
-    choco install audacity -y
-    Write-Host "Installed Audacity" 
-
-    Write-Host "Installing Sharex"
-    choco install sharex -y
-    Write-Host "Installed Sharex"
-
-    Write-Host "Tor Browser Bundle"
+    Write-Host "Installing Tor Browser Bundle"
     choco install tor-browser -y
-    Write-Host "Tor Browser Bundle"
+    Write-Host "Installed Tor Browser Bundle"
 
-    Write-Host "Inkscape"
-    choco install inkscape -y
-    Write-Host "Inkscape"
-
-    Write-Host "GIMP"
-    choco install gimp -y
-    Write-Host "GIMP"
-
-    Write-Host "Spotify"
-    choco install spotify -y
-    Write-Host "Spotify"
-
-    Write-Host "qBittorrent"
+    Write-Host "Installing qBittorrent"
     choco install qBittorrent -y
-    Write-Host "qBittorrent"
+    Write-Host "Installed qBittorrent"
 })
 
 $brave.Add_Click({
