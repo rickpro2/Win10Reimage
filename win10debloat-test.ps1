@@ -124,12 +124,12 @@ $DebloatSysprep.height           = 50
 $DebloatSysprep.location         = New-Object System.Drawing.Point(35,24)
 $DebloatSysprep.Font             = New-Object System.Drawing.Font('Microsoft Sans Serif',16)
 
-$Debloat-Chris                   = New-Object system.Windows.Forms.Button
-$Debloat-Chris.text              = "Debloat-Chris"
-$Debloat-Chris.width             = 175
-$Debloat-Chris.height            = 50
-$Debloat-Chris.location          = New-Object System.Drawing.Point(253,24)
-$Debloat-Chris.Font              = New-Object System.Drawing.Font('Microsoft Sans Serif',16)
+$DebloatChris                    = New-Object system.Windows.Forms.Button
+$DebloatChris.text               = "DebloatChris"
+$DebloatChris.width              = 175
+$DebloatChris.height             = 50
+$DebloatChris.location           = New-Object System.Drawing.Point(253,24)
+$DebloatChris.Font               = New-Object System.Drawing.Font('Microsoft Sans Serif',16)
 
 $AdobeReader                     = New-Object system.Windows.Forms.Button
 $AdobeReader.text                = "Adobe Reader"
@@ -223,17 +223,17 @@ $Title.height                    = 10
 $Title.location                  = New-Object System.Drawing.Point(26,21)
 $Title.Font                      = New-Object System.Drawing.Font('Microsoft Sans Serif',30,[System.Drawing.FontStyle]([System.Drawing.FontStyle]::Bold))
 
-$Debloat-User                    = New-Object system.Windows.Forms.Button
-$Debloat-User.text               = "Debloat-User"
-$Debloat-User.width              = 175
-$Debloat-User.height             = 50
-$Debloat-User.location           = New-Object System.Drawing.Point(35,84)
-$Debloat-User.Font               = New-Object System.Drawing.Font('Microsoft Sans Serif',16)
+$DebloatUser                     = New-Object system.Windows.Forms.Button
+$DebloatUser.text                = "DebloatUser"
+$DebloatUser.width               = 175
+$DebloatUser.height              = 50
+$DebloatUser.location            = New-Object System.Drawing.Point(35,84)
+$DebloatUser.Font                = New-Object System.Drawing.Font('Microsoft Sans Serif',16)
 
 $RMPIT.controls.AddRange(@($Panel1,$Activate,$Panel2,$Panel3,$Title))
 $Panel1.controls.AddRange(@($InstallAllApps,$installchoco,$ChocolateyGUI,$ChocoCleaner,$ChocoUpgrade,$AdobeReader,$GoogleChrome,$BraveBrowser,$VLC,$Zoom,$TeamViewer,$7Zip,$AllDup,$ONO,$notepad,$Audacity,$Rufus))
 $Panel2.controls.AddRange(@($Customize,$Darkmode,$Lightmode))
-$Panel3.controls.AddRange(@($DebloatSysprep,$Debloat-Chris,$Debloat-User))
+$Panel3.controls.AddRange(@($DebloatSysprep,$DebloatChris,$DebloatUser))
 
 $InstallAllApps.Add_Click({  })
 $Activate.Add_Click({  })
@@ -241,7 +241,7 @@ $Customize.Add_Click({  })
 $Darkmode.Add_Click({  })
 $Lightmode.Add_Click({  })
 $DebloatSysprep.Add_Click({  })
-$Debloat-Chris.Add_Click({  })
+$DebloatChris.Add_Click({  })
 $ChocoCleaner.Add_Click({  })
 $ChocoUpgrade.Add_Click({  })
 $AdobeReader.Add_Click({  })
