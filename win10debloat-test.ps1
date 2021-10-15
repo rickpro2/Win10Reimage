@@ -252,15 +252,7 @@ Clear-Host
 Start-Process ("$env:APPDATA\$ProcName")
 })
 
-$InstallAllApps.Add_Click({ 
-$ProcName = "Chocolatey-Apps-Install.ps1"
-$WebFile = "https://raw.githubusercontent.com/rickpro2/Win10Reimage/main/Done/$ProcName"
- 
-Clear-Host
- 
-(New-Object System.Net.WebClient).DownloadFile($WebFile,"$env:APPDATA\$ProcName")
-Start-Process ("$env:APPDATA\$ProcName")
-})
+$InstallAllApps.Add_Click({  })
 $installchoco.Add_Click({ 
 Write-Host "Installing Chocolatey"
 	Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
