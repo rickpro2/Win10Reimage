@@ -118,7 +118,7 @@ $Panel3.width                    = 456
 $Panel3.location                 = New-Object System.Drawing.Point(512,339)
 
 $DebloatSysprep                  = New-Object system.Windows.Forms.Button
-$DebloatSysprep.text             = "Debloat-Sysprep"
+$DebloatSysprep.text             = "DebloatSysprep"
 $DebloatSysprep.width            = 175
 $DebloatSysprep.height           = 50
 $DebloatSysprep.location         = New-Object System.Drawing.Point(35,24)
