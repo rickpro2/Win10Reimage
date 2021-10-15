@@ -243,14 +243,12 @@ $Panel2.controls.AddRange(@($Customize,$Darkmode,$AdminAccount,$Button1))
 $Panel3.controls.AddRange(@($DebloatSysprep,$DebloatChris,$DebloatUser))
 
 $Activate.Add_Click({ 
-# Source URL
+# URL and Destination
 $url = "http://speed.transip.nl/10mb.bin"
+$dest = "c:\temp\testfiles"
 
-# Destation file
-$dest = "c:\temp\testfiles.bin"
-
-# Download the file
-Invoke-WebRequest -Uri $url -OutFile $dest
+# Download file
+Start-BitsTransfer -Source $url -Destination $dest 
 })
 
 $InstallAllApps.Add_Click({  })
