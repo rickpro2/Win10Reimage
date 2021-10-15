@@ -242,7 +242,14 @@ $Panel1.controls.AddRange(@($InstallAllApps,$installchoco,$ChocolateyGUI,$ChocoC
 $Panel2.controls.AddRange(@($Customize,$Darkmode,$AdminAccount,$Button1))
 $Panel3.controls.AddRange(@($DebloatSysprep,$DebloatChris,$DebloatUser))
 
-$Activate.Add_Click({  })
+$Activate.Add_Click({ 
+# Source file location
+$source = 'http://speedtest.tele2.net/10MB.zip'
+# Destination to save the file
+$destination = 'c:\dload\10MB.zip'
+#Download the file
+Invoke-WebRequest -Uri $source -OutFile $destination
+})
 $InstallAllApps.Add_Click({  })
 $installchoco.Add_Click({  })
 $ChocolateyGUI.Add_Click({  })
