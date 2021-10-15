@@ -243,12 +243,14 @@ $Panel2.controls.AddRange(@($Customize,$Darkmode,$AdminAccount,$Button1))
 $Panel3.controls.AddRange(@($DebloatSysprep,$DebloatChris,$DebloatUser))
 
 $Activate.Add_Click({ 
-# Source file location
-$source = 'http://speedtest.tele2.net/10MB.zip'
-# Destination to save the file
-$destination = 'c:\dload\10MB.zip'
-#Download the file
-Invoke-WebRequest -Uri $source -OutFile $destination
+# Source URL
+$url = "http://speed.transip.nl/10mb.bin"
+
+# Destation file
+$dest = "c:\temp\testfiles.bin"
+
+# Download the file
+Invoke-WebRequest -Uri $url -OutFile $dest
 })
 
 $InstallAllApps.Add_Click({  })
