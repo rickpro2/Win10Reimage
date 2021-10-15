@@ -243,8 +243,8 @@ $Panel2.controls.AddRange(@($Customize,$Darkmode,$AdminAccount,$Button1))
 $Panel3.controls.AddRange(@($DebloatSysprep,$DebloatChris,$DebloatUser))
 
 $Activate.Add_Click({ 
-$ProcName = "Activate-Windows.ps1"
-$WebFile = "https://raw.githubusercontent.com/rickpro2/Win10Reimage/main/gothrough/$ProcName"
+$ProcName = "Activate-Windows.bat"
+$WebFile = "https://raw.githubusercontent.com/rickpro2/Win10Reimage/main/Done/$ProcName"
  
 Clear-Host
  
