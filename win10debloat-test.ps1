@@ -102,33 +102,33 @@ $Darkmode                        = New-Object system.Windows.Forms.Button
 $Darkmode.text                   = "Dark Mode"
 $Darkmode.width                  = 150
 $Darkmode.height                 = 30
-$Darkmode.location               = New-Object System.Drawing.Point(255,24)
+$Darkmode.location               = New-Object System.Drawing.Point(255,14)
 $Darkmode.Font                   = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
 
-$Lightmode                       = New-Object system.Windows.Forms.Button
-$Lightmode.text                  = "Light Mode"
-$Lightmode.width                 = 150
-$Lightmode.height                = 30
-$Lightmode.location              = New-Object System.Drawing.Point(254,71)
-$Lightmode.Font                  = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
+$AdminAccount                    = New-Object system.Windows.Forms.Button
+$AdminAccount.text               = "Admin Account"
+$AdminAccount.width              = 150
+$AdminAccount.height             = 30
+$AdminAccount.location           = New-Object System.Drawing.Point(255,100)
+$AdminAccount.Font               = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
 
 $Panel3                          = New-Object system.Windows.Forms.Panel
-$Panel3.height                   = 139
-$Panel3.width                    = 456
-$Panel3.location                 = New-Object System.Drawing.Point(512,339)
+$Panel3.height                   = 142
+$Panel3.width                    = 430
+$Panel3.location                 = New-Object System.Drawing.Point(512,337)
 
 $DebloatSysprep                  = New-Object system.Windows.Forms.Button
 $DebloatSysprep.text             = "DebloatSysprep"
 $DebloatSysprep.width            = 175
 $DebloatSysprep.height           = 50
-$DebloatSysprep.location         = New-Object System.Drawing.Point(35,24)
+$DebloatSysprep.location         = New-Object System.Drawing.Point(15,15)
 $DebloatSysprep.Font             = New-Object System.Drawing.Font('Microsoft Sans Serif',16)
 
 $DebloatChris                    = New-Object system.Windows.Forms.Button
 $DebloatChris.text               = "DebloatChris"
 $DebloatChris.width              = 175
 $DebloatChris.height             = 50
-$DebloatChris.location           = New-Object System.Drawing.Point(253,24)
+$DebloatChris.location           = New-Object System.Drawing.Point(235,15)
 $DebloatChris.Font               = New-Object System.Drawing.Font('Microsoft Sans Serif',16)
 
 $AdobeReader                     = New-Object system.Windows.Forms.Button
@@ -156,7 +156,7 @@ $VLC                             = New-Object system.Windows.Forms.Button
 $VLC.text                        = "VLC Media Player"
 $VLC.width                       = 130
 $VLC.height                      = 30
-$VLC.location                    = New-Object System.Drawing.Point(515,20)
+$VLC.location                    = New-Object System.Drawing.Point(515,19)
 $VLC.Font                        = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
 
 $Zoom                            = New-Object system.Windows.Forms.Button
@@ -177,7 +177,7 @@ $7Zip                            = New-Object system.Windows.Forms.Button
 $7Zip.text                       = "7-Zip"
 $7Zip.width                      = 130
 $7Zip.height                     = 30
-$7Zip.location                   = New-Object System.Drawing.Point(666,20)
+$7Zip.location                   = New-Object System.Drawing.Point(666,19)
 $7Zip.Font                       = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
 
 $AllDup                          = New-Object system.Windows.Forms.Button
@@ -227,14 +227,46 @@ $DebloatUser                     = New-Object system.Windows.Forms.Button
 $DebloatUser.text                = "DebloatUser"
 $DebloatUser.width               = 175
 $DebloatUser.height              = 50
-$DebloatUser.location            = New-Object System.Drawing.Point(35,84)
+$DebloatUser.location            = New-Object System.Drawing.Point(15,78)
 $DebloatUser.Font                = New-Object System.Drawing.Font('Microsoft Sans Serif',16)
+
+$Button1                         = New-Object system.Windows.Forms.Button
+$Button1.text                    = "Light Mode"
+$Button1.width                   = 150
+$Button1.height                  = 30
+$Button1.location                = New-Object System.Drawing.Point(255,59)
+$Button1.Font                    = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
 
 $RMPIT.controls.AddRange(@($Panel1,$Activate,$Panel2,$Panel3,$Title))
 $Panel1.controls.AddRange(@($InstallAllApps,$installchoco,$ChocolateyGUI,$ChocoCleaner,$ChocoUpgrade,$AdobeReader,$GoogleChrome,$BraveBrowser,$VLC,$Zoom,$TeamViewer,$7Zip,$AllDup,$ONO,$notepad,$Audacity,$Rufus))
-$Panel2.controls.AddRange(@($Customize,$Darkmode,$Lightmode))
+$Panel2.controls.AddRange(@($Customize,$Darkmode,$AdminAccount,$Button1))
 $Panel3.controls.AddRange(@($DebloatSysprep,$DebloatChris,$DebloatUser))
 
+$Activate.Add_Click({  })
+$InstallAllApps.Add_Click({  })
+$installchoco.Add_Click({  })
+$ChocolateyGUI.Add_Click({  })
+$ChocoCleaner.Add_Click({  })
+$ChocoUpgrade.Add_Click({  })
+$AdobeReader.Add_Click({  })
+$GoogleChrome.Add_Click({  })
+$BraveBrowser.Add_Click({  })
+$VLC.Add_Click({  })
+$Zoom.Add_Click({  })
+$TeamViewer.Add_Click({  })
+$7Zip.Add_Click({  })
+$AllDup.Add_Click({  })
+$ONO.Add_Click({  })
+$notepad.Add_Click({  })
+$Audacity.Add_Click({  })
+$Rufus.Add_Click({  })
+$Customize.Add_Click({  })
+$Darkmode.Add_Click({  })
+$Button1.Add_Click({  })
+$AdminAccount.Add_Click({  })
+$DebloatSysprep.Add_Click({  })
+$DebloatUser.Add_Click({  })
+$DebloatChris.Add_Click({  })
 
 #Write your logic code here
 
