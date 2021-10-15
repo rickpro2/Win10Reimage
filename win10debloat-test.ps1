@@ -26,774 +26,234 @@ If (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]:
     }
 }
 
+<# This form was created using POSHGUI.com  a free online gui designer for PowerShell
+.NAME
+    win10
+#>
+
+Add-Type -AssemblyName System.Windows.Forms
+[System.Windows.Forms.Application]::EnableVisualStyles()
+
 $Form                            = New-Object system.Windows.Forms.Form
 $Form.ClientSize                 = New-Object System.Drawing.Point(1050,700)
 $Form.text                       = "Form"
 $Form.TopMost                    = $false
 
 $Panel1                          = New-Object system.Windows.Forms.Panel
-$Panel1.height                   = 156
-$Panel1.width                    = 1050
-$Panel1.location                 = New-Object System.Drawing.Point(9,90)
+$Panel1.height                   = 160
+$Panel1.width                    = 960
+$Panel1.location                 = New-Object System.Drawing.Point(42,152)
 
-$Label1                          = New-Object system.Windows.Forms.Label
-$Label1.text                     = "Program Installation"
-$Label1.AutoSize                 = $true
-$Label1.width                    = 25
-$Label1.height                   = 10
-$Label1.location                 = New-Object System.Drawing.Point(10,30)
-$Label1.Font                     = New-Object System.Drawing.Font('Microsoft Sans Serif',30)
+$InstallAllApps                  = New-Object system.Windows.Forms.Button
+$InstallAllApps.text             = "Install All Apps"
+$InstallAllApps.width            = 175
+$InstallAllApps.height           = 50
+$InstallAllApps.location         = New-Object System.Drawing.Point(16,19)
+$InstallAllApps.Font             = New-Object System.Drawing.Font('Microsoft Sans Serif',16)
 
 $installchoco                    = New-Object system.Windows.Forms.Button
-$installchoco.text               = "*Install Chocolatey"
+$installchoco.text               = "Install Chocolatey"
 $installchoco.width              = 175
-$installchoco.height             = 70
-$installchoco.location           = New-Object System.Drawing.Point(16,19)
-$installchoco.Font               = New-Object System.Drawing.Font('Microsoft Sans Serif',14)
+$installchoco.height             = 50
+$installchoco.location           = New-Object System.Drawing.Point(16,90)
+$installchoco.Font               = New-Object System.Drawing.Font('Microsoft Sans Serif',16)
 
-$installallapps                    = New-Object system.Windows.Forms.Button
-$installallapps.text               = "*Install All Apps"
-$installallapps.width              = 175
-$installallapps.height             = 70
-$installallapps.location           = New-Object System.Drawing.Point(16,90)
-$installallapps.Font               = New-Object System.Drawing.Font('Microsoft Sans Serif',14)
+$ChocolateyGUI                   = New-Object system.Windows.Forms.Button
+$ChocolateyGUI.text              = "Chocolatey GUI"
+$ChocolateyGUI.width             = 130
+$ChocolateyGUI.height            = 30
+$ChocolateyGUI.location          = New-Object System.Drawing.Point(215,19)
+$ChocolateyGUI.Font              = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
 
-$brave                           = New-Object system.Windows.Forms.Button
-$brave.text                      = "*Brave Browser"
-$brave.width                     = 150
-$brave.height                    = 30
-$brave.location                  = New-Object System.Drawing.Point(250,19)
-$brave.Font                      = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
+$ChocoCleaner                    = New-Object system.Windows.Forms.Button
+$ChocoCleaner.text               = "Choco Cleaner"
+$ChocoCleaner.width              = 130
+$ChocoCleaner.height             = 30
+$ChocoCleaner.location           = New-Object System.Drawing.Point(215,68)
+$ChocoCleaner.Font               = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
 
-$firefox                         = New-Object system.Windows.Forms.Button
-$firefox.text                    = "Firefox"
-$firefox.width                   = 150
-$firefox.height                  = 30
-$firefox.location                = New-Object System.Drawing.Point(250,61)
-$firefox.Font                    = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
+$ChocoUpgrade                    = New-Object system.Windows.Forms.Button
+$ChocoUpgrade.text               = "Choco Upgrade"
+$ChocoUpgrade.width              = 130
+$ChocoUpgrade.height             = 30
+$ChocoUpgrade.location           = New-Object System.Drawing.Point(215,113)
+$ChocoUpgrade.Font               = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
 
-$7zip                            = New-Object system.Windows.Forms.Button
-$7zip.text                       = "7-Zip"
-$7zip.width                      = 150
-$7zip.height                     = 30
-$7zip.location                   = New-Object System.Drawing.Point(584,104)
-$7zip.Font                       = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
+$Activate                        = New-Object system.Windows.Forms.Button
+$Activate.text                   = "Active Windows"
+$Activate.width                  = 175
+$Activate.height                 = 50
+$Activate.location               = New-Object System.Drawing.Point(42,82)
+$Activate.Font                   = New-Object System.Drawing.Font('Microsoft Sans Serif',16)
 
-$irfanview                       = New-Object system.Windows.Forms.Button
-$irfanview.text                  = "Irfanview"
-$irfanview.width                 = 150
-$irfanview.height                = 30
-$irfanview.location              = New-Object System.Drawing.Point(417,19)
-$irfanview.Font                  = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
+$Customize                       = New-Object system.Windows.Forms.Button
+$Customize.text                  = "Customize"
+$Customize.width                 = 175
+$Customize.height                = 50
+$Customize.location              = New-Object System.Drawing.Point(15,20)
+$Customize.Font                  = New-Object System.Drawing.Font('Microsoft Sans Serif',16)
 
-$adobereader                     = New-Object system.Windows.Forms.Button
-$adobereader.text                = "Adobe Reader DC"
-$adobereader.width               = 150
-$adobereader.height              = 30
-$adobereader.location            = New-Object System.Drawing.Point(417,61)
-$adobereader.Font                = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
+$Panel2                          = New-Object system.Windows.Forms.Panel
+$Panel2.height                   = 142
+$Panel2.width                    = 430
+$Panel2.location                 = New-Object System.Drawing.Point(42,337)
+
+$Darkmode                        = New-Object system.Windows.Forms.Button
+$Darkmode.text                   = "Dark Mode"
+$Darkmode.width                  = 150
+$Darkmode.height                 = 30
+$Darkmode.location               = New-Object System.Drawing.Point(255,24)
+$Darkmode.Font                   = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
+
+$Lightmode                       = New-Object system.Windows.Forms.Button
+$Lightmode.text                  = "Light Mode"
+$Lightmode.width                 = 150
+$Lightmode.height                = 30
+$Lightmode.location              = New-Object System.Drawing.Point(254,71)
+$Lightmode.Font                  = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
+
+$Panel3                          = New-Object system.Windows.Forms.Panel
+$Panel3.height                   = 139
+$Panel3.width                    = 456
+$Panel3.location                 = New-Object System.Drawing.Point(512,339)
+
+$Debloat1                        = New-Object system.Windows.Forms.Button
+$Debloat1.text                   = "Debloat #1"
+$Debloat1.width                  = 175
+$Debloat1.height                 = 50
+$Debloat1.location               = New-Object System.Drawing.Point(35,24)
+$Debloat1.Font                   = New-Object System.Drawing.Font('Microsoft Sans Serif',16)
+
+$Debloat2                        = New-Object system.Windows.Forms.Button
+$Debloat2.text                   = "Debloat #2"
+$Debloat2.width                  = 175
+$Debloat2.height                 = 50
+$Debloat2.location               = New-Object System.Drawing.Point(253,24)
+$Debloat2.Font                   = New-Object System.Drawing.Font('Microsoft Sans Serif',16)
+
+$AdobeReader                     = New-Object system.Windows.Forms.Button
+$AdobeReader.text                = "Adobe Reader"
+$AdobeReader.width               = 130
+$AdobeReader.height              = 30
+$AdobeReader.location            = New-Object System.Drawing.Point(365,19)
+$AdobeReader.Font                = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
+
+$GoogleChrome                    = New-Object system.Windows.Forms.Button
+$GoogleChrome.text               = "Google Chrome"
+$GoogleChrome.width              = 130
+$GoogleChrome.height             = 30
+$GoogleChrome.location           = New-Object System.Drawing.Point(365,68)
+$GoogleChrome.Font               = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
+
+$BraveBrowser                    = New-Object system.Windows.Forms.Button
+$BraveBrowser.text               = "Brave Browser"
+$BraveBrowser.width              = 130
+$BraveBrowser.height             = 30
+$BraveBrowser.location           = New-Object System.Drawing.Point(365,113)
+$BraveBrowser.Font               = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
+
+$VLC                             = New-Object system.Windows.Forms.Button
+$VLC.text                        = "VLC Media Player"
+$VLC.width                       = 130
+$VLC.height                      = 30
+$VLC.location                    = New-Object System.Drawing.Point(515,20)
+$VLC.Font                        = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
+
+$Zoom                            = New-Object system.Windows.Forms.Button
+$Zoom.text                       = "Zoom"
+$Zoom.width                      = 130
+$Zoom.height                     = 30
+$Zoom.location                   = New-Object System.Drawing.Point(515,68)
+$Zoom.Font                       = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
+
+$TeamViewer                      = New-Object system.Windows.Forms.Button
+$TeamViewer.text                 = "TeamViewer"
+$TeamViewer.width                = 130
+$TeamViewer.height               = 30
+$TeamViewer.location             = New-Object System.Drawing.Point(515,113)
+$TeamViewer.Font                 = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
+
+$7Zip                            = New-Object system.Windows.Forms.Button
+$7Zip.text                       = "7-Zip"
+$7Zip.width                      = 130
+$7Zip.height                     = 30
+$7Zip.location                   = New-Object System.Drawing.Point(666,20)
+$7Zip.Font                       = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
+
+$AllDup                          = New-Object system.Windows.Forms.Button
+$AllDup.text                     = "AllDup"
+$AllDup.width                    = 130
+$AllDup.height                   = 30
+$AllDup.location                 = New-Object System.Drawing.Point(666,68)
+$AllDup.Font                     = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
+
+$ONO                             = New-Object system.Windows.Forms.Button
+$ONO.text                        = "O&O Shutup"
+$ONO.width                       = 130
+$ONO.height                      = 30
+$ONO.location                    = New-Object System.Drawing.Point(666,113)
+$ONO.Font                        = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
 
 $notepad                         = New-Object system.Windows.Forms.Button
 $notepad.text                    = "Notepad++"
-$notepad.width                   = 150
+$notepad.width                   = 130
 $notepad.height                  = 30
-$notepad.location                = New-Object System.Drawing.Point(417,104)
-$notepad.Font                    = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
+$notepad.location                = New-Object System.Drawing.Point(815,19)
+$notepad.Font                    = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
 
-$gchrome                         = New-Object system.Windows.Forms.Button
-$gchrome.text                    = "Google Chrome"
-$gchrome.width                   = 150
-$gchrome.height                  = 30
-$gchrome.location                = New-Object System.Drawing.Point(250,104)
-$gchrome.Font                    = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
+$Audacity                        = New-Object system.Windows.Forms.Button
+$Audacity.text                   = "Audacity"
+$Audacity.width                  = 130
+$Audacity.height                 = 30
+$Audacity.location               = New-Object System.Drawing.Point(815,68)
+$Audacity.Font                   = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
 
-$mpc                             = New-Object system.Windows.Forms.Button
-$mpc.text                        = "Media Player Classic"
-$mpc.width                       = 150
-$mpc.height                      = 30
-$mpc.location                    = New-Object System.Drawing.Point(584,61)
-$mpc.Font                        = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
+$Rufus                           = New-Object system.Windows.Forms.Button
+$Rufus.text                      = "Rufus"
+$Rufus.width                     = 130
+$Rufus.height                    = 30
+$Rufus.location                  = New-Object System.Drawing.Point(815,113)
+$Rufus.Font                      = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
 
-$vlc                             = New-Object system.Windows.Forms.Button
-$vlc.text                        = "VLC"
-$vlc.width                       = 150
-$vlc.height                      = 30
-$vlc.location                    = New-Object System.Drawing.Point(584,19)
-$vlc.Font                        = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
+$Title                           = New-Object system.Windows.Forms.Label
+$Title.text                      = "Program Installation"
+$Title.AutoSize                  = $true
+$Title.width                     = 25
+$Title.height                    = 10
+$Title.location                  = New-Object System.Drawing.Point(26,21)
+$Title.Font                      = New-Object System.Drawing.Font('Microsoft Sans Serif',30,[System.Drawing.FontStyle]([System.Drawing.FontStyle]::Bold))
 
-$powertoys                       = New-Object system.Windows.Forms.Button
-$powertoys.text                  = "PowerToys"
-$powertoys.width                 = 150
-$powertoys.height                = 30
-$powertoys.location              = New-Object System.Drawing.Point(751,105)
-$powertoys.Font                  = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
+$Form.controls.AddRange(@($Panel1,$Activate,$Panel2,$Panel3,$Title))
+$Panel1.controls.AddRange(@($InstallAllApps,$installchoco,$ChocolateyGUI,$ChocoCleaner,$ChocoUpgrade,$AdobeReader,$GoogleChrome,$BraveBrowser,$VLC,$Zoom,$TeamViewer,$7Zip,$AllDup,$ONO,$notepad,$Audacity,$Rufus))
+$Panel2.controls.AddRange(@($Customize,$Darkmode,$Lightmode))
+$Panel3.controls.AddRange(@($Debloat1,$Debloat2))
 
-$winterminal                     = New-Object system.Windows.Forms.Button
-$winterminal.text                = "Windows Terminal"
-$winterminal.width               = 150
-$winterminal.height              = 30
-$winterminal.location            = New-Object System.Drawing.Point(751,61)
-$winterminal.Font                = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
-
-$vscode                          = New-Object system.Windows.Forms.Button
-$vscode.text                     = "VS Code"
-$vscode.width                    = 150
-$vscode.height                   = 30
-$vscode.location                 = New-Object System.Drawing.Point(751,19)
-$vscode.Font                     = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
-
-$Label2                          = New-Object system.Windows.Forms.Label
-$Label2.text                     = "(Chocolatey Required for installs)"
-$Label2.AutoSize                 = $true
-$Label2.width                    = 25
-$Label2.height                   = 10
-$Label2.location                 = New-Object System.Drawing.Point(478,3)
-$Label2.Font                     = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
-
-$essentialtweaks                 = New-Object system.Windows.Forms.Button
-$essentialtweaks.text            = "Essential Tweaks"
-$essentialtweaks.width           = 200
-$essentialtweaks.height          = 115
-$essentialtweaks.location        = New-Object System.Drawing.Point(24,34)
-$essentialtweaks.Font            = New-Object System.Drawing.Font('Microsoft Sans Serif',14)
-
-$Form.controls.AddRange(@($Panel1,$Label1,$Panel2,$Label3,$Panel3,$Label4,$Label15,$Panel4,$Label20,$Label21,$Label23,$PictureBox1))
-$Panel1.controls.AddRange(@($installchoco,$installallapps,$brave,$firefox,$7zip,$irfanview,$adobereader,$notepad,$gchrome,$mpc,$vlc,$powertoys,$winterminal,$vscode,$Label2))
-$Panel2.controls.AddRange(@($essentialtweaks,$backgroundapps,$cortana,$windowssearch,$actioncenter,$darkmode,$visualfx,$onedrive,$Label22,$lightmode))
-$Panel3.controls.AddRange(@($securitylow,$securityhigh,$Label5,$Label6,$Label7,$Label8,$Label9,$Label10,$Label11,$Label12,$Label13))
-$Panel4.controls.AddRange(@($defaultwindowsupdate,$securitywindowsupdate,$Label16,$Label17,$Label18,$Label19))
-
-$installchoco.Add_Click({
-    Write-Host "Installing Chocolatey"
-    Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
-    choco install chocolatey-core.extension -y
-    Write-Host "Installed Chocolatey"
-})
-
-$installallapps.Add_Click({
-Write-Host "Installing Chocolatey"
-	Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
-	choco install chocolatey-core.extension -y
-
-    Write-Host "Installing Chocolatey GUI"
-    choco install chocolateygui -y
-    Write-Host "Installed Chocolatey GUI"
-    
-    Write-Host "Installing Choco Cleaner (Script + Task)"
-    choco install choco-cleaner -y
-    Write-Host "Installed Choco Cleaner (Script + Task)"   
-    
-    Write-Host "Installing Choco Upgrade All (Script + Task)"
-    choco install choco-upgrade-all-at --params "'/TIME:07:00 /ABORTTIME:11:00'" -y
-    Write-Host "Installed Choco Upgrade All (Script + Task)"   
-    
-    Write-Host "Installing Adobe Acrobat Reader DC"
-    choco install adobereader -y
-    Write-Host "Installed Adobe Acrobat Reader DC"   
-    
-    Write-Host "Installing Google Chrome"
-    choco install googlechrome -y
-    Write-Host "Installed Google Chrome"   
-    
-    Write-Host "Installing Brave Browser"
-    choco install brave -y
-    Write-Host "Installed Brave Browser"   
-    
-    Write-Host "Installing VLC Media Player"
-    choco install vlc -y
-    Write-Host "Installed VLC Media Player"  
-    
-    Write-Host "Installing Zoom Client for Meetings"
-    choco install zoom -y
-    Write-Host "Installed Zoom Client for Meetings" 
-    
-    Write-Host "Installing TeamViewer"
-    choco install teamviewer -y
-    Write-Host "Installed TeamViewer" 
-    
-    Write-Host "Installing 7-Zip"
-    choco install 7zip -y
-    Write-Host "Installed 7-Zip" 
-    
-    Write-Host "Installing iTunes"
-    choco install itunes -y
-    Write-Host "Installed iTunes" 
-    
-    Write-Host "Installing AllDup"
-    choco install alldup -y
-    Write-Host "Installed AllDup" 
-    
-    Write-Host "Installing O&O Shutup"
-    choco install shutup10 -y
-    Write-Host "Installed O&O Shutup" 
-    
-    Write-Host "Installing Notepad++"
-    choco install notepadplusplus -y
-    Write-Host "Installed Notepad++" 
-    
-    Write-Host "Installing IPVanish"
-    choco install ipvanish -y
-    Write-Host "Installed IPVanish" 
-    
-    Write-Host "Installing Rufus"
-    choco install rufus -y
-    Write-Host "Installed Rufus" 
-    
-    Write-Host "Installing Dell Command | Update 4.1.0"
-    choco install dellcommandupdate -y
-    choco install dellcommandupdate-uwp -y
-    Write-Host "Installed Dell Command | Update 4.1.0" 
-    
-    Write-Host "Installing Tor Browser Bundle"
-    choco install tor-browser -y
-    Write-Host "Installed Tor Browser Bundle"
-
-    Write-Host "Installing qBittorrent"
-    choco install qBittorrent -y
-    Write-Host "Installed qBittorrent"
-})
-
-$brave.Add_Click({
-    Write-Host "Installing Brave Browser"
-    choco install brave -y
-    Write-Host "Installed Brave Browser"
-})
-
-$essentialtweaks.Add_Click({ 
-   
-   Write-Host "Creating Restore Point incase something bad happens"
-    Enable-ComputerRestore -Drive "C:\"
-    Checkpoint-Computer -Description "RestorePoint1" -RestorePointType "MODIFY_SETTINGS"
-
-    Write-Host "Running O&O Shutup with Recommended Settings"
-    Import-Module BitsTransfer		choco install shutup10 -y
-    Start-BitsTransfer -Source "https://raw.githubusercontent.com/ChrisTitusTech/win10script/master/ooshutup10.cfg" -Destination ooshutup10.cfg        OOSU10 ooshutup10.cfg /quiet
-    Start-BitsTransfer -Source "https://dl5.oo-software.com/files/ooshutup10/OOSU10.exe" -Destination OOSU10.exe
-    ./OOSU10.exe ooshutup10.cfg /quiet
-
-
-param (
-  [switch]$Debloat, [switch]$SysPrep
-)
-
-Function Begin-SysPrep {
-
-    param([switch]$SysPrep)
-        Write-Verbose -Message ('Starting Sysprep Fixes')
- 
-        # Disable Windows Store Automatic Updates
-       <# Write-Verbose -Message "Adding Registry key to Disable Windows Store Automatic Updates"
-        $registryPath = "HKLM:\SOFTWARE\Policies\Microsoft\WindowsStore"
-        If (!(Test-Path $registryPath)) {
-            Mkdir $registryPath -ErrorAction SilentlyContinue
-            New-ItemProperty $registryPath -Name AutoDownload -Value 2 
-        }
-        Else {
-            Set-ItemProperty $registryPath -Name AutoDownload -Value 2 
-        }
-        #Stop WindowsStore Installer Service and set to Disabled
-        Write-Verbose -Message ('Stopping InstallService')
-        Stop-Service InstallService 
-        #>
- } 
-
-#Creates a PSDrive to be able to access the 'HKCR' tree
-New-PSDrive -Name HKCR -PSProvider Registry -Root HKEY_CLASSES_ROOT
-Function Start-Debloat {
-    
-    param([switch]$Debloat)
-
-    #Removes AppxPackages
-    #Credit to Reddit user /u/GavinEke for a modified version of my whitelist code
-    [regex]$WhitelistedApps = 'Microsoft.ScreenSketch|Microsoft.Paint3D|Microsoft.WindowsCalculator|Microsoft.WindowsStore|Microsoft.Windows.Photos|CanonicalGroupLimited.UbuntuonWindows|`
-    Microsoft.MicrosoftStickyNotes|Microsoft.MSPaint|Microsoft.WindowsCamera|.NET|Framework|Microsoft.HEIFImageExtension|Microsoft.ScreenSketch|Microsoft.StorePurchaseApp|`
-    Microsoft.VP9VideoExtensions|Microsoft.WebMediaExtensions|Microsoft.WebpImageExtension|Microsoft.DesktopAppInstaller'
-    Get-AppxPackage -AllUsers | Where-Object {$_.Name -NotMatch $WhitelistedApps} | Remove-AppxPackage -ErrorAction SilentlyContinue
-    # Run this again to avoid error on 1803 or having to reboot.
-    Get-AppxPackage -AllUsers | Where-Object {$_.Name -NotMatch $WhitelistedApps} | Remove-AppxPackage -ErrorAction SilentlyContinue
-    $AppxRemoval = Get-AppxProvisionedPackage -Online | Where-Object {$_.PackageName -NotMatch $WhitelistedApps} 
-    ForEach ( $App in $AppxRemoval) {
-    
-        Remove-AppxProvisionedPackage -Online -PackageName $App.PackageName 
-        
-        }
-}
-
-Function Remove-Keys {
-        
-    Param([switch]$Debloat)    
-    
-    #These are the registry keys that it will delete.
-        
-    $Keys = @(
-        
-        #Remove Background Tasks
-        "HKCR:\Extensions\ContractId\Windows.BackgroundTasks\PackageId\46928bounde.EclipseManager_2.2.4.51_neutral__a5h4egax66k6y"
-        "HKCR:\Extensions\ContractId\Windows.BackgroundTasks\PackageId\ActiproSoftwareLLC.562882FEEB491_2.6.18.18_neutral__24pqs290vpjk0"
-        "HKCR:\Extensions\ContractId\Windows.BackgroundTasks\PackageId\Microsoft.MicrosoftOfficeHub_17.7909.7600.0_x64__8wekyb3d8bbwe"
-        "HKCR:\Extensions\ContractId\Windows.BackgroundTasks\PackageId\Microsoft.PPIProjection_10.0.15063.0_neutral_neutral_cw5n1h2txyewy"
-        "HKCR:\Extensions\ContractId\Windows.BackgroundTasks\PackageId\Microsoft.XboxGameCallableUI_1000.15063.0.0_neutral_neutral_cw5n1h2txyewy"
-        "HKCR:\Extensions\ContractId\Windows.BackgroundTasks\PackageId\Microsoft.XboxGameCallableUI_1000.16299.15.0_neutral_neutral_cw5n1h2txyewy"
-        
-        #Windows File
-        "HKCR:\Extensions\ContractId\Windows.File\PackageId\ActiproSoftwareLLC.562882FEEB491_2.6.18.18_neutral__24pqs290vpjk0"
-        
-        #Registry keys to delete if they aren't uninstalled by RemoveAppXPackage/RemoveAppXProvisionedPackage
-        "HKCR:\Extensions\ContractId\Windows.Launch\PackageId\46928bounde.EclipseManager_2.2.4.51_neutral__a5h4egax66k6y"
-        "HKCR:\Extensions\ContractId\Windows.Launch\PackageId\ActiproSoftwareLLC.562882FEEB491_2.6.18.18_neutral__24pqs290vpjk0"
-        "HKCR:\Extensions\ContractId\Windows.Launch\PackageId\Microsoft.PPIProjection_10.0.15063.0_neutral_neutral_cw5n1h2txyewy"
-        "HKCR:\Extensions\ContractId\Windows.Launch\PackageId\Microsoft.XboxGameCallableUI_1000.15063.0.0_neutral_neutral_cw5n1h2txyewy"
-        "HKCR:\Extensions\ContractId\Windows.Launch\PackageId\Microsoft.XboxGameCallableUI_1000.16299.15.0_neutral_neutral_cw5n1h2txyewy"
-        
-        #Scheduled Tasks to delete
-        "HKCR:\Extensions\ContractId\Windows.PreInstalledConfigTask\PackageId\Microsoft.MicrosoftOfficeHub_17.7909.7600.0_x64__8wekyb3d8bbwe"
-        
-        #Windows Protocol Keys
-        "HKCR:\Extensions\ContractId\Windows.Protocol\PackageId\ActiproSoftwareLLC.562882FEEB491_2.6.18.18_neutral__24pqs290vpjk0"
-        "HKCR:\Extensions\ContractId\Windows.Protocol\PackageId\Microsoft.PPIProjection_10.0.15063.0_neutral_neutral_cw5n1h2txyewy"
-        "HKCR:\Extensions\ContractId\Windows.Protocol\PackageId\Microsoft.XboxGameCallableUI_1000.15063.0.0_neutral_neutral_cw5n1h2txyewy"
-        "HKCR:\Extensions\ContractId\Windows.Protocol\PackageId\Microsoft.XboxGameCallableUI_1000.16299.15.0_neutral_neutral_cw5n1h2txyewy"
-           
-        #Windows Share Target
-        "HKCR:\Extensions\ContractId\Windows.ShareTarget\PackageId\ActiproSoftwareLLC.562882FEEB491_2.6.18.18_neutral__24pqs290vpjk0"
-    )
-    
-    #This writes the output of each key it is removing and also removes the keys listed above.
-    ForEach ($Key in $Keys) {
-        Write-Output "Removing $Key from registry"
-        Remove-Item $Key -Recurse -ErrorAction SilentlyContinue
-    }
-}
-        
-Function Protect-Privacy {
-    
-    Param([switch]$Debloat)    
-
-    #Creates a PSDrive to be able to access the 'HKCR' tree
-    New-PSDrive -Name HKCR -PSProvider Registry -Root HKEY_CLASSES_ROOT
-        
-    #Disables Windows Feedback Experience
-    Write-Output "Disabling Windows Feedback Experience program"
-    $Advertising = 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\AdvertisingInfo'
-    If (Test-Path $Advertising) {
-        Set-ItemProperty $Advertising -Name Enabled -Value 0 -Verbose
-    }
-        
-    #Stops Cortana from being used as part of your Windows Search Function
-    Write-Output "Stopping Cortana from being used as part of your Windows Search Function"
-    $Search = 'HKLM:\SOFTWARE\Policies\Microsoft\Windows\Windows Search'
-    If (Test-Path $Search) {
-        Set-ItemProperty $Search -Name AllowCortana -Value 0 -Verbose
-    }
-        
-    #Stops the Windows Feedback Experience from sending anonymous data
-    Write-Output "Stopping the Windows Feedback Experience program"
-    $Period1 = 'HKCU:\Software\Microsoft\Siuf'
-    $Period2 = 'HKCU:\Software\Microsoft\Siuf\Rules'
-    $Period3 = 'HKCU:\Software\Microsoft\Siuf\Rules\PeriodInNanoSeconds'
-    If (!(Test-Path $Period3)) { 
-        mkdir $Period1 -ErrorAction SilentlyContinue
-        mkdir $Period2 -ErrorAction SilentlyContinue
-        mkdir $Period3 -ErrorAction SilentlyContinue
-        New-ItemProperty $Period3 -Name PeriodInNanoSeconds -Value 0 -Verbose -ErrorAction SilentlyContinue
-    }
-               
-    Write-Output "Adding Registry key to prevent bloatware apps from returning"
-    #Prevents bloatware applications from returning
-    $registryPath = "HKLM:\SOFTWARE\Policies\Microsoft\Windows\CloudContent"
-    If (!(Test-Path $registryPath)) {
-        Mkdir $registryPath -ErrorAction SilentlyContinue
-        New-ItemProperty $registryPath -Name DisableWindowsConsumerFeatures -Value 1 -Verbose -ErrorAction SilentlyContinue
-    }          
-    
-    Write-Output "Setting Mixed Reality Portal value to 0 so that you can uninstall it in Settings"
-    $Holo = 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Holographic'    
-    If (Test-Path $Holo) {
-        Set-ItemProperty $Holo -Name FirstRunSucceeded -Value 0 -Verbose
-    }
-    
-    #Disables live tiles
-    Write-Output "Disabling live tiles"
-    $Live = 'HKCU:\SOFTWARE\Policies\Microsoft\Windows\CurrentVersion\PushNotifications'    
-    If (!(Test-Path $Live)) {
-        mkdir $Live -ErrorAction SilentlyContinue     
-        New-ItemProperty $Live -Name NoTileApplicationNotification -Value 1 -Verbose
-    }
-    
-    #Turns off Data Collection via the AllowTelemtry key by changing it to 0
-    Write-Output "Turning off Data Collection"
-    $DataCollection = 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\DataCollection'    
-    If (Test-Path $DataCollection) {
-        Set-ItemProperty $DataCollection -Name AllowTelemetry -Value 0 -Verbose
-    }
-    
-    #Disables People icon on Taskbar
-    Write-Output "Disabling People icon on Taskbar"
-    $People = 'HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced\People'
-    If (Test-Path $People) {
-        Set-ItemProperty $People -Name PeopleBand -Value 0 -Verbose
-    }
-
-    #Disables suggestions on start menu
-    Write-Output "Disabling suggestions on the Start Menu"
-    $Suggestions = 'HKCU:\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager'    
-    If (Test-Path $Suggestions) {
-        Set-ItemProperty $Suggestions -Name SystemPaneSuggestionsEnabled -Value 0 -Verbose
-    }
-    
-    
-     Write-Output "Removing CloudStore from registry if it exists"
-     $CloudStore = 'HKCU:\Software\Microsoft\Windows\CurrentVersion\CloudStore'
-     If (Test-Path $CloudStore) {
-     Stop-Process Explorer.exe -Force
-     Remove-Item $CloudStore -Recurse -Force
-     Start-Process Explorer.exe -Wait
-    }
-
-    #Loads the registry keys/values below into the NTUSER.DAT file which prevents the apps from redownloading. Credit to a60wattfish
-    reg load HKU\Default_User C:\Users\Default\NTUSER.DAT
-    Set-ItemProperty -Path Registry::HKU\Default_User\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager -Name SystemPaneSuggestionsEnabled -Value 0
-    Set-ItemProperty -Path Registry::HKU\Default_User\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager -Name PreInstalledAppsEnabled -Value 0
-    Set-ItemProperty -Path Registry::HKU\Default_User\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager -Name OemPreInstalledAppsEnabled -Value 0
-    reg unload HKU\Default_User
-    
-    #Disables scheduled tasks that are considered unnecessary 
-    Write-Output "Disabling scheduled tasks"
-    #Get-ScheduledTask -TaskName XblGameSaveTaskLogon | Disable-ScheduledTask -ErrorAction SilentlyContinue
-    Get-ScheduledTask -TaskName XblGameSaveTask | Disable-ScheduledTask -ErrorAction SilentlyContinue
-    Get-ScheduledTask -TaskName Consolidator | Disable-ScheduledTask -ErrorAction SilentlyContinue
-    Get-ScheduledTask -TaskName UsbCeip | Disable-ScheduledTask -ErrorAction SilentlyContinue
-    Get-ScheduledTask -TaskName DmClient | Disable-ScheduledTask -ErrorAction SilentlyContinue
-    Get-ScheduledTask -TaskName DmClientOnScenarioDownload | Disable-ScheduledTask -ErrorAction SilentlyContinue
-}
-
-#This includes fixes by xsisbest
-Function FixWhitelistedApps {
-    
-    Param([switch]$Debloat)
-    
-    If(!(Get-AppxPackage -AllUsers | Select Microsoft.Paint3D, Microsoft.MSPaint, Microsoft.WindowsCalculator, Microsoft.WindowsStore, Microsoft.MicrosoftStickyNotes, Microsoft.WindowsSoundRecorder, Microsoft.Windows.Photos)) {
-    
-    #Credit to abulgatz for the 4 lines of code
-    Get-AppxPackage -allusers Microsoft.Paint3D | Foreach {Add-AppxPackage -DisableDevelopmentMode -Register "$($_.InstallLocation)\AppXManifest.xml"}
-    Get-AppxPackage -allusers Microsoft.MSPaint | Foreach {Add-AppxPackage -DisableDevelopmentMode -Register "$($_.InstallLocation)\AppXManifest.xml"}
-    Get-AppxPackage -allusers Microsoft.WindowsCalculator | Foreach {Add-AppxPackage -DisableDevelopmentMode -Register "$($_.InstallLocation)\AppXManifest.xml"}
-    Get-AppxPackage -allusers Microsoft.WindowsStore | Foreach {Add-AppxPackage -DisableDevelopmentMode -Register "$($_.InstallLocation)\AppXManifest.xml"}
-    Get-AppxPackage -allusers Microsoft.MicrosoftStickyNotes | Foreach {Add-AppxPackage -DisableDevelopmentMode -Register "$($_.InstallLocation)\AppXManifest.xml"}
-    Get-AppxPackage -allusers Microsoft.WindowsSoundRecorder | Foreach {Add-AppxPackage -DisableDevelopmentMode -Register "$($_.InstallLocation)\AppXManifest.xml"}
-    Get-AppxPackage -allusers Microsoft.Windows.Photos | Foreach {Add-AppxPackage -DisableDevelopmentMode -Register "$($_.InstallLocation)\AppXManifest.xml"} }
-}
-
-Function CheckDMWService {
-
-  Param([switch]$Debloat)
-  
-If (Get-Service -Name dmwappushservice | Where-Object {$_.StartType -eq "Disabled"}) {
-    Set-Service -Name dmwappushservice -StartupType Automatic}
-
-If(Get-Service -Name dmwappushservice | Where-Object {$_.Status -eq "Stopped"}) {
-   Start-Service -Name dmwappushservice} 
-  }
-
-Function CheckInstallService {
-  Param([switch]$Debloat)
-          If (Get-Service -Name InstallService | Where-Object {$_.Status -eq "Stopped"}) {  
-            Start-Service -Name InstallService
-            Set-Service -Name InstallService -StartupType Automatic 
-            }
-        }
-
-Write-Output "Initiating Sysprep"
-Begin-SysPrep
-Write-Output "Removing bloatware apps."
-Start-Debloat
-Write-Output "Removing leftover bloatware registry keys."
-Remove-Keys
-Write-Output "Checking to see if any Whitelisted Apps were removed, and if so re-adding them."
-FixWhitelistedApps
-Write-Output "Stopping telemetry, disabling unneccessary scheduled tasks, and preventing bloatware from returning."
-Protect-Privacy
-#Write-Output "Stopping Edge from taking over as the default PDF Viewer."
-#Stop-EdgePDF
-CheckDMWService
-CheckInstallService
-Write-Output "Finished all tasks."
-
-    Write-Host "Disabling Telemetry..."
-    Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\DataCollection" -Name "AllowTelemetry" -Type DWord -Value 0
-    Set-ItemProperty -Path "HKLM:\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Policies\DataCollection" -Name "AllowTelemetry" -Type DWord -Value 0
-    Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\DataCollection" -Name "AllowTelemetry" -Type DWord -Value 0
-    Disable-ScheduledTask -TaskName "Microsoft\Windows\Application Experience\Microsoft Compatibility Appraiser" | Out-Null
-    Disable-ScheduledTask -TaskName "Microsoft\Windows\Application Experience\ProgramDataUpdater" | Out-Null
-    Disable-ScheduledTask -TaskName "Microsoft\Windows\Autochk\Proxy" | Out-Null
-    Disable-ScheduledTask -TaskName "Microsoft\Windows\Customer Experience Improvement Program\Consolidator" | Out-Null
-    Disable-ScheduledTask -TaskName "Microsoft\Windows\Customer Experience Improvement Program\UsbCeip" | Out-Null
-    Disable-ScheduledTask -TaskName "Microsoft\Windows\DiskDiagnostic\Microsoft-Windows-DiskDiagnosticDataCollector" | Out-Null
-    Write-Host "Disabling Application suggestions..."
-    Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" -Name "ContentDeliveryAllowed" -Type DWord -Value 0
-    Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" -Name "OemPreInstalledAppsEnabled" -Type DWord -Value 0
-    Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" -Name "PreInstalledAppsEnabled" -Type DWord -Value 0
-    Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" -Name "PreInstalledAppsEverEnabled" -Type DWord -Value 0
-    Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" -Name "SilentInstalledAppsEnabled" -Type DWord -Value 0
-    Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" -Name "SubscribedContent-338387Enabled" -Type DWord -Value 0
-    Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" -Name "SubscribedContent-338388Enabled" -Type DWord -Value 0
-    Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" -Name "SubscribedContent-338389Enabled" -Type DWord -Value 0
-    Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" -Name "SubscribedContent-353698Enabled" -Type DWord -Value 0
-    Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" -Name "SystemPaneSuggestionsEnabled" -Type DWord -Value 0
-    If (!(Test-Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\CloudContent")) {
-        New-Item -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\CloudContent" -Force | Out-Null
-    }
-    Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\CloudContent" -Name "DisableWindowsConsumerFeatures" -Type DWord -Value 1
-    Write-Host "Disabling Activity History..."
-    Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\System" -Name "EnableActivityFeed" -Type DWord -Value 0
-    Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\System" -Name "PublishUserActivities" -Type DWord -Value 0
-    Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\System" -Name "UploadUserActivities" -Type DWord -Value 0
-    Write-Host "Disabling Location Tracking..."
-    If (!(Test-Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\location")) {
-        New-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\location" -Force | Out-Null
-    }
-    Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\location" -Name "Value" -Type String -Value "Deny"
-    Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Sensor\Overrides\{BFA794E4-F964-4FDB-90F6-51056BFE4B44}" -Name "SensorPermissionState" -Type DWord -Value 0
-    Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\lfsvc\Service\Configuration" -Name "Status" -Type DWord -Value 0
-    Write-Host "Disabling automatic Maps updates..."
-    Set-ItemProperty -Path "HKLM:\SYSTEM\Maps" -Name "AutoUpdateEnabled" -Type DWord -Value 0
-    Write-Host "Disabling Feedback..."
-    If (!(Test-Path "HKCU:\SOFTWARE\Microsoft\Siuf\Rules")) {
-        New-Item -Path "HKCU:\SOFTWARE\Microsoft\Siuf\Rules" -Force | Out-Null
-    }
-    Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Siuf\Rules" -Name "NumberOfSIUFInPeriod" -Type DWord -Value 0
-    Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\DataCollection" -Name "DoNotShowFeedbackNotifications" -Type DWord -Value 1
-    Disable-ScheduledTask -TaskName "Microsoft\Windows\Feedback\Siuf\DmClient" -ErrorAction SilentlyContinue | Out-Null
-    Disable-ScheduledTask -TaskName "Microsoft\Windows\Feedback\Siuf\DmClientOnScenarioDownload" -ErrorAction SilentlyContinue | Out-Null
-    Write-Host "Disabling Tailored Experiences..."
-    If (!(Test-Path "HKCU:\SOFTWARE\Policies\Microsoft\Windows\CloudContent")) {
-        New-Item -Path "HKCU:\SOFTWARE\Policies\Microsoft\Windows\CloudContent" -Force | Out-Null
-    }
-    Set-ItemProperty -Path "HKCU:\SOFTWARE\Policies\Microsoft\Windows\CloudContent" -Name "DisableTailoredExperiencesWithDiagnosticData" -Type DWord -Value 1
-    Write-Host "Disabling Advertising ID..."
-    If (!(Test-Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\AdvertisingInfo")) {
-        New-Item -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\AdvertisingInfo" | Out-Null
-    }
-    Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\AdvertisingInfo" -Name "DisabledByGroupPolicy" -Type DWord -Value 1
-    Write-Host "Disabling Error reporting..."
-    Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\Windows Error Reporting" -Name "Disabled" -Type DWord -Value 1
-    Disable-ScheduledTask -TaskName "Microsoft\Windows\Windows Error Reporting\QueueReporting" | Out-Null
-    Write-Host "Restricting Windows Update P2P only to local network..."
-    If (!(Test-Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\DeliveryOptimization\Config")) {
-        New-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\DeliveryOptimization\Config" | Out-Null
-    }
-    Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\DeliveryOptimization\Config" -Name "DODownloadMode" -Type DWord -Value 1
-    Write-Host "Stopping and disabling Diagnostics Tracking Service..."
-    Stop-Service "DiagTrack" -WarningAction SilentlyContinue
-    Set-Service "DiagTrack" -StartupType Disabled
-    Write-Host "Stopping and disabling WAP Push Service..."
-    Stop-Service "dmwappushservice" -WarningAction SilentlyContinue
-    Set-Service "dmwappushservice" -StartupType Disabled
-    Write-Host "Enabling F8 boot menu options..."
-    bcdedit /set `{current`} bootmenupolicy Legacy | Out-Null
-    Write-Host "Stopping and disabling Home Groups services..."
-    Stop-Service "HomeGroupListener" -WarningAction SilentlyContinue
-    Set-Service "HomeGroupListener" -StartupType Disabled
-    Stop-Service "HomeGroupProvider" -WarningAction SilentlyContinue
-    Set-Service "HomeGroupProvider" -StartupType Disabled
-    Write-Host "Disabling Remote Assistance..."
-    Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\Remote Assistance" -Name "fAllowToGetHelp" -Type DWord -Value 0
-    Write-Host "Disabling Storage Sense..."
-    Remove-Item -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\StorageSense\Parameters\StoragePolicy" -Recurse -ErrorAction SilentlyContinue
-    Write-Host "Stopping and disabling Superfetch service..."
-    Stop-Service "SysMain" -WarningAction SilentlyContinue
-    Set-Service "SysMain" -StartupType Disabled
-    Write-Host "Setting BIOS time to UTC..."
-    Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\TimeZoneInformation" -Name "RealTimeIsUniversal" -Type DWord -Value 1
-    Write-Host "Disabling Hibernation..."
-    Set-ItemProperty -Path "HKLM:\System\CurrentControlSet\Control\Session Manager\Power" -Name "HibernteEnabled" -Type Dword -Value 0
-    If (!(Test-Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\FlyoutMenuSettings")) {
-        New-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\FlyoutMenuSettings" | Out-Null
-    }
-    Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\FlyoutMenuSettings" -Name "ShowHibernateOption" -Type Dword -Value 0
-    Write-Host "Showing task manager details..."
-    $taskmgr = Start-Process -WindowStyle Hidden -FilePath taskmgr.exe -PassThru
-    Do {
-        Start-Sleep -Milliseconds 100
-        $preferences = Get-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\TaskManager" -Name "Preferences" -ErrorAction SilentlyContinue
-    } Until ($preferences)
-    Stop-Process $taskmgr
-    $preferences.Preferences[28] = 0
-    Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\TaskManager" -Name "Preferences" -Type Binary -Value $preferences.Preferences
-    Write-Host "Showing file operations details..."
-    If (!(Test-Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\OperationStatusManager")) {
-        New-Item -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\OperationStatusManager" | Out-Null
-    }
-    Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\OperationStatusManager" -Name "EnthusiastMode" -Type DWord -Value 1
-    Write-Host "Hiding Task View button..."
-    Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "ShowTaskViewButton" -Type DWord -Value 0
-    Write-Host "Hiding People icon..."
-    If (!(Test-Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced\People")) {
-        New-Item -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced\People" | Out-Null
-    }
-    Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced\People" -Name "PeopleBand" -Type DWord -Value 0
-    Write-Host "Showing all tray icons..."
-    Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer" -Name "EnableAutoTray" -Type DWord -Value 0
-    Write-Host "Enabling NumLock after startup..."
-    If (!(Test-Path "HKU:")) {
-        New-PSDrive -Name HKU -PSProvider Registry -Root HKEY_USERS | Out-Null
-    }
-    Set-ItemProperty -Path "HKU:\.DEFAULT\Control Panel\Keyboard" -Name "InitialKeyboardIndicators" -Type DWord -Value 2147483650
-    Add-Type -AssemblyName System.Windows.Forms
-    If (!([System.Windows.Forms.Control]::IsKeyLocked('NumLock'))) {
-        $wsh = New-Object -ComObject WScript.Shell
-        $wsh.SendKeys('{NUMLOCK}')
-    }
-
-    Write-Host "Changing default Explorer view to This PC..."
-    Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "LaunchTo" -Type DWord -Value 1
-    Write-Host "Hiding 3D Objects icon from This PC..."
-    Remove-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{0DB7E03F-FC29-4DC6-9020-FF41B59E513A}" -Recurse -ErrorAction SilentlyContinue
-
-	# Network Tweaks
-	Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters" -Name "IRPStackSize" -Type DWord -Value 20
-
-	# SVCHost Tweak
-	Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control" -Name "SvcHostSplitThresholdInKB" -Type DWord -Value 4194304
+$InstallAllApps.Add_Click({  })
+$installchoco.Add_Click({  })
+$Activate.Add_Click({  })
+$Customize.Add_Click({  })
+$Darkmode.Add_Click({  })
+$Lightmode.Add_Click({  })
+$Debloat1.Add_Click({  })
+$Debloat2.Add_Click({  })
+$ChocolateyGUI.Add_Click({  })
+$ChocoCleaner.Add_Click({  })
+$ChocoUpgrade.Add_Click({  })
+$AdobeReader.Add_Click({  })
+$GoogleChrome.Add_Click({  })
+$BraveBrowser.Add_Click({  })
+$VLC.Add_Click({  })
+$Zoom.Add_Click({  })
+$TeamViewer.Add_Click({  })
+$7Zip.Add_Click({  })
+$AllDup.Add_Click({  })
+$ONO.Add_Click({  })
+$notepad.Add_Click({  })
+$Audacity.Add_Click({  })
+$Rufus.Add_Click({  })
 
 
 
-$Bloatware = @(
-
-        #Unnecessary Windows 10 AppX Apps
-        "Microsoft.3DBuilder"
-        "Microsoft.AppConnector"
-        "Microsoft.BingFinance"
-        "Microsoft.BingNews"
-        "Microsoft.BingSports"
-        "Microsoft.BingTranslator"
-        "Microsoft.BingWeather"
-        "Microsoft.GetHelp"
-        "Microsoft.Getstarted"
-        "Microsoft.Messaging"
-        "Microsoft.Microsoft3DViewer"
-        "Microsoft.MicrosoftSolitaireCollection"
-        "Microsoft.NetworkSpeedTest"
-        "Microsoft.News"
-        "Microsoft.Office.Lens"
-        "Microsoft.Office.Sway"
-        "Microsoft.OneConnect"
-        "Microsoft.People"
-        "Microsoft.Print3D"
-        "Microsoft.SkypeApp"
-        "Microsoft.StorePurchaseApp"
-        "Microsoft.Wallet"
-        "Microsoft.Whiteboard"
-        "Microsoft.WindowsAlarms"
-        "microsoft.windowscommunicationsapps"
-        "Microsoft.WindowsFeedbackHub"
-        "Microsoft.WindowsMaps"
-        "Microsoft.WindowsSoundRecorder"
-        "Microsoft.ZuneMusic"
-        "Microsoft.ZuneVideo"
-
-        #Sponsored Windows 10 AppX Apps
-        #Add sponsored/featured apps to remove in the "*AppName*" format
-        "*EclipseManager*"
-        "*ActiproSoftwareLLC*"
-        "*AdobeSystemsIncorporated.AdobePhotoshopExpress*"
-        "*Duolingo-LearnLanguagesforFree*"
-        "*PandoraMediaInc*"
-        "*CandyCrush*"
-        "*BubbleWitch3Saga*"
-        "*Wunderlist*"
-        "*Flipboard*"
-        "*Twitter*"
-        "*Facebook*"
-        "*Royal Revolt*"
-        "*Sway*"
-        "*Speed Test*"
-        "*Dolby*"
-        "*Viber*"
-        "*ACGMediaPlayer*"
-        "*Netflix*"
-        "*OneCalendar*"
-        "*LinkedInforWindows*"
-        "*HiddenCityMysteryofShadows*"
-        "*Hulu*"
-        "*HiddenCity*"
-        "*AdobePhotoshopExpress*"
-
-        #Optional: Typically not removed but you can if you need to for some reason
-        #"*Microsoft.Advertising.Xaml_10.1712.5.0_x64__8wekyb3d8bbwe*"
-        #"*Microsoft.Advertising.Xaml_10.1712.5.0_x86__8wekyb3d8bbwe*"
-        #"*Microsoft.BingWeather*"
-        #"*Microsoft.MSPaint*"
-        #"*Microsoft.MicrosoftStickyNotes*"
-        #"*Microsoft.Windows.Photos*"
-        #"*Microsoft.WindowsCalculator*"
-        #"*Microsoft.WindowsStore*"
-    )
-    foreach ($Bloat in $Bloatware) {
-        Get-AppxPackage -Name $Bloat| Remove-AppxPackage
-        Get-AppxProvisionedPackage -Online | Where-Object DisplayName -like $Bloat | Remove-AppxProvisionedPackage -Online
-        Write-Host "Trying to remove $Bloat."
-    }
-
-    #Write-Host "Installing Windows Media Player..."
-	#Enable-WindowsOptionalFeature -Online -FeatureName "WindowsMediaPlayer" -NoRestart -WarningAction SilentlyContinue | Out-Null
-
-    #Stops edge from taking over as the default .PDF viewer
-    Write-Host "Stopping Edge from taking over as the default .PDF viewer"
-    # Identify the edge application class
-    $Packages = "HKCU:SOFTWARE\Classes\Local Settings\Software\Microsoft\Windows\CurrentVersion\AppModel\Repository\Packages"
-    $edge = Get-ChildItem $Packages -Recurse -include "MicrosoftEdge"
-
-    # Specify the paths to the file and URL associations
-    $FileAssocKey = Join-Path $edge.PSPath Capabilities\FileAssociations
-    $URLAssocKey = Join-Path $edge.PSPath Capabilities\URLAssociations
-
-    # get the software classes for the file and URL types that Edge will associate
-    $FileTypes = Get-Item $FileAssocKey
-    $URLTypes = Get-Item $URLAssocKey
-
-    $FileAssoc = Get-ItemProperty $FileAssocKey
-    $URLAssoc = Get-ItemProperty $URLAssocKey
-
-    $Associations = @()
-    $Filetypes.Property | foreach {$Associations += $FileAssoc.$_}
-    $URLTypes.Property | foreach {$Associations += $URLAssoc.$_}
-
-    # add registry values in each software class to stop edge from associating as the default
-    foreach ($Association in $Associations)
-            {
-            $Class = Join-Path HKCU:SOFTWARE\Classes $Association
-            #if (Test-Path $class)
-            #   {write-host $Association}
-            # Get-Item $Class
-            Set-ItemProperty $Class -Name NoOpenWith -Value ""
-            Set-ItemProperty $Class -Name NoStaticDefaultVerb -Value ""
-            }
-
-
-    #Removes Paint3D stuff from context menu
-$Paint3Dstuff = @(
-    "HKCR:\SystemFileAssociations\.3mf\Shell\3D Edit"
-    "HKCR:\SystemFileAssociations\.bmp\Shell\3D Edit"
-    "HKCR:\SystemFileAssociations\.fbx\Shell\3D Edit"
-    "HKCR:\SystemFileAssociations\.gif\Shell\3D Edit"
-    "HKCR:\SystemFileAssociations\.jfif\Shell\3D Edit"
-    "HKCR:\SystemFileAssociations\.jpe\Shell\3D Edit"
-    "HKCR:\SystemFileAssociations\.jpeg\Shell\3D Edit"
-    "HKCR:\SystemFileAssociations\.jpg\Shell\3D Edit"
-    "HKCR:\SystemFileAssociations\.png\Shell\3D Edit"
-    "HKCR:\SystemFileAssociations\.tif\Shell\3D Edit"
-    "HKCR:\SystemFileAssociations\.tiff\Shell\3D Edit"
-    )
-    #Rename reg key to remove it, so it's revertible
-    foreach ($Paint3D in $Paint3Dstuff) {
-        If (Test-Path $Paint3D) {
-        $rmPaint3D = $Paint3D + "_"
-        Set-Item $Paint3D $rmPaint3D
-    }
-    }
-
-    Write-Host "Essential Tweaks Completed"
-})
+#Write your logic code here
 
 [void]$Form.ShowDialog()
