@@ -236,7 +236,6 @@ $Panel2.controls.AddRange(@($Customize,$Darkmode,$Lightmode))
 $Panel3.controls.AddRange(@($Debloat-Sysprep,$Debloat-Chris,$Debloat-User))
 
 $InstallAllApps.Add_Click({  })
-$installchoco.Add_Click({     Write-Host "Installing Chocolatey"     Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))     choco install chocolatey-core.extension -y     Write-Host "Installed Chocolatey" })
 $Activate.Add_Click({  })
 $Customize.Add_Click({  })
 $Darkmode.Add_Click({  })
@@ -258,9 +257,7 @@ $notepad.Add_Click({  })
 $Audacity.Add_Click({  })
 $Rufus.Add_Click({  })
 $ChocolateyGUI.Add_Click({  })
-
-function     Write-Host "Installing Chocolatey"     Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))     choco install chocolatey-core.extension -y     Write-Host "Installed Chocolatey" { }
-
+$installchoco.Add_Click({  })
 
 #Write your logic code here
 
