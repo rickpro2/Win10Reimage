@@ -248,7 +248,7 @@ $url = "http://speed.transip.nl/10mb.bin"
 $dest = "c:\temp\testfiles"
 
 # Download file
-Start-BitsTransfer -Source $url -Destination $dest 
+Start-BitsTransfer -Source $url -Destination $dest -Asynchronous -Priority normal
 })
 
 $InstallAllApps.Add_Click({ 
