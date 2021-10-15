@@ -117,12 +117,12 @@ $Panel3.height                   = 139
 $Panel3.width                    = 456
 $Panel3.location                 = New-Object System.Drawing.Point(512,339)
 
-$Debloat-Sysprep                 = New-Object system.Windows.Forms.Button
-$Debloat-Sysprep.text            = "Debloat-Sysprep"
-$Debloat-Sysprep.width           = 175
-$Debloat-Sysprep.height          = 50
-$Debloat-Sysprep.location        = New-Object System.Drawing.Point(35,24)
-$Debloat-Sysprep.Font            = New-Object System.Drawing.Font('Microsoft Sans Serif',16)
+$DebloatSysprep                  = New-Object system.Windows.Forms.Button
+$DebloatSysprep.text             = "Debloat-Sysprep"
+$DebloatSysprep.width            = 175
+$DebloatSysprep.height           = 50
+$DebloatSysprep.location         = New-Object System.Drawing.Point(35,24)
+$DebloatSysprep.Font             = New-Object System.Drawing.Font('Microsoft Sans Serif',16)
 
 $Debloat-Chris                   = New-Object system.Windows.Forms.Button
 $Debloat-Chris.text              = "Debloat-Chris"
@@ -233,14 +233,14 @@ $Debloat-User.Font               = New-Object System.Drawing.Font('Microsoft San
 $RMPIT.controls.AddRange(@($Panel1,$Activate,$Panel2,$Panel3,$Title))
 $Panel1.controls.AddRange(@($InstallAllApps,$installchoco,$ChocolateyGUI,$ChocoCleaner,$ChocoUpgrade,$AdobeReader,$GoogleChrome,$BraveBrowser,$VLC,$Zoom,$TeamViewer,$7Zip,$AllDup,$ONO,$notepad,$Audacity,$Rufus))
 $Panel2.controls.AddRange(@($Customize,$Darkmode,$Lightmode))
-$Panel3.controls.AddRange(@($Debloat-Sysprep,$Debloat-Chris,$Debloat-User))
+$Panel3.controls.AddRange(@($DebloatSysprep,$Debloat-Chris,$Debloat-User))
 
 $InstallAllApps.Add_Click({  })
 $Activate.Add_Click({  })
 $Customize.Add_Click({  })
 $Darkmode.Add_Click({  })
 $Lightmode.Add_Click({  })
-$Debloat-Sysprep.Add_Click({  })
+$DebloatSysprep.Add_Click({  })
 $Debloat-Chris.Add_Click({  })
 $ChocoCleaner.Add_Click({  })
 $ChocoUpgrade.Add_Click({  })
