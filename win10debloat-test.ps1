@@ -250,6 +250,7 @@ $destination = 'c:\TEMP\Activate-Windows.bat'
 #Download the file
 Invoke-WebRequest -Uri $source -OutFile $destination
 })
+
 $InstallAllApps.Add_Click({  })
 $installchoco.Add_Click({  })
 $ChocolateyGUI.Add_Click({  })
