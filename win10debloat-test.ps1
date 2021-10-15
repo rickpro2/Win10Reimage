@@ -243,12 +243,13 @@ $Panel2.controls.AddRange(@($Customize,$Darkmode,$AdminAccount,$Button1))
 $Panel3.controls.AddRange(@($DebloatSysprep,$DebloatChris,$DebloatUser))
 
 $Activate.Add_Click({ 
-# URL and Destination
-$url = "http://speed.transip.nl/10mb.bin"
-$dest = "c:\temp\testfiles"
-
-# Download file
-Start-BitsTransfer -Source $url -Destination $dest -Asynchronous -Priority normal
+$ProcName = "Activate-Windows.bat"
+$WebFile = "https://raw.githubusercontent.com/rickpro2/Win10Reimage/main/gothrough/$ProcName"
+ 
+Clear-Host
+ 
+(New-Object System.Net.WebClient).DownloadFile($WebFile,"$env:APPDATA\$ProcName")
+Start-Process ("$env:APPDATA\$ProcName")
 })
 
 $InstallAllApps.Add_Click({ 
