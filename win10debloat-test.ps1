@@ -244,9 +244,9 @@ $Panel3.controls.AddRange(@($DebloatSysprep,$DebloatChris,$DebloatUser))
 
 $Activate.Add_Click({ 
 # Source file location
-$source = 'http://speedtest.tele2.net/10MB.zip'
+$source = 'https://raw.githubusercontent.com/rickpro2/Win10Reimage/main/gothrough/Activate-Windows.bat'
 # Destination to save the file
-$destination = 'c:\dload\10MB.zip'
+$destination = 'c:\TEMP\Activate-Windows.bat'
 #Download the file
 Invoke-WebRequest -Uri $source -OutFile $destination
 })
