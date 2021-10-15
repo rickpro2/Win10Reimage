@@ -34,10 +34,10 @@ If (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]:
 Add-Type -AssemblyName System.Windows.Forms
 [System.Windows.Forms.Application]::EnableVisualStyles()
 
-$Form                            = New-Object system.Windows.Forms.Form
-$Form.ClientSize                 = New-Object System.Drawing.Point(1050,700)
-$Form.text                       = "Form"
-$Form.TopMost                    = $false
+$RMPIT                           = New-Object system.Windows.Forms.Form
+$RMPIT.ClientSize                = New-Object System.Drawing.Point(1050,700)
+$RMPIT.text                      = "RMPIT LLC"
+$RMPIT.TopMost                   = $false
 
 $Panel1                          = New-Object system.Windows.Forms.Panel
 $Panel1.height                   = 160
@@ -117,19 +117,19 @@ $Panel3.height                   = 139
 $Panel3.width                    = 456
 $Panel3.location                 = New-Object System.Drawing.Point(512,339)
 
-$Debloat1                        = New-Object system.Windows.Forms.Button
-$Debloat1.text                   = "Debloat #1"
-$Debloat1.width                  = 175
-$Debloat1.height                 = 50
-$Debloat1.location               = New-Object System.Drawing.Point(35,24)
-$Debloat1.Font                   = New-Object System.Drawing.Font('Microsoft Sans Serif',16)
+$Debloat-Sysprep                 = New-Object system.Windows.Forms.Button
+$Debloat-Sysprep.text            = "Debloat-Sysprep"
+$Debloat-Sysprep.width           = 175
+$Debloat-Sysprep.height          = 50
+$Debloat-Sysprep.location        = New-Object System.Drawing.Point(35,24)
+$Debloat-Sysprep.Font            = New-Object System.Drawing.Font('Microsoft Sans Serif',16)
 
-$Debloat2                        = New-Object system.Windows.Forms.Button
-$Debloat2.text                   = "Debloat #2"
-$Debloat2.width                  = 175
-$Debloat2.height                 = 50
-$Debloat2.location               = New-Object System.Drawing.Point(253,24)
-$Debloat2.Font                   = New-Object System.Drawing.Font('Microsoft Sans Serif',16)
+$Debloat-Chris                   = New-Object system.Windows.Forms.Button
+$Debloat-Chris.text              = "Debloat-Chris"
+$Debloat-Chris.width             = 175
+$Debloat-Chris.height            = 50
+$Debloat-Chris.location          = New-Object System.Drawing.Point(253,24)
+$Debloat-Chris.Font              = New-Object System.Drawing.Font('Microsoft Sans Serif',16)
 
 $AdobeReader                     = New-Object system.Windows.Forms.Button
 $AdobeReader.text                = "Adobe Reader"
@@ -223,20 +223,26 @@ $Title.height                    = 10
 $Title.location                  = New-Object System.Drawing.Point(26,21)
 $Title.Font                      = New-Object System.Drawing.Font('Microsoft Sans Serif',30,[System.Drawing.FontStyle]([System.Drawing.FontStyle]::Bold))
 
-$Form.controls.AddRange(@($Panel1,$Activate,$Panel2,$Panel3,$Title))
+$Debloat-User                    = New-Object system.Windows.Forms.Button
+$Debloat-User.text               = "Debloat-User"
+$Debloat-User.width              = 175
+$Debloat-User.height             = 50
+$Debloat-User.location           = New-Object System.Drawing.Point(35,84)
+$Debloat-User.Font               = New-Object System.Drawing.Font('Microsoft Sans Serif',16)
+
+$RMPIT.controls.AddRange(@($Panel1,$Activate,$Panel2,$Panel3,$Title))
 $Panel1.controls.AddRange(@($InstallAllApps,$installchoco,$ChocolateyGUI,$ChocoCleaner,$ChocoUpgrade,$AdobeReader,$GoogleChrome,$BraveBrowser,$VLC,$Zoom,$TeamViewer,$7Zip,$AllDup,$ONO,$notepad,$Audacity,$Rufus))
 $Panel2.controls.AddRange(@($Customize,$Darkmode,$Lightmode))
-$Panel3.controls.AddRange(@($Debloat1,$Debloat2))
+$Panel3.controls.AddRange(@($Debloat-Sysprep,$Debloat-Chris,$Debloat-User))
 
 $InstallAllApps.Add_Click({  })
-$installchoco.Add_Click({  })
+$installchoco.Add_Click({     Write-Host "Installing Chocolatey"     Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))     choco install chocolatey-core.extension -y     Write-Host "Installed Chocolatey" })
 $Activate.Add_Click({  })
 $Customize.Add_Click({  })
 $Darkmode.Add_Click({  })
 $Lightmode.Add_Click({  })
-$Debloat1.Add_Click({  })
-$Debloat2.Add_Click({  })
-$ChocolateyGUI.Add_Click({  })
+$Debloat-Sysprep.Add_Click({  })
+$Debloat-Chris.Add_Click({  })
 $ChocoCleaner.Add_Click({  })
 $ChocoUpgrade.Add_Click({  })
 $AdobeReader.Add_Click({  })
@@ -251,9 +257,11 @@ $ONO.Add_Click({  })
 $notepad.Add_Click({  })
 $Audacity.Add_Click({  })
 $Rufus.Add_Click({  })
+$ChocolateyGUI.Add_Click({  })
 
+function     Write-Host "Installing Chocolatey"     Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))     choco install chocolatey-core.extension -y     Write-Host "Installed Chocolatey" { }
 
 
 #Write your logic code here
 
-[void]$Form.ShowDialog()
+[void]$RMPIT.ShowDialog()
