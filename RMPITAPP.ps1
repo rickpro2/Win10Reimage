@@ -90,13 +90,13 @@ $Step2.Font                      = New-Object System.Drawing.Font('Microsoft San
 $Panel2                          = New-Object system.Windows.Forms.Panel
 $Panel2.height                   = 150
 $Panel2.width                    = 300
-$Panel2.location                 = New-Object System.Drawing.Point(47,238)
+$Panel2.location                 = New-Object System.Drawing.Point(66,412)
 
 $Button1                         = New-Object system.Windows.Forms.Button
 $Button1.text                    = "button"
 $Button1.width                   = 130
 $Button1.height                  = 30
-$Button1.location                = New-Object System.Drawing.Point(147,27)
+$Button1.location                = New-Object System.Drawing.Point(151,97)
 $Button1.Font                    = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
 
 $Customiz                        = New-Object system.Windows.Forms.Button
@@ -118,7 +118,7 @@ $installchoco                    = New-Object system.Windows.Forms.Button
 $installchoco.text               = "Install Chocolatey"
 $installchoco.width              = 175
 $installchoco.height             = 50
-$installchoco.location           = New-Object System.Drawing.Point(16,90)
+$installchoco.location           = New-Object System.Drawing.Point(11,15)
 $installchoco.Font               = New-Object System.Drawing.Font('Microsoft Sans Serif',16)
 
 $Panel3                          = New-Object system.Windows.Forms.Panel
@@ -178,5 +178,5 @@ $WebFile = "https://raw.githubusercontent.com/rickpro2/Win10Reimage/main/Done/$P
 Clear-Host
 (New-Object System.Net.WebClient).DownloadFile($WebFile,"$env:APPDATA\$ProcName")
 Start-Process ("$env:APPDATA\$ProcName") 
-}
+ }
 [void]$Form.ShowDialog()
