@@ -222,15 +222,13 @@ $Panel3.controls.AddRange(@($DebloatSysprep,$DebloatChris,$DebloatUser))
 
 $ActivateWindows.Add_Click({ Activate Windows })
 
-function Activate Windows {
-$ProcName = "Activate-Windows.bat"
+function Activate Windows {$ProcName = "Activate-Windows.bat"
 $WebFile = "https://raw.githubusercontent.com/rickpro2/Win10Reimage/main/Done/$ProcName"
  
 Clear-Host
  
 (New-Object System.Net.WebClient).DownloadFile($WebFile,"$env:APPDATA\$ProcName")
-Start-Process ("$env:APPDATA\$ProcName")
-}
+Start-Process ("$env:APPDATA\$ProcName")}
 
 
 #Write your logic code here
