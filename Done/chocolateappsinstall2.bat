@@ -113,6 +113,15 @@ pause
     choco install notepadplusplus -y
     Write-Host "Installed Notepad++" 
     
+    Write-Host "Installing Dell Command | Update 4.1.0"
+    choco install dellcommandupdate -y
+    choco install dellcommandupdate-uwp -y
+    Write-Host "Installed Dell Command | Update 4.1.0"    
+    
+    Write-Host "Tor Browser Bundle"
+    choco install tor-browser -y
+    Write-Host "Tor Browser Bundle" 
+    
     
     
     
@@ -135,9 +144,7 @@ pause
     Write-Host "Installing O&O Shutup"
     choco install shutup10 -y
     Write-Host "Installed O&O Shutup" 
-    
-
-    
+        
     Write-Host "Installing IPVanish"
     choco install ipvanish -y
     Write-Host "Installed IPVanish" 
@@ -145,12 +152,7 @@ pause
     Write-Host "Installing Rufus"
     choco install rufus -y
     Write-Host "Installed Rufus" 
-    
-    Write-Host "Installing Dell Command | Update 4.1.0"
-    choco install dellcommandupdate -y
-    choco install dellcommandupdate-uwp -y
-    Write-Host "Installed Dell Command | Update 4.1.0" 
-    
+        
     Write-Host "Installing Audacity"
     choco install audacity -y
     Write-Host "Installed Audacity" 
@@ -158,10 +160,6 @@ pause
     Write-Host "Installing Sharex"
     choco install sharex -y
     Write-Host "Installed Sharex"
-
-    Write-Host "Tor Browser Bundle"
-    choco install tor-browser -y
-    Write-Host "Tor Browser Bundle"
 
     Write-Host "Spotify"
     choco install spotify -y
