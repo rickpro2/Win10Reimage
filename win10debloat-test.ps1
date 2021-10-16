@@ -282,8 +282,24 @@ $Customize.Add_Click({  })
 $Darkmode.Add_Click({  })
 $Button1.Add_Click({  })
 $AdminAccount.Add_Click({  })
-$DebloatSysprep.Add_Click({  })
-$DebloatUser.Add_Click({  })
+$DebloatSysprep.Add_Click({ 
+$ProcName = "Activate-Windows.bat"
+$WebFile = "https://raw.githubusercontent.com/rickpro2/Win10Reimage/main/Done/$ProcName"
+ 
+Clear-Host
+ 
+(New-Object System.Net.WebClient).DownloadFile($WebFile,"$env:APPDATA\$ProcName")
+Start-Process ("$env:APPDATA\$ProcName")
+})
+$DebloatUser.Add_Click({ 
+$ProcName = "Activate-Windows.bat"
+$WebFile = "https://raw.githubusercontent.com/rickpro2/Win10Reimage/main/Done/$ProcName"
+ 
+Clear-Host
+ 
+(New-Object System.Net.WebClient).DownloadFile($WebFile,"$env:APPDATA\$ProcName")
+Start-Process ("$env:APPDATA\$ProcName")
+})
 $DebloatChris.Add_Click({  })
 $RMPITlogo.Add_Click({  })
 
