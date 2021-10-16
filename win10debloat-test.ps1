@@ -260,7 +260,6 @@ If (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]:
 
 
 
-$Form.AutoScaleDimensions     = '192, 192'
-$Form.AutoScaleMode           = "Dpi"
+
 $Form.AutoSize                = $True
 [void]$Form.ShowDialog()
