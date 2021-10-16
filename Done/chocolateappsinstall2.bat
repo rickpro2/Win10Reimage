@@ -65,29 +65,17 @@ pause
 
 @rem ----[ Whatever you want to install, place it below this point, each item on its own line (to make it easier to find later on. ] ----
 
-
-
-@rem ---[You can add as many programs here as you desire!]----
-
-pause
-echo.
-echo Your installation is complete.
-pause
-
-
-
-
     Write-Host "Installing Choco Cleaner (Script + Task)"
     choco install choco-cleaner -y
-    Write-Host "Installed Choco Cleaner (Script + Task)"   
-    
+    Write-Host "Installed Choco Cleaner (Script + Task)"  
+
     Write-Host "Installing Choco Upgrade All (Script + Task)"
     choco install choco-upgrade-all-at --params "'/TIME:07:00 /ABORTTIME:11:50'" -y
     Write-Host "Installed Choco Upgrade All (Script + Task)"   
-    
+
     Write-Host "Installing Adobe Acrobat Reader DC"
     choco install adobereader -y
-    Write-Host "Installed Adobe Acrobat Reader DC"   
+    Write-Host "Installed Adobe Acrobat Reader DC"
     
     Write-Host "Installing Google Chrome"
     choco install googlechrome -y
@@ -107,11 +95,27 @@ pause
     
     Write-Host "Installing TeamViewer"
     choco install teamviewer -y
-    Write-Host "Installed TeamViewer" 
+    Write-Host "Installed TeamViewer"  
     
     Write-Host "Installing 7-Zip"
     choco install 7zip -y
-    Write-Host "Installed 7-Zip" 
+    Write-Host "Installed 7-Zip"  
+    
+    
+    
+    
+    
+    
+
+@rem ---[You can add as many programs here as you desire!]----
+
+pause
+echo.
+echo Your installation is complete.
+pause
+  
+   
+
     
     Write-Host "Installing iTunes"
     choco install itunes -y
