@@ -241,14 +241,12 @@ $urlremovevirus.Add_Click({ CleanVirusVideo })
 function CleanVirusVideo {Start-Process "https://youtu.be/CHtZ9-9ch2w" }
 
 
-
-
-
 function Chocolatey {Write-Host "Installing Chocolatey"
-	$ResultText.text = "`r`n" +"`r`n" + "Installing Brave... Please Wait"
+	$ResultText.text = "`r`n" +"`r`n" + "Installing Chocolatey... Please Wait"
 	Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 	choco install chocolatey-core.extension -y 
-    $ResultText.text = "`r`n" + "Finished Installing Brave" + "`r`n" + "`r`n" + "Ready for Next Task"
+    if($?) { Write-Host "Installed Chocolatey" }
+    $ResultText.text = "`r`n" + "Finished Installing Chocolatey" + "`r`n" + "`r`n" + "Ready for Next Task"
 }
 
 
