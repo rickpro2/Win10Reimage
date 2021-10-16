@@ -69,6 +69,11 @@ pause
 
 @rem ---[You can add as many programs here as you desire!]----
 
+pause
+echo.
+echo Your installation is complete.
+pause
+
 
 
 
