@@ -216,7 +216,7 @@ $Rufus.location                  = New-Object System.Drawing.Point(815,113)
 $Rufus.Font                      = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
 
 $Title                           = New-Object system.Windows.Forms.Label
-$Title.text                      = "Program Installation"
+$Title.text                      = "Program Installation  - Crabs"
 $Title.AutoSize                  = $true
 $Title.width                     = 25
 $Title.height                    = 10
@@ -237,13 +237,13 @@ $Button1.height                  = 30
 $Button1.location                = New-Object System.Drawing.Point(255,59)
 $Button1.Font                    = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
 
-$PictureBox1                     = New-Object system.Windows.Forms.PictureBox
-$PictureBox1.width               = 163
-$PictureBox1.height              = 114
-$PictureBox1.location            = New-Object System.Drawing.Point(51,595)
-$PictureBox1.imageLocation       = "https://raw.githubusercontent.com/rickpro2/Win10Reimage/main/RMPIT_logo.png"
-$PictureBox1.SizeMode            = [System.Windows.Forms.PictureBoxSizeMode]::zoom
-$RMPIT.controls.AddRange(@($Panel1,$Activate,$Panel2,$Panel3,$Title,$PictureBox1))
+$RMPI-logo                       = New-Object system.Windows.Forms.PictureBox
+$RMPI-logo.width                 = 163
+$RMPI-logo.height                = 114
+$RMPI-logo.location              = New-Object System.Drawing.Point(51,595)
+$RMPI-logo.imageLocation         = "https://raw.githubusercontent.com/rickpro2/Win10Reimage/main/RMPIT_logo.png"
+$RMPI-logo.SizeMode              = [System.Windows.Forms.PictureBoxSizeMode]::zoom
+$RMPIT.controls.AddRange(@($Panel1,$Activate,$Panel2,$Panel3,$Title,$RMPI-logo))
 $Panel1.controls.AddRange(@($InstallAllApps,$installchoco,$ChocolateyGUI,$ChocoCleaner,$ChocoUpgrade,$AdobeReader,$GoogleChrome,$BraveBrowser,$VLC,$Zoom,$TeamViewer,$7Zip,$AllDup,$ONO,$notepad,$Audacity,$Rufus))
 $Panel2.controls.AddRange(@($Customize,$Darkmode,$AdminAccount,$Button1))
 $Panel3.controls.AddRange(@($DebloatSysprep,$DebloatChris,$DebloatUser))
@@ -273,7 +273,7 @@ $AdminAccount.Add_Click({  })
 $DebloatSysprep.Add_Click({  })
 $DebloatUser.Add_Click({  })
 $DebloatChris.Add_Click({  })
-$PictureBox1.Add_Click({  })
+$RMPI-logo.Add_Click({  })
 
 #Write your logic code here
 
