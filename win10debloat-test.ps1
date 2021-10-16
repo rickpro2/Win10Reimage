@@ -259,7 +259,7 @@ If (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]:
 
 
 
-
-
 $Form.AutoSize                = $True
+$Form.StartPosition           = "CenterScreen"
+
 [void]$Form.ShowDialog()
