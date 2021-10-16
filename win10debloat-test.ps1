@@ -247,6 +247,12 @@ $InstallAllApps.Add_Click({ AllAppsInstall })
 $installchoco.Add_Click({ ChocolateyInstall })
 $DebloatUser.Add_Click({ DebloaterGUI })
 $DebloatSysprep.Add_Click({ DebloatSysprep })
+$urlremovevirus.Add_Click({ VirusURL })
+
+function VirusURL { 
+        Start-Process "https://youtu.be/CHtZ9-9ch2w"
+}
+
 
 function DebloatSysprep { 
     #This function finds any AppX/AppXProvisioned package and uninstalls it, except for Freshpaint, Windows Calculator, Windows Store, and Windows Photos.
