@@ -91,14 +91,6 @@ Write-Host "Installing Chocolatey"
     choco install tor-browser -y
     Write-Host "Tor Browser Bundle"
 
-    Write-Host "Inkscape"
-    choco install inkscape -y
-    Write-Host "Inkscape"
-
-    Write-Host "GIMP"
-    choco install gimp -y
-    Write-Host "GIMP"
-
     Write-Host "Spotify"
     choco install spotify -y
     Write-Host "Spotify"
@@ -107,9 +99,13 @@ Write-Host "Installing Chocolatey"
     choco install qBittorrent -y
     Write-Host "qBittorrent"
 
+#Write-Host "Inkscape"
+#    choco install inkscape -y
+#    Write-Host "Inkscape"
 
-#Write-Host "Installing Atom"
-#	choco install atom -y
+#Write-Host "GIMP"
+#    choco install gimp -y
+#    Write-Host "GIMP"
 
 #Write-Host "Installing Office 365 Business"
 #	choco install office365business -y
