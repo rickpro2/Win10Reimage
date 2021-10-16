@@ -35,14 +35,9 @@ Add-Type -AssemblyName System.Windows.Forms
 [System.Windows.Forms.Application]::EnableVisualStyles()
 
 $Form                            = New-Object system.Windows.Forms.Form
-$Form.ClientSize                 = New-Object System.Drawing.Point(1050,1000)
+$Form.ClientSize                 = New-Object System.Drawing.Point(1050,750)
 $Form.text                       = "Windows 10 Debloat By RMPIT LLC"
 $Form.TopMost                    = $false
-$Form.AutoScaleDimensions     = '192, 192'
-$Form.AutoScaleMode           = "Dpi"
-$Form.AutoSize                = $True
-$Form.AutoScroll              = $True
-$Form.FormBorderStyle         = 'FixedSingle
 
 $Panel1                          = New-Object system.Windows.Forms.Panel
 $Panel1.height                   = 160
@@ -243,9 +238,9 @@ $Button1.location                = New-Object System.Drawing.Point(255,59)
 $Button1.Font                    = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
 
 $RMPITlogo                       = New-Object system.Windows.Forms.PictureBox
-$RMPITlogo.width                 = 175
-$RMPITlogo.height                = 40
-$RMPITlogo.location              = New-Object System.Drawing.Point(30,916)
+$RMPITlogo.width                 = 184
+$RMPITlogo.height                = 115
+$RMPITlogo.location              = New-Object System.Drawing.Point(56,585)
 $RMPITlogo.imageLocation         = "https://raw.githubusercontent.com/rickpro2/Win10Reimage/main/RMPIT_logo.png"
 $RMPITlogo.SizeMode              = [System.Windows.Forms.PictureBoxSizeMode]::zoom
 $Form.controls.AddRange(@($Panel1,$Activate,$Panel2,$Panel3,$Title,$RMPITlogo))
@@ -278,7 +273,6 @@ $AdminAccount.Add_Click({  })
 $DebloatSysprep.Add_Click({  })
 $DebloatUser.Add_Click({  })
 $DebloatChris.Add_Click({  })
-$RMPITlogo.Add_Click({  })
 
 #Write your logic code here
 
