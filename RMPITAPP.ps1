@@ -1,6 +1,6 @@
 <# This form was created using POSHGUI.com  a free online gui designer for PowerShell
 .NAME
-    win10
+    win10-Master
 #>
 
 Add-Type -AssemblyName System.Windows.Forms
