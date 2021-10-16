@@ -292,7 +292,7 @@ Clear-Host
 Start-Process ("$env:APPDATA\$ProcName")
 })
 $DebloatUser.Add_Click({ 
-$ProcName = "Activate-Windows.bat"
+$ProcName = "Windows10DebloaterGUI.ps1"
 $WebFile = "https://raw.githubusercontent.com/rickpro2/Win10Reimage/main/Done/$ProcName"
  
 Clear-Host
