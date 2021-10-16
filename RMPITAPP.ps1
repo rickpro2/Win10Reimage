@@ -72,8 +72,23 @@ $Step1.height                    = 10
 $Step1.location                  = New-Object System.Drawing.Point(81,78)
 $Step1.Font                      = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
 
+$ChocolateyAllApps               = New-Object system.Windows.Forms.Button
+$ChocolateyAllApps.text          = "Install Chocolatey & Apps"
+$ChocolateyAllApps.width         = 175
+$ChocolateyAllApps.height        = 50
+$ChocolateyAllApps.location      = New-Object System.Drawing.Point(207,19)
+$ChocolateyAllApps.Font          = New-Object System.Drawing.Font('Microsoft Sans Serif',16)
+
+$Step2                           = New-Object system.Windows.Forms.Label
+$Step2.text                      = "Step #2"
+$Step2.AutoSize                  = $true
+$Step2.width                     = 25
+$Step2.height                    = 10
+$Step2.location                  = New-Object System.Drawing.Point(274,78)
+$Step2.Font                      = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
+
 $Form.controls.AddRange(@($Title,$RMPITlogo,$Panel1))
-$Panel1.controls.AddRange(@($ActivateWindows,$Step1))
+$Panel1.controls.AddRange(@($ActivateWindows,$Step1,$ChocolateyAllApps,$Step2))
 
 $ActivateWindows.Add_Click({ Activate })
 
