@@ -34,10 +34,10 @@ If (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]:
 Add-Type -AssemblyName System.Windows.Forms
 [System.Windows.Forms.Application]::EnableVisualStyles()
 
-$RMPIT                           = New-Object system.Windows.Forms.Form
-$RMPIT.ClientSize                = New-Object System.Drawing.Point(1050,700)
-$RMPIT.text                      = "RMPIT LLC"
-$RMPIT.TopMost                   = $false
+$Form                            = New-Object system.Windows.Forms.Form
+$Form.ClientSize                 = New-Object System.Drawing.Point(1050,1000)
+$Form.text                       = "RMPIT LLC"
+$Form.TopMost                    = $false
 
 $Panel1                          = New-Object system.Windows.Forms.Panel
 $Panel1.height                   = 160
@@ -216,7 +216,7 @@ $Rufus.location                  = New-Object System.Drawing.Point(815,113)
 $Rufus.Font                      = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
 
 $Title                           = New-Object system.Windows.Forms.Label
-$Title.text                      = "Program Installation  - Crabs"
+$Title.text                      = "Program Installation"
 $Title.AutoSize                  = $true
 $Title.width                     = 25
 $Title.height                    = 10
@@ -238,31 +238,19 @@ $Button1.location                = New-Object System.Drawing.Point(255,59)
 $Button1.Font                    = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
 
 $RMPITlogo                       = New-Object system.Windows.Forms.PictureBox
-$RMPITlogo.width                 = 163
-$RMPITlogo.height                = 114
-$RMPITlogo.location              = New-Object System.Drawing.Point(51,595)
-$RMPITlogo.imageLocation         = "./rickpro2/Win10Reimage/main/RMPIT_logo.png"
+$RMPITlogo.width                 = 175
+$RMPITlogo.height                = 40
+$RMPITlogo.location              = New-Object System.Drawing.Point(30,916)
+$RMPITlogo.imageLocation         = "https://raw.githubusercontent.com/rickpro2/Win10Reimage/main/RMPIT_logo.png"
 $RMPITlogo.SizeMode              = [System.Windows.Forms.PictureBoxSizeMode]::zoom
-$RMPIT.controls.AddRange(@($Panel1,$Activate,$Panel2,$Panel3,$Title,$RMPITlogo))
+$Form.controls.AddRange(@($Panel1,$Activate,$Panel2,$Panel3,$Title,$RMPITlogo))
 $Panel1.controls.AddRange(@($InstallAllApps,$installchoco,$ChocolateyGUI,$ChocoCleaner,$ChocoUpgrade,$AdobeReader,$GoogleChrome,$BraveBrowser,$VLC,$Zoom,$TeamViewer,$7Zip,$AllDup,$ONO,$notepad,$Audacity,$Rufus))
 $Panel2.controls.AddRange(@($Customize,$Darkmode,$AdminAccount,$Button1))
 $Panel3.controls.AddRange(@($DebloatSysprep,$DebloatChris,$DebloatUser))
 
-$Activate.Add_Click({ 
-$ProcName = "Activate-Windows.bat"
-$WebFile = "https://raw.githubusercontent.com/rickpro2/Win10Reimage/main/Done/$ProcName"
- 
-Clear-Host
- 
-(New-Object System.Net.WebClient).DownloadFile($WebFile,"$env:APPDATA\$ProcName")
-Start-Process ("$env:APPDATA\$ProcName")
-})
+$Activate.Add_Click({  })
 $InstallAllApps.Add_Click({  })
-$installchoco.Add_Click({ 
-Write-Host "Installing Chocolatey"
-	Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
-	choco install chocolatey-core.extension -y
-        })
+$installchoco.Add_Click({  })
 $ChocolateyGUI.Add_Click({  })
 $ChocoCleaner.Add_Click({  })
 $ChocoUpgrade.Add_Click({  })
@@ -282,27 +270,11 @@ $Customize.Add_Click({  })
 $Darkmode.Add_Click({  })
 $Button1.Add_Click({  })
 $AdminAccount.Add_Click({  })
-$DebloatSysprep.Add_Click({ 
-$ProcName = "Activate-Windows.bat"
-$WebFile = "https://raw.githubusercontent.com/rickpro2/Win10Reimage/main/Done/$ProcName"
- 
-Clear-Host
- 
-(New-Object System.Net.WebClient).DownloadFile($WebFile,"$env:APPDATA\$ProcName")
-Start-Process ("$env:APPDATA\$ProcName")
-})
-$DebloatUser.Add_Click({ 
-$ProcName = "Windows10DebloaterGUI.ps1"
-$WebFile = "https://raw.githubusercontent.com/rickpro2/Win10Reimage/main/Done/$ProcName"
- 
-Clear-Host
- 
-(New-Object System.Net.WebClient).DownloadFile($WebFile,"$env:APPDATA\$ProcName")
-Start-Process ("$env:APPDATA\$ProcName")
-})
+$DebloatSysprep.Add_Click({  })
+$DebloatUser.Add_Click({  })
 $DebloatChris.Add_Click({  })
 $RMPITlogo.Add_Click({  })
 
 #Write your logic code here
 
-[void]$RMPIT.ShowDialog()
+[void]$Form.ShowDialog()
