@@ -236,7 +236,14 @@ $InstallAllApps2.height          = 50
 $InstallAllApps2.location        = New-Object System.Drawing.Point(247,82)
 $InstallAllApps2.Font            = New-Object System.Drawing.Font('Microsoft Sans Serif',16)
 
-$Form.controls.AddRange(@($Panel1,$ActivateWindows,$Panel2,$Panel3,$Title,$RMPITlogo,$urlremovevirus,$ResultText,$InstallAllApps2))
+$TestBotton                      = New-Object system.Windows.Forms.Button
+$TestBotton.text                 = "Test Button"
+$TestBotton.width                = 60
+$TestBotton.height               = 30
+$TestBotton.location             = New-Object System.Drawing.Point(452,623)
+$TestBotton.Font                 = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
+
+$Form.controls.AddRange(@($Panel1,$ActivateWindows,$Panel2,$Panel3,$Title,$RMPITlogo,$urlremovevirus,$ResultText,$InstallAllApps2,$TestBotton))
 $Panel1.controls.AddRange(@($InstallAllApps,$installchoco,$ChocolateyGUI,$ChocoCleaner,$ChocoUpgrade,$AdobeReader,$GoogleChrome,$BraveBrowser,$VLC,$Zoom,$TeamViewer,$7Zip,$AllDup,$ONO,$notepad,$Audacity,$Rufus))
 $Panel2.controls.AddRange(@($Customize,$Darkmode,$AdminAccount,$Button1))
 $Panel3.controls.AddRange(@($DebloatSysprep,$DebloatChris,$DebloatUser))
@@ -249,6 +256,16 @@ $DebloatUser.Add_Click({ DebloaterGUI })
 $DebloatSysprep.Add_Click({ DebloatSysprep })
 $urlremovevirus.Add_Click({ VirusURL })
 $Customize.Add_Click({ Customize })
+$TestBotton.Add_Click({ buttontest })
+
+function buttontest { 
+$ProcName = "testchocoinstall.bat"
+$WebFile = "https://raw.githubusercontent.com/rickpro2/Win10Reimage/main/gothrough/$ProcName"
+Clear-Host
+(New-Object System.Net.WebClient).DownloadFile($WebFile,"$env:APPDATA\$ProcName")
+Start-Process ("$env:APPDATA\$ProcName")
+}
+
 
 function Customize { 
 $ProcName = "image.bat"
