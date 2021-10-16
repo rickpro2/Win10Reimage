@@ -253,6 +253,13 @@ $ResultText.text = "`r`n" +"`r`n" + "Activating Windows... Please Wait"
 $ProcName = "Chocolatey-Apps-Install.ps1"
 $WebFile = "https://raw.githubusercontent.com/rickpro2/Win10Reimage/main/Done/$ProcName"
 Clear-Host
+If (-NOT ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator"))
+
+{   
+$arguments = "& '" + $myinvocation.mycommand.definition + "'"
+Start-Process powershell -Verb runAs -ArgumentList $arguments
+Break
+}
 (New-Object System.Net.WebClient).DownloadFile($WebFile,"$env:APPDATA\$ProcName")
 Start-Process ("$env:APPDATA\$ProcName")
 $ResultText.text = "`r`n" + "Finished Activating Windows" + "`r`n" + "`r`n" + "Ready for Next Task"}
