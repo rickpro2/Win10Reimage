@@ -1,6 +1,6 @@
 <# This form was created using POSHGUI.com  a free online gui designer for PowerShell
 .NAME
-    win10-Master
+    RMPIT APP
 #>
 
 Add-Type -AssemblyName System.Windows.Forms
@@ -240,7 +240,7 @@ $TestBotton                      = New-Object system.Windows.Forms.Button
 $TestBotton.text                 = "Test Button"
 $TestBotton.width                = 60
 $TestBotton.height               = 30
-$TestBotton.location             = New-Object System.Drawing.Point(452,623)
+$TestBotton.location             = New-Object System.Drawing.Point(279,533)
 $TestBotton.Font                 = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
 
 $Form.controls.AddRange(@($Panel1,$ActivateWindows,$Panel2,$Panel3,$Title,$RMPITlogo,$urlremovevirus,$ResultText,$InstallAllApps2,$TestBotton))
@@ -248,15 +248,6 @@ $Panel1.controls.AddRange(@($InstallAllApps,$installchoco,$ChocolateyGUI,$ChocoC
 $Panel2.controls.AddRange(@($Customize,$Darkmode,$AdminAccount,$Button1))
 $Panel3.controls.AddRange(@($DebloatSysprep,$DebloatChris,$DebloatUser))
 
-$ActivateWindows.Add_Click({ ActivateWindows })
-$InstallAllApps2.Add_Click({ AllAppsInstall })
-$InstallAllApps.Add_Click({ AllAppsInstall })
-$installchoco.Add_Click({ ChocolateyInstall })
-$DebloatUser.Add_Click({ DebloaterGUI })
-$DebloatSysprep.Add_Click({ DebloatSysprep })
-$urlremovevirus.Add_Click({ VirusURL })
-$Customize.Add_Click({ Customize })
-$TestBotton.Add_Click({ buttontest })
 
 function buttontest { 
 $ProcName = "testchocoinstall.bat"
@@ -681,4 +672,5 @@ If (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]:
         }
     }
 }
+ This is a test to see what is in the chocolaty aps
 [void]$Form.ShowDialog()
