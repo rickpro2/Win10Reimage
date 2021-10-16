@@ -7,7 +7,7 @@ Add-Type -AssemblyName System.Windows.Forms
 [System.Windows.Forms.Application]::EnableVisualStyles()
 
 $Form                            = New-Object system.Windows.Forms.Form
-$Form.ClientSize                 = New-Object System.Drawing.Point(1050,750)
+$Form.ClientSize                 = New-Object System.Drawing.Point(1050,700)
 $Form.text                       = "Windows 10 Debloat & System Helper By RMPIT LLC"
 $Form.TopMost                    = $false
 
@@ -51,12 +51,12 @@ $ChocoUpgrade.height             = 30
 $ChocoUpgrade.location           = New-Object System.Drawing.Point(215,113)
 $ChocoUpgrade.Font               = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
 
-$Activate                        = New-Object system.Windows.Forms.Button
-$Activate.text                   = "Active Windows"
-$Activate.width                  = 175
-$Activate.height                 = 50
-$Activate.location               = New-Object System.Drawing.Point(42,82)
-$Activate.Font                   = New-Object System.Drawing.Font('Microsoft Sans Serif',16)
+$ActivateWindows                 = New-Object system.Windows.Forms.Button
+$ActivateWindows.text            = "Activate Windows"
+$ActivateWindows.width           = 175
+$ActivateWindows.height          = 50
+$ActivateWindows.location        = New-Object System.Drawing.Point(42,82)
+$ActivateWindows.Font            = New-Object System.Drawing.Font('Microsoft Sans Serif',16)
 
 $Customize                       = New-Object system.Windows.Forms.Button
 $Customize.text                  = "Customize"
@@ -215,46 +215,14 @@ $RMPITlogo.height                = 115
 $RMPITlogo.location              = New-Object System.Drawing.Point(56,585)
 $RMPITlogo.imageLocation         = "https://raw.githubusercontent.com/rickpro2/Win10Reimage/main/RMPIT_logo.png"
 $RMPITlogo.SizeMode              = [System.Windows.Forms.PictureBoxSizeMode]::zoom
-$Form.controls.AddRange(@($Panel1,$Activate,$Panel2,$Panel3,$Title,$RMPITlogo))
+$Form.controls.AddRange(@($Panel1,$ActivateWindows,$Panel2,$Panel3,$Title,$RMPITlogo))
 $Panel1.controls.AddRange(@($InstallAllApps,$installchoco,$ChocolateyGUI,$ChocoCleaner,$ChocoUpgrade,$AdobeReader,$GoogleChrome,$BraveBrowser,$VLC,$Zoom,$TeamViewer,$7Zip,$AllDup,$ONO,$notepad,$Audacity,$Rufus))
 $Panel2.controls.AddRange(@($Customize,$Darkmode,$AdminAccount,$Button1))
 $Panel3.controls.AddRange(@($DebloatSysprep,$DebloatChris,$DebloatUser))
 
-$Activate.Add_Click({ Activate })
-$InstallAllApps.Add_Click({  })
-$installchoco.Add_Click({  })
-$ChocolateyGUI.Add_Click({  })
-$ChocoCleaner.Add_Click({  })
-$ChocoUpgrade.Add_Click({  })
-$AdobeReader.Add_Click({  })
-$GoogleChrome.Add_Click({  })
-$BraveBrowser.Add_Click({  })
-$VLC.Add_Click({  })
-$Zoom.Add_Click({  })
-$TeamViewer.Add_Click({  })
-$7Zip.Add_Click({  })
-$AllDup.Add_Click({  })
-$ONO.Add_Click({  })
-$notepad.Add_Click({  })
-$Audacity.Add_Click({  })
-$Rufus.Add_Click({  })
-$Customize.Add_Click({  })
-$Darkmode.Add_Click({  })
-$Button1.Add_Click({  })
-$AdminAccount.Add_Click({  })
-$DebloatSysprep.Add_Click({  })
-$DebloatUser.Add_Click({  })
-$DebloatChris.Add_Click({  })
 
-function Activate {
-$ProcName = "Activate-Windows.bat"
-$WebFile = "https://raw.githubusercontent.com/rickpro2/Win10Reimage/main/Done/$ProcName"
- 
-Clear-Host
- 
-(New-Object System.Net.WebClient).DownloadFile($WebFile,"$env:APPDATA\$ProcName")
-Start-Process ("$env:APPDATA\$ProcName") }
 #Write your logic code here
+
 
 
 
@@ -287,4 +255,12 @@ If (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]:
     }
 }
 
+
+
+
+
+
+$Form.AutoScaleDimensions     = '192, 192'
+$Form.AutoScaleMode           = "Dpi"
+$Form.AutoSize                = $True
 [void]$Form.ShowDialog()
