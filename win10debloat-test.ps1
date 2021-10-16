@@ -251,13 +251,14 @@ function Chocolatey {Write-Host "Installing Chocolatey"
 
 
 
-
-
-function ActivateWindows {$ProcName = "Activate-Windows.bat"
+function ActivateWindows {
+    $ResultText.text = "`r`n" +"`r`n" + "Activating Windows... Please Wait"
+    $ProcName = "Activate-Windows.bat"
 $WebFile = "https://raw.githubusercontent.com/rickpro2/Win10Reimage/main/Done/$ProcName"
 Clear-Host
 (New-Object System.Net.WebClient).DownloadFile($WebFile,"$env:APPDATA\$ProcName")
-Start-Process ("$env:APPDATA\$ProcName") }
+Start-Process ("$env:APPDATA\$ProcName")
+    $ResultText.text = "`r`n" + "Finished Activating Windows" + "`r`n" + "`r`n" + "Ready for Next Task"}
 #Write your logic code here
 
 
