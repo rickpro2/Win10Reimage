@@ -211,8 +211,8 @@ $Button1.Font                    = New-Object System.Drawing.Font('Microsoft San
 
 $RMPITlogo                       = New-Object system.Windows.Forms.PictureBox
 $RMPITlogo.width                 = 184
-$RMPITlogo.height                = 115
-$RMPITlogo.location              = New-Object System.Drawing.Point(56,585)
+$RMPITlogo.height                = 40
+$RMPITlogo.location              = New-Object System.Drawing.Point(42,611)
 $RMPITlogo.imageLocation         = "https://raw.githubusercontent.com/rickpro2/Win10Reimage/main/RMPIT_logo.png"
 $RMPITlogo.SizeMode              = [System.Windows.Forms.PictureBoxSizeMode]::zoom
 $urlremovevirus                  = New-Object system.Windows.Forms.Button
