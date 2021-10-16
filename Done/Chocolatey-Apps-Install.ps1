@@ -19,7 +19,7 @@ Write-Host "Installing Chocolatey"
     Write-Host "Installed Choco Cleaner (Script + Task)"   
     
     Write-Host "Installing Choco Upgrade All (Script + Task)"
-    choco install choco-upgrade-all-at --params "'/TIME:07:00 /ABORTTIME:11:00'" -y
+    choco install choco-upgrade-all-at --params "'/TIME:07:00 /ABORTTIME:11:50'" -y
     Write-Host "Installed Choco Upgrade All (Script + Task)"   
     
     Write-Host "Installing Adobe Acrobat Reader DC"
