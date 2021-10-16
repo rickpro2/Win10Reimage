@@ -237,13 +237,13 @@ $Button1.height                  = 30
 $Button1.location                = New-Object System.Drawing.Point(255,59)
 $Button1.Font                    = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
 
-$RMPI_logo                       = New-Object system.Windows.Forms.PictureBox
-$RMPI_logo.width                 = 163
-$RMPI_logo.height                = 114
-$RMPI_logo.location              = New-Object System.Drawing.Point(51,595)
-$RMPI_logo.imageLocation         = "https://raw.githubusercontent.com/rickpro2/Win10Reimage/main/RMPIT_logo.png"
-$RMPI_logo.SizeMode              = [System.Windows.Forms.PictureBoxSizeMode]::zoom
-$RMPIT.controls.AddRange(@($Panel1,$Activate,$Panel2,$Panel3,$Title,$RMPI_logo))
+$RMPITlogo                       = New-Object system.Windows.Forms.PictureBox
+$RMPITlogo.width                 = 163
+$RMPITlogo.height                = 114
+$RMPITlogo.location              = New-Object System.Drawing.Point(51,595)
+$RMPITlogo.imageLocation         = "https://raw.githubusercontent.com/rickpro2/Win10Reimage/main/RMPIT_logo.png"
+$RMPITlogo.SizeMode              = [System.Windows.Forms.PictureBoxSizeMode]::zoom
+$RMPIT.controls.AddRange(@($Panel1,$Activate,$Panel2,$Panel3,$Title,$RMPITlogo))
 $Panel1.controls.AddRange(@($InstallAllApps,$installchoco,$ChocolateyGUI,$ChocoCleaner,$ChocoUpgrade,$AdobeReader,$GoogleChrome,$BraveBrowser,$VLC,$Zoom,$TeamViewer,$7Zip,$AllDup,$ONO,$notepad,$Audacity,$Rufus))
 $Panel2.controls.AddRange(@($Customize,$Darkmode,$AdminAccount,$Button1))
 $Panel3.controls.AddRange(@($DebloatSysprep,$DebloatChris,$DebloatUser))
@@ -273,7 +273,7 @@ $AdminAccount.Add_Click({  })
 $DebloatSysprep.Add_Click({  })
 $DebloatUser.Add_Click({  })
 $DebloatChris.Add_Click({  })
-$RMPI_logo.Add_Click({  })
+$RMPITlogo.Add_Click({  })
 
 #Write your logic code here
 
