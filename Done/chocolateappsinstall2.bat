@@ -59,11 +59,15 @@ powershell -NoProfile -ExecutionPolicy Bypass -Command "iex ((New-Object System.
 choco feature enable -n=allowGlobalConfirmation
 pause
 
-echo Now chocolatey should be ready and we can go ahead
+echo Chocolatey is ready to begin installing packages!
 echo .
 pause
 
+@rem ----[ Whatever you want to install, place it below this point, each item on its own line (to make it easier to find later on. ] ----
 
+
+
+@rem ---[You can add as many programs here as you desire!]----
 
 
 
