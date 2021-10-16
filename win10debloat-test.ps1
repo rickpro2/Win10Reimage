@@ -237,27 +237,20 @@ $Button1.height                  = 30
 $Button1.location                = New-Object System.Drawing.Point(255,59)
 $Button1.Font                    = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
 
-$RMPIT.controls.AddRange(@($Panel1,$Activate,$Panel2,$Panel3,$Title))
+$PictureBox1                     = New-Object system.Windows.Forms.PictureBox
+$PictureBox1.width               = 163
+$PictureBox1.height              = 114
+$PictureBox1.location            = New-Object System.Drawing.Point(51,595)
+$PictureBox1.imageLocation       = "https://raw.githubusercontent.com/rickpro2/Win10Reimage/main/RMPIT_logo.png"
+$PictureBox1.SizeMode            = [System.Windows.Forms.PictureBoxSizeMode]::zoom
+$RMPIT.controls.AddRange(@($Panel1,$Activate,$Panel2,$Panel3,$Title,$PictureBox1))
 $Panel1.controls.AddRange(@($InstallAllApps,$installchoco,$ChocolateyGUI,$ChocoCleaner,$ChocoUpgrade,$AdobeReader,$GoogleChrome,$BraveBrowser,$VLC,$Zoom,$TeamViewer,$7Zip,$AllDup,$ONO,$notepad,$Audacity,$Rufus))
 $Panel2.controls.AddRange(@($Customize,$Darkmode,$AdminAccount,$Button1))
 $Panel3.controls.AddRange(@($DebloatSysprep,$DebloatChris,$DebloatUser))
 
-$Activate.Add_Click({ 
-$ProcName = "Activate-Windows.bat"
-$WebFile = "https://raw.githubusercontent.com/rickpro2/Win10Reimage/main/Done/$ProcName"
- 
-Clear-Host
- 
-(New-Object System.Net.WebClient).DownloadFile($WebFile,"$env:APPDATA\$ProcName")
-Start-Process ("$env:APPDATA\$ProcName")
-})
-
+$Activate.Add_Click({  })
 $InstallAllApps.Add_Click({  })
-$installchoco.Add_Click({ 
-Write-Host "Installing Chocolatey"
-	Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
-	choco install chocolatey-core.extension -y
-})
+$installchoco.Add_Click({  })
 $ChocolateyGUI.Add_Click({  })
 $ChocoCleaner.Add_Click({  })
 $ChocoUpgrade.Add_Click({  })
@@ -280,6 +273,7 @@ $AdminAccount.Add_Click({  })
 $DebloatSysprep.Add_Click({  })
 $DebloatUser.Add_Click({  })
 $DebloatChris.Add_Click({  })
+$PictureBox1.Add_Click({  })
 
 #Write your logic code here
 
