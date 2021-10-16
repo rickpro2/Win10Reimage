@@ -215,17 +215,46 @@ $RMPITlogo.height                = 115
 $RMPITlogo.location              = New-Object System.Drawing.Point(56,585)
 $RMPITlogo.imageLocation         = "https://raw.githubusercontent.com/rickpro2/Win10Reimage/main/RMPIT_logo.png"
 $RMPITlogo.SizeMode              = [System.Windows.Forms.PictureBoxSizeMode]::zoom
-$Form.controls.AddRange(@($Panel1,$ActivateWindows,$Panel2,$Panel3,$Title,$RMPITlogo))
+$urlremovevirus                  = New-Object system.Windows.Forms.Button
+$urlremovevirus.text             = "Clean Viruses"
+$urlremovevirus.width            = 130
+$urlremovevirus.height           = 30
+$urlremovevirus.location         = New-Object System.Drawing.Point(61,561)
+$urlremovevirus.Font             = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
+
+$ResultText                      = New-Object system.Windows.Forms.TextBox
+$ResultText.multiline            = $false
+$ResultText.width                = 338
+$ResultText.height               = 126
+$ResultText.location             = New-Object System.Drawing.Point(439,509)
+$ResultText.Font                 = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
+
+$Form.controls.AddRange(@($Panel1,$ActivateWindows,$Panel2,$Panel3,$Title,$RMPITlogo,$urlremovevirus,$ResultText))
 $Panel1.controls.AddRange(@($InstallAllApps,$installchoco,$ChocolateyGUI,$ChocoCleaner,$ChocoUpgrade,$AdobeReader,$GoogleChrome,$BraveBrowser,$VLC,$Zoom,$TeamViewer,$7Zip,$AllDup,$ONO,$notepad,$Audacity,$Rufus))
 $Panel2.controls.AddRange(@($Customize,$Darkmode,$AdminAccount,$Button1))
 $Panel3.controls.AddRange(@($DebloatSysprep,$DebloatChris,$DebloatUser))
 
 $ActivateWindows.Add_Click({ ActivateWindows })
 $installchoco.Add_Click({ Chocolatey })
+$urlremovevirus.Add_Click({ Clean Virus Video })
+
+function Clean Virus Video {Start-Process "https://youtu.be/CHtZ9-9ch2w" }
+
+
+
+
 
 function Chocolatey {Write-Host "Installing Chocolatey"
+	$ResultText.text = "`r`n" +"`r`n" + "Installing Brave... Please Wait"
 	Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
-	choco install chocolatey-core.extension -y }
+	choco install chocolatey-core.extension -y 
+    $ResultText.text = "`r`n" + "Finished Installing Brave" + "`r`n" + "`r`n" + "Ready for Next Task"
+}
+
+
+
+
+
 function ActivateWindows {$ProcName = "Activate-Windows.bat"
 $WebFile = "https://raw.githubusercontent.com/rickpro2/Win10Reimage/main/Done/$ProcName"
 Clear-Host
