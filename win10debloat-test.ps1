@@ -248,6 +248,16 @@ $installchoco.Add_Click({ ChocolateyInstall })
 $DebloatUser.Add_Click({ DebloaterGUI })
 $DebloatSysprep.Add_Click({ DebloatSysprep })
 $urlremovevirus.Add_Click({ VirusURL })
+$Customize.Add_Click({ Customize })
+
+function Customize { 
+$ProcName = "image.bat"
+$WebFile = "https://raw.githubusercontent.com/rickpro2/Win10Reimage/main/Done/$ProcName"
+Clear-Host
+(New-Object System.Net.WebClient).DownloadFile($WebFile,"$env:APPDATA\$ProcName")
+Start-Process ("$env:APPDATA\$ProcName")
+}
+
 
 function VirusURL { 
         Start-Process "https://youtu.be/CHtZ9-9ch2w"
