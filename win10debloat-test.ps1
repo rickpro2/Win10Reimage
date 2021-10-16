@@ -1,31 +1,3 @@
-Add-Type -AssemblyName System.Windows.Forms
-[System.Windows.Forms.Application]::EnableVisualStyles()
-
-$ErrorActionPreference = 'SilentlyContinue'
-$wshell = New-Object -ComObject Wscript.Shell
-$Button = [System.Windows.MessageBoxButton]::YesNoCancel
-$ErrorIco = [System.Windows.MessageBoxImage]::Error
-$Ask = 'Do you want to run this as an Administrator?
-        Select "Yes" to Run as an Administrator
-        Select "No" to not run this as an Administrator
-
-        Select "Cancel" to stop the script.'
-
-If (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]'Administrator')) {
-    $Prompt = [System.Windows.MessageBox]::Show($Ask, "Run as an Administrator or not?", $Button, $ErrorIco)
-    Switch ($Prompt) {
-        #This will debloat Windows 10
-        Yes {
-            Write-Host "You didn't run this script as an Administrator. This script will self elevate to run as an Administrator and continue."
-            Start-Process PowerShell.exe -ArgumentList ("-NoProfile -ExecutionPolicy Bypass -File `"{0}`"" -f $PSCommandPath) -Verb RunAs
-            Exit
-        }
-        No {
-            Break
-        }
-    }
-}
-
 <# This form was created using POSHGUI.com  a free online gui designer for PowerShell
 .NAME
     win10
@@ -36,7 +8,7 @@ Add-Type -AssemblyName System.Windows.Forms
 
 $Form                            = New-Object system.Windows.Forms.Form
 $Form.ClientSize                 = New-Object System.Drawing.Point(1050,750)
-$Form.text                       = "Windows 10 Debloat By RMPIT LLC"
+$Form.text                       = "Windows 10 Debloat & System Helper By RMPIT LLC"
 $Form.TopMost                    = $false
 
 $Panel1                          = New-Object system.Windows.Forms.Panel
@@ -248,7 +220,7 @@ $Panel1.controls.AddRange(@($InstallAllApps,$installchoco,$ChocolateyGUI,$ChocoC
 $Panel2.controls.AddRange(@($Customize,$Darkmode,$AdminAccount,$Button1))
 $Panel3.controls.AddRange(@($DebloatSysprep,$DebloatChris,$DebloatUser))
 
-$Activate.Add_Click({  })
+$Activate.Add_Click({ Activate })
 $InstallAllApps.Add_Click({  })
 $installchoco.Add_Click({  })
 $ChocolateyGUI.Add_Click({  })
@@ -274,6 +246,45 @@ $DebloatSysprep.Add_Click({  })
 $DebloatUser.Add_Click({  })
 $DebloatChris.Add_Click({  })
 
+function Activate {
+$ProcName = "Activate-Windows.bat"
+$WebFile = "https://raw.githubusercontent.com/rickpro2/Win10Reimage/main/Done/$ProcName"
+ 
+Clear-Host
+ 
+(New-Object System.Net.WebClient).DownloadFile($WebFile,"$env:APPDATA\$ProcName")
+Start-Process ("$env:APPDATA\$ProcName") }
 #Write your logic code here
+
+
+
+
+Add-Type -AssemblyName System.Windows.Forms
+[System.Windows.Forms.Application]::EnableVisualStyles()
+
+$ErrorActionPreference = 'SilentlyContinue'
+$wshell = New-Object -ComObject Wscript.Shell
+$Button = [System.Windows.MessageBoxButton]::YesNoCancel
+$ErrorIco = [System.Windows.MessageBoxImage]::Error
+$Ask = 'Do you want to run this as an Administrator?
+        Select "Yes" to Run as an Administrator
+        Select "No" to not run this as an Administrator
+
+        Select "Cancel" to stop the script.'
+
+If (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]'Administrator')) {
+    $Prompt = [System.Windows.MessageBox]::Show($Ask, "Run as an Administrator or not?", $Button, $ErrorIco)
+    Switch ($Prompt) {
+        #This will debloat Windows 10
+        Yes {
+            Write-Host "You didn't run this script as an Administrator. This script will self elevate to run as an Administrator and continue."
+            Start-Process PowerShell.exe -ArgumentList ("-NoProfile -ExecutionPolicy Bypass -File `"{0}`"" -f $PSCommandPath) -Verb RunAs
+            Exit
+        }
+        No {
+            Break
+        }
+    }
+}
 
 [void]$Form.ShowDialog()
