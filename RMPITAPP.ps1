@@ -77,7 +77,7 @@ $ChocolateyAllApps.text          = "Install Chocolatey & Apps"
 $ChocolateyAllApps.width         = 175
 $ChocolateyAllApps.height        = 50
 $ChocolateyAllApps.location      = New-Object System.Drawing.Point(207,19)
-$ChocolateyAllApps.Font          = New-Object System.Drawing.Font('Microsoft Sans Serif',16)
+$ChocolateyAllApps.Font          = New-Object System.Drawing.Font('Microsoft Sans Serif',9)
 
 $Step2                           = New-Object system.Windows.Forms.Label
 $Step2.text                      = "Step #2"
@@ -93,7 +93,7 @@ $Panel1.controls.AddRange(@($ActivateWindows,$Step1,$ChocolateyAllApps,$Step2))
 $ActivateWindows.Add_Click({ Activate })
 
 #Write your logic code here
- function Activate { 
+function Activate { 
 $ProcName = "Activate-Windows.bat"
 $WebFile = "https://raw.githubusercontent.com/rickpro2/Win10Reimage/main/Done/$ProcName"
 Clear-Host
