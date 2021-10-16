@@ -150,9 +150,6 @@ $ChocolateyAllApps.Add_Click({ Chocolateyapps })
 $Customiz.Add_Click({ customize })
 $installchoco.Add_Click({ ChocolateyInstall })
 
-
-
-
 #Write your logic code here
 function Activate { 
 $ProcName = "Activate-Windows.bat"
@@ -176,7 +173,7 @@ Start-Process ("$env:APPDATA\$ProcName")
 	choco install chocolatey-core.extension -y
  }
 function customize { 
-$ProcName = "Activate-Windows.bat"
+$ProcName = "Customiz.bat"
 $WebFile = "https://raw.githubusercontent.com/rickpro2/Win10Reimage/main/Done/$ProcName"
 Clear-Host
 (New-Object System.Net.WebClient).DownloadFile($WebFile,"$env:APPDATA\$ProcName")
