@@ -38,6 +38,11 @@ $Form                            = New-Object system.Windows.Forms.Form
 $Form.ClientSize                 = New-Object System.Drawing.Point(1050,1000)
 $Form.text                       = "Windows 10 Debloat By RMPIT LLC"
 $Form.TopMost                    = $false
+$Form.AutoScaleDimensions     = '192, 192'
+$Form.AutoScaleMode           = "Dpi"
+$Form.AutoSize                = $True
+$Form.AutoScroll              = $True
+$Form.FormBorderStyle         = 'FixedSingle
 
 $Panel1                          = New-Object system.Windows.Forms.Panel
 $Panel1.height                   = 160
