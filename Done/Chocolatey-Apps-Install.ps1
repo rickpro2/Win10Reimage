@@ -11,6 +11,7 @@ Write-Host "Installing Chocolatey"
 	choco install chocolatey-core.extension -y
 
     Write-Host "Installing Chocolatey GUI"
+    $ResultText.text = "`r`n" +"`r`n" + "Installing Chocolatey GUI... Please Wait"
     choco install chocolateygui -y
     Write-Host "Installed Chocolatey GUI"
     
