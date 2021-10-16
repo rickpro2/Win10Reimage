@@ -236,9 +236,9 @@ $Panel3.controls.AddRange(@($DebloatSysprep,$DebloatChris,$DebloatUser))
 
 $ActivateWindows.Add_Click({ ActivateWindows })
 $installchoco.Add_Click({ Chocolatey })
-$urlremovevirus.Add_Click({ Clean Virus Video })
+$urlremovevirus.Add_Click({ CleanVirusVideo })
 
-function Clean Virus Video {Start-Process "https://youtu.be/CHtZ9-9ch2w" }
+function CleanVirusVideo {Start-Process "https://youtu.be/CHtZ9-9ch2w" }
 
 
 
