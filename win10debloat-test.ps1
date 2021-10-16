@@ -241,7 +241,7 @@ $RMPITlogo                       = New-Object system.Windows.Forms.PictureBox
 $RMPITlogo.width                 = 163
 $RMPITlogo.height                = 114
 $RMPITlogo.location              = New-Object System.Drawing.Point(51,595)
-$RMPITlogo.imageLocation         = "https://raw.githubusercontent.com/rickpro2/Win10Reimage/main/RMPIT_logo.png"
+$RMPITlogo.imageLocation         = "./rickpro2/Win10Reimage/main/RMPIT_logo.png"
 $RMPITlogo.SizeMode              = [System.Windows.Forms.PictureBoxSizeMode]::zoom
 $RMPIT.controls.AddRange(@($Panel1,$Activate,$Panel2,$Panel3,$Title,$RMPITlogo))
 $Panel1.controls.AddRange(@($InstallAllApps,$installchoco,$ChocolateyGUI,$ChocoCleaner,$ChocoUpgrade,$AdobeReader,$GoogleChrome,$BraveBrowser,$VLC,$Zoom,$TeamViewer,$7Zip,$AllDup,$ONO,$notepad,$Audacity,$Rufus))
