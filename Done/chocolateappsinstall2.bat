@@ -101,6 +101,17 @@ pause
     choco install 7zip -y
     Write-Host "Installed 7-Zip"  
     
+    Write-Host "Installing iTunes"
+    choco install itunes -y
+    Write-Host "Installed iTunes" 
+    
+    Write-Host "Installing AllDup"
+    choco install alldup -y
+    Write-Host "Installed AllDup"    
+    
+    Write-Host "Installing Notepad++"
+    choco install notepadplusplus -y
+    Write-Host "Installed Notepad++" 
     
     
     
@@ -117,21 +128,15 @@ pause
    
 
     
-    Write-Host "Installing iTunes"
-    choco install itunes -y
-    Write-Host "Installed iTunes" 
+
     
-    Write-Host "Installing AllDup"
-    choco install alldup -y
-    Write-Host "Installed AllDup" 
+
     
     Write-Host "Installing O&O Shutup"
     choco install shutup10 -y
     Write-Host "Installed O&O Shutup" 
     
-    Write-Host "Installing Notepad++"
-    choco install notepadplusplus -y
-    Write-Host "Installed Notepad++" 
+
     
     Write-Host "Installing IPVanish"
     choco install ipvanish -y
