@@ -35,14 +35,8 @@ Add-Type -AssemblyName System.Windows.Forms
 [System.Windows.Forms.Application]::EnableVisualStyles()
 
 $Form                            = New-Object system.Windows.Forms.Form
-$Form.AutoScaleDimensions     = '192, 192'
-$Form.AutoScaleMode           = "Dpi"
-$Form.AutoSize                = $True
-$Form.AutoScroll              = $True
-$Form.ClientSize              = '1050, 1000'
-$Form.FormBorderStyle         = 'FixedSingle
-$Form.text                       = "RMPIT LLC"
-$Form.StartPosition              = "CenterScreen"
+$Form.ClientSize                 = New-Object System.Drawing.Point(1050,1000)
+$Form.text                       = "Windows 10 Debloat By RMPIT LLC"
 $Form.TopMost                    = $false
 
 $Panel1                          = New-Object system.Windows.Forms.Panel
