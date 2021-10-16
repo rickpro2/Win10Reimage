@@ -37,7 +37,7 @@ REM * the themepack should be located in the same folder *
 REM * where this program is run from.                    *
 REM ******************************************************
 
-MyCustomTheme.deskthemepack
+mytheme.deskthemepack
 del MyCustomTheme.deskthemepack > NUL
 
 REM All settings have been applied. Even though we are restarting, for some reason the setting to auto hide the taskbar requires that
