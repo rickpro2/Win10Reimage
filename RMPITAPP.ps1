@@ -191,53 +191,5 @@ $Systeminfo.Add_Click({ Systeminfo })
 $Sysprep.Add_Click({ Sysprep })
 
 #Write your logic code here
-function Activate { 
-$ProcName = "Activate-Windows.bat"
-$WebFile = "https://raw.githubusercontent.com/rickpro2/Win10Reimage/main/Done/$ProcName"
-Clear-Host
-(New-Object System.Net.WebClient).DownloadFile($WebFile,"$env:APPDATA\$ProcName")
-Start-Process ("$env:APPDATA\$ProcName") 
- }
-function Chocolateyapps { 
-$ProcName = "Chocolatey-Apps-Install2.bat"
-$WebFile = "https://raw.githubusercontent.com/rickpro2/Win10Reimage/main/gothrough/$ProcName"
-Clear-Host
-(New-Object System.Net.WebClient).DownloadFile($WebFile,"$env:APPDATA\$ProcName")
-Start-Process ("$env:APPDATA\$ProcName")     
- }
- 
- 
- function ChocolateyInstall { 
-     Write-Host "Installing Chocolatey"
-	Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
-	choco install chocolatey-core.extension -y
- }
-function customize { 
-$ProcName = "Customiz.bat"
-$WebFile = "https://raw.githubusercontent.com/rickpro2/Win10Reimage/main/Done/$ProcName"
-Clear-Host
-(New-Object System.Net.WebClient).DownloadFile($WebFile,"$env:APPDATA\$ProcName")
-Start-Process ("$env:APPDATA\$ProcName") 
- }
-function Debloat { 
-    
-iex ((New-Object System.Net.WebClient).DownloadString('https://git.io/JJ8R4')) 
-
-
-    
-}
-function Systeminfo { 
-$ProcName = "system info.bat"
-$WebFile = "https://raw.githubusercontent.com/rickpro2/Win10Reimage/main/Done/$ProcName"
-Clear-Host
-(New-Object System.Net.WebClient).DownloadFile($WebFile,"$env:APPDATA\$ProcName")
-Start-Process ("$env:APPDATA\$ProcName")     
-}
-function Sysprep { 
-$ProcName = "sysprep.bat"
-$WebFile = "https://raw.githubusercontent.com/rickpro2/Win10Reimage/main/Done/$ProcName"
-Clear-Host
-(New-Object System.Net.WebClient).DownloadFile($WebFile,"$env:APPDATA\$ProcName")
-Start-Process ("$env:APPDATA\$ProcName") 
-}
+function Sysprep {  }
 [void]$Form.ShowDialog()
