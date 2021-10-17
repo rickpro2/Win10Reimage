@@ -25,7 +25,7 @@ copy /Y RunOnce.bat %appdata%\Microsoft\Windows\Start Menu\Programs\Startup > NU
 copy /Y Welcome.VBS %appdata%\Microsoft\Windows\Start Menu\Programs\Startup > NUL
 
 
-C:\Windows\System32\sysprep\sysprep.exe /generalize /oobe /shutdown
+C:\Windows\System32\sysprep\sysprep.exe /generalize /oobe /shutdown /unattend:C:\Windows\System32\Sysprep\unattend.xml
 
 
 REM We should never reach this line, it is here just to be on the safe side
