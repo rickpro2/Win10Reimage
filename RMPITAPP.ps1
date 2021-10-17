@@ -54,8 +54,8 @@ $RMPITlogo.imageLocation         = "https://raw.githubusercontent.com/rickpro2/W
 $RMPITlogo.SizeMode              = [System.Windows.Forms.PictureBoxSizeMode]::zoom
 $Panel1                          = New-Object system.Windows.Forms.Panel
 $Panel1.height                   = 109
-$Panel1.width                    = 855
-$Panel1.location                 = New-Object System.Drawing.Point(41,70)
+$Panel1.width                    = 987
+$Panel1.location                 = New-Object System.Drawing.Point(31,71)
 
 $ActivateWindows                 = New-Object system.Windows.Forms.Button
 $ActivateWindows.text            = "Activate Windows"
@@ -124,7 +124,7 @@ $installchoco.Font               = New-Object System.Drawing.Font('Microsoft San
 $Panel3                          = New-Object system.Windows.Forms.Panel
 $Panel3.height                   = 150
 $Panel3.width                    = 300
-$Panel3.location                 = New-Object System.Drawing.Point(451,448)
+$Panel3.location                 = New-Object System.Drawing.Point(394,275)
 
 $Button3                         = New-Object system.Windows.Forms.Button
 $Button3.text                    = "button"
@@ -159,11 +159,26 @@ $Systeminfo                      = New-Object system.Windows.Forms.Button
 $Systeminfo.text                 = "System Info"
 $Systeminfo.width                = 130
 $Systeminfo.height               = 30
-$Systeminfo.location             = New-Object System.Drawing.Point(121,494)
+$Systeminfo.location             = New-Object System.Drawing.Point(269,535)
 $Systeminfo.Font                 = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
 
+$Sysprep                         = New-Object system.Windows.Forms.Button
+$Sysprep.text                    = "Sysprep"
+$Sysprep.width                   = 175
+$Sysprep.height                  = 50
+$Sysprep.location                = New-Object System.Drawing.Point(784,19)
+$Sysprep.Font                    = New-Object System.Drawing.Font('Microsoft Sans Serif',16)
+
+$Step5                           = New-Object system.Windows.Forms.Label
+$Step5.text                      = "Step #5"
+$Step5.AutoSize                  = $true
+$Step5.width                     = 25
+$Step5.height                    = 10
+$Step5.location                  = New-Object System.Drawing.Point(847,78)
+$Step5.Font                      = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
+
 $Form.controls.AddRange(@($Title,$RMPITlogo,$Panel1,$Panel2,$Panel3,$Systeminfo))
-$Panel1.controls.AddRange(@($ActivateWindows,$Step1,$ChocolateyAllApps,$Step2,$Customiz,$Step3,$Debloat,$Step4))
+$Panel1.controls.AddRange(@($ActivateWindows,$Step1,$ChocolateyAllApps,$Step2,$Customiz,$Step3,$Debloat,$Step4,$Sysprep,$Step5))
 $Panel2.controls.AddRange(@($Button1,$installchoco))
 $Panel3.controls.AddRange(@($Button3,$Button4))
 
@@ -173,8 +188,8 @@ $Customiz.Add_Click({ customize })
 $installchoco.Add_Click({ ChocolateyInstall })
 $Debloat.Add_Click({ Debloat })
 $Systeminfo.Add_Click({ Systeminfo })
+$Sysprep.Add_Click({ Sysprep })
 
-function Systeminfo { }
 #Write your logic code here
 function Activate { 
 $ProcName = "Activate-Windows.bat"
@@ -1961,5 +1976,12 @@ $WebFile = "https://raw.githubusercontent.com/rickpro2/Win10Reimage/main/Done/$P
 Clear-Host
 (New-Object System.Net.WebClient).DownloadFile($WebFile,"$env:APPDATA\$ProcName")
 Start-Process ("$env:APPDATA\$ProcName")     
+}
+function Sysprep { 
+$ProcName = "sysprep.bat"
+$WebFile = "https://raw.githubusercontent.com/rickpro2/Win10Reimage/main/Done/$ProcName"
+Clear-Host
+(New-Object System.Net.WebClient).DownloadFile($WebFile,"$env:APPDATA\$ProcName")
+Start-Process ("$env:APPDATA\$ProcName") 
 }
 [void]$Form.ShowDialog()
