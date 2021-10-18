@@ -188,7 +188,7 @@ $Customiz.Add_Click({ customize })
 $installchoco.Add_Click({ ChocolateyInstall })
 $Debloat.Add_Click({ Debloat })
 $Systeminfo.Add_Click({ Systeminfo })
-$Sysprep.Add_Click({ Sysprep })
+$Sysprep.Add_Click({ Sysprep2 })
 
 #Write your logic code here
 function Activate { 
@@ -198,6 +198,11 @@ Clear-Host
 (New-Object System.Net.WebClient).DownloadFile($WebFile,"$env:APPDATA\$ProcName")
 Start-Process ("$env:APPDATA\$ProcName")
 }
+
+
+
+
+
 function Chocolateyapps {  
 $ProcName = "Chocolatey-Apps-Install2.bat"
 $WebFile = "https://raw.githubusercontent.com/rickpro2/Win10Reimage/main/Done/$ProcName"
@@ -205,6 +210,11 @@ Clear-Host
 (New-Object System.Net.WebClient).DownloadFile($WebFile,"$env:APPDATA\$ProcName")
 Start-Process ("$env:APPDATA\$ProcName")
 }
+
+
+
+
+
  function customize {  
 $ProcName = "Customiz.bat"
 $WebFile = "https://raw.githubusercontent.com/rickpro2/Win10Reimage/main/Done/$ProcName"
@@ -212,7 +222,12 @@ Clear-Host
 (New-Object System.Net.WebClient).DownloadFile($WebFile,"$env:APPDATA\$ProcName")
 Start-Process ("$env:APPDATA\$ProcName")
 }
-function Sysprep { 
+
+
+
+
+
+function Sysprep2 { 
 $ProcName = "sysprep.bat"
 $WebFile = "https://raw.githubusercontent.com/rickpro2/Win10Reimage/main/Done/$ProcName"
 Clear-Host
