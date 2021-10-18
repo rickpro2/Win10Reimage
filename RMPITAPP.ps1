@@ -76,7 +76,7 @@ $ChocolateyAllApps               = New-Object system.Windows.Forms.Button
 $ChocolateyAllApps.text          = "Install Chocolatey/Apps"
 $ChocolateyAllApps.width         = 175
 $ChocolateyAllApps.height        = 50
-$ChocolateyAllApps.location      = New-Object System.Drawing.Point(207,19)
+$ChocolateyAllApps.location      = New-Object System.Drawing.Point(589,19)
 $ChocolateyAllApps.Font          = New-Object System.Drawing.Font('Microsoft Sans Serif',9)
 
 $Step2                           = New-Object system.Windows.Forms.Label
@@ -144,7 +144,7 @@ $Debloat                         = New-Object system.Windows.Forms.Button
 $Debloat.text                    = "Debloat"
 $Debloat.width                   = 175
 $Debloat.height                  = 50
-$Debloat.location                = New-Object System.Drawing.Point(589,19)
+$Debloat.location                = New-Object System.Drawing.Point(207,19)
 $Debloat.Font                    = New-Object System.Drawing.Font('Microsoft Sans Serif',16)
 
 $Step4                           = New-Object system.Windows.Forms.Label
@@ -215,5 +215,10 @@ Clear-Host
 (New-Object System.Net.WebClient).DownloadFile($WebFile,"$env:APPDATA\$ProcName")
 Start-Process ("$env:APPDATA\$ProcName")
 }
-function Sysprep {  }
-[void]$Form.ShowDialog()
+ function customize {  
+$ProcName = "Customiz.bat"
+$WebFile = "https://raw.githubusercontent.com/rickpro2/Win10Reimage/main/Done/$ProcName"
+Clear-Host
+(New-Object System.Net.WebClient).DownloadFile($WebFile,"$env:APPDATA\$ProcName")
+Start-Process ("$env:APPDATA\$ProcName")
+}
