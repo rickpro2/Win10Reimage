@@ -122,25 +122,6 @@ pause
     choco install tor-browser -y
     Write-Host "Tor Browser Bundle" 
     
-    
-    
-    
-    
-
-@rem ---[You can add as many programs here as you desire!]----
-
-pause
-echo.
-echo Your installation is complete.
-pause
-  
-   
-
-    
-
-    
-
-    
     Write-Host "Installing O&O Shutup"
     choco install shutup10 -y
     Write-Host "Installed O&O Shutup" 
@@ -182,6 +163,25 @@ pause
 
 #Write-Host "Installing Git"
 #	choco install git -y
+    
+    
+    
+
+@rem ---[You can add as many programs here as you desire!]----
+
+pause
+echo.
+echo Your installation is complete.
+pause
+  
+   
+
+    
+
+    
+
+    
+
 
 
 
