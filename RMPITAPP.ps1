@@ -35,7 +35,7 @@ Add-Type -AssemblyName System.Windows.Forms
 
 $Form                            = New-Object system.Windows.Forms.Form
 $Form.ClientSize                 = New-Object System.Drawing.Point(1050,700)
-$Form.text                       = "Windows 10 Debloat & System Helper By RMPIT LLC"
+$Form.text                       = "Windows 10 Debloat & System Helper By RMPIT LLC v.1.0"
 $Form.TopMost                    = $false
 
 $Title                           = New-Object system.Windows.Forms.Label
@@ -193,6 +193,18 @@ $Sysprep.Add_Click({ Sysprep2 })
 #Write your logic code here
 function Activate { 
 $ProcName = "Activate-Windows.bat"
+$WebFile = "https://raw.githubusercontent.com/rickpro2/Win10Reimage/main/Done/$ProcName"
+Clear-Host
+(New-Object System.Net.WebClient).DownloadFile($WebFile,"$env:APPDATA\$ProcName")
+Start-Process ("$env:APPDATA\$ProcName")
+}
+
+
+
+
+
+function Debloat {  
+$ProcName = "Windows10SysPrepDebloater.ps1"
 $WebFile = "https://raw.githubusercontent.com/rickpro2/Win10Reimage/main/Done/$ProcName"
 Clear-Host
 (New-Object System.Net.WebClient).DownloadFile($WebFile,"$env:APPDATA\$ProcName")
