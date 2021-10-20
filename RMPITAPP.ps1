@@ -25,6 +25,29 @@ If (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]:
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+$Form.StartPosition              = "CenterScreen"
+$Form.TopMost                    = $false
+$Form.BackColor                  = [System.Drawing.ColorTranslator]::FromHtml("#e9e9e9")
+$Form.AutoScaleDimensions     = '192, 192'
+$Form.AutoScaleMode           = "Dpi"
+$Form.AutoSize                = $True
+$Form.AutoScroll              = $True
+$Form.ClientSize              = '1050, 1000'
+$Form.FormBorderStyle         = 'FixedSingle'
 <# This form was created using POSHGUI.com  a free online gui designer for PowerShell
 .NAME
     RMPIT APP
