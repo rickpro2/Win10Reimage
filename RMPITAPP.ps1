@@ -124,7 +124,7 @@ $installchoco.Font               = New-Object System.Drawing.Font('Microsoft San
 $Panel3                          = New-Object system.Windows.Forms.Panel
 $Panel3.height                   = 150
 $Panel3.width                    = 300
-$Panel3.location                 = New-Object System.Drawing.Point(394,275)
+$Panel3.location                 = New-Object System.Drawing.Point(411,275)
 
 $Button3                         = New-Object system.Windows.Forms.Button
 $Button3.text                    = "button"
@@ -159,7 +159,7 @@ $Systeminfo                      = New-Object system.Windows.Forms.Button
 $Systeminfo.text                 = "System Info"
 $Systeminfo.width                = 130
 $Systeminfo.height               = 30
-$Systeminfo.location             = New-Object System.Drawing.Point(269,535)
+$Systeminfo.location             = New-Object System.Drawing.Point(6,36)
 $Systeminfo.Font                 = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
 
 $Sysprep                         = New-Object system.Windows.Forms.Button
@@ -177,10 +177,38 @@ $Step5.height                    = 10
 $Step5.location                  = New-Object System.Drawing.Point(847,78)
 $Step5.Font                      = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
 
-$Form.controls.AddRange(@($Title,$RMPITlogo,$Panel1,$Panel2,$Panel3,$Systeminfo))
+$Darkmode                        = New-Object system.Windows.Forms.Button
+$Darkmode.text                   = "Dark Mode"
+$Darkmode.width                  = 130
+$Darkmode.height                 = 30
+$Darkmode.location               = New-Object System.Drawing.Point(6,76)
+$Darkmode.Font                   = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
+
+$Panel4                          = New-Object system.Windows.Forms.Panel
+$Panel4.height                   = 150
+$Panel4.width                    = 300
+$Panel4.location                 = New-Object System.Drawing.Point(269,462)
+
+$Label1                          = New-Object system.Windows.Forms.Label
+$Label1.text                     = "Extra Options"
+$Label1.AutoSize                 = $true
+$Label1.width                    = 25
+$Label1.height                   = 10
+$Label1.location                 = New-Object System.Drawing.Point(10,14)
+$Label1.Font                     = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
+
+$Lightmode                       = New-Object system.Windows.Forms.Button
+$Lightmode.text                  = "Light Mode"
+$Lightmode.width                 = 130
+$Lightmode.height                = 30
+$Lightmode.location              = New-Object System.Drawing.Point(6,116)
+$Lightmode.Font                  = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
+
+$Form.controls.AddRange(@($Title,$RMPITlogo,$Panel1,$Panel2,$Panel3,$Panel4))
 $Panel1.controls.AddRange(@($ActivateWindows,$Step1,$ChocolateyAllApps,$Step2,$Customiz,$Step3,$Debloat,$Step4,$Sysprep,$Step5))
 $Panel2.controls.AddRange(@($Button1,$installchoco))
 $Panel3.controls.AddRange(@($Button3,$Button4))
+$Panel4.controls.AddRange(@($Systeminfo,$Darkmode,$Label1,$Lightmode))
 
 $ActivateWindows.Add_Click({ Activate })
 $ChocolateyAllApps.Add_Click({ Chocolateyapps })
@@ -189,6 +217,10 @@ $installchoco.Add_Click({ ChocolateyInstall })
 $Debloat.Add_Click({ Debloat })
 $Systeminfo.Add_Click({ Systeminfo })
 $Sysprep.Add_Click({ Sysprep2 })
+$Darkmode.Add_Click({ darkmode })
+$Lightmode.Add_Click({ lightmode })
+
+
 
 #Write your logic code here
 function Activate { 
@@ -502,5 +534,34 @@ $WebFile = "https://raw.githubusercontent.com/rickpro2/Win10Reimage/main/Done/$P
 Clear-Host
 (New-Object System.Net.WebClient).DownloadFile($WebFile,"$env:APPDATA\$ProcName")
 Start-Process ("$env:APPDATA\$ProcName")
+}
+function Systeminfo { 
+$ProcName = "system info.bat"
+$WebFile = "https://raw.githubusercontent.com/rickpro2/Win10Reimage/main/Done/$ProcName"
+Clear-Host
+(New-Object System.Net.WebClient).DownloadFile($WebFile,"$env:APPDATA\$ProcName")
+Start-Process ("$env:APPDATA\$ProcName")
+}
+
+
+
+
+
+function darkmode { 
+    Write-Host "Enabling Dark Mode"
+    Set-ItemProperty -Path HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize -Name AppsUseLightTheme -Value 0
+    Write-Host "Enabled Dark Mode"
+    $ResultText.text = "`r`n" +"`r`n" + "Enabled Dark Mode"
+}
+
+
+
+
+
+function lightmode { 
+    Write-Host "Switching Back to Light Mode"
+    Remove-ItemProperty -Path HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize -Name AppsUseLightTheme
+    Write-Host "Switched Back to Light Mode"
+    $ResultText.text = "`r`n" +"`r`n" + "Enabled Light Mode"
 }
 [void]$Form.ShowDialog()
