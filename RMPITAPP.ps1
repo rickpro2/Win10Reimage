@@ -212,11 +212,18 @@ $ResultText.height               = 126
 $ResultText.location             = New-Object System.Drawing.Point(537,436)
 $ResultText.Font                 = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
 
+$Bloatware                       = New-Object system.Windows.Forms.Button
+$Bloatware.text                  = "Bloatware"
+$Bloatware.width                 = 130
+$Bloatware.height                = 30
+$Bloatware.location              = New-Object System.Drawing.Point(151,36)
+$Bloatware.Font                  = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
+
 $Form.controls.AddRange(@($Title,$RMPITlogo,$Panel1,$Panel2,$Panel3,$Panel4,$ResultText))
 $Panel1.controls.AddRange(@($ActivateWindows,$Step1,$ChocolateyAllApps,$Step2,$Customiz,$Step3,$Debloat,$Step4,$Sysprep,$Step5))
 $Panel2.controls.AddRange(@($Button1,$installchoco))
 $Panel3.controls.AddRange(@($Button3,$Button4))
-$Panel4.controls.AddRange(@($Systeminfo,$Darkmode,$Label1,$Lightmode))
+$Panel4.controls.AddRange(@($Systeminfo,$Darkmode,$Label1,$Lightmode,$Bloatware))
 
 $ActivateWindows.Add_Click({ Activate })
 $ChocolateyAllApps.Add_Click({ Chocolateyapps })
@@ -227,6 +234,7 @@ $Systeminfo.Add_Click({ Systeminfo })
 $Sysprep.Add_Click({ Sysprep2 })
 $Darkmode.Add_Click({ darkmode })
 $Lightmode.Add_Click({ lightmode })
+$Bloatware.Add_Click({ removebloat })
 
 #Write your logic code here
 function Activate { 
@@ -505,4 +513,107 @@ function lightmode {
     Write-Host "Switched Back to Light Mode"
     $ResultText.text = "`r`n" +"`r`n" + "Enabled Light Mode"
 }
+ $Bloatware = @(
+    #Unnecessary Windows 10 AppX Apps
+    "Microsoft.3DBuilder"
+    "Microsoft.Microsoft3DViewer"
+    "Microsoft.AppConnector"
+    "Microsoft.BingFinance"
+    "Microsoft.BingNews"
+    "Microsoft.BingSports"
+    "Microsoft.BingTranslator"
+    "Microsoft.BingWeather"
+    "Microsoft.BingFoodAndDrink"
+    "Microsoft.BingHealthAndFitness"
+    "Microsoft.BingTravel"
+    "Microsoft.MinecraftUWP"
+    "Microsoft.GamingServices"
+    # "Microsoft.WindowsReadingList"
+    "Microsoft.GetHelp"
+    "Microsoft.Getstarted"
+    "Microsoft.Messaging"
+    "Microsoft.Microsoft3DViewer"
+    "Microsoft.MicrosoftSolitaireCollection"
+    "Microsoft.NetworkSpeedTest"
+    "Microsoft.News"
+    "Microsoft.Office.Lens"
+    "Microsoft.Office.Sway"
+    "Microsoft.Office.OneNote"
+    "Microsoft.OneConnect"
+    "Microsoft.People"
+    "Microsoft.Print3D"
+    "Microsoft.SkypeApp"
+    "Microsoft.Wallet"
+    "Microsoft.Whiteboard"
+    "Microsoft.WindowsAlarms"
+    "microsoft.windowscommunicationsapps"
+    "Microsoft.WindowsFeedbackHub"
+    "Microsoft.WindowsMaps"
+    "Microsoft.WindowsPhone"
+    "Microsoft.WindowsSoundRecorder"
+    "Microsoft.XboxApp"
+    "Microsoft.ConnectivityStore"
+    "Microsoft.CommsPhone"
+    "Microsoft.ScreenSketch"
+    "Microsoft.Xbox.TCUI"
+    "Microsoft.XboxGameOverlay"
+    "Microsoft.XboxGameCallableUI"
+    "Microsoft.XboxSpeechToTextOverlay"
+    "Microsoft.MixedReality.Portal"
+    "Microsoft.XboxIdentityProvider"
+    "Microsoft.ZuneMusic"
+    "Microsoft.ZuneVideo"
+    "Microsoft.YourPhone"
+    "Microsoft.Getstarted"
+    "Microsoft.MicrosoftOfficeHub"
+
+    #Sponsored Windows 10 AppX Apps
+    #Add sponsored/featured apps to remove in the "*AppName*" format
+    "*EclipseManager*"
+    "*ActiproSoftwareLLC*"
+    "*AdobeSystemsIncorporated.AdobePhotoshopExpress*"
+    "*Duolingo-LearnLanguagesforFree*"
+    "*PandoraMediaInc*"
+    "*CandyCrush*"
+    "*BubbleWitch3Saga*"
+    "*Wunderlist*"
+    "*Flipboard*"
+    "*Twitter*"
+    "*Facebook*"
+    "*Royal Revolt*"
+    "*Sway*"
+    "*Speed Test*"
+    "*Dolby*"
+    "*Viber*"
+    "*ACGMediaPlayer*"
+    "*Netflix*"
+    "*OneCalendar*"
+    "*LinkedInforWindows*"
+    "*HiddenCityMysteryofShadows*"
+    "*Hulu*"
+    "*HiddenCity*"
+    "*AdobePhotoshopExpress*"
+
+    #Optional: Typically not removed but you can if you need to for some reason
+    "*Microsoft.Advertising.Xaml*"
+    #"*Microsoft.MSPaint*"
+    #"*Microsoft.MicrosoftStickyNotes*"
+    #"*Microsoft.Windows.Photos*"
+    #"*Microsoft.WindowsCalculator*"
+    #"*Microsoft.WindowsStore*"
+)
+
+$removebloat.Add_Click({
+    Write-Host "Removing Bloatware"
+
+    foreach ($Bloat in $Bloatware) {
+        Get-AppxPackage -Name $Bloat| Remove-AppxPackage
+        Get-AppxProvisionedPackage -Online | Where-Object DisplayName -like $Bloat | Remove-AppxProvisionedPackage -Online
+        Write-Host "Trying to remove $Bloat."
+        $ResultText.text = "`r`n" +"`r`n" + "Trying to remove $Bloat."
+    }
+
+    Write-Host "Finished Removing Bloatware Apps"
+    $ResultText.text = "`r`n" +"`r`n" + "Finished Removing Bloatware Apps"
+})
 [void]$Form.ShowDialog()
