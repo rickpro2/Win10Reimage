@@ -234,7 +234,8 @@ $Systeminfo.Add_Click({ Systeminfo })
 $Sysprep.Add_Click({ Sysprep2 })
 $Darkmode.Add_Click({ darkmode })
 $Lightmode.Add_Click({ lightmode })
-$Bloatware.Add_Click({ removebloat })
+$Bloatware.Add_Click({ removebolatware })
+
 
 #Write your logic code here
 function Activate { 
@@ -616,4 +617,21 @@ $removebloat.Add_Click({
     Write-Host "Finished Removing Bloatware Apps"
     $ResultText.text = "`r`n" +"`r`n" + "Finished Removing Bloatware Apps"
 })
+
+
+
+
+
+
+
+
+function removebolatware { 
+        Write-Host "Removing Bloatware"
+
+    foreach ($Bloat in $Bloatware) {
+        Get-AppxPackage -Name $Bloat| Remove-AppxPackage
+        Get-AppxProvisionedPackage -Online | Where-Object DisplayName -like $Bloat | Remove-AppxProvisionedPackage -Online
+        Write-Host "Trying to remove $Bloat."
+        $ResultText.text = "`r`n" +"`r`n" + "Trying to remove $Bloat."
+}
 [void]$Form.ShowDialog()
