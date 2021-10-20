@@ -37,6 +37,7 @@ $Form                            = New-Object system.Windows.Forms.Form
 $Form.ClientSize                 = New-Object System.Drawing.Point(1050,700)
 $Form.text                       = "Windows 10 Debloat & System Helper By RMPIT LLC v.1.0"
 $Form.TopMost                    = $false
+$Form.icon                       = "https://raw.githubusercontent.com/rickpro2/Win10Reimage/main/RMPIT_logo.png"
 
 $Title                           = New-Object system.Windows.Forms.Label
 $Title.text                      = "Program Installation"
@@ -90,7 +91,7 @@ $Step2.Font                      = New-Object System.Drawing.Font('Microsoft San
 $Panel2                          = New-Object system.Windows.Forms.Panel
 $Panel2.height                   = 150
 $Panel2.width                    = 300
-$Panel2.location                 = New-Object System.Drawing.Point(61,275)
+$Panel2.location                 = New-Object System.Drawing.Point(42,229)
 
 $Button1                         = New-Object system.Windows.Forms.Button
 $Button1.text                    = "button"
@@ -124,7 +125,7 @@ $installchoco.Font               = New-Object System.Drawing.Font('Microsoft San
 $Panel3                          = New-Object system.Windows.Forms.Panel
 $Panel3.height                   = 150
 $Panel3.width                    = 300
-$Panel3.location                 = New-Object System.Drawing.Point(411,275)
+$Panel3.location                 = New-Object System.Drawing.Point(365,229)
 
 $Button3                         = New-Object system.Windows.Forms.Button
 $Button3.text                    = "button"
@@ -187,7 +188,7 @@ $Darkmode.Font                   = New-Object System.Drawing.Font('Microsoft San
 $Panel4                          = New-Object system.Windows.Forms.Panel
 $Panel4.height                   = 150
 $Panel4.width                    = 300
-$Panel4.location                 = New-Object System.Drawing.Point(269,462)
+$Panel4.location                 = New-Object System.Drawing.Point(42,405)
 
 $Label1                          = New-Object system.Windows.Forms.Label
 $Label1.text                     = "Extra Options"
@@ -204,7 +205,14 @@ $Lightmode.height                = 30
 $Lightmode.location              = New-Object System.Drawing.Point(6,116)
 $Lightmode.Font                  = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
 
-$Form.controls.AddRange(@($Title,$RMPITlogo,$Panel1,$Panel2,$Panel3,$Panel4))
+$ResultText                      = New-Object system.Windows.Forms.TextBox
+$ResultText.multiline            = $true
+$ResultText.width                = 338
+$ResultText.height               = 126
+$ResultText.location             = New-Object System.Drawing.Point(537,436)
+$ResultText.Font                 = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
+
+$Form.controls.AddRange(@($Title,$RMPITlogo,$Panel1,$Panel2,$Panel3,$Panel4,$ResultText))
 $Panel1.controls.AddRange(@($ActivateWindows,$Step1,$ChocolateyAllApps,$Step2,$Customiz,$Step3,$Debloat,$Step4,$Sysprep,$Step5))
 $Panel2.controls.AddRange(@($Button1,$installchoco))
 $Panel3.controls.AddRange(@($Button3,$Button4))
@@ -219,8 +227,6 @@ $Systeminfo.Add_Click({ Systeminfo })
 $Sysprep.Add_Click({ Sysprep2 })
 $Darkmode.Add_Click({ darkmode })
 $Lightmode.Add_Click({ lightmode })
-
-
 
 #Write your logic code here
 function Activate { 
