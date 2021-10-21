@@ -223,7 +223,6 @@ $Lightmode.Add_Click({ lightmode })
 $Bloatware.Add_Click({ removebolatware })
 $Debloat2.Add_Click({ DebloatSysprep })
 
-function DebloatSysprep { }
 #Write your logic code here
 function Activate { 
 $ProcName = "Activate-Windows.bat"
