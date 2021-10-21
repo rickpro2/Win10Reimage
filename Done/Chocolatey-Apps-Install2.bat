@@ -150,6 +150,10 @@ pause
     choco install qBittorrent -y
     Write-Host "qBittorrent"
 
+    Write-Host "Apple iCloud 7.21.0.23"
+    choco install icloud -y
+    Write-Host "Apple iCloud7.21.0.23"
+
 #Write-Host "Inkscape"
 #    choco install inkscape -y
 #    Write-Host "Inkscape"
