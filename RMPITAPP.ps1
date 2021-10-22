@@ -230,37 +230,6 @@ Clear-Host
 (New-Object System.Net.WebClient).DownloadFile($WebFile,"$env:APPDATA\$ProcName")
 Start-Process ("$env:APPDATA\$ProcName")    
 }
-function debloat { 
-    Write-Host "Removing Bloatware"
-
-    foreach ($Bloat in $Bloatware) {
-        Get-AppxPackage -Name $Bloat| Remove-AppxPackage
-        Get-AppxProvisionedPackage -Online | Where-Object DisplayName -like $Bloat | Remove-AppxProvisionedPackage -Online
-        Write-Host "Trying to remove $Bloat."
-        $ResultText.text = "`r`n" +"`r`n" + "Trying to remove $Bloat."
-    }
-
-    Write-Host "Finished Removing Bloatware Apps"
-    $ResultText.text = "`r`n" +"`r`n" + "Finished Removing Bloatware Apps"    
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 $Bloatware = @(
     #Unnecessary Windows 10 AppX Apps
     "Microsoft.3DBuilder"
@@ -350,6 +319,23 @@ $Bloatware = @(
     #"*Microsoft.WindowsCalculator*"
     #"*Microsoft.WindowsStore*"
 )
+
+
+
+
+function debloat { 
+    Write-Host "Removing Bloatware"
+
+    foreach ($Bloat in $Bloatware) {
+        Get-AppxPackage -Name $Bloat| Remove-AppxPackage
+        Get-AppxProvisionedPackage -Online | Where-Object DisplayName -like $Bloat | Remove-AppxProvisionedPackage -Online
+        Write-Host "Trying to remove $Bloat."
+        $ResultText.text = "`r`n" +"`r`n" + "Trying to remove $Bloat."
+    }
+
+    Write-Host "Finished Removing Bloatware Apps"
+    $ResultText.text = "`r`n" +"`r`n" + "Finished Removing Bloatware Apps"    
+}
 function debloat2 { }
 function chocoapps { 
 $ProcName = "Chocolatey-Apps-Install2.bat"
