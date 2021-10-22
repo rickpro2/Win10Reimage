@@ -106,7 +106,7 @@ $Step3.Font                      = New-Object System.Drawing.Font('Microsoft San
 $Panel3                          = New-Object system.Windows.Forms.Panel
 $Panel3.height                   = 150
 $Panel3.width                    = 300
-$Panel3.location                 = New-Object System.Drawing.Point(445,353)
+$Panel3.location                 = New-Object System.Drawing.Point(560,338)
 
 $Button3                         = New-Object system.Windows.Forms.Button
 $Button3.text                    = "button"
@@ -187,7 +187,7 @@ $Lightmode.location              = New-Object System.Drawing.Point(6,116)
 $Lightmode.Font                  = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
 
 $ResultText                      = New-Object system.Windows.Forms.TextBox
-$ResultText.multiline            = $true
+$ResultText.multiline            = $false
 $ResultText.width                = 338
 $ResultText.height               = 126
 $ResultText.location             = New-Object System.Drawing.Point(546,541)
@@ -212,57 +212,48 @@ $Panel1.controls.AddRange(@($ActivateWindows,$Step1,$ChocolateyAllApps,$Step2,$C
 $Panel3.controls.AddRange(@($Button3,$Button4))
 $Panel4.controls.AddRange(@($Systeminfo,$Darkmode,$Label1,$Lightmode,$Bloatware))
 
+$ActivateWindows.Add_Click({ activate })
+$Debloat2.Add_Click({ debloat2 })
+$Debloat.Add_Click({ debloat })
+$Customiz.Add_Click({ customize })
+$ChocolateyAllApps.Add_Click({ chocoapps })
+$Sysprep.Add_Click({ sysprep })
 
 #Write your logic code here
-function Activate { 
+function activate { 
 $ProcName = "Activate-Windows.bat"
 $WebFile = "https://raw.githubusercontent.com/rickpro2/Win10Reimage/main/Done/$ProcName"
 Clear-Host
 (New-Object System.Net.WebClient).DownloadFile($WebFile,"$env:APPDATA\$ProcName")
-Start-Process ("$env:APPDATA\$ProcName")
+Start-Process ("$env:APPDATA\$ProcName")    
 }
-
-
-
-
-
-
-function Chocolateyapps {  
+function debloat { 
+    
+}
+function debloat2 { 
+    
+}
+function chocoapps { 
 $ProcName = "Chocolatey-Apps-Install2.bat"
 $WebFile = "https://raw.githubusercontent.com/rickpro2/Win10Reimage/main/Done/$ProcName"
 Clear-Host
 (New-Object System.Net.WebClient).DownloadFile($WebFile,"$env:APPDATA\$ProcName")
-Start-Process ("$env:APPDATA\$ProcName")
+Start-Process ("$env:APPDATA\$ProcName")    
 }
-
-
-
-
-
- function customize {  
+function customize { 
 $ProcName = "Customiz.bat"
 $WebFile = "https://raw.githubusercontent.com/rickpro2/Win10Reimage/main/Done/$ProcName"
 Clear-Host
 (New-Object System.Net.WebClient).DownloadFile($WebFile,"$env:APPDATA\$ProcName")
-Start-Process ("$env:APPDATA\$ProcName")
+Start-Process ("$env:APPDATA\$ProcName")    
 }
-
-
-
-
-
-function Sysprep2 { 
+function sysprep { 
 $ProcName = "sysprep.bat"
 $WebFile = "https://raw.githubusercontent.com/rickpro2/Win10Reimage/main/Done/$ProcName"
 Clear-Host
 (New-Object System.Net.WebClient).DownloadFile($WebFile,"$env:APPDATA\$ProcName")
-Start-Process ("$env:APPDATA\$ProcName")
+Start-Process ("$env:APPDATA\$ProcName")    
 }
-
-
-
-
-
 function Systeminfo { 
 $ProcName = "system info.bat"
 $WebFile = "https://raw.githubusercontent.com/rickpro2/Win10Reimage/main/Done/$ProcName"
@@ -292,5 +283,4 @@ function lightmode {
     Write-Host "Switched Back to Light Mode"
     $ResultText.text = "`r`n" +"`r`n" + "Enabled Light Mode"
 }
-
 [void]$Form.ShowDialog()
