@@ -302,5 +302,3 @@ function lightmode {
     Write-Host "Switched Back to Light Mode"
     $ResultText.text = "`r`n" +"`r`n" + "Enabled Light Mode"
 }
-
-[void]$Form.ShowDialog()
