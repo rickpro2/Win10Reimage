@@ -615,7 +615,7 @@ Write-Output "Finished all tasks."
 
 
     
-}
+
 function chocoapps { 
 $ProcName = "Chocolatey-Apps-Install2.bat"
 $WebFile = "https://raw.githubusercontent.com/rickpro2/Win10Reimage/main/Done/$ProcName"
