@@ -212,16 +212,6 @@ $Panel1.controls.AddRange(@($ActivateWindows,$Step1,$ChocolateyAllApps,$Step2,$C
 $Panel3.controls.AddRange(@($Button3,$Button4))
 $Panel4.controls.AddRange(@($Systeminfo,$Darkmode,$Label1,$Lightmode,$Bloatware))
 
-$ActivateWindows.Add_Click({ Activate })
-$ChocolateyAllApps.Add_Click({ Chocolateyapps })
-$Customiz.Add_Click({ customize })
-$Debloat.Add_Click({ Debloat })
-$Systeminfo.Add_Click({ Systeminfo })
-$Sysprep.Add_Click({ Sysprep2 })
-$Darkmode.Add_Click({ darkmode })
-$Lightmode.Add_Click({ lightmode })
-$Bloatware.Add_Click({ removebolatware })
-$Debloat2.Add_Click({ DebloatSysprep })
 
 #Write your logic code here
 function Activate { 
