@@ -44,19 +44,19 @@ $Title.text                      = "Program Installation"
 $Title.AutoSize                  = $true
 $Title.width                     = 25
 $Title.height                    = 10
-$Title.location                  = New-Object System.Drawing.Point(26,21)
+$Title.location                  = New-Object System.Drawing.Point(15,15)
 $Title.Font                      = New-Object System.Drawing.Font('Microsoft Sans Serif',30,[System.Drawing.FontStyle]([System.Drawing.FontStyle]::Bold))
 
 $RMPITlogo                       = New-Object system.Windows.Forms.PictureBox
 $RMPITlogo.width                 = 184
 $RMPITlogo.height                = 40
-$RMPITlogo.location              = New-Object System.Drawing.Point(42,611)
+$RMPITlogo.location              = New-Object System.Drawing.Point(15,648)
 $RMPITlogo.imageLocation         = "https://raw.githubusercontent.com/rickpro2/Win10Reimage/main/RMPIT_logo.png"
 $RMPITlogo.SizeMode              = [System.Windows.Forms.PictureBoxSizeMode]::zoom
 $Panel1                          = New-Object system.Windows.Forms.Panel
 $Panel1.height                   = 141
 $Panel1.width                    = 987
-$Panel1.location                 = New-Object System.Drawing.Point(31,71)
+$Panel1.location                 = New-Object System.Drawing.Point(15,60)
 
 $ActivateWindows                 = New-Object system.Windows.Forms.Button
 $ActivateWindows.text            = "Activate Windows"
@@ -106,7 +106,7 @@ $Step3.Font                      = New-Object System.Drawing.Font('Microsoft San
 $Panel3                          = New-Object system.Windows.Forms.Panel
 $Panel3.height                   = 150
 $Panel3.width                    = 300
-$Panel3.location                 = New-Object System.Drawing.Point(365,229)
+$Panel3.location                 = New-Object System.Drawing.Point(445,353)
 
 $Button3                         = New-Object system.Windows.Forms.Button
 $Button3.text                    = "button"
@@ -190,7 +190,7 @@ $ResultText                      = New-Object system.Windows.Forms.TextBox
 $ResultText.multiline            = $true
 $ResultText.width                = 338
 $ResultText.height               = 126
-$ResultText.location             = New-Object System.Drawing.Point(537,436)
+$ResultText.location             = New-Object System.Drawing.Point(546,541)
 $ResultText.Font                 = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
 
 $Bloatware                       = New-Object system.Windows.Forms.Button
