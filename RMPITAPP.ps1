@@ -34,7 +34,7 @@ Add-Type -AssemblyName System.Windows.Forms
 [System.Windows.Forms.Application]::EnableVisualStyles()
 
 $Form                            = New-Object system.Windows.Forms.Form
-$Form.ClientSize                 = New-Object System.Drawing.Point(1050,700)
+$Form.ClientSize                 = New-Object System.Drawing.Point(1050,650)
 $Form.text                       = "Windows 10 Debloat & System Helper By RMPIT LLC v.1.0"
 $Form.TopMost                    = $false
 $Form.icon                       = "https://raw.githubusercontent.com/rickpro2/Win10Reimage/main/RMPIT_logo.png"
@@ -50,7 +50,7 @@ $Title.Font                      = New-Object System.Drawing.Font('Microsoft San
 $RMPITlogo                       = New-Object system.Windows.Forms.PictureBox
 $RMPITlogo.width                 = 184
 $RMPITlogo.height                = 40
-$RMPITlogo.location              = New-Object System.Drawing.Point(15,648)
+$RMPITlogo.location              = New-Object System.Drawing.Point(15,600)
 $RMPITlogo.imageLocation         = "https://raw.githubusercontent.com/rickpro2/Win10Reimage/main/RMPIT_logo.png"
 $RMPITlogo.SizeMode              = [System.Windows.Forms.PictureBoxSizeMode]::zoom
 $Panel1                          = New-Object system.Windows.Forms.Panel
@@ -169,15 +169,15 @@ $Darkmode.Font                   = New-Object System.Drawing.Font('Microsoft San
 $Panel4                          = New-Object system.Windows.Forms.Panel
 $Panel4.height                   = 150
 $Panel4.width                    = 300
-$Panel4.location                 = New-Object System.Drawing.Point(42,405)
+$Panel4.location                 = New-Object System.Drawing.Point(36,305)
 
 $Label1                          = New-Object system.Windows.Forms.Label
 $Label1.text                     = "Extra Options"
 $Label1.AutoSize                 = $true
 $Label1.width                    = 25
 $Label1.height                   = 10
-$Label1.location                 = New-Object System.Drawing.Point(10,14)
-$Label1.Font                     = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
+$Label1.location                 = New-Object System.Drawing.Point(10,10)
+$Label1.Font                     = New-Object System.Drawing.Font('Microsoft Sans Serif',12,[System.Drawing.FontStyle]([System.Drawing.FontStyle]::Bold -bor [System.Drawing.FontStyle]::Underline))
 
 $Lightmode                       = New-Object system.Windows.Forms.Button
 $Lightmode.text                  = "Light Mode"
@@ -218,6 +218,11 @@ $Debloat.Add_Click({ debloat })
 $Customiz.Add_Click({ customize })
 $ChocolateyAllApps.Add_Click({ chocoapps })
 $Sysprep.Add_Click({ sysprep })
+$Systeminfo.Add_Click({ info })
+$Darkmode.Add_Click({ darkmode })
+$Lightmode.Add_Click({ lightmode })
+
+
 
 #Write your logic code here
 function activate { 
@@ -254,33 +259,23 @@ Clear-Host
 (New-Object System.Net.WebClient).DownloadFile($WebFile,"$env:APPDATA\$ProcName")
 Start-Process ("$env:APPDATA\$ProcName")    
 }
-function Systeminfo { 
+function info { 
 $ProcName = "system info.bat"
 $WebFile = "https://raw.githubusercontent.com/rickpro2/Win10Reimage/main/Done/$ProcName"
 Clear-Host
 (New-Object System.Net.WebClient).DownloadFile($WebFile,"$env:APPDATA\$ProcName")
-Start-Process ("$env:APPDATA\$ProcName")
+Start-Process ("$env:APPDATA\$ProcName")    
 }
-
-
-
-
-
 function darkmode { 
     Write-Host "Enabling Dark Mode"
     Set-ItemProperty -Path HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize -Name AppsUseLightTheme -Value 0
     Write-Host "Enabled Dark Mode"
-    $ResultText.text = "`r`n" +"`r`n" + "Enabled Dark Mode"
+    $ResultText.text = "`r`n" +"`r`n" + "Enabled Dark Mode"    
 }
-
-
-
-
-
 function lightmode { 
     Write-Host "Switching Back to Light Mode"
     Remove-ItemProperty -Path HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize -Name AppsUseLightTheme
     Write-Host "Switched Back to Light Mode"
-    $ResultText.text = "`r`n" +"`r`n" + "Enabled Light Mode"
+    $ResultText.text = "`r`n" +"`r`n" + "Enabled Light Mode"    
 }
 [void]$Form.ShowDialog()
