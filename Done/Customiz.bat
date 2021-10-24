@@ -25,9 +25,10 @@ REM *****************************
 
 REG ADD HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced /v HideFileExt /t REG_DWORD /d 0x00000000 /f > NUL
 
-REM *****************************
-REM * Show file name extensions *
-REM *****************************
+REM **********************************************
+REM * To Turn On or Off "Auto arrange icons" and *
+REM * "Align icons to grid" using a BAT file *
+REM **********************************************
 
 REG ADD "HKCU\SOFTWARE\Microsoft\Windows\Shell\Bags\1\Desktop" /V FFLAGS /T REG_DWORD /D 1075839525 /F
 
