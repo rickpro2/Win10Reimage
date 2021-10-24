@@ -8,7 +8,7 @@ REM * START OF WINDOWS CUSTOMIZATIONS *
 REM *********************************
 
 echo Installing WINDOWS CUSTOMIZATIONS...
-timeout /t 7
+timeout /t 5
 
 REM ****************************************
 REM * Display seconds on the taskbar clock *
@@ -24,6 +24,17 @@ REM * Show file name extensions *
 REM *****************************
 
 REG ADD HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced /v HideFileExt /t REG_DWORD /d 0x00000000 /f > NUL
+
+REM *****************************
+REM * Show file name extensions *
+REM *****************************
+
+REG ADD "HKCU\SOFTWARE\Microsoft\Windows\Shell\Bags\1\Desktop" /V FFLAGS /T REG_DWORD /D 1075839525 /F
+
+1075839520 = Auto arrange icons = OFF and Align icons to grid = OFF
+1075839521 = Auto arrange icons = ON and Align icons to grid = OFF
+1075839524 = Auto arrange icons = OFF and Align icons to grid = ON
+1075839525 = Auto arrange icons = ON and Align icons to grid = ON
 
 REM **************************************
 REM * Display full path in the title bar *
