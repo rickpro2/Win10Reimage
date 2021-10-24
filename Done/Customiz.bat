@@ -32,10 +32,10 @@ REM **********************************************
 
 REG ADD "HKCU\SOFTWARE\Microsoft\Windows\Shell\Bags\1\Desktop" /V FFLAGS /T REG_DWORD /D 1075839525 /F
 
-1075839520 = Auto arrange icons = OFF and Align icons to grid = OFF
-1075839521 = Auto arrange icons = ON and Align icons to grid = OFF
-1075839524 = Auto arrange icons = OFF and Align icons to grid = ON
-1075839525 = Auto arrange icons = ON and Align icons to grid = ON
+:: 1075839520 = Auto arrange icons = OFF and Align icons to grid = OFF
+:: 1075839521 = Auto arrange icons = ON and Align icons to grid = OFF
+:: 1075839524 = Auto arrange icons = OFF and Align icons to grid = ON
+:: 1075839525 = Auto arrange icons = ON and Align icons to grid = ON
 
 REM **************************************
 REM * Display full path in the title bar *
