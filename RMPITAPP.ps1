@@ -62,7 +62,7 @@ $ActivateWindows                 = New-Object system.Windows.Forms.Button
 $ActivateWindows.text            = "Activate Windows"
 $ActivateWindows.width           = 175
 $ActivateWindows.height          = 50
-$ActivateWindows.location        = New-Object System.Drawing.Point(16,19)
+$ActivateWindows.location        = New-Object System.Drawing.Point(15,15)
 $ActivateWindows.Font            = New-Object System.Drawing.Font('Microsoft Sans Serif',16)
 
 $Step1                           = New-Object system.Windows.Forms.Label
@@ -77,7 +77,7 @@ $ChocolateyAllApps               = New-Object system.Windows.Forms.Button
 $ChocolateyAllApps.text          = "Install Chocolatey/Apps"
 $ChocolateyAllApps.width         = 175
 $ChocolateyAllApps.height        = 50
-$ChocolateyAllApps.location      = New-Object System.Drawing.Point(589,19)
+$ChocolateyAllApps.location      = New-Object System.Drawing.Point(589,15)
 $ChocolateyAllApps.Font          = New-Object System.Drawing.Font('Microsoft Sans Serif',9)
 
 $Step2                           = New-Object system.Windows.Forms.Label
@@ -92,7 +92,7 @@ $Customiz                        = New-Object system.Windows.Forms.Button
 $Customiz.text                   = "Customize"
 $Customiz.width                  = 175
 $Customiz.height                 = 50
-$Customiz.location               = New-Object System.Drawing.Point(397,19)
+$Customiz.location               = New-Object System.Drawing.Point(397,15)
 $Customiz.Font                   = New-Object System.Drawing.Font('Microsoft Sans Serif',16)
 
 $Step3                           = New-Object system.Windows.Forms.Label
@@ -126,7 +126,7 @@ $Debloat                         = New-Object system.Windows.Forms.Button
 $Debloat.text                    = "Debloat"
 $Debloat.width                   = 175
 $Debloat.height                  = 50
-$Debloat.location                = New-Object System.Drawing.Point(207,19)
+$Debloat.location                = New-Object System.Drawing.Point(207,15)
 $Debloat.Font                    = New-Object System.Drawing.Font('Microsoft Sans Serif',16)
 
 $Step4                           = New-Object system.Windows.Forms.Label
@@ -148,7 +148,7 @@ $Sysprep                         = New-Object system.Windows.Forms.Button
 $Sysprep.text                    = "Sysprep"
 $Sysprep.width                   = 175
 $Sysprep.height                  = 50
-$Sysprep.location                = New-Object System.Drawing.Point(784,19)
+$Sysprep.location                = New-Object System.Drawing.Point(784,15)
 $Sysprep.Font                    = New-Object System.Drawing.Font('Microsoft Sans Serif',16)
 
 $Step5                           = New-Object system.Windows.Forms.Label
@@ -216,13 +216,21 @@ $essentialtweaks                 = New-Object system.Windows.Forms.Button
 $essentialtweaks.text            = "Essential Tweaks                 "
 $essentialtweaks.width           = 175
 $essentialtweaks.height          = 50
-$essentialtweaks.location        = New-Object System.Drawing.Point(342,451)
+$essentialtweaks.location        = New-Object System.Drawing.Point(15,15)
 $essentialtweaks.Font            = New-Object System.Drawing.Font('Microsoft Sans Serif',16)
 
-$Form.controls.AddRange(@($Title,$RMPITlogo,$Panel1,$Panel3,$Panel4,$ResultText,$Panel2,$essentialtweaks))
+$AdminUser                       = New-Object system.Windows.Forms.Button
+$AdminUser.text                  = "Admin User"
+$AdminUser.width                 = 130
+$AdminUser.height                = 30
+$AdminUser.location              = New-Object System.Drawing.Point(360,374)
+$AdminUser.Font                  = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
+
+$Form.controls.AddRange(@($Title,$RMPITlogo,$Panel1,$Panel3,$Panel4,$ResultText,$Panel2,$AdminUser))
 $Panel1.controls.AddRange(@($ActivateWindows,$Step1,$ChocolateyAllApps,$Step2,$Customiz,$Step3,$Debloat,$Step4,$Sysprep,$Step5,$Debloat2))
 $Panel3.controls.AddRange(@($Button3,$Button4))
 $Panel4.controls.AddRange(@($Systeminfo,$Darkmode,$Label1,$Lightmode,$Bloatware))
+$Panel2.controls.AddRange(@($essentialtweaks))
 
 $ActivateWindows.Add_Click({ activate })
 $Debloat2.Add_Click({ debloat2 })
@@ -234,7 +242,9 @@ $Systeminfo.Add_Click({ info })
 $Darkmode.Add_Click({ darkmode })
 $Lightmode.Add_Click({ lightmode })
 $essentialtweaks.Add_Click({ essentialtweaks })
+$AdminUser.Add_Click({ adminuser })
 
+function adminuser { }
 #Write your logic code here
 function activate { 
 $ProcName = "Activate-Windows.bat"
@@ -835,5 +845,36 @@ function lightmode {
     Remove-ItemProperty -Path HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize -Name AppsUseLightTheme
     Write-Host "Switched Back to Light Mode"
     $ResultText.text = "`r`n" +"`r`n" + "Enabled Light Mode"    
+}
+
+
+
+
+
+
+
+
+
+function adminuser { 
+    function Create-NewLocalAdmin {
+    [CmdletBinding()]
+    param (
+        [string] $NewLocalAdmin,
+        [securestring] $Password
+    )    
+    begin {
+    }    
+    process {
+        New-LocalUser "$NewLocalAdmin" -Password $Password -FullName "$NewLocalAdmin" -Description "Temporary local admin"
+        Write-Verbose "$NewLocalAdmin local user crated"
+        Add-LocalGroupMember -Group "Administrators" -Member "$NewLocalAdmin"
+        Write-Verbose "$NewLocalAdmin added to the local administrator group"
+    }    
+    end {
+    }
+}
+$NewLocalAdmin = Read-Host "New local admin username:"
+$Password = Read-Host -AsSecureString "Create a password for $NewLocalAdmin"
+Create-NewLocalAdmin -NewLocalAdmin $NewLocalAdmin -Password $Password -Verbose
 }
 [void]$Form.ShowDialog()
