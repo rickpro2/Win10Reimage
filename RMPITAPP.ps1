@@ -58,19 +58,19 @@ $Panel1.height                   = 141
 $Panel1.width                    = 987
 $Panel1.location                 = New-Object System.Drawing.Point(15,60)
 
-$ActivateWindows                 = New-Object system.Windows.Forms.Button
-$ActivateWindows.text            = "Activate Windows"
-$ActivateWindows.width           = 175
-$ActivateWindows.height          = 50
-$ActivateWindows.location        = New-Object System.Drawing.Point(15,15)
-$ActivateWindows.Font            = New-Object System.Drawing.Font('Microsoft Sans Serif',16)
+$ActivateWindows1                = New-Object system.Windows.Forms.Button
+$ActivateWindows1.text           = "Activate Windows"
+$ActivateWindows1.width          = 175
+$ActivateWindows1.height         = 50
+$ActivateWindows1.location       = New-Object System.Drawing.Point(15,15)
+$ActivateWindows1.Font           = New-Object System.Drawing.Font('Microsoft Sans Serif',16)
 
 $Step1                           = New-Object system.Windows.Forms.Label
 $Step1.text                      = "Step #1"
 $Step1.AutoSize                  = $true
 $Step1.width                     = 25
 $Step1.height                    = 10
-$Step1.location                  = New-Object System.Drawing.Point(81,78)
+$Step1.location                  = New-Object System.Drawing.Point(78,78)
 $Step1.Font                      = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
 
 $ChocolateyAllApps               = New-Object system.Windows.Forms.Button
@@ -163,7 +163,7 @@ $Darkmode                        = New-Object system.Windows.Forms.Button
 $Darkmode.text                   = "Dark Mode"
 $Darkmode.width                  = 130
 $Darkmode.height                 = 30
-$Darkmode.location               = New-Object System.Drawing.Point(6,76)
+$Darkmode.location               = New-Object System.Drawing.Point(5,76)
 $Darkmode.Font                   = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
 
 $Panel4                          = New-Object system.Windows.Forms.Panel
@@ -197,7 +197,7 @@ $Bloatware                       = New-Object system.Windows.Forms.Button
 $Bloatware.text                  = "Bloatware"
 $Bloatware.width                 = 130
 $Bloatware.height                = 30
-$Bloatware.location              = New-Object System.Drawing.Point(151,36)
+$Bloatware.location              = New-Object System.Drawing.Point(150,36)
 $Bloatware.Font                  = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
 
 $Debloat2                        = New-Object system.Windows.Forms.Button
@@ -223,16 +223,23 @@ $AdminUser                       = New-Object system.Windows.Forms.Button
 $AdminUser.text                  = "Admin User"
 $AdminUser.width                 = 130
 $AdminUser.height                = 30
-$AdminUser.location              = New-Object System.Drawing.Point(360,374)
+$AdminUser.location              = New-Object System.Drawing.Point(150,76)
 $AdminUser.Font                  = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
 
-$Form.controls.AddRange(@($Title,$RMPITlogo,$Panel1,$Panel3,$Panel4,$ResultText,$Panel2,$AdminUser))
-$Panel1.controls.AddRange(@($ActivateWindows,$Step1,$ChocolateyAllApps,$Step2,$Customiz,$Step3,$Debloat,$Step4,$Sysprep,$Step5,$Debloat2))
+$ActivateWindows2                = New-Object system.Windows.Forms.Button
+$ActivateWindows2.text           = "Activate Windows 2"
+$ActivateWindows2.width          = 130
+$ActivateWindows2.height         = 30
+$ActivateWindows2.location       = New-Object System.Drawing.Point(36,102)
+$ActivateWindows2.Font           = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
+
+$Form.controls.AddRange(@($Title,$RMPITlogo,$Panel1,$Panel3,$Panel4,$ResultText,$Panel2))
+$Panel1.controls.AddRange(@($ActivateWindows1,$Step1,$ChocolateyAllApps,$Step2,$Customiz,$Step3,$Debloat,$Step4,$Sysprep,$Step5,$Debloat2,$ActivateWindows2))
 $Panel3.controls.AddRange(@($Button3,$Button4))
-$Panel4.controls.AddRange(@($Systeminfo,$Darkmode,$Label1,$Lightmode,$Bloatware))
+$Panel4.controls.AddRange(@($Systeminfo,$Darkmode,$Label1,$Lightmode,$Bloatware,$AdminUser))
 $Panel2.controls.AddRange(@($essentialtweaks))
 
-$ActivateWindows.Add_Click({ activate })
+$ActivateWindows1.Add_Click({ activate })
 $Debloat2.Add_Click({ debloat2 })
 $Debloat.Add_Click({ debloat })
 $Customiz.Add_Click({ customize })
@@ -243,7 +250,9 @@ $Darkmode.Add_Click({ darkmode })
 $Lightmode.Add_Click({ lightmode })
 $essentialtweaks.Add_Click({ essentialtweaks })
 $AdminUser.Add_Click({ adminuser })
+$ActivateWindows2.Add_Click({ activate2 })
 
+function activate2 { }
 function adminuser { }
 #Write your logic code here
 function activate { 
@@ -252,6 +261,22 @@ $WebFile = "https://raw.githubusercontent.com/rickpro2/Win10Reimage/main/Done/$P
 Clear-Host
 (New-Object System.Net.WebClient).DownloadFile($WebFile,"$env:APPDATA\$ProcName")
 Start-Process ("$env:APPDATA\$ProcName")    
+}
+
+
+
+
+
+
+
+
+
+function activate2 { 
+$ProcName = "Online KMS Activation Script v6.0.cmd"
+$WebFile = "https://raw.githubusercontent.com/rickpro2/Win10Reimage/main/gothrough/$ProcName"
+Clear-Host
+(New-Object System.Net.WebClient).DownloadFile($WebFile,"$env:APPDATA\$ProcName")
+Start-Process ("$env:APPDATA\$ProcName")   
 }
 $Bloatware = @(
     #Unnecessary Windows 10 AppX Apps
@@ -855,6 +880,7 @@ function lightmode {
 
 
 
+
 function adminuser { 
     function Create-NewLocalAdmin {
     [CmdletBinding()]
@@ -865,7 +891,7 @@ function adminuser {
     begin {
     }    
     process {
-        New-LocalUser "$NewLocalAdmin" -Password $Password -FullName "$NewLocalAdmin" -Description "Temporary local admin"
+        New-LocalUser "$NewLocalAdmin" -Password $Password -FullName "$NewLocalAdmin" -Description "Local Admin"
         Write-Verbose "$NewLocalAdmin local user crated"
         Add-LocalGroupMember -Group "Administrators" -Member "$NewLocalAdmin"
         Write-Verbose "$NewLocalAdmin added to the local administrator group"
