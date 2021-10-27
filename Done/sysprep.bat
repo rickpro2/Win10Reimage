@@ -1,6 +1,3 @@
-net user RMPIT ogoged /ADD /PASSWORDCHG:NO
-net localgroup administrators RMPIT /ADD
-
 REM The following lines place the oemlogo.bmp, and unattend.xml, files in the correct locations.
 
 cd C:\Program Files\RMPIT\Assets\  
