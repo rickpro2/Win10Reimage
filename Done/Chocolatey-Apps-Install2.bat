@@ -40,6 +40,10 @@ choco feature enable -n=allowGlobalConfirmation
     choco install choco-cleaner -y
     Write-Host "Installed Choco Cleaner (Script + Task)"  
 
+    Write-Host "Chocolatey GUI 0.19.0"
+    choco install chocolateygui -y
+    Write-Host "Chocolatey GUI 0.19.0"  
+
     Write-Host "Installing Choco Upgrade All (Script + Task)"
     choco install choco-upgrade-all-at --params "'/TIME:07:00 /ABORTTIME:11:50'" -y
     Write-Host "Installed Choco Upgrade All (Script + Task)"   
