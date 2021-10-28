@@ -297,7 +297,7 @@ Start-Process ("$env:APPDATA\$ProcName")
 
 
 function activateMicrosoftOffice { 
-$ProcName = "Activate-Windows.bat"
+$ProcName = "Activate-Office.bat"
 $WebFile = "https://raw.githubusercontent.com/rickpro2/Win10Reimage/main/Done/$ProcName"
 Clear-Host
 (New-Object System.Net.WebClient).DownloadFile($WebFile,"$env:APPDATA\$ProcName")
