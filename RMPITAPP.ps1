@@ -233,10 +233,17 @@ $ActivateWindows2.height         = 30
 $ActivateWindows2.location       = New-Object System.Drawing.Point(36,102)
 $ActivateWindows2.Font           = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
 
+$MicrosoftOffice                 = New-Object system.Windows.Forms.Button
+$MicrosoftOffice.text            = "Microsoft Office"
+$MicrosoftOffice.width           = 130
+$MicrosoftOffice.height          = 30
+$MicrosoftOffice.location        = New-Object System.Drawing.Point(150,116)
+$MicrosoftOffice.Font            = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
+
 $Form.controls.AddRange(@($Title,$RMPITlogo,$Panel1,$Panel3,$Panel4,$ResultText,$Panel2))
 $Panel1.controls.AddRange(@($ActivateWindows1,$Step1,$ChocolateyAllApps,$Step2,$Customiz,$Step3,$Debloat,$Step4,$Sysprep,$Step5,$Debloat2,$ActivateWindows2))
 $Panel3.controls.AddRange(@($Button3,$Button4))
-$Panel4.controls.AddRange(@($Systeminfo,$Darkmode,$Label1,$Lightmode,$Bloatware,$AdminUser))
+$Panel4.controls.AddRange(@($Systeminfo,$Darkmode,$Label1,$Lightmode,$Bloatware,$AdminUser,$MicrosoftOffice))
 $Panel2.controls.AddRange(@($essentialtweaks))
 
 $ActivateWindows1.Add_Click({ activate })
@@ -251,6 +258,7 @@ $Lightmode.Add_Click({ lightmode })
 $essentialtweaks.Add_Click({ essentialtweaks })
 $AdminUser.Add_Click({ adminuser })
 $ActivateWindows2.Add_Click({ activate2 })
+$MicrosoftOffice.Add_Click({ activateMicrosoftOffice })
 
 function activate2 { }
 function adminuser { }
@@ -271,12 +279,29 @@ Start-Process ("$env:APPDATA\$ProcName")
 
 
 
+
 function activate2 { 
 $ProcName = "Online KMS Activation Script v6.0.cmd"
 $WebFile = "https://raw.githubusercontent.com/rickpro2/Win10Reimage/main/gothrough/$ProcName"
 Clear-Host
 (New-Object System.Net.WebClient).DownloadFile($WebFile,"$env:APPDATA\$ProcName")
 Start-Process ("$env:APPDATA\$ProcName")   
+}
+
+
+
+
+
+
+
+
+
+function activateMicrosoftOffice { 
+$ProcName = "Activate-Office.bat"
+$WebFile = "https://raw.githubusercontent.com/rickpro2/Win10Reimage/main/gothrough/$ProcName"
+Clear-Host
+(New-Object System.Net.WebClient).DownloadFile($WebFile,"$env:APPDATA\$ProcName")
+Start-Process ("$env:APPDATA\$ProcName")      
 }
 $Bloatware = @(
     #Unnecessary Windows 10 AppX Apps
