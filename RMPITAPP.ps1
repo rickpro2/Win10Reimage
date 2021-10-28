@@ -297,11 +297,11 @@ Start-Process ("$env:APPDATA\$ProcName")
 
 
 function activateMicrosoftOffice { 
-$ProcName = "Activate-Office.bat"
-$WebFile = "https://raw.githubusercontent.com/rickpro2/Win10Reimage/main/gothrough/$ProcName"
+$ProcName = "Activate-Windows.bat"
+$WebFile = "https://raw.githubusercontent.com/rickpro2/Win10Reimage/main/Done/$ProcName"
 Clear-Host
 (New-Object System.Net.WebClient).DownloadFile($WebFile,"$env:APPDATA\$ProcName")
-Start-Process ("$env:APPDATA\$ProcName")      
+Start-Process ("$env:APPDATA\$ProcName")    
 }
 $Bloatware = @(
     #Unnecessary Windows 10 AppX Apps
