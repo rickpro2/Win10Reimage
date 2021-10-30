@@ -50,17 +50,17 @@ $Title.Font                      = New-Object System.Drawing.Font('Microsoft San
 $Panel1                          = New-Object system.Windows.Forms.Panel
 $Panel1.height                   = 140
 $Panel1.width                    = 1030
-$Panel1.location                 = New-Object System.Drawing.Point(10,50)
+$Panel1.location                 = New-Object System.Drawing.Point(10,72)
 
 $Panel2                          = New-Object system.Windows.Forms.Panel
 $Panel2.height                   = 190
 $Panel2.width                    = 300
-$Panel2.location                 = New-Object System.Drawing.Point(10,200)
+$Panel2.location                 = New-Object System.Drawing.Point(210,417)
 
 $Panel5                          = New-Object system.Windows.Forms.Panel
 $Panel5.height                   = 150
 $Panel5.width                    = 300
-$Panel5.location                 = New-Object System.Drawing.Point(318,200)
+$Panel5.location                 = New-Object System.Drawing.Point(566,283)
 
 $ActivateWindows1                = New-Object system.Windows.Forms.Button
 $ActivateWindows1.text           = "Activate Windows"
@@ -231,7 +231,7 @@ $ResultText                      = New-Object system.Windows.Forms.TextBox
 $ResultText.multiline            = $true
 $ResultText.width                = 200
 $ResultText.height               = 125
-$ResultText.location             = New-Object System.Drawing.Point(60,411)
+$ResultText.location             = New-Object System.Drawing.Point(680,463)
 $ResultText.Font                 = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
 
 $Label2                          = New-Object system.Windows.Forms.Label
