@@ -272,12 +272,262 @@ $AdminUser.Add_Click({ AdminUser })
 $CleanViruses.Add_Click({ virusesurl })
 $Sysprep.Add_Click({ Sysprep })
 $CleanViruses2.Add_Click({ virusesurl2 })
-
-
-
+$ChocolateyAllApps.Add_Click({ ChocolateyAllApps })
 
 
 #Write your logic code here
+function ChocolateyAllApps { 
+Write-Host "Installing Chocolatey"
+$ResultText.text = "`r`n" +"`r`n" + "Installing Chocolatey... Please Wait"
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+choco install chocolatey-core.extension -y
+$ResultText.text = "`r`n" + "Finished Installing Chocolatey" + "`r`n" + "`r`n" + "Ready for Next Task"
+
+Write-Host "Installing Chocolatey GUI"
+$ResultText.text = "`r`n" +"`r`n" + "Installing Chocolatey GUI... Please Wait"
+choco install chocolateygui -y
+$ResultText.text = "`r`n" + "Finished Installing Chocolatey GUI" + "`r`n" + "`r`n" + "Ready for Next Task"    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    Write-Host "Installing Choco Cleaner (Script + Task)"
+    choco install choco-cleaner -y
+    Write-Host "Installed Choco Cleaner (Script + Task)"   
+    
+    Write-Host "Installing Choco Upgrade All (Script + Task)"
+    choco install choco-upgrade-all-at --params "'/TIME:07:00 /ABORTTIME:11:50'" -y
+    Write-Host "Installed Choco Upgrade All (Script + Task)"   
+    
+    Write-Host "Installing Adobe Acrobat Reader DC"
+    choco install adobereader -y
+    Write-Host "Installed Adobe Acrobat Reader DC"   
+    
+    Write-Host "Installing Google Chrome"
+    choco install googlechrome -y
+    Write-Host "Installed Google Chrome"   
+    
+    Write-Host "Installing Brave Browser"
+    choco install brave -y
+    Write-Host "Installed Brave Browser"   
+    
+    Write-Host "Installing VLC Media Player"
+    choco install vlc -y
+    Write-Host "Installed VLC Media Player"  
+    
+    Write-Host "Installing Zoom Client for Meetings"
+    choco install zoom -y
+    Write-Host "Installed Zoom Client for Meetings" 
+    
+    Write-Host "Installing TeamViewer"
+    choco install teamviewer -y
+    Write-Host "Installed TeamViewer" 
+    
+    Write-Host "Installing 7-Zip"
+    choco install 7zip -y
+    Write-Host "Installed 7-Zip" 
+    
+    Write-Host "Installing iTunes"
+    choco install itunes -y
+    Write-Host "Installed iTunes" 
+    
+    Write-Host "Installing AllDup"
+    choco install alldup -y
+    Write-Host "Installed AllDup" 
+    
+    Write-Host "Installing O&O Shutup"
+    choco install shutup10 -y
+    Write-Host "Installed O&O Shutup" 
+    
+    Write-Host "Installing Notepad++"
+    choco install notepadplusplus -y
+    Write-Host "Installed Notepad++" 
+    
+    Write-Host "Installing IPVanish"
+    choco install ipvanish -y
+    Write-Host "Installed IPVanish" 
+    
+    Write-Host "Installing Rufus"
+    choco install rufus -y
+    Write-Host "Installed Rufus" 
+    
+    Write-Host "Installing Dell Command | Update 4.1.0"
+    choco install dellcommandupdate -y
+    choco install dellcommandupdate-uwp -y
+    Write-Host "Installed Dell Command | Update 4.1.0" 
+    
+    Write-Host "Installing Audacity"
+    choco install audacity -y
+    Write-Host "Installed Audacity" 
+
+    Write-Host "Installing Sharex"
+    choco install sharex -y
+    Write-Host "Installed Sharex"
+
+    Write-Host "Tor Browser Bundle"
+    choco install tor-browser -y
+    Write-Host "Tor Browser Bundle"
+
+    Write-Host "Spotify"
+    choco install spotify -y
+    Write-Host "Spotify"
+
+    Write-Host "qBittorrent"
+    choco install qBittorrent -y
+    Write-Host "qBittorrent"
+
+#Write-Host "Inkscape"
+#    choco install inkscape -y
+#    Write-Host "Inkscape"
+
+#Write-Host "GIMP"
+#    choco install gimp -y
+#    Write-Host "GIMP"
+
+#Write-Host "Installing Office 365 Business"
+#	choco install office365business -y
+
+#Write-Host "Installing Git"
+#	choco install git -y
+
+
+
+
+    Write-Host "Installing Choco Cleaner (Script + Task)"
+    choco install choco-cleaner -y
+    Write-Host "Installed Choco Cleaner (Script + Task)"  
+
+    Write-Host "Chocolatey GUI 0.19.0"
+    choco install chocolateygui -y
+    Write-Host "Chocolatey GUI 0.19.0"  
+
+    Write-Host "Installing Choco Upgrade All (Script + Task)"
+    choco install choco-upgrade-all-at --params "'/TIME:07:00 /ABORTTIME:11:50'" -y
+    Write-Host "Installed Choco Upgrade All (Script + Task)"   
+
+    Write-Host "Installing Adobe Acrobat Reader DC"
+    choco install adobereader -y
+    Write-Host "Installed Adobe Acrobat Reader DC"
+    
+    Write-Host "Installing Google Chrome"
+    choco install googlechrome -y
+    Write-Host "Installed Google Chrome"   
+    
+    Write-Host "Installing Brave Browser"
+    choco install brave -y
+    Write-Host "Installed Brave Browser"   
+    
+    Write-Host "Installing VLC Media Player"
+    choco install vlc -y
+    Write-Host "Installed VLC Media Player"  
+    
+    Write-Host "Installing Zoom Client for Meetings"
+    choco install zoom -y
+    Write-Host "Installed Zoom Client for Meetings" 
+    
+    Write-Host "Installing TeamViewer"
+    choco install teamviewer -y
+    Write-Host "Installed TeamViewer"  
+    
+    Write-Host "Installing 7-Zip"
+    choco install 7zip -y
+    Write-Host "Installed 7-Zip"  
+    
+    Write-Host "Installing iTunes"
+    choco install itunes -y
+    Write-Host "Installed iTunes" 
+    
+    Write-Host "Installing AllDup"
+    choco install alldup -y
+    Write-Host "Installed AllDup"    
+    
+    Write-Host "Installing Notepad++"
+    choco install notepadplusplus -y
+    Write-Host "Installed Notepad++" 
+    
+    Write-Host "Installing Dell Command | Update 4.1.0"
+    choco install dellcommandupdate -y
+    choco install dellcommandupdate-uwp -y
+    Write-Host "Installed Dell Command | Update 4.1.0"    
+    
+    Write-Host "Tor Browser Bundle"
+    choco install tor-browser -y
+    Write-Host "Tor Browser Bundle" 
+    
+    Write-Host "Installing O&O Shutup"
+    choco install shutup10 -y
+    Write-Host "Installed O&O Shutup" 
+        
+    Write-Host "Installing IPVanish"
+    choco install ipvanish -y
+    Write-Host "Installed IPVanish" 
+    
+    Write-Host "Installing Rufus"
+    choco install rufus -y
+    Write-Host "Installed Rufus" 
+        
+    Write-Host "Installing Audacity"
+    choco install audacity -y
+    Write-Host "Installed Audacity" 
+
+    Write-Host "Installing Sharex"
+    choco install sharex -y
+    Write-Host "Installed Sharex"
+
+    Write-Host "Spotify"
+    choco install spotify -y
+    Write-Host "Spotify"
+
+    Write-Host "qBittorrent"
+    choco install qBittorrent -y
+    Write-Host "qBittorrent"
+
+    Write-Host "Apple iCloud 7.21.0.23"
+    choco install icloud -y
+    Write-Host "Apple iCloud7.21.0.23"
+
+#Write-Host "Inkscape"
+#    choco install inkscape -y
+#    Write-Host "Inkscape"
+
+#Write-Host "GIMP"
+#    choco install gimp -y
+#    Write-Host "GIMP"
+
+#Write-Host "Installing Office 365 Business"
+#	choco install office365business -y
+
+#Write-Host "Installing Git"
+#	choco install git -y
 function Darkmode { 
 Write-Host "Enabling Dark Mode"
 Set-ItemProperty -Path HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize -Name AppsUseLightTheme -Value 0
