@@ -55,12 +55,12 @@ $Panel1.location                 = New-Object System.Drawing.Point(10,72)
 $Panel2                          = New-Object system.Windows.Forms.Panel
 $Panel2.height                   = 190
 $Panel2.width                    = 300
-$Panel2.location                 = New-Object System.Drawing.Point(210,417)
+$Panel2.location                 = New-Object System.Drawing.Point(10,225)
 
 $Panel5                          = New-Object system.Windows.Forms.Panel
 $Panel5.height                   = 150
 $Panel5.width                    = 300
-$Panel5.location                 = New-Object System.Drawing.Point(566,283)
+$Panel5.location                 = New-Object System.Drawing.Point(320,225)
 
 $ActivateWindows1                = New-Object system.Windows.Forms.Button
 $ActivateWindows1.text           = "Activate Windows"
