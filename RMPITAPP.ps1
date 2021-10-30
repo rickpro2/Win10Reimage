@@ -57,11 +57,6 @@ $Panel2.height                   = 190
 $Panel2.width                    = 300
 $Panel2.location                 = New-Object System.Drawing.Point(10,200)
 
-$Panel3                          = New-Object system.Windows.Forms.Panel
-$Panel3.height                   = 150
-$Panel3.width                    = 300
-$Panel3.location                 = New-Object System.Drawing.Point(667,436)
-
 $Panel5                          = New-Object system.Windows.Forms.Panel
 $Panel5.height                   = 150
 $Panel5.width                    = 300
@@ -260,12 +255,12 @@ $CleanViruses2                   = New-Object system.Windows.Forms.Button
 $CleanViruses2.text              = "Remove Virsuses"
 $CleanViruses2.width             = 130
 $CleanViruses2.height            = 30
-$CleanViruses2.visible           = $false
-$CleanViruses2.enabled           = $false
+$CleanViruses2.visible           = $true
+$CleanViruses2.enabled           = $true
 $CleanViruses2.location          = New-Object System.Drawing.Point(158,30)
 $CleanViruses2.Font              = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
 
-$RMPITAPP.controls.AddRange(@($Title,$Panel1,$Panel2,$Panel3,$Panel5,$RMPITlogo,$ResultText))
+$RMPITAPP.controls.AddRange(@($Title,$Panel1,$Panel2,$Panel5,$RMPITlogo,$ResultText))
 $Panel1.controls.AddRange(@($ActivateWindows1,$ActivateWindows2,$Step1,$Debloat,$SysprepDebloat,$Step2,$Customize,$Step3,$ChocolateyAllApps,$Sysprep,$Step4,$Step5))
 $Panel2.controls.AddRange(@($Label1,$Lightmode,$Darkmode,$Systeminfo,$ActivateOffice,$AdminUser,$Button4,$Button5,$Button6))
 $Panel5.controls.AddRange(@($Label2,$CleanViruses,$CleanViruses2))
