@@ -53,12 +53,12 @@ $Panel1.width                    = 1030
 $Panel1.location                 = New-Object System.Drawing.Point(10,72)
 
 $Panel2                          = New-Object system.Windows.Forms.Panel
-$Panel2.height                   = 190
+$Panel2.height                   = 210
 $Panel2.width                    = 300
-$Panel2.location                 = New-Object System.Drawing.Point(10,225)
+$Panel2.location                 = New-Object System.Drawing.Point(9,225)
 
 $Panel5                          = New-Object system.Windows.Forms.Panel
-$Panel5.height                   = 100
+$Panel5.height                   = 210
 $Panel5.width                    = 300
 $Panel5.location                 = New-Object System.Drawing.Point(320,225)
 
@@ -169,35 +169,35 @@ $Lightmode                       = New-Object system.Windows.Forms.Button
 $Lightmode.text                  = "Light Mode"
 $Lightmode.width                 = 130
 $Lightmode.height                = 30
-$Lightmode.location              = New-Object System.Drawing.Point(10,30)
+$Lightmode.location              = New-Object System.Drawing.Point(10,40)
 $Lightmode.Font                  = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
 
 $Darkmode                        = New-Object system.Windows.Forms.Button
 $Darkmode.text                   = "Dark Mode"
 $Darkmode.width                  = 130
 $Darkmode.height                 = 30
-$Darkmode.location               = New-Object System.Drawing.Point(158,30)
+$Darkmode.location               = New-Object System.Drawing.Point(150,40)
 $Darkmode.Font                   = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
 
 $Systeminfo                      = New-Object system.Windows.Forms.Button
 $Systeminfo.text                 = "System Info"
 $Systeminfo.width                = 130
 $Systeminfo.height               = 30
-$Systeminfo.location             = New-Object System.Drawing.Point(10,69)
+$Systeminfo.location             = New-Object System.Drawing.Point(10,80)
 $Systeminfo.Font                 = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
 
 $ActivateOffice                  = New-Object system.Windows.Forms.Button
 $ActivateOffice.text             = "Activate Microsoft Office"
 $ActivateOffice.width            = 130
 $ActivateOffice.height           = 30
-$ActivateOffice.location         = New-Object System.Drawing.Point(158,69)
+$ActivateOffice.location         = New-Object System.Drawing.Point(150,80)
 $ActivateOffice.Font             = New-Object System.Drawing.Font('Microsoft Sans Serif',8)
 
 $AdminUser                       = New-Object system.Windows.Forms.Button
 $AdminUser.text                  = "Add Admin User"
 $AdminUser.width                 = 130
 $AdminUser.height                = 30
-$AdminUser.location              = New-Object System.Drawing.Point(10,108)
+$AdminUser.location              = New-Object System.Drawing.Point(10,120)
 $AdminUser.Font                  = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
 
 $Button4                         = New-Object system.Windows.Forms.Button
@@ -206,7 +206,7 @@ $Button4.width                   = 130
 $Button4.height                  = 30
 $Button4.visible                 = $false
 $Button4.enabled                 = $false
-$Button4.location                = New-Object System.Drawing.Point(158,108)
+$Button4.location                = New-Object System.Drawing.Point(150,120)
 $Button4.Font                    = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
 
 $Button5                         = New-Object system.Windows.Forms.Button
@@ -215,7 +215,7 @@ $Button5.width                   = 130
 $Button5.height                  = 30
 $Button5.visible                 = $false
 $Button5.enabled                 = $false
-$Button5.location                = New-Object System.Drawing.Point(158,148)
+$Button5.location                = New-Object System.Drawing.Point(150,160)
 $Button5.Font                    = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
 
 $Button6                         = New-Object system.Windows.Forms.Button
@@ -224,7 +224,7 @@ $Button6.width                   = 130
 $Button6.height                  = 30
 $Button6.visible                 = $false
 $Button6.enabled                 = $false
-$Button6.location                = New-Object System.Drawing.Point(10,148)
+$Button6.location                = New-Object System.Drawing.Point(10,160)
 $Button6.Font                    = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
 
 $ResultText                      = New-Object system.Windows.Forms.TextBox
@@ -248,7 +248,7 @@ $CleanViruses.width              = 130
 $CleanViruses.height             = 30
 $CleanViruses.visible            = $true
 $CleanViruses.enabled            = $true
-$CleanViruses.location           = New-Object System.Drawing.Point(10,30)
+$CleanViruses.location           = New-Object System.Drawing.Point(10,40)
 $CleanViruses.Font               = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
 
 $CleanViruses2                   = New-Object system.Windows.Forms.Button
@@ -257,7 +257,7 @@ $CleanViruses2.width             = 130
 $CleanViruses2.height            = 30
 $CleanViruses2.visible           = $true
 $CleanViruses2.enabled           = $true
-$CleanViruses2.location          = New-Object System.Drawing.Point(158,30)
+$CleanViruses2.location          = New-Object System.Drawing.Point(150,40)
 $CleanViruses2.Font              = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
 
 $RMPITAPP.controls.AddRange(@($Title,$Panel1,$Panel2,$Panel5,$RMPITlogo,$ResultText))
