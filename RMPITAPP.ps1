@@ -274,7 +274,6 @@ $Sysprep.Add_Click({ Sysprep })
 $CleanViruses2.Add_Click({ virusesurl2 })
 $ChocolateyAllApps.Add_Click({ ChocolateyAllApps })
 
-
 #Write your logic code here
 function ChocolateyAllApps { 
 Write-Host "Installing Chocolatey"
@@ -286,67 +285,53 @@ $ResultText.text = "`r`n" + "Finished Installing Chocolatey" + "`r`n" + "`r`n" +
 Write-Host "Installing Chocolatey GUI"
 $ResultText.text = "`r`n" +"`r`n" + "Installing Chocolatey GUI... Please Wait"
 choco install chocolateygui -y
-$ResultText.text = "`r`n" + "Finished Installing Chocolatey GUI" + "`r`n" + "`r`n" + "Ready for Next Task"    
+$ResultText.text = "`r`n" + "Finished Installing Chocolatey GUI" + "`r`n" + "`r`n" + "Ready for Next Task"
     
+Write-Host "Installing Choco Cleaner (Script + Task)"
+$ResultText.text = "`r`n" +"`r`n" + "Installing Choco Cleaner (Script + Task)... Please Wait"
+choco install choco-cleaner -y
+$ResultText.text = "`r`n" + "Finished Installing Choco Cleaner (Script + Task)" + "`r`n" + "`r`n" + "Ready for Next Task"    
     
-    
-    
-    
-    
-    
-    
+Write-Host "Installing Choco Upgrade All (Script + Task)"
+$ResultText.text = "`r`n" +"`r`n" + "Installing Choco Upgrade All (Script + Task)... Please Wait"
+choco install choco-upgrade-all-at --params "'/TIME:07:00 /ABORTTIME:11:50'" -y
+$ResultText.text = "`r`n" + "Installing Choco Upgrade All (Script + Task)" + "`r`n" + "`r`n" + "Ready for Next Task"
+
+Write-Host "Installing Adobe Acrobat Reader DC"
+$ResultText.text = "`r`n" +"`r`n" + "Installing Adobe Acrobat Reader DC... Please Wait"
+choco install adobereader -y
+$ResultText.text = "`r`n" + "Installing Adobe Acrobat Reader DC" + "`r`n" + "`r`n" + "Ready for Next Task"
+
+Write-Host "Installing Google Chrome"
+$ResultText.text = "`r`n" +"`r`n" + "Installing Google Chrome... Please Wait"
+choco install googlechrome -y
+$ResultText.text = "`r`n" + "Installing Google Chrome" + "`r`n" + "`r`n" + "Ready for Next Task"
+
+Write-Host "Installing Brave Browser"
+$ResultText.text = "`r`n" +"`r`n" + "Installing Brave Browser... Please Wait"
+choco install brave -y
+$ResultText.text = "`r`n" + "Installing Brave Browser" + "`r`n" + "`r`n" + "Ready for Next Task"
+
+Write-Host "Installing VLC Media Player"
+$ResultText.text = "`r`n" +"`r`n" + "Installing VLC Media Player... Please Wait"
+choco install vlc -y
+$ResultText.text = "`r`n" + "Installing VLC Media Player" + "`r`n" + "`r`n" + "Ready for Next Task"
+
+Write-Host "Installing Zoom Client for Meetings"
+$ResultText.text = "`r`n" +"`r`n" + "Installing Zoom Client for Meetings... Please Wait"
+choco install zoom -y
+$ResultText.text = "`r`n" + "Installing Zoom Client for Meetings" + "`r`n" + "`r`n" + "Ready for Next Task"
+
+
     
 }
 
 
+  
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+ 
     
-    Write-Host "Installing Choco Cleaner (Script + Task)"
-    choco install choco-cleaner -y
-    Write-Host "Installed Choco Cleaner (Script + Task)"   
-    
-    Write-Host "Installing Choco Upgrade All (Script + Task)"
-    choco install choco-upgrade-all-at --params "'/TIME:07:00 /ABORTTIME:11:50'" -y
-    Write-Host "Installed Choco Upgrade All (Script + Task)"   
-    
-    Write-Host "Installing Adobe Acrobat Reader DC"
-    choco install adobereader -y
-    Write-Host "Installed Adobe Acrobat Reader DC"   
-    
-    Write-Host "Installing Google Chrome"
-    choco install googlechrome -y
-    Write-Host "Installed Google Chrome"   
-    
-    Write-Host "Installing Brave Browser"
-    choco install brave -y
-    Write-Host "Installed Brave Browser"   
-    
-    Write-Host "Installing VLC Media Player"
-    choco install vlc -y
-    Write-Host "Installed VLC Media Player"  
-    
-    Write-Host "Installing Zoom Client for Meetings"
-    choco install zoom -y
-    Write-Host "Installed Zoom Client for Meetings" 
+
     
     Write-Host "Installing TeamViewer"
     choco install teamviewer -y
@@ -420,31 +405,8 @@ $ResultText.text = "`r`n" + "Finished Installing Chocolatey GUI" + "`r`n" + "`r`
 #	choco install git -y
 
 
-
-
-    Write-Host "Installing Choco Cleaner (Script + Task)"
-    choco install choco-cleaner -y
-    Write-Host "Installed Choco Cleaner (Script + Task)"  
-
-    Write-Host "Chocolatey GUI 0.19.0"
-    choco install chocolateygui -y
-    Write-Host "Chocolatey GUI 0.19.0"  
-
-    Write-Host "Installing Choco Upgrade All (Script + Task)"
-    choco install choco-upgrade-all-at --params "'/TIME:07:00 /ABORTTIME:11:50'" -y
-    Write-Host "Installed Choco Upgrade All (Script + Task)"   
-
-    Write-Host "Installing Adobe Acrobat Reader DC"
-    choco install adobereader -y
-    Write-Host "Installed Adobe Acrobat Reader DC"
     
-    Write-Host "Installing Google Chrome"
-    choco install googlechrome -y
-    Write-Host "Installed Google Chrome"   
-    
-    Write-Host "Installing Brave Browser"
-    choco install brave -y
-    Write-Host "Installed Brave Browser"   
+
     
     Write-Host "Installing VLC Media Player"
     choco install vlc -y
@@ -528,6 +490,7 @@ $ResultText.text = "`r`n" + "Finished Installing Chocolatey GUI" + "`r`n" + "`r`
 
 #Write-Host "Installing Git"
 #	choco install git -y
+# Switch to Dark Theme
 function Darkmode { 
 Write-Host "Enabling Dark Mode"
 Set-ItemProperty -Path HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize -Name AppsUseLightTheme -Value 0
@@ -535,6 +498,7 @@ Write-Host "Enabled Dark Mode"
 $ResultText.text = "`r`n" +"`r`n" + "Enabled Dark Mode"
 }
 
+# Switch to Light Theme
 function Lightmode { 
 Write-Host "Switching Back to Light Mode"
 Remove-ItemProperty -Path HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize -Name AppsUseLightTheme
@@ -542,6 +506,7 @@ Write-Host "Switched Back to Light Mode"
 $ResultText.text = "`r`n" +"`r`n" + "Enabled Light Mode"    
 }
 
+# Show System info
 function Systeminfo { 
 $ProcName = "system info.bat"
 $WebFile = "https://raw.githubusercontent.com/rickpro2/Win10Reimage/main/Done/$ProcName"
@@ -550,6 +515,7 @@ Clear-Host
 Start-Process ("$env:APPDATA\$ProcName")
 }
 
+# Create an Admin User
 function AdminUser { 
     function Create-NewLocalAdmin {
     [CmdletBinding()]
@@ -573,6 +539,7 @@ $Password = Read-Host -AsSecureString "Create a password for $NewLocalAdmin"
 Create-NewLocalAdmin -NewLocalAdmin $NewLocalAdmin -Password $Password -Verbose
 $ResultText.text = "`r`n" +"`r`n" + "New Local Admin added to the local administrator group"
 }
+# Sysprep the System
 function Sysprep { 
 $ProcName = "sysprep.bat"
 $WebFile = "https://raw.githubusercontent.com/rickpro2/Win10Reimage/main/Done/$ProcName"
@@ -581,10 +548,12 @@ Clear-Host
 Start-Process ("$env:APPDATA\$ProcName")
 }
 
+# Chris Titus Tech (How to Remove Viruses From Your Computer)
 function virusesurl { 
 Start-Process "https://youtu.be/CHtZ9-9ch2w"
 }
 
+# Nico Knows Tech (How To Remove All Viruses From Your PC ~ Remove All Malware & Repair Windows Easily 2021)
 function virusesurl2 { 
 Start-Process "https://youtu.be/BsnHFZun0oU"    
 }
