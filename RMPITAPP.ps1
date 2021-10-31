@@ -282,11 +282,47 @@ $Inkscape.enabled                = $true
 $Inkscape.location               = New-Object System.Drawing.Point(10,40)
 $Inkscape.Font                   = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
 
+$GIMP                            = New-Object system.Windows.Forms.Button
+$GIMP.text                       = "GIMP"
+$GIMP.width                      = 130
+$GIMP.height                     = 30
+$GIMP.visible                    = $true
+$GIMP.enabled                    = $true
+$GIMP.location                   = New-Object System.Drawing.Point(150,40)
+$GIMP.Font                       = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
+
+$Audacity                        = New-Object system.Windows.Forms.Button
+$Audacity.text                   = "Audacity"
+$Audacity.width                  = 130
+$Audacity.height                 = 30
+$Audacity.visible                = $true
+$Audacity.enabled                = $true
+$Audacity.location               = New-Object System.Drawing.Point(10,80)
+$Audacity.Font                   = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
+
+$Sharex                          = New-Object system.Windows.Forms.Button
+$Sharex.text                     = "Sharex"
+$Sharex.width                    = 130
+$Sharex.height                   = 30
+$Sharex.visible                  = $true
+$Sharex.enabled                  = $true
+$Sharex.location                 = New-Object System.Drawing.Point(150,80)
+$Sharex.Font                     = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
+
+$Office                          = New-Object system.Windows.Forms.Button
+$Office.text                     = "Microsoft Office"
+$Office.width                    = 130
+$Office.height                   = 30
+$Office.visible                  = $true
+$Office.enabled                  = $true
+$Office.location                 = New-Object System.Drawing.Point(10,120)
+$Office.Font                     = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
+
 $RMPITAPP.controls.AddRange(@($Title,$Panel1,$Panel2,$Panel5,$RMPITlogo,$ResultText,$Panel3))
 $Panel1.controls.AddRange(@($ActivateWindows1,$ActivateWindows2,$Step1,$Debloat,$SysprepDebloat,$Step2,$Customize,$Step3,$ChocolateyAllApps,$Sysprep,$Step4,$Step5))
 $Panel2.controls.AddRange(@($Label1,$Lightmode,$Darkmode,$Systeminfo,$ActivateOffice,$AdminUser,$Button4,$Button5,$Button6))
 $Panel5.controls.AddRange(@($Label2,$CleanViruses,$CleanViruses2))
-$Panel3.controls.AddRange(@($Label3,$Inkscape))
+$Panel3.controls.AddRange(@($Label3,$Inkscape,$GIMP,$Audacity,$Sharex,$Office))
 
 $Systeminfo.Add_Click({ Systeminfo })
 $Lightmode.Add_Click({ Lightmode })
@@ -297,8 +333,13 @@ $Sysprep.Add_Click({ Sysprep })
 $CleanViruses2.Add_Click({ virusesurl2 })
 $ChocolateyAllApps.Add_Click({ ChocolateyAllApps })
 $Inkscape.Add_Click({ Inkscape })
+$GIMP.Add_Click({ GIMP })
+$Audacity.Add_Click({ Audacity })
+$Sharex.Add_Click({ Sharex })
+$Office.Add_Click({ office })
 
-function Inkscape { }
+
+
 #Write your logic code here
 function ChocolateyAllApps { 
 Write-Host "Installing Chocolatey"
@@ -367,89 +408,71 @@ $ResultText.text = "`r`n" +"`r`n" + "Installing AllDup... Please Wait"
 choco install AllDup -y
 $ResultText.text = "`r`n" + "Finished Installing AllDup" + "`r`n" + "`r`n" + "Ready for Next Task"
  
-Write-Host "Installing Installing O&O Shutup"
-$ResultText.text = "`r`n" +"`r`n" + "Installing Installing O&O Shutup... Please Wait"
+Write-Host "Installing O&O Shutup"
+$ResultText.text = "`r`n" +"`r`n" + "Installing O&O Shutup... Please Wait"
 choco install shutup10 -y
-$ResultText.text = "`r`n" + "Finished Installing Installing O&O Shutup" + "`r`n" + "`r`n" + "Ready for Next Task"
+$ResultText.text = "`r`n" + "Finished Installing O&O Shutup" + "`r`n" + "`r`n" + "Ready for Next Task"
  
-Write-Host "Installing Installing Notepad++"
-$ResultText.text = "`r`n" +"`r`n" + "Installing Installing Notepad++... Please Wait"
+Write-Host "Installing Notepad++"
+$ResultText.text = "`r`n" +"`r`n" + "Installing Notepad++... Please Wait"
 choco install notepadplusplus -y
-$ResultText.text = "`r`n" + "Finished Installing Installing Notepad++" + "`r`n" + "`r`n" + "Ready for Next Task"
+$ResultText.text = "`r`n" + "Finished Installing Notepad++" + "`r`n" + "`r`n" + "Ready for Next Task"
   
-Write-Host "Installing Installing Rufus"
-$ResultText.text = "`r`n" +"`r`n" + "Installing Installing Rufus... Please Wait"
+Write-Host "Installing Rufus"
+$ResultText.text = "`r`n" +"`r`n" + "Installing Rufus... Please Wait"
 choco install Rufus -y
-$ResultText.text = "`r`n" + "Finished Installing Installing Rufus" + "`r`n" + "`r`n" + "Ready for Next Task"
+$ResultText.text = "`r`n" + "Finished Installing Rufus" + "`r`n" + "`r`n" + "Ready for Next Task"
 
-Write-Host "Installing Installing qBittorrent"
-$ResultText.text = "`r`n" +"`r`n" + "Installing Installing qBittorrent... Please Wait"
+Write-Host "Installing qBittorrent"
+$ResultText.text = "`r`n" +"`r`n" + "Installing qBittorrent... Please Wait"
 choco install qBittorrent -y
-$ResultText.text = "`r`n" + "Finished Installing Installing qBittorrent" + "`r`n" + "`r`n" + "Ready for Next Task"
+$ResultText.text = "`r`n" + "Finished Installing qBittorrent" + "`r`n" + "`r`n" + "Ready for Next Task"
 
-Write-Host "Installing Installing Apple iCloud 7.21.0.23"
-$ResultText.text = "`r`n" +"`r`n" + "Installing Installing Apple iCloud 7.21.0.23... Please Wait"
+Write-Host "Installing Apple iCloud 7.21.0.23"
+$ResultText.text = "`r`n" +"`r`n" + "Installing Apple iCloud 7.21.0.23... Please Wait"
 choco install icloud -y
-$ResultText.text = "`r`n" + "Finished Installing Installing Apple iCloud 7.21.0.23" + "`r`n" + "`r`n" + "Ready for Next Task"
+$ResultText.text = "`r`n" + "Finished Installing Apple iCloud 7.21.0.23" + "`r`n" + "`r`n" + "Ready for Next Task"
+
+Write-Host "Installing Tor Browser Bundle"
+$ResultText.text = "`r`n" +"`r`n" + "Installing Tor Browser Bundle... Please Wait"
+choco install tor-browser -y
+$ResultText.text = "`r`n" + "Finished Installing Tor Browser Bundle" + "`r`n" + "`r`n" + "Ready for Next Task"    
 }
 
 function Inkscape { 
-Write-Host "Installing Installing Inkscape"
-$ResultText.text = "`r`n" +"`r`n" + "Installing Installing Inkscape... Please Wait"
+Write-Host "Installing Inkscape"
+$ResultText.text = "`r`n" +"`r`n" + "Installing Inkscape... Please Wait"
 choco install inkscape -y
-$ResultText.text = "`r`n" + "Finished Installing Installing Inkscape" + "`r`n" + "`r`n" + "Ready for Next Task"    
+$ResultText.text = "`r`n" + "Finished Installing Inkscape" + "`r`n" + "`r`n" + "Ready for Next Task"    
 }
 
+function GIMP { 
+Write-Host "Installing GIMP"
+$ResultText.text = "`r`n" +"`r`n" + "Installing GIMP... Please Wait"
+choco install gimp -y
+$ResultText.text = "`r`n" + "Finished Installing GIMP" + "`r`n" + "`r`n" + "Ready for Next Task"    
+}
 
+function Audacity { 
+Write-Host "Installing Audacity"
+$ResultText.text = "`r`n" +"`r`n" + "Installing Audacity... Please Wait"
+choco install audacity -y
+$ResultText.text = "`r`n" + "Finished Installing Audacity" + "`r`n" + "`r`n" + "Ready for Next Task"    
+}
 
+function Sharex { 
+Write-Host "Installing Sharex"
+$ResultText.text = "`r`n" +"`r`n" + "Installing Sharex... Please Wait"
+choco install sharex -y
+$ResultText.text = "`r`n" + "Finished Installing Sharex" + "`r`n" + "`r`n" + "Ready for Next Task"
+}
 
-
-
-
-
-
-
-
-#Write-Host "Installing Installing Sharex"
-#$ResultText.text = "`r`n" +"`r`n" + "Installing Installing Sharex... Please Wait"
-#choco install sharex -y
-#$ResultText.text = "`r`n" + "Finished Installing Installing Sharex" + "`r`n" + "`r`n" + "Ready for Next Task"
-
-#Write-Host "Installing Installing Audacity"
-#$ResultText.text = "`r`n" +"`r`n" + "Installing Installing Audacity... Please Wait"
-#choco install audacity -y
-#$ResultText.text = "`r`n" + "Finished Installing Installing Audacity" + "`r`n" + "`r`n" + "Ready for Next Task"
-
-#Write-Host "Installing Installing IPVanish"
-#$ResultText.text = "`r`n" +"`r`n" + "Installing Installing IPVanish... Please Wait"
-#choco install ipvanish -y
-#$ResultText.text = "`r`n" + "Finished Installing Installing IPVanish" + "`r`n" + "`r`n" + "Ready for Next Task"
-    
-    Write-Host "Installing Dell Command | Update 4.1.0"
-    choco install dellcommandupdate -y
-    choco install dellcommandupdate-uwp -y
-    Write-Host "Installed Dell Command | Update 4.1.0" 
-
-
-
-    Write-Host "Tor Browser Bundle"
-    choco install tor-browser -y
-    Write-Host "Tor Browser Bundle"
-
-    Write-Host "Spotify"
-    choco install spotify -y
-    Write-Host "Spotify"
-
-
-#Write-Host "GIMP"
-#    choco install gimp -y
-#    Write-Host "GIMP"
-
-#Write-Host "Installing Office 365 Business"
-#	choco install office365business -y
-
-#Write-Host "Installing Git"
-#	choco install git -y
+function office { 
+Write-Host "Installing  Office 365 Business"
+$ResultText.text = "`r`n" +"`r`n" + "Installing  Office 365 Business... Please Wait"
+choco install office365business -y
+$ResultText.text = "`r`n" + "Finished Installing  Office 365 Business" + "`r`n" + "`r`n" + "Ready for Next Task"    
+}
 # Switch to Dark Theme
 function Darkmode { 
 Write-Host "Enabling Dark Mode"
