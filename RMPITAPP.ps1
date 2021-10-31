@@ -231,7 +231,7 @@ $ResultText                      = New-Object system.Windows.Forms.TextBox
 $ResultText.multiline            = $true
 $ResultText.width                = 200
 $ResultText.height               = 125
-$ResultText.location             = New-Object System.Drawing.Point(681,428)
+$ResultText.location             = New-Object System.Drawing.Point(358,470)
 $ResultText.Font                 = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
 
 $Label2                          = New-Object system.Windows.Forms.Label
@@ -260,10 +260,33 @@ $CleanViruses2.enabled           = $true
 $CleanViruses2.location          = New-Object System.Drawing.Point(150,40)
 $CleanViruses2.Font              = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
 
-$RMPITAPP.controls.AddRange(@($Title,$Panel1,$Panel2,$Panel5,$RMPITlogo,$ResultText))
+$Panel3                          = New-Object system.Windows.Forms.Panel
+$Panel3.height                   = 210
+$Panel3.width                    = 300
+$Panel3.location                 = New-Object System.Drawing.Point(631,225)
+
+$Label3                          = New-Object system.Windows.Forms.Label
+$Label3.text                     = "Additional Apps"
+$Label3.AutoSize                 = $true
+$Label3.width                    = 25
+$Label3.height                   = 10
+$Label3.location                 = New-Object System.Drawing.Point(10,10)
+$Label3.Font                     = New-Object System.Drawing.Font('Microsoft Sans Serif',12,[System.Drawing.FontStyle]([System.Drawing.FontStyle]::Bold -bor [System.Drawing.FontStyle]::Underline))
+
+$Inkscape                        = New-Object system.Windows.Forms.Button
+$Inkscape.text                   = "Inkscape"
+$Inkscape.width                  = 130
+$Inkscape.height                 = 30
+$Inkscape.visible                = $true
+$Inkscape.enabled                = $true
+$Inkscape.location               = New-Object System.Drawing.Point(10,40)
+$Inkscape.Font                   = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
+
+$RMPITAPP.controls.AddRange(@($Title,$Panel1,$Panel2,$Panel5,$RMPITlogo,$ResultText,$Panel3))
 $Panel1.controls.AddRange(@($ActivateWindows1,$ActivateWindows2,$Step1,$Debloat,$SysprepDebloat,$Step2,$Customize,$Step3,$ChocolateyAllApps,$Sysprep,$Step4,$Step5))
 $Panel2.controls.AddRange(@($Label1,$Lightmode,$Darkmode,$Systeminfo,$ActivateOffice,$AdminUser,$Button4,$Button5,$Button6))
 $Panel5.controls.AddRange(@($Label2,$CleanViruses,$CleanViruses2))
+$Panel3.controls.AddRange(@($Label3,$Inkscape))
 
 $Systeminfo.Add_Click({ Systeminfo })
 $Lightmode.Add_Click({ Lightmode })
@@ -273,7 +296,9 @@ $CleanViruses.Add_Click({ virusesurl })
 $Sysprep.Add_Click({ Sysprep })
 $CleanViruses2.Add_Click({ virusesurl2 })
 $ChocolateyAllApps.Add_Click({ ChocolateyAllApps })
+$Inkscape.Add_Click({ Inkscape })
 
+function Inkscape { }
 #Write your logic code here
 function ChocolateyAllApps { 
 Write-Host "Installing Chocolatey"
@@ -357,6 +382,27 @@ $ResultText.text = "`r`n" +"`r`n" + "Installing Installing Rufus... Please Wait"
 choco install Rufus -y
 $ResultText.text = "`r`n" + "Finished Installing Installing Rufus" + "`r`n" + "`r`n" + "Ready for Next Task"
 
+Write-Host "Installing Installing qBittorrent"
+$ResultText.text = "`r`n" +"`r`n" + "Installing Installing qBittorrent... Please Wait"
+choco install qBittorrent -y
+$ResultText.text = "`r`n" + "Finished Installing Installing qBittorrent" + "`r`n" + "`r`n" + "Ready for Next Task"
+
+Write-Host "Installing Installing Apple iCloud 7.21.0.23"
+$ResultText.text = "`r`n" +"`r`n" + "Installing Installing Apple iCloud 7.21.0.23... Please Wait"
+choco install icloud -y
+$ResultText.text = "`r`n" + "Finished Installing Installing Apple iCloud 7.21.0.23" + "`r`n" + "`r`n" + "Ready for Next Task"
+}
+
+function Inkscape { 
+Write-Host "Installing Installing Inkscape"
+$ResultText.text = "`r`n" +"`r`n" + "Installing Installing Inkscape... Please Wait"
+choco install inkscape -y
+$ResultText.text = "`r`n" + "Finished Installing Installing Inkscape" + "`r`n" + "`r`n" + "Ready for Next Task"    
+}
+
+
+
+
 
 
 
@@ -378,10 +424,6 @@ $ResultText.text = "`r`n" + "Finished Installing Installing Rufus" + "`r`n" + "`
 #$ResultText.text = "`r`n" +"`r`n" + "Installing Installing IPVanish... Please Wait"
 #choco install ipvanish -y
 #$ResultText.text = "`r`n" + "Finished Installing Installing IPVanish" + "`r`n" + "`r`n" + "Ready for Next Task"
-}
-
-
-
     
     Write-Host "Installing Dell Command | Update 4.1.0"
     choco install dellcommandupdate -y
@@ -398,100 +440,6 @@ $ResultText.text = "`r`n" + "Finished Installing Installing Rufus" + "`r`n" + "`
     choco install spotify -y
     Write-Host "Spotify"
 
-    Write-Host "qBittorrent"
-    choco install qBittorrent -y
-    Write-Host "qBittorrent"
-
-#Write-Host "Inkscape"
-#    choco install inkscape -y
-#    Write-Host "Inkscape"
-
-#Write-Host "GIMP"
-#    choco install gimp -y
-#    Write-Host "GIMP"
-
-#Write-Host "Installing Office 365 Business"
-#	choco install office365business -y
-
-#Write-Host "Installing Git"
-#	choco install git -y
-
-
-    
-
-    
-    Write-Host "Installing VLC Media Player"
-    choco install vlc -y
-    Write-Host "Installed VLC Media Player"  
-    
-    Write-Host "Installing Zoom Client for Meetings"
-    choco install zoom -y
-    Write-Host "Installed Zoom Client for Meetings" 
-    
-    Write-Host "Installing TeamViewer"
-    choco install teamviewer -y
-    Write-Host "Installed TeamViewer"  
-    
-    Write-Host "Installing 7-Zip"
-    choco install 7zip -y
-    Write-Host "Installed 7-Zip"  
-    
-    Write-Host "Installing iTunes"
-    choco install itunes -y
-    Write-Host "Installed iTunes" 
-    
-    Write-Host "Installing AllDup"
-    choco install alldup -y
-    Write-Host "Installed AllDup"    
-    
-    Write-Host "Installing Notepad++"
-    choco install notepadplusplus -y
-    Write-Host "Installed Notepad++" 
-    
-    Write-Host "Installing Dell Command | Update 4.1.0"
-    choco install dellcommandupdate -y
-    choco install dellcommandupdate-uwp -y
-    Write-Host "Installed Dell Command | Update 4.1.0"    
-    
-    Write-Host "Tor Browser Bundle"
-    choco install tor-browser -y
-    Write-Host "Tor Browser Bundle" 
-    
-    Write-Host "Installing O&O Shutup"
-    choco install shutup10 -y
-    Write-Host "Installed O&O Shutup" 
-        
-    Write-Host "Installing IPVanish"
-    choco install ipvanish -y
-    Write-Host "Installed IPVanish" 
-    
-    Write-Host "Installing Rufus"
-    choco install rufus -y
-    Write-Host "Installed Rufus" 
-        
-    Write-Host "Installing Audacity"
-    choco install audacity -y
-    Write-Host "Installed Audacity" 
-
-    Write-Host "Installing Sharex"
-    choco install sharex -y
-    Write-Host "Installed Sharex"
-
-    Write-Host "Spotify"
-    choco install spotify -y
-    Write-Host "Spotify"
-
-    Write-Host "qBittorrent"
-    choco install qBittorrent -y
-    Write-Host "qBittorrent"
-
-    Write-Host "Apple iCloud 7.21.0.23"
-    choco install icloud -y
-    Write-Host "Apple iCloud7.21.0.23"
-
-#Write-Host "Inkscape"
-#    choco install inkscape -y
-#    Write-Host "Inkscape"
 
 #Write-Host "GIMP"
 #    choco install gimp -y
