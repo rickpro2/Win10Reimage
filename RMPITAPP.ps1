@@ -74,7 +74,7 @@ $ActivateWindows2.text           = "Activate Windows 2"
 $ActivateWindows2.width          = 130
 $ActivateWindows2.height         = 30
 $ActivateWindows2.location       = New-Object System.Drawing.Point(32,70)
-$ActivateWindows2.Font           = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
+$ActivateWindows2.Font           = New-Object System.Drawing.Font('Microsoft Sans Serif',9)
 
 $Step1                           = New-Object system.Windows.Forms.Label
 $Step1.text                      = "Step #1"
@@ -338,8 +338,6 @@ $Audacity.Add_Click({ Audacity })
 $Sharex.Add_Click({ Sharex })
 $Office.Add_Click({ office })
 
-
-
 #Write your logic code here
 function ChocolateyAllApps { 
 Write-Host "Installing Chocolatey"
@@ -437,6 +435,8 @@ Write-Host "Installing Tor Browser Bundle"
 $ResultText.text = "`r`n" +"`r`n" + "Installing Tor Browser Bundle... Please Wait"
 choco install tor-browser -y
 $ResultText.text = "`r`n" + "Finished Installing Tor Browser Bundle" + "`r`n" + "`r`n" + "Ready for Next Task"    
+
+$ResultText.text = "`r`n" + "Finished Installing Chocolaty and All Apps" + "`r`n" + "`r`n" + "Ready for Next Task"     
 }
 
 function Inkscape { 
