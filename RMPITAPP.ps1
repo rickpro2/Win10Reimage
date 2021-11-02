@@ -34,7 +34,7 @@ Add-Type -AssemblyName System.Windows.Forms
 [System.Windows.Forms.Application]::EnableVisualStyles()
 
 $RMPITAPP                        = New-Object system.Windows.Forms.Form
-$RMPITAPP.ClientSize             = New-Object System.Drawing.Point(1050,650)
+$RMPITAPP.ClientSize             = New-Object System.Drawing.Point(975,650)
 $RMPITAPP.text                   = "Windows 10 Debloat & System Helper By RMPIT LLC v.1.2"
 $RMPITAPP.TopMost                = $false
 $RMPITAPP.icon                   = "https://raw.githubusercontent.com/rickpro2/Win10Reimage/main/RMPIT_logo.png"
@@ -49,7 +49,7 @@ $Title.Font                      = New-Object System.Drawing.Font('Microsoft San
 
 $Panel1                          = New-Object system.Windows.Forms.Panel
 $Panel1.height                   = 140
-$Panel1.width                    = 1030
+$Panel1.width                    = 950
 $Panel1.location                 = New-Object System.Drawing.Point(10,72)
 
 $Panel2                          = New-Object system.Windows.Forms.Panel
@@ -229,9 +229,9 @@ $Button6.Font                    = New-Object System.Drawing.Font('Microsoft San
 
 $ResultText                      = New-Object system.Windows.Forms.TextBox
 $ResultText.multiline            = $true
-$ResultText.width                = 200
+$ResultText.width                = 300
 $ResultText.height               = 125
-$ResultText.location             = New-Object System.Drawing.Point(358,470)
+$ResultText.location             = New-Object System.Drawing.Point(576,475)
 $ResultText.Font                 = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
 
 $Label2                          = New-Object system.Windows.Forms.Label
