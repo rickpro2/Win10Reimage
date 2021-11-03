@@ -61,7 +61,4 @@ REM Restart explorer
 taskkill /f /im explorer.exe
 start explorer.exe
 
-if %DoBoth%==N goto Reboot
-
-
 :END
