@@ -6,109 +6,142 @@ Start-Process powershell -Verb runAs -ArgumentList $arguments
 Break
 }
 
+function ChocolateyAllApps { 
 Write-Host "Installing Chocolatey"
-	Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
-	choco install chocolatey-core.extension -y
+$ResultText.text = "`r`n" +"`r`n" + "Installing Chocolatey... Please Wait"
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+choco install chocolatey-core.extension -y
+$ResultText.text = "`r`n" + "Finished Installing Chocolatey" + "`r`n" + "`r`n" + "Ready for Next Task"
 
-    Write-Host "Installing Chocolatey GUI"
-    choco install chocolateygui -y
-    Write-Host "Installed Chocolatey GUI"
+Write-Host "Installing Chocolatey GUI"
+$ResultText.text = "`r`n" +"`r`n" + "Installing Chocolatey GUI... Please Wait"
+choco install chocolateygui -y
+$ResultText.text = "`r`n" + "Finished Installing Chocolatey GUI" + "`r`n" + "`r`n" + "Ready for Next Task"
     
-    Write-Host "Installing Choco Cleaner (Script + Task)"
-    choco install choco-cleaner -y
-    Write-Host "Installed Choco Cleaner (Script + Task)"   
+Write-Host "Installing Choco Cleaner (Script + Task)"
+$ResultText.text = "`r`n" +"`r`n" + "Installing Choco Cleaner (Script + Task)... Please Wait"
+choco install choco-cleaner -y
+$ResultText.text = "`r`n" + "Finished Installing Choco Cleaner (Script + Task)" + "`r`n" + "`r`n" + "Ready for Next Task"    
     
-    Write-Host "Installing Choco Upgrade All (Script + Task)"
-    choco install choco-upgrade-all-at --params "'/TIME:07:00 /ABORTTIME:11:50'" -y
-    Write-Host "Installed Choco Upgrade All (Script + Task)"   
-    
-    Write-Host "Installing Adobe Acrobat Reader DC"
-    choco install adobereader -y
-    Write-Host "Installed Adobe Acrobat Reader DC"   
-    
-    Write-Host "Installing Google Chrome"
-    choco install googlechrome -y
-    Write-Host "Installed Google Chrome"   
-    
-    Write-Host "Installing Brave Browser"
-    choco install brave -y
-    Write-Host "Installed Brave Browser"   
-    
-    Write-Host "Installing VLC Media Player"
-    choco install vlc -y
-    Write-Host "Installed VLC Media Player"  
-    
-    Write-Host "Installing Zoom Client for Meetings"
-    choco install zoom -y
-    Write-Host "Installed Zoom Client for Meetings" 
-    
-    Write-Host "Installing TeamViewer"
-    choco install teamviewer -y
-    Write-Host "Installed TeamViewer" 
-    
-    Write-Host "Installing 7-Zip"
-    choco install 7zip -y
-    Write-Host "Installed 7-Zip" 
-    
-    Write-Host "Installing iTunes"
-    choco install itunes -y
-    Write-Host "Installed iTunes" 
-    
-    Write-Host "Installing AllDup"
-    choco install alldup -y
-    Write-Host "Installed AllDup" 
-    
-    Write-Host "Installing O&O Shutup"
-    choco install shutup10 -y
-    Write-Host "Installed O&O Shutup" 
-    
-    Write-Host "Installing Notepad++"
-    choco install notepadplusplus -y
-    Write-Host "Installed Notepad++" 
-    
-    Write-Host "Installing IPVanish"
-    choco install ipvanish -y
-    Write-Host "Installed IPVanish" 
-    
-    Write-Host "Installing Rufus"
-    choco install rufus -y
-    Write-Host "Installed Rufus" 
-    
-    Write-Host "Installing Dell Command | Update 4.1.0"
-    choco install dellcommandupdate -y
-    choco install dellcommandupdate-uwp -y
-    Write-Host "Installed Dell Command | Update 4.1.0" 
-    
-    Write-Host "Installing Audacity"
-    choco install audacity -y
-    Write-Host "Installed Audacity" 
+Write-Host "Installing Choco Upgrade All (Script + Task)"
+$ResultText.text = "`r`n" +"`r`n" + "Installing Choco Upgrade All (Script + Task)... Please Wait"
+choco install choco-upgrade-all-at --params "'/TIME:07:00 /ABORTTIME:11:50'" -y
+$ResultText.text = "`r`n" + "Finished Installing Choco Upgrade All (Script + Task)" + "`r`n" + "`r`n" + "Ready for Next Task"
 
-    Write-Host "Installing Sharex"
-    choco install sharex -y
-    Write-Host "Installed Sharex"
+Write-Host "Installing Adobe Acrobat Reader DC"
+$ResultText.text = "`r`n" +"`r`n" + "Installing Adobe Acrobat Reader DC... Please Wait"
+choco install adobereader -y
+$ResultText.text = "`r`n" + "Finished Installing Adobe Acrobat Reader DC" + "`r`n" + "`r`n" + "Ready for Next Task"
 
-    Write-Host "Tor Browser Bundle"
-    choco install tor-browser -y
-    Write-Host "Tor Browser Bundle"
+Write-Host "Installing Google Chrome"
+$ResultText.text = "`r`n" +"`r`n" + "Installing Google Chrome... Please Wait"
+choco install googlechrome -y
+$ResultText.text = "`r`n" + "Finished Installing Google Chrome" + "`r`n" + "`r`n" + "Ready for Next Task"
 
-    Write-Host "Spotify"
-    choco install spotify -y
-    Write-Host "Spotify"
+Write-Host "Installing Brave Browser"
+$ResultText.text = "`r`n" +"`r`n" + "Installing Brave Browser... Please Wait"
+choco install brave -y
+$ResultText.text = "`r`n" + "Finished Installing Brave Browser" + "`r`n" + "`r`n" + "Ready for Next Task"
 
-    Write-Host "qBittorrent"
-    choco install qBittorrent -y
-    Write-Host "qBittorrent"
+Write-Host "Installing VLC Media Player"
+$ResultText.text = "`r`n" +"`r`n" + "Installing VLC Media Player... Please Wait"
+choco install vlc -y
+$ResultText.text = "`r`n" + "Finished Installing VLC Media Player" + "`r`n" + "`r`n" + "Ready for Next Task"
 
-#Write-Host "Inkscape"
-#    choco install inkscape -y
-#    Write-Host "Inkscape"
+Write-Host "Installing Zoom Client for Meetings"
+$ResultText.text = "`r`n" +"`r`n" + "Installing Zoom Client for Meetings... Please Wait"
+choco install zoom -y
+$ResultText.text = "`r`n" + "Finished Installing Zoom Client for Meetings" + "`r`n" + "`r`n" + "Ready for Next Task"
 
-#Write-Host "GIMP"
-#    choco install gimp -y
-#    Write-Host "GIMP"
+Write-Host "Installing TeamViewer"
+$ResultText.text = "`r`n" +"`r`n" + "Installing TeamViewer... Please Wait"
+choco install teamviewer -y
+$ResultText.text = "`r`n" + "Finished Installing TeamViewer" + "`r`n" + "`r`n" + "Ready for Next Task"
 
-#Write-Host "Installing Office 365 Business"
-#	choco install office365business -y
+Write-Host "Installing 7-Zip"
+$ResultText.text = "`r`n" +"`r`n" + "Installing 7-Zip... Please Wait"
+choco install 7-Zip -y
+$ResultText.text = "`r`n" + "Finished Installing 7-Zip" + "`r`n" + "`r`n" + "Ready for Next Task"
 
-#Write-Host "Installing Git"
-#	choco install git -y
+Write-Host "Installing iTunes"
+$ResultText.text = "`r`n" +"`r`n" + "Installing iTunes... Please Wait"
+choco install iTunes -y
+$ResultText.text = "`r`n" + "Finished Installing iTunes" + "`r`n" + "`r`n" + "Ready for Next Task"
+
+Write-Host "Installing AllDup"
+$ResultText.text = "`r`n" +"`r`n" + "Installing AllDup... Please Wait"
+choco install AllDup -y
+$ResultText.text = "`r`n" + "Finished Installing AllDup" + "`r`n" + "`r`n" + "Ready for Next Task"
+ 
+Write-Host "Installing O&O Shutup"
+$ResultText.text = "`r`n" +"`r`n" + "Installing O&O Shutup... Please Wait"
+choco install shutup10 -y
+$ResultText.text = "`r`n" + "Finished Installing O&O Shutup" + "`r`n" + "`r`n" + "Ready for Next Task"
+ 
+Write-Host "Installing Notepad++"
+$ResultText.text = "`r`n" +"`r`n" + "Installing Notepad++... Please Wait"
+choco install notepadplusplus -y
+$ResultText.text = "`r`n" + "Finished Installing Notepad++" + "`r`n" + "`r`n" + "Ready for Next Task"
+  
+Write-Host "Installing Rufus"
+$ResultText.text = "`r`n" +"`r`n" + "Installing Rufus... Please Wait"
+choco install Rufus -y
+$ResultText.text = "`r`n" + "Finished Installing Rufus" + "`r`n" + "`r`n" + "Ready for Next Task"
+
+Write-Host "Installing qBittorrent"
+$ResultText.text = "`r`n" +"`r`n" + "Installing qBittorrent... Please Wait"
+choco install qBittorrent -y
+$ResultText.text = "`r`n" + "Finished Installing qBittorrent" + "`r`n" + "`r`n" + "Ready for Next Task"
+
+Write-Host "Installing Apple iCloud 7.21.0.23"
+$ResultText.text = "`r`n" +"`r`n" + "Installing Apple iCloud 7.21.0.23... Please Wait"
+choco install icloud -y
+$ResultText.text = "`r`n" + "Finished Installing Apple iCloud 7.21.0.23" + "`r`n" + "`r`n" + "Ready for Next Task"
+
+Write-Host "Installing Tor Browser Bundle"
+$ResultText.text = "`r`n" +"`r`n" + "Installing Tor Browser Bundle... Please Wait"
+choco install tor-browser -y
+$ResultText.text = "`r`n" + "Finished Installing Tor Browser Bundle" + "`r`n" + "`r`n" + "Ready for Next Task"    
+
+Write-Host "Installing 123Etcher 1.6.0"
+$ResultText.text = "`r`n" +"`r`n" + "Installing 123Etcher 1.6.0... Please Wait"
+choco install etcher -y
+$ResultText.text = "`r`n" + "Finished Installing 123Etcher 1.6.0" + "`r`n" + "`r`n" + "Ready for Next Task"    
+
+$ResultText.text = "`r`n" + "Finished Installing Chocolaty and All Apps" + "`r`n" + "`r`n" + "Ready for Next Task"     
+}
+
+function Inkscape { 
+Write-Host "Installing Inkscape"
+$ResultText.text = "`r`n" +"`r`n" + "Installing Inkscape... Please Wait"
+choco install inkscape -y
+$ResultText.text = "`r`n" + "Finished Installing Inkscape" + "`r`n" + "`r`n" + "Ready for Next Task"    
+}
+
+function GIMP { 
+Write-Host "Installing GIMP"
+$ResultText.text = "`r`n" +"`r`n" + "Installing GIMP... Please Wait"
+choco install gimp -y
+$ResultText.text = "`r`n" + "Finished Installing GIMP" + "`r`n" + "`r`n" + "Ready for Next Task"    
+}
+
+function Audacity { 
+Write-Host "Installing Audacity"
+$ResultText.text = "`r`n" +"`r`n" + "Installing Audacity... Please Wait"
+choco install audacity -y
+$ResultText.text = "`r`n" + "Finished Installing Audacity" + "`r`n" + "`r`n" + "Ready for Next Task"    
+}
+
+function Sharex { 
+Write-Host "Installing Sharex"
+$ResultText.text = "`r`n" +"`r`n" + "Installing Sharex... Please Wait"
+choco install sharex -y
+$ResultText.text = "`r`n" + "Finished Installing Sharex" + "`r`n" + "`r`n" + "Ready for Next Task"
+}
+
+function office { 
+Write-Host "Installing  Office 365 Business"
+$ResultText.text = "`r`n" +"`r`n" + "Installing  Office 365 Business... Please Wait"
+choco install office365business -y
+$ResultText.text = "`r`n" + "Finished Installing  Office 365 Business" + "`r`n" + "`r`n" + "Ready for Next Task"    
+}
