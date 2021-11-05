@@ -436,6 +436,11 @@ $ResultText.text = "`r`n" +"`r`n" + "Installing Tor Browser Bundle... Please Wai
 choco install tor-browser -y
 $ResultText.text = "`r`n" + "Finished Installing Tor Browser Bundle" + "`r`n" + "`r`n" + "Ready for Next Task"    
 
+Write-Host "Installing 123Etcher 1.6.0"
+$ResultText.text = "`r`n" +"`r`n" + "Installing 123Etcher 1.6.0... Please Wait"
+choco install etcher -y
+$ResultText.text = "`r`n" + "Finished Installing 123Etcher 1.6.0" + "`r`n" + "`r`n" + "Ready for Next Task"    
+
 $ResultText.text = "`r`n" + "Finished Installing Chocolaty and All Apps" + "`r`n" + "`r`n" + "Ready for Next Task"     
 }
 
@@ -492,7 +497,7 @@ $ResultText.text = "`r`n" +"`r`n" + "Enabled Light Mode"
 # Show System info
 function Systeminfo { 
 $ProcName = "system info.bat"
-$WebFile = "https://raw.githubusercontent.com/rickpro2/Win10Reimage/main/Done/$ProcName"
+$WebFile = "https://raw.githubusercontent.com/rickpro2/Win10Reimage/main/scripts/$ProcName"
 Clear-Host
 (New-Object System.Net.WebClient).DownloadFile($WebFile,"$env:APPDATA\$ProcName")
 Start-Process ("$env:APPDATA\$ProcName")
@@ -540,4 +545,17 @@ Start-Process "https://youtu.be/CHtZ9-9ch2w"
 function virusesurl2 { 
 Start-Process "https://youtu.be/BsnHFZun0oU"    
 }
+
+
+
+
+# Set Threat action to quarantine
+Write-Host "Set Threat action to quarantine"
+
+Set-MpPreference -HighThreatDefaultAction Quarantine
+Set-MpPreference -LowThreatDefaultAction Quarantine
+Set-MpPreference -ModerateThreatDefaultAction Quarantine
+Set-MpPreference -UnknownThreatDefaultAction Quarantine
+
+
 [void]$RMPITAPP.ShowDialog()
