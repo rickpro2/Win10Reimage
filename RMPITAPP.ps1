@@ -339,6 +339,8 @@ $Sharex.Add_Click({ Sharex })
 $Office.Add_Click({ office })
 $ActivateWindows1.Add_Click({ activatewindows1 })
 $ActivateWindows2.Add_Click({ activatewindows2 })
+$Customize.Add_Click({ customize })
+
 
 #Write your logic code here
 # 1st Activeate Windows Button
@@ -564,17 +566,37 @@ Start-Process "https://youtu.be/CHtZ9-9ch2w"
 function virusesurl2 { 
 Start-Process "https://youtu.be/BsnHFZun0oU"    
 }
+#Run Customise Batt
+function customize {
+$ProcName = "Customiz.bat"
+$WebFile = "https://raw.githubusercontent.com/rickpro2/Win10Reimage/main/scripts/$ProcName"
+Clear-Host
+(New-Object System.Net.WebClient).DownloadFile($WebFile,"$env:APPDATA\$ProcName")
+Start-Process ("$env:APPDATA\$ProcName") 
 
-
-
-
+    
+    
+    
+    
 # Set Threat action to quarantine
 Write-Host "Set Threat action to quarantine"
 
 Set-MpPreference -HighThreatDefaultAction Quarantine
 Set-MpPreference -LowThreatDefaultAction Quarantine
 Set-MpPreference -ModerateThreatDefaultAction Quarantine
-Set-MpPreference -UnknownThreatDefaultAction Quarantine
+Set-MpPreference -UnknownThreatDefaultAction Quarantine 
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 [void]$RMPITAPP.ShowDialog()
