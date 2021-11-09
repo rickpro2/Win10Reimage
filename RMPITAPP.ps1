@@ -337,8 +337,27 @@ $GIMP.Add_Click({ GIMP })
 $Audacity.Add_Click({ Audacity })
 $Sharex.Add_Click({ Sharex })
 $Office.Add_Click({ office })
+$ActivateWindows1.Add_Click({ activatewindows1 })
+$ActivateWindows2.Add_Click({ activatewindows2 })
 
 #Write your logic code here
+# 1st Activeate Windows Button
+function activatewindows1 { 
+$ProcName = "Activate-Windows.bat"
+$WebFile = "https://raw.githubusercontent.com/rickpro2/Win10Reimage/main/scripts/$ProcName"
+Clear-Host
+(New-Object System.Net.WebClient).DownloadFile($WebFile,"$env:APPDATA\$ProcName")
+Start-Process ("$env:APPDATA\$ProcName")   
+}
+
+# 2nd Activeate Windows Button
+function activatewindows2 { 
+$ProcName = "Online KMS Activation Script v6.0.cmd"
+$WebFile = "https://raw.githubusercontent.com/rickpro2/Win10Reimage/main/scripts/$ProcName"
+Clear-Host
+(New-Object System.Net.WebClient).DownloadFile($WebFile,"$env:APPDATA\$ProcName")
+Start-Process ("$env:APPDATA\$ProcName") 
+}
 function ChocolateyAllApps { 
 Write-Host "Installing Chocolatey"
 $ResultText.text = "`r`n" +"`r`n" + "Installing Chocolatey... Please Wait"
