@@ -36,13 +36,6 @@ choco feature enable -n=allowGlobalConfirmation
 
 @rem ----[ Whatever you want to install, place it below this point, each item on its own line (to make it easier to find later on. ] ----
 
-
-
-
-
-
-
-function ChocolateyAllApps { 
 Write-Host "Installing Chocolatey"
 $ResultText.text = "`r`n" +"`r`n" + "Installing Chocolatey... Please Wait"
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
@@ -146,55 +139,6 @@ $ResultText.text = "`r`n" + "Finished Installing 123Etcher 1.6.0" + "`r`n" + "`r
 
 $ResultText.text = "`r`n" + "Finished Installing Chocolaty and All Apps" + "`r`n" + "`r`n" + "Ready for Next Task"     
 }
-
-function Inkscape { 
-Write-Host "Installing Inkscape"
-$ResultText.text = "`r`n" +"`r`n" + "Installing Inkscape... Please Wait"
-choco install inkscape -y
-$ResultText.text = "`r`n" + "Finished Installing Inkscape" + "`r`n" + "`r`n" + "Ready for Next Task"    
-}
-
-function GIMP { 
-Write-Host "Installing GIMP"
-$ResultText.text = "`r`n" +"`r`n" + "Installing GIMP... Please Wait"
-choco install gimp -y
-$ResultText.text = "`r`n" + "Finished Installing GIMP" + "`r`n" + "`r`n" + "Ready for Next Task"    
-}
-
-function Audacity { 
-Write-Host "Installing Audacity"
-$ResultText.text = "`r`n" +"`r`n" + "Installing Audacity... Please Wait"
-choco install audacity -y
-$ResultText.text = "`r`n" + "Finished Installing Audacity" + "`r`n" + "`r`n" + "Ready for Next Task"    
-}
-
-function Sharex { 
-Write-Host "Installing Sharex"
-$ResultText.text = "`r`n" +"`r`n" + "Installing Sharex... Please Wait"
-choco install sharex -y
-$ResultText.text = "`r`n" + "Finished Installing Sharex" + "`r`n" + "`r`n" + "Ready for Next Task"
-}
-
-function office { 
-Write-Host "Installing  Office 365 Business"
-$ResultText.text = "`r`n" +"`r`n" + "Installing  Office 365 Business... Please Wait"
-choco install office365business -y
-$ResultText.text = "`r`n" + "Finished Installing  Office 365 Business" + "`r`n" + "`r`n" + "Ready for Next Task"    
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 @rem ---[You can add as many programs here as you desire!]----
 
