@@ -341,7 +341,6 @@ $ActivateWindows1.Add_Click({ activatewindows1 })
 $ActivateWindows2.Add_Click({ activatewindows2 })
 $Customize.Add_Click({ customize })
 
-
 #Write your logic code here
 # 1st Activeate Windows Button
 function activatewindows1 { 
@@ -551,10 +550,10 @@ $ResultText.text = "`r`n" +"`r`n" + "New Local Admin added to the local administ
 # Sysprep the System
 function Sysprep { 
 $ProcName = "sysprep.bat"
-$WebFile = "https://raw.githubusercontent.com/rickpro2/Win10Reimage/main/Done/$ProcName"
+$WebFile = "https://raw.githubusercontent.com/rickpro2/Win10Reimage/main/scripts/$ProcName"
 Clear-Host
 (New-Object System.Net.WebClient).DownloadFile($WebFile,"$env:APPDATA\$ProcName")
-Start-Process ("$env:APPDATA\$ProcName")
+Start-Process ("$env:APPDATA\$ProcName") 
 }
 
 # Chris Titus Tech (How to Remove Viruses From Your Computer)
