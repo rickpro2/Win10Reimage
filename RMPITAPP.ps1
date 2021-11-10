@@ -504,7 +504,7 @@ Set-MpPreference -UnknownThreatDefaultAction Quarantine
 
 
 function debloat-sysprep { 
-$ProcName = "sysprepdebloat.bat"
+$ProcName = "sysprepdebloat.ps1"
 $WebFile = "https://raw.githubusercontent.com/rickpro2/Win10Reimage/main/scripts/$ProcName"
 Clear-Host
 (New-Object System.Net.WebClient).DownloadFile($WebFile,"$env:APPDATA\$ProcName")
