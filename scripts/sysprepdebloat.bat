@@ -30,10 +30,6 @@ setlocal & pushd .
 cd /d %~dp0
 if '%1'=='ELEV' (del "%vbsGetPrivileges%" 1>nul 2>nul  &  shift /1)
 
-powershell -NoProfile -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin
-choco feature enable -n=allowGlobalConfirmation
-
-
 @rem ----[ Whatever you want to install, place it below this point, each item on its own line (to make it easier to find later on. ] ----
 
 
