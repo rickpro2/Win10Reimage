@@ -463,7 +463,7 @@ $ResultText.text = "`r`n" +"`r`n" + "New Local Admin added to the local administ
 
 # Restart Computer
 function restart { 
-shutdown.exe /r /t 5
+Restart-Computer -Force
 }
 # Sysprep the System
 function Sysprep { 
