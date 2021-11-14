@@ -351,7 +351,6 @@ $SysprepDebloat.Add_Click({ debloat-sysprep })
 $Debloat.Add_Click({ delobat })
 $Restart.Add_Click({ restart })
 
-function restart { }
 #Write your logic code here
 # 1st Activeate Windows Button
 function activatewindows1 { 
@@ -464,7 +463,7 @@ $ResultText.text = "`r`n" +"`r`n" + "New Local Admin added to the local administ
 
 # Restart Computer
 function restart { 
-shutdown.exe /m /r /t 5
+shutdown.exe /r /t 5
 }
 # Sysprep the System
 function Sysprep { 
