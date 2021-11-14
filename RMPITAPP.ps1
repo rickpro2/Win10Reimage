@@ -322,7 +322,7 @@ $Restart                         = New-Object system.Windows.Forms.Button
 $Restart.text                    = "Restart Computer"
 $Restart.width                   = 130
 $Restart.height                  = 30
-$Restart.location                = New-Object System.Drawing.Point(200,513)
+$Restart.location                = New-Object System.Drawing.Point(13,463)
 $Restart.Font                    = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
 
 $RMPITAPP.controls.AddRange(@($Title,$Panel1,$Panel2,$Panel5,$RMPITlogo,$ResultText,$Panel3,$Restart))
