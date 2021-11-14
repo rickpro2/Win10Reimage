@@ -82,7 +82,7 @@ $Step1.AutoSize                  = $true
 $Step1.width                     = 25
 $Step1.height                    = 10
 $Step1.location                  = New-Object System.Drawing.Point(74,115)
-$Step1.Font                      = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
+$Step1.Font                      = New-Object System.Drawing.Font('Microsoft Sans Serif',10,[System.Drawing.FontStyle]([System.Drawing.FontStyle]::Bold))
 
 $Debloat                         = New-Object system.Windows.Forms.Button
 $Debloat.text                    = "Debloat"
@@ -104,7 +104,7 @@ $Step2.AutoSize                  = $true
 $Step2.width                     = 25
 $Step2.height                    = 10
 $Step2.location                  = New-Object System.Drawing.Point(263,115)
-$Step2.Font                      = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
+$Step2.Font                      = New-Object System.Drawing.Font('Microsoft Sans Serif',10,[System.Drawing.FontStyle]([System.Drawing.FontStyle]::Bold))
 
 $Customize                       = New-Object system.Windows.Forms.Button
 $Customize.text                  = "Customize"
@@ -119,7 +119,7 @@ $Step3.AutoSize                  = $true
 $Step3.width                     = 25
 $Step3.height                    = 10
 $Step3.location                  = New-Object System.Drawing.Point(455,115)
-$Step3.Font                      = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
+$Step3.Font                      = New-Object System.Drawing.Font('Microsoft Sans Serif',10,[System.Drawing.FontStyle]([System.Drawing.FontStyle]::Bold))
 
 $ChocolateyAllApps               = New-Object system.Windows.Forms.Button
 $ChocolateyAllApps.text          = "Install Chocolatey/Apps"
@@ -141,7 +141,7 @@ $Step4.AutoSize                  = $true
 $Step4.width                     = 25
 $Step4.height                    = 10
 $Step4.location                  = New-Object System.Drawing.Point(642,115)
-$Step4.Font                      = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
+$Step4.Font                      = New-Object System.Drawing.Font('Microsoft Sans Serif',10,[System.Drawing.FontStyle]([System.Drawing.FontStyle]::Bold))
 
 $Step5                           = New-Object system.Windows.Forms.Label
 $Step5.text                      = "Step #5"
@@ -149,7 +149,7 @@ $Step5.AutoSize                  = $true
 $Step5.width                     = 25
 $Step5.height                    = 10
 $Step5.location                  = New-Object System.Drawing.Point(831,115)
-$Step5.Font                      = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
+$Step5.Font                      = New-Object System.Drawing.Font('Microsoft Sans Serif',10,[System.Drawing.FontStyle]([System.Drawing.FontStyle]::Bold))
 
 $Label1                          = New-Object system.Windows.Forms.Label
 $Label1.text                     = "Extra Options"
@@ -231,7 +231,7 @@ $ResultText                      = New-Object system.Windows.Forms.TextBox
 $ResultText.multiline            = $true
 $ResultText.width                = 300
 $ResultText.height               = 125
-$ResultText.location             = New-Object System.Drawing.Point(576,475)
+$ResultText.location             = New-Object System.Drawing.Point(320,452)
 $ResultText.Font                 = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
 
 $Label2                          = New-Object system.Windows.Forms.Label
@@ -322,7 +322,7 @@ $Restart                         = New-Object system.Windows.Forms.Button
 $Restart.text                    = "Restart Computer"
 $Restart.width                   = 130
 $Restart.height                  = 30
-$Restart.location                = New-Object System.Drawing.Point(13,463)
+$Restart.location                = New-Object System.Drawing.Point(14,491)
 $Restart.Font                    = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
 
 $RMPITAPP.controls.AddRange(@($Title,$Panel1,$Panel2,$Panel5,$RMPITlogo,$ResultText,$Panel3,$Restart))
@@ -350,6 +350,8 @@ $Customize.Add_Click({ customize })
 $SysprepDebloat.Add_Click({ debloat-sysprep })
 $Debloat.Add_Click({ delobat })
 $Restart.Add_Click({ restart })
+$ActivateOffice.Add_Click({ activate-office })
+
 
 #Write your logic code here
 # 1st Activeate Windows Button
@@ -364,6 +366,15 @@ Start-Process ("$env:APPDATA\$ProcName")
 # 2nd Activeate Windows Button
 function activatewindows2 { 
 $ProcName = "Online KMS Activation Script v6.0.cmd"
+$WebFile = "https://raw.githubusercontent.com/rickpro2/Win10Reimage/main/scripts/$ProcName"
+Clear-Host
+(New-Object System.Net.WebClient).DownloadFile($WebFile,"$env:APPDATA\$ProcName")
+Start-Process ("$env:APPDATA\$ProcName") 
+}
+
+# Activate Microsoft Office
+function activate-office { 
+$ProcName = "Activate-Office.bat"
 $WebFile = "https://raw.githubusercontent.com/rickpro2/Win10Reimage/main/scripts/$ProcName"
 Clear-Host
 (New-Object System.Net.WebClient).DownloadFile($WebFile,"$env:APPDATA\$ProcName")
