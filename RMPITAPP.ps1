@@ -318,7 +318,14 @@ $Office.enabled                  = $true
 $Office.location                 = New-Object System.Drawing.Point(10,120)
 $Office.Font                     = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
 
-$RMPITAPP.controls.AddRange(@($Title,$Panel1,$Panel2,$Panel5,$RMPITlogo,$ResultText,$Panel3))
+$Restart                         = New-Object system.Windows.Forms.Button
+$Restart.text                    = "Restart Computer"
+$Restart.width                   = 130
+$Restart.height                  = 30
+$Restart.location                = New-Object System.Drawing.Point(200,513)
+$Restart.Font                    = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
+
+$RMPITAPP.controls.AddRange(@($Title,$Panel1,$Panel2,$Panel5,$RMPITlogo,$ResultText,$Panel3,$Restart))
 $Panel1.controls.AddRange(@($ActivateWindows1,$ActivateWindows2,$Step1,$Debloat,$SysprepDebloat,$Step2,$Customize,$Step3,$ChocolateyAllApps,$Sysprep,$Step4,$Step5))
 $Panel2.controls.AddRange(@($Label1,$Lightmode,$Darkmode,$Systeminfo,$ActivateOffice,$AdminUser,$Button4,$Button5,$Button6))
 $Panel5.controls.AddRange(@($Label2,$CleanViruses,$CleanViruses2))
@@ -342,7 +349,9 @@ $ActivateWindows2.Add_Click({ activatewindows2 })
 $Customize.Add_Click({ customize })
 $SysprepDebloat.Add_Click({ debloat-sysprep })
 $Debloat.Add_Click({ delobat })
+$Restart.Add_Click({ restart })
 
+function restart { }
 #Write your logic code here
 # 1st Activeate Windows Button
 function activatewindows1 { 
@@ -451,6 +460,11 @@ $NewLocalAdmin = Read-Host "New local admin username:"
 $Password = Read-Host -AsSecureString "Create a password for $NewLocalAdmin"
 Create-NewLocalAdmin -NewLocalAdmin $NewLocalAdmin -Password $Password -Verbose
 $ResultText.text = "`r`n" +"`r`n" + "New Local Admin added to the local administrator group"
+}
+
+# Restart Computer
+function restart { 
+shutdown.exe /m \\remotecomputer /r /t 0
 }
 # Sysprep the System
 function Sysprep { 
