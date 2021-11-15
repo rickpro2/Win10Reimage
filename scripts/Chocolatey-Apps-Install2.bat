@@ -147,6 +147,13 @@ $ResultText.text = "`r`n" +"`r`n" + "Installing PuTTY 0.76... Please Wait"
 choco install putty -y
 $ResultText.text = "`r`n" + "Finished Installing PuTTY 0.76" + "`r`n" + "`r`n" + "Ready for Next Task"  
 
+Write-Host "Installing WinDirStat"
+$ResultText.text = "`r`n" +"`r`n" + "Installing WinDirStat... Please Wait"
+choco install windirstat -y
+$ResultText.text = "`r`n" + "Finished Installing WinDirStat" + "`r`n" + "`r`n" + "Ready for Next Task" 
+
+
+
 $ResultText.text = "`r`n" + "Finished Installing Chocolaty and All Apps" + "`r`n" + "`r`n" + "Ready for Next Task"     
 }
 
