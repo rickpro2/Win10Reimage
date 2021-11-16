@@ -352,7 +352,6 @@ $Debloat.Add_Click({ delobat })
 $Restart.Add_Click({ restart })
 $ActivateOffice.Add_Click({ activate-office })
 
-
 #Write your logic code here
 # 1st Activeate Windows Button
 function activatewindows1 { 
@@ -474,23 +473,8 @@ $ResultText.text = "`r`n" +"`r`n" + "New Local Admin added to the local administ
 
 # Restart Computer
 function restart { 
-$wshell = New-Object -ComObject Wscript.Shell
-
-$wshell.Popup("This computer is scheduled for shutdown",10,"Save Data",0x0)
-
-$wshell.Popup("30 seconds to shutdown",2,"Save it or it will be gone",0x0)
-
-$xCmdString = {sleep 30}
-
-Invoke-Command $xCmdString
-
-Restart-Computer -ComputerName Server01
-}
-
 Restart-Computer -Force
-
-
-
+}
 # Sysprep the System
 function Sysprep { 
 $ProcName = "sysprep.bat"
