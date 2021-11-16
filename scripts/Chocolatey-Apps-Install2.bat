@@ -137,11 +137,6 @@ $ResultText.text = "`r`n" +"`r`n" + "Installing 123Etcher 1.6.0... Please Wait"
 choco install etcher -y
 $ResultText.text = "`r`n" + "Finished Installing 123Etcher 1.6.0" + "`r`n" + "`r`n" + "Ready for Next Task"    
 
-rem  Write-Host "Installing OpenVPN Connect v3 3.3.1"
-rem  $ResultText.text = "`r`n" +"`r`n" + "Installing OpenVPN Connect v3 3.3.1... Please Wait"
-rem  choco install openvpn-connect -y
-rem  $ResultText.text = "`r`n" + "Finished Installing OpenVPN Connect v3 3.3.1" + "`r`n" + "`r`n" + "Ready for Next Task"
-
 Write-Host "Installing PuTTY 0.76"
 $ResultText.text = "`r`n" +"`r`n" + "Installing PuTTY 0.76... Please Wait"
 choco install putty -y
@@ -152,7 +147,15 @@ $ResultText.text = "`r`n" +"`r`n" + "Installing WinDirStat... Please Wait"
 choco install windirstat -y
 $ResultText.text = "`r`n" + "Finished Installing WinDirStat" + "`r`n" + "`r`n" + "Ready for Next Task" 
 
+rem  Write-Host "Installing OpenVPN Connect v3 3.3.1"
+rem  $ResultText.text = "`r`n" +"`r`n" + "Installing OpenVPN Connect v3 3.3.1... Please Wait"
+rem  choco install openvpn-connect -y
+rem  $ResultText.text = "`r`n" + "Finished Installing OpenVPN Connect v3 3.3.1" + "`r`n" + "`r`n" + "Ready for Next Task"
 
+rem  Write-Host "Installing OpenVPN Connect v3 3.3.1"
+rem  $ResultText.text = "`r`n" +"`r`n" + "Installing OpenVPN Connect v3 3.3.1... Please Wait"
+rem  choco install openvpn-connect -y
+rem  $ResultText.text = "`r`n" + "Finished Installing OpenVPN Connect v3 3.3.1" + "`r`n" + "`r`n" + "Ready for Next Task"
 
 $ResultText.text = "`r`n" + "Finished Installing Chocolaty and All Apps" + "`r`n" + "`r`n" + "Ready for Next Task"     
 }
