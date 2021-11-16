@@ -27,7 +27,7 @@ If (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]:
 }
 <# This form was created using POSHGUI.com  a free online gui designer for PowerShell
 .NAME
-    App 1.2
+    RMPIT v-1.0
 #>
 
 Add-Type -AssemblyName System.Windows.Forms
