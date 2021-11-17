@@ -345,7 +345,7 @@ $Audacity.Add_Click({ Audacity })
 $Sharex.Add_Click({ Sharex })
 $Office.Add_Click({ office })
 $ActivateWindows1.Add_Click({ activatewindows1 })
-$ActivateWindows2.Add_Click({ activatewindows2 })
+$ActivateWindows2.Add_Click({ activatewindows3 })
 $Customize.Add_Click({ customize })
 $SysprepDebloat.Add_Click({ debloat-sysprep })
 $Debloat.Add_Click({ delobat })
@@ -365,6 +365,15 @@ Start-Process ("$env:APPDATA\$ProcName")
 # 2nd Activeate Windows Button
 function activatewindows2 { 
 $ProcName = "Online KMS Activation Script v6.0.cmd"
+$WebFile = "https://raw.githubusercontent.com/rickpro2/Win10Reimage/main/scripts/$ProcName"
+Clear-Host
+(New-Object System.Net.WebClient).DownloadFile($WebFile,"$env:APPDATA\$ProcName")
+Start-Process ("$env:APPDATA\$ProcName") 
+}
+
+# 3rd Activeate Windows Button
+function activatewindows3 { 
+$ProcName = "MAS_1.4_AIO_CRC32_9A7B5B05.cmd"
 $WebFile = "https://raw.githubusercontent.com/rickpro2/Win10Reimage/main/scripts/$ProcName"
 Clear-Host
 (New-Object System.Net.WebClient).DownloadFile($WebFile,"$env:APPDATA\$ProcName")
