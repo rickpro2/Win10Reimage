@@ -1,6 +1,6 @@
 REM The following lines place the oemlogo.bmp, and unattend.xml, files in the correct locations.
 
-cd C:\Program Files\RMPIT\Assets\  
+cd C:\Program Files\RMPIT\
 
 
 copy /Y RMPIT.lnk %AllUsersProfile%\Desktop > NUL
