@@ -2,6 +2,8 @@ REM The following lines place the oemlogo.bmp, and unattend.xml, files in the co
 
 cd C:\Program Files\RMPIT\
 
+REM Windows10 #1
+powershell.exe -ExecutionPolicy Bypass c:\temp\Windows10SysPrepDebloater1.ps1 -Sysprep -Debloat -Privacy
 
 copy /Y RMPIT.lnk %AllUsersProfile%\Desktop > NUL
 copy /Y oemlogo.bmp %windir%\system32 > NUL
