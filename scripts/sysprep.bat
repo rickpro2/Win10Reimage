@@ -6,7 +6,7 @@ Debloating The Windows System...
 
 Mkdir C:\TEMP
 cd C:\Program Files\RMPIT\             
-COPY  /Y Windows10SysPrepDebloater1.ps1  C:\TEMP 
+COPY  /Y Windows10SysPrepDebloater.ps1  C:\TEMP 
               
 REM Windows10 #1
 powershell.exe -ExecutionPolicy Bypass c:\temp\Windows10SysPrepDebloater1.ps1 -Sysprep -Debloat -Privacy
