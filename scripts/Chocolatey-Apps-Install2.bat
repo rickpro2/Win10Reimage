@@ -147,6 +147,11 @@ $ResultText.text = "`r`n" +"`r`n" + "Installing WinDirStat... Please Wait"
 choco install windirstat -y
 $ResultText.text = "`r`n" + "Finished Installing WinDirStat" + "`r`n" + "`r`n" + "Ready for Next Task" 
 
+Write-Host "Installing FileZilla"
+$ResultText.text = "`r`n" +"`r`n" + "Installing FileZilla... Please Wait"
+choco install filezilla -y
+$ResultText.text = "`r`n" + "Finished Installing FileZilla" + "`r`n" + "`r`n" + "Ready for Next Task"
+
 rem  Write-Host "Installing OpenVPN Connect v3 3.3.1"
 rem  $ResultText.text = "`r`n" +"`r`n" + "Installing OpenVPN Connect v3 3.3.1... Please Wait"
 rem  choco install openvpn-connect -y
