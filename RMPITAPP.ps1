@@ -27,7 +27,7 @@ If (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]:
 }
 <# This form was created using POSHGUI.com  a free online gui designer for PowerShell
 .NAME
-    RMPIT v-1.0
+    RMPIT LLC v.1.2
 #>
 
 Add-Type -AssemblyName System.Windows.Forms
@@ -325,8 +325,15 @@ $Restart.height                  = 30
 $Restart.location                = New-Object System.Drawing.Point(14,491)
 $Restart.Font                    = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
 
+$Chocolatey                      = New-Object system.Windows.Forms.Button
+$Chocolatey.text                 = "Install Chocolatey"
+$Chocolatey.width                = 130
+$Chocolatey.height               = 30
+$Chocolatey.location             = New-Object System.Drawing.Point(598,70)
+$Chocolatey.Font                 = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
+
 $RMPITAPP.controls.AddRange(@($Title,$Panel1,$Panel2,$Panel5,$RMPITlogo,$ResultText,$Panel3,$Restart))
-$Panel1.controls.AddRange(@($ActivateWindows1,$ActivateWindows2,$Step1,$Debloat,$SysprepDebloat,$Step2,$Customize,$Step3,$ChocolateyAllApps,$Sysprep,$Step4,$Step5))
+$Panel1.controls.AddRange(@($ActivateWindows1,$ActivateWindows2,$Step1,$Debloat,$SysprepDebloat,$Step2,$Customize,$Step3,$ChocolateyAllApps,$Sysprep,$Step4,$Step5,$Chocolatey))
 $Panel2.controls.AddRange(@($Label1,$Lightmode,$Darkmode,$Systeminfo,$ActivateOffice,$AdminUser,$Button4,$Button5,$Button6))
 $Panel5.controls.AddRange(@($Label2,$CleanViruses,$CleanViruses2))
 $Panel3.controls.AddRange(@($Label3,$Inkscape,$GIMP,$Audacity,$Sharex,$Office))
@@ -345,13 +352,15 @@ $Audacity.Add_Click({ Audacity })
 $Sharex.Add_Click({ Sharex })
 $Office.Add_Click({ office })
 $ActivateWindows1.Add_Click({ activatewindows1 })
-$ActivateWindows2.Add_Click({ activatewindows3 })
+$ActivateWindows2.Add_Click({ activatewindows2 })
 $Customize.Add_Click({ customize })
 $SysprepDebloat.Add_Click({ debloat-sysprep })
 $Debloat.Add_Click({ delobat })
 $Restart.Add_Click({ restart })
 $ActivateOffice.Add_Click({ activate-office })
+$Chocolatey.Add_Click({ Chocolatey })
 
+function Chocolatey { }
 #Write your logic code here
 # 1st Activeate Windows Button
 function activatewindows1 { 
@@ -394,6 +403,14 @@ $WebFile = "https://raw.githubusercontent.com/rickpro2/Win10Reimage/main/scripts
 Clear-Host
 (New-Object System.Net.WebClient).DownloadFile($WebFile,"$env:APPDATA\$ProcName")
 Start-Process ("$env:APPDATA\$ProcName") 
+}
+
+function Chocolatey { 
+Write-Host "Installing Chocolatey"
+$ResultText.text = "`r`n" +"`r`n" + "Installing Chocolatey... Please Wait"
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+choco install chocolatey-core.extension -y
+$ResultText.text = "`r`n" + "Finished Installing Chocolatey" + "`r`n" + "`r`n" + "Ready for Next Task"
 }
 
 function Inkscape { 
