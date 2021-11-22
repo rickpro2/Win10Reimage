@@ -43,6 +43,22 @@ REM **************************************
 
 REG ADD HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\CabinetState /v FullPath /t REG_DWORD /d 0x00000001 /f > NUL
 
+REM **************************************
+REM * Display full path in the title bar *
+REM **************************************
+
+:: disable the sign-in option while your device is running on battery
+:: powercfg /SETDCVALUEINDEX SCHEME_CURRENT SUB_NONE CONSOLELOCK 0
+
+:: disable the sign-in option while your device is plugged in
+:: powercfg /SETACVALUEINDEX SCHEME_CURRENT SUB_NONE CONSOLELOCK 0
+
+:: enable the sign-in option while your device is running on battery
+powercfg /SETDCVALUEINDEX SCHEME_CURRENT SUB_NONE CONSOLELOCK 1
+
+:: disable the sign-in option while your device is plugged in
+powercfg /SETACVALUEINDEX SCHEME_CURRENT SUB_NONE CONSOLELOCK 1
+
 REM ******************************************************
 REM * Apply a customized themepack to Windows. Note that *
 REM * the themepack should be located in the same folder *
