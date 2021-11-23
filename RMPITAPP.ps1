@@ -96,6 +96,7 @@ $SysprepDebloat.text             = "Sysprep Debloat"
 $SysprepDebloat.width            = 130
 $SysprepDebloat.height           = 30
 $SysprepDebloat.visible          = $false
+$SysprepDebloat.enabled          = $false
 $SysprepDebloat.location         = New-Object System.Drawing.Point(221,70)
 $SysprepDebloat.Font             = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
 
