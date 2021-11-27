@@ -113,6 +113,16 @@ $ResultText.text = "`r`n" +"`r`n" + "Installing Malwarebytes 4.1.1.159... Please
 choco install malwarebytes -y
 $ResultText.text = "`r`n" + "Finished Installing Malwarebytes 4.1.1.159" + "`r`n" + "`r`n" + "Ready for Next Task"    
 
+Write-Host "Installing HandBrake 1.3.2.20200505"
+$ResultText.text = "`r`n" +"`r`n" + "Installing HandBrake 1.3.2.20200505... Please Wait"
+choco install handbrake -y
+$ResultText.text = "`r`n" + "Finished Installing HandBrake 1.3.2.20200505" + "`r`n" + "`r`n" + "Ready for Next Task"    
+
+Write-Host "Installing Tixati 2.73"
+$ResultText.text = "`r`n" +"`r`n" + "Installing Tixati 2.73... Please Wait"
+choco install tixati -y
+$ResultText.text = "`r`n" + "Finished Installing Tixati 2.73" + "`r`n" + "`r`n" + "Ready for Next Task"  
+
 $ResultText.text = "`r`n" + "Finished Installing Chocolaty and All Apps" + "`r`n" + "`r`n" + "Ready for Next Task"     
 }
 
