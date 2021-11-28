@@ -71,6 +71,29 @@ $ResultText.text = "`r`n" +"`r`n" + "Installing VLC Media Player... Please Wait"
 choco install vlc -y
 $ResultText.text = "`r`n" + "Finished Installing VLC Media Player" + "`r`n" + "`r`n" + "Ready for Next Task"
 
+Write-Host "Installing Zoom Client for Meetings"
+$ResultText.text = "`r`n" +"`r`n" + "Installing Zoom Client for Meetings... Please Wait"
+choco install zoom -y
+$ResultText.text = "`r`n" + "Finished Installing Zoom Client for Meetings" + "`r`n" + "`r`n" + "Ready for Next Task"
+
+Write-Host "Installing TeamViewer"
+$ResultText.text = "`r`n" +"`r`n" + "Installing TeamViewer... Please Wait"
+choco install teamviewer -y
+$ResultText.text = "`r`n" + "Finished Installing TeamViewer" + "`r`n" + "`r`n" + "Ready for Next Task"
+
+Write-Host "Installing 7-Zip"
+$ResultText.text = "`r`n" +"`r`n" + "Installing 7-Zip... Please Wait"
+choco install 7-Zip -y
+$ResultText.text = "`r`n" + "Finished Installing 7-Zip" + "`r`n" + "`r`n" + "Ready for Next Task"
+
+Write-Host "Installing iTunes"
+$ResultText.text = "`r`n" +"`r`n" + "Installing iTunes... Please Wait"
+choco install iTunes -y
+$ResultText.text = "`r`n" + "Finished Installing iTunes" + "`r`n" + "`r`n" + "Ready for Next Task"
+
+
+
+
 
 
 
