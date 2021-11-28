@@ -166,6 +166,11 @@ $ResultText.text = "`r`n" +"`r`n" + "Installing Adobe Creative Cloud Client... P
 choco install adobe-creative-cloud -y
 $ResultText.text = "`r`n" + "Finished Installing Adobe Creative Cloud Client" + "`r`n" + "`r`n" + "Ready for Next Task"  
 
+Write-Host "Installing Dell Command"
+$ResultText.text = "`r`n" +"`r`n" + "Installing Dell Command... Please Wait"
+choco install dellcommandupdate -y
+$ResultText.text = "`r`n" + "Finished Installing Dell Command" + "`r`n" + "`r`n" + "Ready for Next Task"  
+
 rem  Write-Host "Installing OpenVPN Connect v3 3.3.1"
 rem  $ResultText.text = "`r`n" +"`r`n" + "Installing OpenVPN Connect v3 3.3.1... Please Wait"
 rem  choco install openvpn-connect -y
