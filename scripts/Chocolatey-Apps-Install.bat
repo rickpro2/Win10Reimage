@@ -66,7 +66,10 @@ $ResultText.text = "`r`n" +"`r`n" + "Installing Brave Browser... Please Wait"
 choco install brave -y
 $ResultText.text = "`r`n" + "Finished Installing Brave Browser" + "`r`n" + "`r`n" + "Ready for Next Task"
 
-
+Write-Host "Installing VLC Media Player"
+$ResultText.text = "`r`n" +"`r`n" + "Installing VLC Media Player... Please Wait"
+choco install vlc -y
+$ResultText.text = "`r`n" + "Finished Installing VLC Media Player" + "`r`n" + "`r`n" + "Ready for Next Task"
 
 
 
