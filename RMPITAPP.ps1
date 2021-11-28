@@ -362,7 +362,6 @@ $Restart.Add_Click({ restart })
 $ActivateOffice.Add_Click({ activate-office })
 $Chocolatey.Add_Click({ Chocolatey })
 
-function Chocolatey { }
 #Write your logic code here
 # 1st Activeate Windows Button
 function activatewindows1 { 
