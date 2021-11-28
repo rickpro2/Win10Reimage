@@ -51,6 +51,23 @@ $ResultText.text = "`r`n" +"`r`n" + "Installing Choco Upgrade All (Script + Task
 choco install choco-upgrade-all-at --params "'/TIME:07:00 /ABORTTIME:11:50'" -y
 $ResultText.text = "`r`n" + "Finished Installing Choco Upgrade All (Script + Task)" + "`r`n" + "`r`n" + "Ready for Next Task"
 
+Write-Host "Installing Adobe Acrobat Reader DC"
+$ResultText.text = "`r`n" +"`r`n" + "Installing Adobe Acrobat Reader DC... Please Wait"
+choco install adobereader -y
+$ResultText.text = "`r`n" + "Finished Installing Adobe Acrobat Reader DC" + "`r`n" + "`r`n" + "Ready for Next Task"
+
+Write-Host "Installing Google Chrome"
+$ResultText.text = "`r`n" +"`r`n" + "Installing Google Chrome... Please Wait"
+choco install googlechrome -y
+$ResultText.text = "`r`n" + "Finished Installing Google Chrome" + "`r`n" + "`r`n" + "Ready for Next Task"
+
+Write-Host "Installing Brave Browser"
+$ResultText.text = "`r`n" +"`r`n" + "Installing Brave Browser... Please Wait"
+choco install brave -y
+$ResultText.text = "`r`n" + "Finished Installing Brave Browser" + "`r`n" + "`r`n" + "Ready for Next Task"
+
+
+
 
 
 
