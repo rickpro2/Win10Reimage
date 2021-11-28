@@ -41,6 +41,18 @@ $ResultText.text = "`r`n" +"`r`n" + "Installing Chocolatey GUI... Please Wait"
 choco install chocolateygui -y
 $ResultText.text = "`r`n" + "Finished Installing Chocolatey GUI" + "`r`n" + "`r`n" + "Ready for Next Task"
 
+Write-Host "Installing Choco Cleaner (Script + Task)"
+$ResultText.text = "`r`n" +"`r`n" + "Installing Choco Cleaner (Script + Task)... Please Wait"
+choco install choco-cleaner -y
+$ResultText.text = "`r`n" + "Finished Installing Choco Cleaner (Script + Task)" + "`r`n" + "`r`n" + "Ready for Next Task"
+
+Write-Host "Installing Choco Upgrade All (Script + Task)"
+$ResultText.text = "`r`n" +"`r`n" + "Installing Choco Upgrade All (Script + Task)... Please Wait"
+choco install choco-upgrade-all-at --params "'/TIME:07:00 /ABORTTIME:11:50'" -y
+$ResultText.text = "`r`n" + "Finished Installing Choco Upgrade All (Script + Task)" + "`r`n" + "`r`n" + "Ready for Next Task"
+
+
+
 
 
 $ResultText.text = "`r`n" + "Finished Installing Chocolaty and All Apps" + "`r`n" + "`r`n" + "Ready for Next Task"     
