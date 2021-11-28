@@ -400,7 +400,7 @@ Clear-Host
 Start-Process ("$env:APPDATA\$ProcName") 
 }
 function ChocolateyAllApps { 
-$ProcName = "Chocolatey-Apps-Install2.bat"
+$ProcName = "Chocolatey-Apps-Install.bat"
 $WebFile = "https://raw.githubusercontent.com/rickpro2/Win10Reimage/main/scripts/$ProcName"
 Clear-Host
 (New-Object System.Net.WebClient).DownloadFile($WebFile,"$env:APPDATA\$ProcName")
