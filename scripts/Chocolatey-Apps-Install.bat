@@ -161,6 +161,11 @@ $ResultText.text = "`r`n" +"`r`n" + "Installing Tixati 2.73... Please Wait"
 choco install tixati -y
 $ResultText.text = "`r`n" + "Finished Installing Tixati 2.73" + "`r`n" + "`r`n" + "Ready for Next Task"  
 
+Write-Host "Installing Adobe Creative Cloud Client"
+$ResultText.text = "`r`n" +"`r`n" + "Installing Adobe Creative Cloud Client... Please Wait"
+choco install adobe-creative-cloud -y
+$ResultText.text = "`r`n" + "Finished Installing Adobe Creative Cloud Client" + "`r`n" + "`r`n" + "Ready for Next Task"  
+
 rem  Write-Host "Installing OpenVPN Connect v3 3.3.1"
 rem  $ResultText.text = "`r`n" +"`r`n" + "Installing OpenVPN Connect v3 3.3.1... Please Wait"
 rem  choco install openvpn-connect -y
