@@ -36,6 +36,11 @@ choco feature enable -n=allowGlobalConfirmation
 
 @rem ----[ Whatever you want to install, place it below this point, each item on its own line (to make it easier to find later on. ] ----
 
+Write-Host "Installing Chocolatey GUI"
+$ResultText.text = "`r`n" +"`r`n" + "Installing Chocolatey GUI... Please Wait"
+choco install chocolateygui -y
+$ResultText.text = "`r`n" + "Finished Installing Chocolatey GUI" + "`r`n" + "`r`n" + "Ready for Next Task"
+
 
 
 $ResultText.text = "`r`n" + "Finished Installing Chocolaty and All Apps" + "`r`n" + "`r`n" + "Ready for Next Task"     
