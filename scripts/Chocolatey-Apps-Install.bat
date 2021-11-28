@@ -91,6 +91,25 @@ $ResultText.text = "`r`n" +"`r`n" + "Installing iTunes... Please Wait"
 choco install iTunes -y
 $ResultText.text = "`r`n" + "Finished Installing iTunes" + "`r`n" + "`r`n" + "Ready for Next Task"
 
+Write-Host "Installing AllDup"
+$ResultText.text = "`r`n" +"`r`n" + "Installing AllDup... Please Wait"
+choco install AllDup -y
+$ResultText.text = "`r`n" + "Finished Installing AllDup" + "`r`n" + "`r`n" + "Ready for Next Task"
+
+Write-Host "Installing O&O Shutup"
+$ResultText.text = "`r`n" +"`r`n" + "Installing O&O Shutup... Please Wait"
+choco install shutup10 -y
+$ResultText.text = "`r`n" + "Finished Installing O&O Shutup" + "`r`n" + "`r`n" + "Ready for Next Task"
+
+Write-Host "Installing Notepad++"
+$ResultText.text = "`r`n" +"`r`n" + "Installing Notepad++... Please Wait"
+choco install notepadplusplus -y
+$ResultText.text = "`r`n" + "Finished Installing Notepad++" + "`r`n" + "`r`n" + "Ready for Next Task"
+
+Write-Host "Installing Rufus"
+$ResultText.text = "`r`n" +"`r`n" + "Installing Rufus... Please Wait"
+choco install Rufus -y
+$ResultText.text = "`r`n" + "Finished Installing Rufus" + "`r`n" + "`r`n" + "Ready for Next Task"
 
 
 
