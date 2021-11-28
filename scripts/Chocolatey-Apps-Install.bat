@@ -111,6 +111,50 @@ $ResultText.text = "`r`n" +"`r`n" + "Installing Rufus... Please Wait"
 choco install Rufus -y
 $ResultText.text = "`r`n" + "Finished Installing Rufus" + "`r`n" + "`r`n" + "Ready for Next Task"
 
+Write-Host "Installing qBittorrent"
+$ResultText.text = "`r`n" +"`r`n" + "Installing qBittorrent... Please Wait"
+choco install qBittorrent -y
+$ResultText.text = "`r`n" + "Finished Installing qBittorrent" + "`r`n" + "`r`n" + "Ready for Next Task"
+
+Write-Host "Installing Apple iCloud 7.21.0.23"
+$ResultText.text = "`r`n" +"`r`n" + "Installing Apple iCloud 7.21.0.23... Please Wait"
+choco install icloud -y
+$ResultText.text = "`r`n" + "Finished Installing Apple iCloud 7.21.0.23" + "`r`n" + "`r`n" + "Ready for Next Task"
+
+Write-Host "Installing Tor Browser Bundle"
+$ResultText.text = "`r`n" +"`r`n" + "Installing Tor Browser Bundle... Please Wait"
+choco install tor-browser -y
+$ResultText.text = "`r`n" + "Finished Installing Tor Browser Bundle" + "`r`n" + "`r`n" + "Ready for Next Task"
+
+Write-Host "Installing 123Etcher 1.6.0"
+$ResultText.text = "`r`n" +"`r`n" + "Installing 123Etcher 1.6.0... Please Wait"
+choco install etcher -y
+$ResultText.text = "`r`n" + "Finished Installing 123Etcher 1.6.0" + "`r`n" + "`r`n" + "Ready for Next Task"   
+
+Write-Host "Installing PuTTY 0.76"
+$ResultText.text = "`r`n" +"`r`n" + "Installing PuTTY 0.76... Please Wait"
+choco install putty -y
+$ResultText.text = "`r`n" + "Finished Installing PuTTY 0.76" + "`r`n" + "`r`n" + "Ready for Next Task" 
+
+Write-Host "Installing WinDirStat"
+$ResultText.text = "`r`n" +"`r`n" + "Installing WinDirStat... Please Wait"
+choco install windirstat -y
+$ResultText.text = "`r`n" + "Finished Installing WinDirStat" + "`r`n" + "`r`n" + "Ready for Next Task" 
+
+Write-Host "Installing FileZilla"
+$ResultText.text = "`r`n" +"`r`n" + "Installing FileZilla... Please Wait"
+choco install filezilla -y
+$ResultText.text = "`r`n" + "Finished Installing FileZilla" + "`r`n" + "`r`n" + "Ready for Next Task"
+
+rem  Write-Host "Installing OpenVPN Connect v3 3.3.1"
+rem  $ResultText.text = "`r`n" +"`r`n" + "Installing OpenVPN Connect v3 3.3.1... Please Wait"
+rem  choco install openvpn-connect -y
+rem  $ResultText.text = "`r`n" + "Finished Installing OpenVPN Connect v3 3.3.1" + "`r`n" + "`r`n" + "Ready for Next Task"
+
+
+
+
+
 
 
 
