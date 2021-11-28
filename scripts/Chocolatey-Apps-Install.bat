@@ -146,20 +146,50 @@ $ResultText.text = "`r`n" +"`r`n" + "Installing FileZilla... Please Wait"
 choco install filezilla -y
 $ResultText.text = "`r`n" + "Finished Installing FileZilla" + "`r`n" + "`r`n" + "Ready for Next Task"
 
+Write-Host "Installing Malwarebytes 4.1.1.159"
+$ResultText.text = "`r`n" +"`r`n" + "Installing Malwarebytes 4.1.1.159... Please Wait"
+choco install malwarebytes -y
+$ResultText.text = "`r`n" + "Finished Installing Malwarebytes 4.1.1.159" + "`r`n" + "`r`n" + "Ready for Next Task"    
+
+Write-Host "Installing HandBrake 1.3.2.20200505"
+$ResultText.text = "`r`n" +"`r`n" + "Installing HandBrake 1.3.2.20200505... Please Wait"
+choco install handbrake -y
+$ResultText.text = "`r`n" + "Finished Installing HandBrake 1.3.2.20200505" + "`r`n" + "`r`n" + "Ready for Next Task"    
+
+Write-Host "Installing Tixati 2.73"
+$ResultText.text = "`r`n" +"`r`n" + "Installing Tixati 2.73... Please Wait"
+choco install tixati -y
+$ResultText.text = "`r`n" + "Finished Installing Tixati 2.73" + "`r`n" + "`r`n" + "Ready for Next Task"  
+
 rem  Write-Host "Installing OpenVPN Connect v3 3.3.1"
 rem  $ResultText.text = "`r`n" +"`r`n" + "Installing OpenVPN Connect v3 3.3.1... Please Wait"
 rem  choco install openvpn-connect -y
 rem  $ResultText.text = "`r`n" + "Finished Installing OpenVPN Connect v3 3.3.1" + "`r`n" + "`r`n" + "Ready for Next Task"
 
+rem  Write-Host "Installing Inkscape"
+rem  $ResultText.text = "`r`n" +"`r`n" + "Installing Inkscape... Please Wait"
+rem  choco install inkscape -y
+rem  $ResultText.text = "`r`n" + "Finished Installing Inkscape" + "`r`n" + "`r`n" + "Ready for Next Task"   
 
+rem  Write-Host "Installing GIMP"
+rem  $ResultText.text = "`r`n" +"`r`n" + "Installing GIMP... Please Wait"
+rem  choco install gimp -y
+rem  $ResultText.text = "`r`n" + "Finished Installing GIMP" + "`r`n" + "`r`n" + "Ready for Next Task"  
 
+rem  Write-Host "Installing Audacity"
+rem  $ResultText.text = "`r`n" +"`r`n" + "Installing Audacity... Please Wait"
+rem  choco install audacity -y
+rem  $ResultText.text = "`r`n" + "Finished Installing Audacity" + "`r`n" + "`r`n" + "Ready for Next Task"  
 
+rem  Write-Host "Installing Sharex"
+rem  $ResultText.text = "`r`n" +"`r`n" + "Installing Sharex... Please Wait"
+rem  choco install sharex -y
+rem  $ResultText.text = "`r`n" + "Finished Installing Sharex" + "`r`n" + "`r`n" + "Ready for Next Task"
 
-
-
-
-
-
+rem  Write-Host "Installing  Office 365 Business"
+rem  $ResultText.text = "`r`n" +"`r`n" + "Installing  Office 365 Business... Please Wait"
+rem  choco install office365business -y
+rem  $ResultText.text = "`r`n" + "Finished Installing  Office 365 Business" + "`r`n" + "`r`n" + "Ready for Next Task"   
 
 $ResultText.text = "`r`n" + "Finished Installing Chocolaty and All Apps" + "`r`n" + "`r`n" + "Ready for Next Task"     
 }
