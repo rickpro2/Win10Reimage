@@ -176,6 +176,11 @@ $ResultText.text = "`r`n" +"`r`n" + "Installing Google Drive for Desktop... Plea
 choco install google-drive-file-stream -y
 $ResultText.text = "`r`n" + "Finished Installing Google Drive for Desktop" + "`r`n" + "`r`n" + "Ready for Next Task"  
 
+Write-Host "Installing Winaero Tweaker"
+$ResultText.text = "`r`n" +"`r`n" + "Installing Winaero Tweaker... Please Wait"
+choco install winaero-tweaker -y
+$ResultText.text = "`r`n" + "Finished Installing Winaero Tweaker" + "`r`n" + "`r`n" + "Ready for Next Task"  
+
 rem  Write-Host "Installing OpenVPN Connect v3 3.3.1"
 rem  $ResultText.text = "`r`n" +"`r`n" + "Installing OpenVPN Connect v3 3.3.1... Please Wait"
 rem  choco install openvpn-connect -y
