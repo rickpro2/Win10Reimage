@@ -83,7 +83,7 @@ $ResultText.text = "`r`n" + "Finished Installing TeamViewer" + "`r`n" + "`r`n" +
 
 Write-Host "Installing 7-Zip"
 $ResultText.text = "`r`n" +"`r`n" + "Installing 7-Zip... Please Wait"
-choco install 7-Zip -y
+choco install 7zip -y
 $ResultText.text = "`r`n" + "Finished Installing 7-Zip" + "`r`n" + "`r`n" + "Ready for Next Task"
 
 Write-Host "Installing iTunes"
