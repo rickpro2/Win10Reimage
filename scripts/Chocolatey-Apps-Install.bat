@@ -48,7 +48,7 @@ $ResultText.text = "`r`n" + "Finished Installing Choco Cleaner (Script + Task)" 
 
 Write-Host "Installing Choco Upgrade All (Script + Task)"
 $ResultText.text = "`r`n" +"`r`n" + "Installing Choco Upgrade All (Script + Task)... Please Wait"
-choco install choco-upgrade-all-at --params "'/TIME:07:00 /ABORTTIME:11:50'" -y
+choco install choco-upgrade-all-at-startup -y
 $ResultText.text = "`r`n" + "Finished Installing Choco Upgrade All (Script + Task)" + "`r`n" + "`r`n" + "Ready for Next Task"
 
 Write-Host "Installing Adobe Acrobat Reader DC"
@@ -108,7 +108,7 @@ $ResultText.text = "`r`n" + "Finished Installing Notepad++" + "`r`n" + "`r`n" + 
 
 Write-Host "Installing Rufus"
 $ResultText.text = "`r`n" +"`r`n" + "Installing Rufus... Please Wait"
-choco install Rufus -y
+choco install rufus -y
 $ResultText.text = "`r`n" + "Finished Installing Rufus" + "`r`n" + "`r`n" + "Ready for Next Task"
 
 Write-Host "Installing qBittorrent"
@@ -171,15 +171,20 @@ $ResultText.text = "`r`n" +"`r`n" + "Installing Dell Command... Please Wait"
 choco install dellcommandupdate -y
 $ResultText.text = "`r`n" + "Finished Installing Dell Command" + "`r`n" + "`r`n" + "Ready for Next Task"  
 
-Write-Host "Installing Google Drive for Desktop"
-$ResultText.text = "`r`n" +"`r`n" + "Installing Google Drive for Desktop... Please Wait"
-choco install google-drive-file-stream -y
-$ResultText.text = "`r`n" + "Finished Installing Google Drive for Desktop" + "`r`n" + "`r`n" + "Ready for Next Task"  
+Write-Host "Installing Audacity"
+$ResultText.text = "`r`n" +"`r`n" + "Installing Audacity... Please Wait"
+choco install audacity -y
+$ResultText.text = "`r`n" + "Finished Installing Audacity" + "`r`n" + "`r`n" + "Ready for Next Task"  
 
-Write-Host "Installing Winaero Tweaker"
-$ResultText.text = "`r`n" +"`r`n" + "Installing Winaero Tweaker... Please Wait"
-choco install winaero-tweaker -y
-$ResultText.text = "`r`n" + "Finished Installing Winaero Tweaker" + "`r`n" + "`r`n" + "Ready for Next Task"  
+rem Write-Host "Installing Google Drive for Desktop"
+rem $ResultText.text = "`r`n" +"`r`n" + "Installing Google Drive for Desktop... Please Wait"
+rem choco install google-drive-file-stream -y
+rem $ResultText.text = "`r`n" + "Finished Installing Google Drive for Desktop" + "`r`n" + "`r`n" + "Ready for Next Task"  
+
+rem Write-Host "Installing Winaero Tweaker"
+rem $ResultText.text = "`r`n" +"`r`n" + "Installing Winaero Tweaker... Please Wait"
+rem choco install winaero-tweaker -y
+rem $ResultText.text = "`r`n" + "Finished Installing Winaero Tweaker" + "`r`n" + "`r`n" + "Ready for Next Task"  
 
 rem  Write-Host "Installing OpenVPN Connect v3 3.3.1"
 rem  $ResultText.text = "`r`n" +"`r`n" + "Installing OpenVPN Connect v3 3.3.1... Please Wait"
@@ -195,11 +200,6 @@ rem  Write-Host "Installing GIMP"
 rem  $ResultText.text = "`r`n" +"`r`n" + "Installing GIMP... Please Wait"
 rem  choco install gimp -y
 rem  $ResultText.text = "`r`n" + "Finished Installing GIMP" + "`r`n" + "`r`n" + "Ready for Next Task"  
-
-rem  Write-Host "Installing Audacity"
-rem  $ResultText.text = "`r`n" +"`r`n" + "Installing Audacity... Please Wait"
-rem  choco install audacity -y
-rem  $ResultText.text = "`r`n" + "Finished Installing Audacity" + "`r`n" + "`r`n" + "Ready for Next Task"  
 
 rem  Write-Host "Installing Sharex"
 rem  $ResultText.text = "`r`n" +"`r`n" + "Installing Sharex... Please Wait"
