@@ -35,25 +35,15 @@ if %i%==8 set KMS_Sev=kms.lotro.cc
 if %i%==9 set KMS_Sev=kms9.MSGuides.com
 if %i%==10 set KMS_Sev=kms.srv.crsoo.com
 if %i%==11 set KMS_Sev=54.223.212.31
-
-
-kms.digiboy.ir
-54.223.212.31
-kms.cnlic.com
-kms.chinancce.com
-kms.ddns.net
-franklv.ddns.net
-k.zpale.com
-m.zpale.com
-mvg.zpale.com
-kms.shuax.com
-kensol263.imwork.net:1688
-
-
-
-
-
-if %i%==12 exit
+if %i%==12 set KMS_Sev=kms.digiboy.ir
+if %i%==13 set KMS_Sev=kms.cnlic.com
+if %i%==14 set KMS_Sev=kms.ddns.net
+if %i%==15 set KMS_Sev=k.zpale.com
+if %i%==16 set KMS_Sev=m.zpale.com
+if %i%==17 set KMS_Sev=mvg.zpale.com
+if %i%==18 set KMS_Sev=kms.shuax.com
+if %i%==19 set KMS_Sev=kensol263.imwork.net:1688
+if %i%==20 exit
 cscript //nologo c:\windows\system32\slmgr.vbs /skms %KMS_Sev% >nul
 cscript //nologo c:\windows\system32\slmgr.vbs /ato | find /i "successfully" && (echo.&  ************************************ & echo. & choice /n /c YN /m "Do you want to restart your PC now [Y,N]?" & if errorlevel 2 exit) || (echo The connection to the server failed! Trying to connect to another one... & echo Please wait... & echo. & echo. & set /a i+=1 & goto server)
 shutdown.exe /r /t 10
