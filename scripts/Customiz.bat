@@ -72,6 +72,16 @@ REM All settings have been applied. Even though we are restarting, for some reas
 REM File explorer.exe be restarted. If you don't restart it, that registry setting will revert back, even after a logoff / logon or reboot.
 REM As a result, we will restart explorer.exe first, then reboot the system.
 
+REM ****************************************
+REM * Change Background Shuffle Time *
+REM ****************************************
+
+REM This will cause the clock on the taskbar to show seconds. Windows Explorer needs to be restarted
+REM before this will take effect.
+
+reg add HKEY_CURRENT_USER\Control Panel\Personalization\Desktop Slideshow   /v Interval /t REG_DWORD /d 10000  /f 
+
+
 REM Restart explorer
 
 taskkill /f /im explorer.exe
