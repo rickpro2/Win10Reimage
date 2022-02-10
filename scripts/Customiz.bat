@@ -79,7 +79,7 @@ REM ****************************************
 REM This will cause the clock on the taskbar to show seconds. Windows Explorer needs to be restarted
 REM before this will take effect.
 
-reg add HKEY_CURRENT_USER\Control Panel\Personalization\Desktop Slideshow   /v Interval /t REG_DWORD /d "30000"  /f 
+reg add HKEY_CURRENT_USER\Control Panel\Personalization\Desktop Slideshow /v Interval /t REG_DWORD /d "30000"  /f 
 
 
 
