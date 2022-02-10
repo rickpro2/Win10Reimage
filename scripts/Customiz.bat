@@ -82,6 +82,7 @@ REM before this will take effect.
 reg add HKEY_CURRENT_USER\Control Panel\Personalization\Desktop Slideshow   /v Interval /t REG_DWORD /d 10000  /f 
 
 
+
 REM Restart explorer
 
 taskkill /f /im explorer.exe
