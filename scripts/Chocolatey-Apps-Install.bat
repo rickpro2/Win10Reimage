@@ -171,6 +171,11 @@ $ResultText.text = "`r`n" +"`r`n" + "Installing Dell Command... Please Wait"
 choco install dellcommandupdate -y
 $ResultText.text = "`r`n" + "Finished Installing Dell Command" + "`r`n" + "`r`n" + "Ready for Next Task"  
 
+Write-Host "Installing Dell SupportAssist"
+$ResultText.text = "`r`n" +"`r`n" + "Installing Dell SupportAssist... Please Wait"
+choco install supportassist -y
+$ResultText.text = "`r`n" + "Finished Installing Dell SupportAssist" + "`r`n" + "`r`n" + "Ready for Next Task"  
+
 Write-Host "Installing Audacity"
 $ResultText.text = "`r`n" +"`r`n" + "Installing Audacity... Please Wait"
 choco install audacity -y
