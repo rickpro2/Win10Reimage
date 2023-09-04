@@ -61,10 +61,10 @@ $ResultText.text = "`r`n" +"`r`n" + "Installing Google Chrome... Please Wait"
 choco install googlechrome -y
 $ResultText.text = "`r`n" + "Finished Installing Google Chrome" + "`r`n" + "`r`n" + "Ready for Next Task"
 
-Write-Host "Installing Brave Browser"
-$ResultText.text = "`r`n" +"`r`n" + "Installing Brave Browser... Please Wait"
-choco install brave -y
-$ResultText.text = "`r`n" + "Finished Installing Brave Browser" + "`r`n" + "`r`n" + "Ready for Next Task"
+rem  Write-Host "Installing Brave Browser"
+rem  $ResultText.text = "`r`n" +"`r`n" + "Installing Brave Browser... Please Wait"
+rem  choco install brave -y
+rem  $ResultText.text = "`r`n" + "Finished Installing Brave Browser" + "`r`n" + "`r`n" + "Ready for Next Task"
 
 Write-Host "Installing VLC Media Player"
 $ResultText.text = "`r`n" +"`r`n" + "Installing VLC Media Player... Please Wait"
@@ -76,110 +76,110 @@ $ResultText.text = "`r`n" +"`r`n" + "Installing Zoom Client for Meetings... Plea
 choco install zoom -y
 $ResultText.text = "`r`n" + "Finished Installing Zoom Client for Meetings" + "`r`n" + "`r`n" + "Ready for Next Task"
 
-Write-Host "Installing TeamViewer"
-$ResultText.text = "`r`n" +"`r`n" + "Installing TeamViewer... Please Wait"
-choco install teamviewer -y
-$ResultText.text = "`r`n" + "Finished Installing TeamViewer" + "`r`n" + "`r`n" + "Ready for Next Task"
+rem  Write-Host "Installing TeamViewer"
+rem  $ResultText.text = "`r`n" +"`r`n" + "Installing TeamViewer... Please Wait"
+rem  choco install teamviewer -y
+rem  $ResultText.text = "`r`n" + "Finished Installing TeamViewer" + "`r`n" + "`r`n" + "Ready for Next Task"
 
-Write-Host "Installing 7-Zip"
-$ResultText.text = "`r`n" +"`r`n" + "Installing 7-Zip... Please Wait"
-choco install 7zip -y
-$ResultText.text = "`r`n" + "Finished Installing 7-Zip" + "`r`n" + "`r`n" + "Ready for Next Task"
+rem  Write-Host "Installing 7-Zip"
+rem  $ResultText.text = "`r`n" +"`r`n" + "Installing 7-Zip... Please Wait"
+rem  choco install 7zip -y
+rem  $ResultText.text = "`r`n" + "Finished Installing 7-Zip" + "`r`n" + "`r`n" + "Ready for Next Task"
 
 Write-Host "Installing iTunes"
 $ResultText.text = "`r`n" +"`r`n" + "Installing iTunes... Please Wait"
 choco install iTunes -y
 $ResultText.text = "`r`n" + "Finished Installing iTunes" + "`r`n" + "`r`n" + "Ready for Next Task"
 
-Write-Host "Installing AllDup"
-$ResultText.text = "`r`n" +"`r`n" + "Installing AllDup... Please Wait"
-choco install AllDup -y
-$ResultText.text = "`r`n" + "Finished Installing AllDup" + "`r`n" + "`r`n" + "Ready for Next Task"
+rem  Write-Host "Installing AllDup"
+rem  $ResultText.text = "`r`n" +"`r`n" + "Installing AllDup... Please Wait"
+rem  choco install AllDup -y
+rem  $ResultText.text = "`r`n" + "Finished Installing AllDup" + "`r`n" + "`r`n" + "Ready for Next Task"
 
-Write-Host "Installing O&O Shutup"
-$ResultText.text = "`r`n" +"`r`n" + "Installing O&O Shutup... Please Wait"
-choco install shutup10 -y
-$ResultText.text = "`r`n" + "Finished Installing O&O Shutup" + "`r`n" + "`r`n" + "Ready for Next Task"
+rem  Write-Host "Installing O&O Shutup"
+rem  $ResultText.text = "`r`n" +"`r`n" + "Installing O&O Shutup... Please Wait"
+rem  choco install shutup10 -y
+rem  $ResultText.text = "`r`n" + "Finished Installing O&O Shutup" + "`r`n" + "`r`n" + "Ready for Next Task"
 
-Write-Host "Installing Notepad++"
-$ResultText.text = "`r`n" +"`r`n" + "Installing Notepad++... Please Wait"
-choco install notepadplusplus -y
-$ResultText.text = "`r`n" + "Finished Installing Notepad++" + "`r`n" + "`r`n" + "Ready for Next Task"
+rem  Write-Host "Installing Notepad++"
+rem  $ResultText.text = "`r`n" +"`r`n" + "Installing Notepad++... Please Wait"
+rem  choco install notepadplusplus -y
+rem  $ResultText.text = "`r`n" + "Finished Installing Notepad++" + "`r`n" + "`r`n" + "Ready for Next Task"
 
-Write-Host "Installing Rufus"
-$ResultText.text = "`r`n" +"`r`n" + "Installing Rufus... Please Wait"
-choco install rufus -y
-$ResultText.text = "`r`n" + "Finished Installing Rufus" + "`r`n" + "`r`n" + "Ready for Next Task"
+rem  Write-Host "Installing Rufus"
+rem  $ResultText.text = "`r`n" +"`r`n" + "Installing Rufus... Please Wait"
+rem  choco install rufus -y
+rem  $ResultText.text = "`r`n" + "Finished Installing Rufus" + "`r`n" + "`r`n" + "Ready for Next Task"
 
-Write-Host "Installing qBittorrent"
-$ResultText.text = "`r`n" +"`r`n" + "Installing qBittorrent... Please Wait"
-choco install qBittorrent -y
-$ResultText.text = "`r`n" + "Finished Installing qBittorrent" + "`r`n" + "`r`n" + "Ready for Next Task"
+rem  Write-Host "Installing qBittorrent"
+rem  $ResultText.text = "`r`n" +"`r`n" + "Installing qBittorrent... Please Wait"
+rem  choco install qBittorrent -y
+rem  $ResultText.text = "`r`n" + "Finished Installing qBittorrent" + "`r`n" + "`r`n" + "Ready for Next Task"
 
-Write-Host "Installing Apple iCloud 7.21.0.23"
-$ResultText.text = "`r`n" +"`r`n" + "Installing Apple iCloud 7.21.0.23... Please Wait"
-choco install icloud -y
-$ResultText.text = "`r`n" + "Finished Installing Apple iCloud 7.21.0.23" + "`r`n" + "`r`n" + "Ready for Next Task"
+rem  Write-Host "Installing Apple iCloud 7.21.0.23"
+rem  $ResultText.text = "`r`n" +"`r`n" + "Installing Apple iCloud 7.21.0.23... Please Wait"
+rem  choco install icloud -y
+rem  $ResultText.text = "`r`n" + "Finished Installing Apple iCloud 7.21.0.23" + "`r`n" + "`r`n" + "Ready for Next Task"
 
-Write-Host "Installing Tor Browser Bundle"
-$ResultText.text = "`r`n" +"`r`n" + "Installing Tor Browser Bundle... Please Wait"
-choco install tor-browser -y
-$ResultText.text = "`r`n" + "Finished Installing Tor Browser Bundle" + "`r`n" + "`r`n" + "Ready for Next Task"
+rem  Write-Host "Installing Tor Browser Bundle"
+rem  $ResultText.text = "`r`n" +"`r`n" + "Installing Tor Browser Bundle... Please Wait"
+rem  choco install tor-browser -y
+rem  $ResultText.text = "`r`n" + "Finished Installing Tor Browser Bundle" + "`r`n" + "`r`n" + "Ready for Next Task"
 
-Write-Host "Installing 123Etcher 1.6.0"
-$ResultText.text = "`r`n" +"`r`n" + "Installing 123Etcher 1.6.0... Please Wait"
-choco install etcher -y
-$ResultText.text = "`r`n" + "Finished Installing 123Etcher 1.6.0" + "`r`n" + "`r`n" + "Ready for Next Task"   
+rem  Write-Host "Installing 123Etcher 1.6.0"
+rem  $ResultText.text = "`r`n" +"`r`n" + "Installing 123Etcher 1.6.0... Please Wait"
+rem  choco install etcher -y
+rem  $ResultText.text = "`r`n" + "Finished Installing 123Etcher 1.6.0" + "`r`n" + "`r`n" + "Ready for Next Task"   
 
-Write-Host "Installing PuTTY 0.76"
-$ResultText.text = "`r`n" +"`r`n" + "Installing PuTTY 0.76... Please Wait"
-choco install putty -y
-$ResultText.text = "`r`n" + "Finished Installing PuTTY 0.76" + "`r`n" + "`r`n" + "Ready for Next Task" 
+rem  Write-Host "Installing PuTTY 0.76"
+rem  $ResultText.text = "`r`n" +"`r`n" + "Installing PuTTY 0.76... Please Wait"
+rem  choco install putty -y
+rem  $ResultText.text = "`r`n" + "Finished Installing PuTTY 0.76" + "`r`n" + "`r`n" + "Ready for Next Task" 
 
-Write-Host "Installing WinDirStat"
-$ResultText.text = "`r`n" +"`r`n" + "Installing WinDirStat... Please Wait"
-choco install windirstat -y
-$ResultText.text = "`r`n" + "Finished Installing WinDirStat" + "`r`n" + "`r`n" + "Ready for Next Task" 
+rem  Write-Host "Installing WinDirStat"
+rem  $ResultText.text = "`r`n" +"`r`n" + "Installing WinDirStat... Please Wait"
+rem  choco install windirstat -y
+rem  $ResultText.text = "`r`n" + "Finished Installing WinDirStat" + "`r`n" + "`r`n" + "Ready for Next Task" 
 
-Write-Host "Installing FileZilla"
-$ResultText.text = "`r`n" +"`r`n" + "Installing FileZilla... Please Wait"
-choco install filezilla -y
-$ResultText.text = "`r`n" + "Finished Installing FileZilla" + "`r`n" + "`r`n" + "Ready for Next Task"
+rem  Write-Host "Installing FileZilla"
+rem  $ResultText.text = "`r`n" +"`r`n" + "Installing FileZilla... Please Wait"
+rem  choco install filezilla -y
+rem  $ResultText.text = "`r`n" + "Finished Installing FileZilla" + "`r`n" + "`r`n" + "Ready for Next Task"
 
-Write-Host "Installing Malwarebytes 4.1.1.159"
-$ResultText.text = "`r`n" +"`r`n" + "Installing Malwarebytes 4.1.1.159... Please Wait"
-choco install malwarebytes -y
-$ResultText.text = "`r`n" + "Finished Installing Malwarebytes 4.1.1.159" + "`r`n" + "`r`n" + "Ready for Next Task"    
+rem  Write-Host "Installing Malwarebytes 4.1.1.159"
+rem  $ResultText.text = "`r`n" +"`r`n" + "Installing Malwarebytes 4.1.1.159... Please Wait"
+rem  choco install malwarebytes -y
+rem  $ResultText.text = "`r`n" + "Finished Installing Malwarebytes 4.1.1.159" + "`r`n" + "`r`n" + "Ready for Next Task"    
 
-Write-Host "Installing HandBrake 1.3.2.20200505"
-$ResultText.text = "`r`n" +"`r`n" + "Installing HandBrake 1.3.2.20200505... Please Wait"
-choco install handbrake -y
-$ResultText.text = "`r`n" + "Finished Installing HandBrake 1.3.2.20200505" + "`r`n" + "`r`n" + "Ready for Next Task"    
+rem  Write-Host "Installing HandBrake 1.3.2.20200505"
+rem  $ResultText.text = "`r`n" +"`r`n" + "Installing HandBrake 1.3.2.20200505... Please Wait"
+rem  choco install handbrake -y
+rem  $ResultText.text = "`r`n" + "Finished Installing HandBrake 1.3.2.20200505" + "`r`n" + "`r`n" + "Ready for Next Task"    
 
-Write-Host "Installing Tixati 2.73"
-$ResultText.text = "`r`n" +"`r`n" + "Installing Tixati 2.73... Please Wait"
-choco install tixati -y
-$ResultText.text = "`r`n" + "Finished Installing Tixati 2.73" + "`r`n" + "`r`n" + "Ready for Next Task"  
+rem  Write-Host "Installing Tixati 2.73"
+rem  $ResultText.text = "`r`n" +"`r`n" + "Installing Tixati 2.73... Please Wait"
+rem  choco install tixati -y
+rem  $ResultText.text = "`r`n" + "Finished Installing Tixati 2.73" + "`r`n" + "`r`n" + "Ready for Next Task"  
 
-Write-Host "Installing Adobe Creative Cloud Client"
-$ResultText.text = "`r`n" +"`r`n" + "Installing Adobe Creative Cloud Client... Please Wait"
-choco install adobe-creative-cloud -y
-$ResultText.text = "`r`n" + "Finished Installing Adobe Creative Cloud Client" + "`r`n" + "`r`n" + "Ready for Next Task"  
+rem  Write-Host "Installing Adobe Creative Cloud Client"
+rem  $ResultText.text = "`r`n" +"`r`n" + "Installing Adobe Creative Cloud Client... Please Wait"
+rem  choco install adobe-creative-cloud -y
+rem  $ResultText.text = "`r`n" + "Finished Installing Adobe Creative Cloud Client" + "`r`n" + "`r`n" + "Ready for Next Task"  
 
-Write-Host "Installing Dell Command"
-$ResultText.text = "`r`n" +"`r`n" + "Installing Dell Command... Please Wait"
-choco install dellcommandupdate -y
-$ResultText.text = "`r`n" + "Finished Installing Dell Command" + "`r`n" + "`r`n" + "Ready for Next Task"  
+rem  Write-Host "Installing Dell Command"
+rem  $ResultText.text = "`r`n" +"`r`n" + "Installing Dell Command... Please Wait"
+rem  choco install dellcommandupdate -y
+rem  $ResultText.text = "`r`n" + "Finished Installing Dell Command" + "`r`n" + "`r`n" + "Ready for Next Task"  
 
 Write-Host "Installing Dell SupportAssist"
 $ResultText.text = "`r`n" +"`r`n" + "Installing Dell SupportAssist... Please Wait"
 choco install supportassist -y
 $ResultText.text = "`r`n" + "Finished Installing Dell SupportAssist" + "`r`n" + "`r`n" + "Ready for Next Task"  
 
-Write-Host "Installing Audacity"
-$ResultText.text = "`r`n" +"`r`n" + "Installing Audacity... Please Wait"
-choco install audacity -y
-$ResultText.text = "`r`n" + "Finished Installing Audacity" + "`r`n" + "`r`n" + "Ready for Next Task"  
+rem  Write-Host "Installing Audacity"
+rem  $ResultText.text = "`r`n" +"`r`n" + "Installing Audacity... Please Wait"
+rem  choco install audacity -y
+rem  $ResultText.text = "`r`n" + "Finished Installing Audacity" + "`r`n" + "`r`n" + "Ready for Next Task"  
 
 rem Write-Host "Installing Google Drive for Desktop"
 rem $ResultText.text = "`r`n" +"`r`n" + "Installing Google Drive for Desktop... Please Wait"
