@@ -17,6 +17,7 @@ copy /Y oemlogo.bmp %windir%\system32 > NUL
 move /Y unattend.xml %windir%\system32\sysprep > NUL
 copy /Y RunOnce.bat %appdata%\Microsoft\Windows\Start Menu\Programs\Startup > NUL
 copy /Y Welcome.VBS %appdata%\Microsoft\Windows\Start Menu\Programs\Startup > NUL
+del /Y C:\TEMP\Windows10SysPrepDebloater.ps1
 
 
 C:\Windows\System32\sysprep\sysprep.exe /generalize /oobe /shutdown /unattend:C:\Windows\System32\Sysprep\unattend.xml
