@@ -19,7 +19,7 @@ copy /Y RunOnce.bat %appdata%\Microsoft\Windows\Start Menu\Programs\Startup > NU
 copy /Y Welcome.VBS %appdata%\Microsoft\Windows\Start Menu\Programs\Startup > NUL
 
 cd C:\TEMP
-del /Y Windows10SysPrepDebloater.ps1
+del /s /q c:\temp\Windows10SysPrepDebloater.ps1\*
 
 
 C:\Windows\System32\sysprep\sysprep.exe /generalize /oobe /shutdown /unattend:C:\Windows\System32\Sysprep\unattend.xml
