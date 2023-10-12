@@ -20,6 +20,7 @@ copy /Y RunOnce.bat %appdata%\Microsoft\Windows\Start Menu\Programs\Startup > NU
 copy /Y Welcome.VBS %appdata%\Microsoft\Windows\Start Menu\Programs\Startup > NUL
 
 cd C:\TEMP
+del /s /q c:\temp\*
 del /s /q c:\temp\Windows10SysPrepDebloater.ps1\*
 
 
