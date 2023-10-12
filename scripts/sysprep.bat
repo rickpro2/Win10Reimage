@@ -13,6 +13,7 @@ powershell.exe -ExecutionPolicy Bypass c:\temp\Windows10SysPrepDebloater.ps1 -Sy
 
 
 copy /Y RMPIT.lnk %AllUsersProfile%\Desktop > NUL
+copy /Y Tron Virus Remover.lnk %AllUsersProfile%\Desktop > NUL
 copy /Y oemlogo.bmp %windir%\system32 > NUL
 move /Y unattend.xml %windir%\system32\sysprep > NUL
 copy /Y RunOnce.bat %appdata%\Microsoft\Windows\Start Menu\Programs\Startup > NUL
