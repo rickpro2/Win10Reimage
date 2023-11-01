@@ -61,10 +61,10 @@ $ResultText.text = "`r`n" +"`r`n" + "Installing Google Chrome... Please Wait"
 choco install googlechrome -y
 $ResultText.text = "`r`n" + "Finished Installing Google Chrome" + "`r`n" + "`r`n" + "Ready for Next Task"
 
-rem  Write-Host "Installing Brave Browser"
-rem  $ResultText.text = "`r`n" +"`r`n" + "Installing Brave Browser... Please Wait"
-rem  choco install brave -y
-rem  $ResultText.text = "`r`n" + "Finished Installing Brave Browser" + "`r`n" + "`r`n" + "Ready for Next Task"
+Write-Host "Installing Brave Browser"
+$ResultText.text = "`r`n" +"`r`n" + "Installing Brave Browser... Please Wait"
+choco install brave -y
+$ResultText.text = "`r`n" + "Finished Installing Brave Browser" + "`r`n" + "`r`n" + "Ready for Next Task"
 
 Write-Host "Installing VLC Media Player"
 $ResultText.text = "`r`n" +"`r`n" + "Installing VLC Media Player... Please Wait"
@@ -96,10 +96,10 @@ rem  $ResultText.text = "`r`n" +"`r`n" + "Installing 7-Zip... Please Wait"
 rem  choco install 7zip -y
 rem  $ResultText.text = "`r`n" + "Finished Installing 7-Zip" + "`r`n" + "`r`n" + "Ready for Next Task"
 
-rem  Write-Host "Installing iTunes"
-rem  $ResultText.text = "`r`n" +"`r`n" + "Installing iTunes... Please Wait"
-rem  choco install iTunes -y
-rem  $ResultText.text = "`r`n" + "Finished Installing iTunes" + "`r`n" + "`r`n" + "Ready for Next Task"
+Write-Host "Installing iTunes"
+$ResultText.text = "`r`n" +"`r`n" + "Installing iTunes... Please Wait"
+choco install iTunes -y
+$ResultText.text = "`r`n" + "Finished Installing iTunes" + "`r`n" + "`r`n" + "Ready for Next Task"
 
 rem  Write-Host "Installing AllDup"
 rem  $ResultText.text = "`r`n" +"`r`n" + "Installing AllDup... Please Wait"
@@ -156,10 +156,10 @@ rem  $ResultText.text = "`r`n" +"`r`n" + "Installing FileZilla... Please Wait"
 rem  choco install filezilla -y
 rem  $ResultText.text = "`r`n" + "Finished Installing FileZilla" + "`r`n" + "`r`n" + "Ready for Next Task"
 
-rem  Write-Host "Installing Malwarebytes 4.1.1.159"
-rem  $ResultText.text = "`r`n" +"`r`n" + "Installing Malwarebytes 4.1.1.159... Please Wait"
-rem  choco install malwarebytes -y
-rem  $ResultText.text = "`r`n" + "Finished Installing Malwarebytes 4.1.1.159" + "`r`n" + "`r`n" + "Ready for Next Task"    
+Write-Host "Installing Malwarebytes 4.1.1.159"
+$ResultText.text = "`r`n" +"`r`n" + "Installing Malwarebytes 4.1.1.159... Please Wait"
+choco install malwarebytes -y
+$ResultText.text = "`r`n" + "Finished Installing Malwarebytes 4.1.1.159" + "`r`n" + "`r`n" + "Ready for Next Task"    
 
 rem  Write-Host "Installing HandBrake 1.3.2.20200505"
 rem  $ResultText.text = "`r`n" +"`r`n" + "Installing HandBrake 1.3.2.20200505... Please Wait"
