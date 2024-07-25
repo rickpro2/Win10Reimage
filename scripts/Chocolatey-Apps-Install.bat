@@ -86,6 +86,11 @@ $ResultText.text = "`r`n" +"`r`n" + "Installing Malwarebytes... Please Wait"
 choco install malwarebytes -y
 $ResultText.text = "`r`n" + "Finished Installing Malwarebytes" + "`r`n" + "`r`n" + "Ready for Next Task"
 
+Write-Host "Installing Open-Shell"
+$ResultText.text = "`r`n" +"`r`n" + "Installing Open-Shell... Please Wait"
+choco install open-shell -y
+$ResultText.text = "`r`n" + "Finished Installing Open-Shell" + "`r`n" + "`r`n" + "Ready for Next Task"
+
 rem  Write-Host "Installing TeamViewer"
 rem  $ResultText.text = "`r`n" +"`r`n" + "Installing TeamViewer... Please Wait"
 rem  choco install teamviewer -y
