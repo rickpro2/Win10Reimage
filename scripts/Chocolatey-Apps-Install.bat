@@ -61,10 +61,10 @@ $ResultText.text = "`r`n" +"`r`n" + "Installing Google Chrome... Please Wait"
 choco install googlechrome -y
 $ResultText.text = "`r`n" + "Finished Installing Google Chrome" + "`r`n" + "`r`n" + "Ready for Next Task"
 
-Write-Host "Installing Brave Browser"
-$ResultText.text = "`r`n" +"`r`n" + "Installing Brave Browser... Please Wait"
-choco install brave -y
-$ResultText.text = "`r`n" + "Finished Installing Brave Browser" + "`r`n" + "`r`n" + "Ready for Next Task"
+rem  Write-Host "Installing Brave Browser"
+rem  $ResultText.text = "`r`n" +"`r`n" + "Installing Brave Browser... Please Wait"
+rem  choco install brave -y
+rem  $ResultText.text = "`r`n" + "Finished Installing Brave Browser" + "`r`n" + "`r`n" + "Ready for Next Task"
 
 Write-Host "Installing VLC Media Player"
 $ResultText.text = "`r`n" +"`r`n" + "Installing VLC Media Player... Please Wait"
@@ -81,25 +81,25 @@ $ResultText.text = "`r`n" +"`r`n" + "Installing Rustdesk... Please Wait"
 choco install rustdesk -y
 $ResultText.text = "`r`n" + "Finished Installing Rustdesk" + "`r`n" + "`r`n" + "Ready for Next Task"
 
-Write-Host "Installing Malwarebytes"
-$ResultText.text = "`r`n" +"`r`n" + "Installing Malwarebytes... Please Wait"
-choco install malwarebytes -y
-$ResultText.text = "`r`n" + "Finished Installing Malwarebytes" + "`r`n" + "`r`n" + "Ready for Next Task"
+rem  Write-Host "Installing Malwarebytes"
+rem  $ResultText.text = "`r`n" +"`r`n" + "Installing Malwarebytes... Please Wait"
+rem  choco install malwarebytes -y
+rem  $ResultText.text = "`r`n" + "Finished Installing Malwarebytes" + "`r`n" + "`r`n" + "Ready for Next Task"
 
-Write-Host "Installing Open-Shell"
-$ResultText.text = "`r`n" +"`r`n" + "Installing Open-Shell... Please Wait"
-choco install open-shell -y
-$ResultText.text = "`r`n" + "Finished Installing Open-Shell" + "`r`n" + "`r`n" + "Ready for Next Task"
+rem  Write-Host "Installing Open-Shell"
+rem  $ResultText.text = "`r`n" +"`r`n" + "Installing Open-Shell... Please Wait"
+rem  choco install open-shell -y
+rem  $ResultText.text = "`r`n" + "Finished Installing Open-Shell" + "`r`n" + "`r`n" + "Ready for Next Task"
 
 rem  Write-Host "Installing TeamViewer"
 rem  $ResultText.text = "`r`n" +"`r`n" + "Installing TeamViewer... Please Wait"
 rem  choco install teamviewer -y
 rem  $ResultText.text = "`r`n" + "Finished Installing TeamViewer" + "`r`n" + "`r`n" + "Ready for Next Task"
 
-rem  Write-Host "Installing 7-Zip"
-rem  $ResultText.text = "`r`n" +"`r`n" + "Installing 7-Zip... Please Wait"
-rem  choco install 7zip -y
-rem  $ResultText.text = "`r`n" + "Finished Installing 7-Zip" + "`r`n" + "`r`n" + "Ready for Next Task"
+Write-Host "Installing 7-Zip"
+$ResultText.text = "`r`n" +"`r`n" + "Installing 7-Zip... Please Wait"
+choco install 7zip -y
+$ResultText.text = "`r`n" + "Finished Installing 7-Zip" + "`r`n" + "`r`n" + "Ready for Next Task"
 
 Write-Host "Installing iTunes"
 $ResultText.text = "`r`n" +"`r`n" + "Installing iTunes... Please Wait"
@@ -186,10 +186,10 @@ rem  $ResultText.text = "`r`n" +"`r`n" + "Installing Dell Command... Please Wait
 rem  choco install dellcommandupdate -y
 rem  $ResultText.text = "`r`n" + "Finished Installing Dell Command" + "`r`n" + "`r`n" + "Ready for Next Task"  
 
-rem  Write-Host "Installing Dell SupportAssist"
-rem  $ResultText.text = "`r`n" +"`r`n" + "Installing Dell SupportAssist... Please Wait"
-rem  choco install supportassist -y
-rem  $ResultText.text = "`r`n" + "Finished Installing Dell SupportAssist" + "`r`n" + "`r`n" + "Ready for Next Task"  
+Write-Host "Installing Dell SupportAssist"
+$ResultText.text = "`r`n" +"`r`n" + "Installing Dell SupportAssist... Please Wait"
+choco install supportassist -y
+$ResultText.text = "`r`n" + "Finished Installing Dell SupportAssist" + "`r`n" + "`r`n" + "Ready for Next Task"  
 
 rem  Write-Host "Installing Audacity"
 rem  $ResultText.text = "`r`n" +"`r`n" + "Installing Audacity... Please Wait"
@@ -226,10 +226,10 @@ rem  $ResultText.text = "`r`n" +"`r`n" + "Installing Sharex... Please Wait"
 rem  choco install sharex -y
 rem  $ResultText.text = "`r`n" + "Finished Installing Sharex" + "`r`n" + "`r`n" + "Ready for Next Task"
 
-rem  Write-Host "Installing  Office 365 Business"
-rem  $ResultText.text = "`r`n" +"`r`n" + "Installing  Office 365 Business... Please Wait"
-rem  choco install office365business -y
-rem  $ResultText.text = "`r`n" + "Finished Installing  Office 365 Business" + "`r`n" + "`r`n" + "Ready for Next Task"   
+Write-Host "Installing  Office 365 Business"
+$ResultText.text = "`r`n" +"`r`n" + "Installing  Office 365 Business... Please Wait"
+choco install office365business -y
+$ResultText.text = "`r`n" + "Finished Installing  Office 365 Business" + "`r`n" + "`r`n" + "Ready for Next Task"   
 
 $ResultText.text = "`r`n" + "Finished Installing Chocolaty and All Apps" + "`r`n" + "`r`n" + "Ready for Next Task"     
 }
