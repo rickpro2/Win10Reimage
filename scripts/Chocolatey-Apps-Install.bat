@@ -81,6 +81,11 @@ $ResultText.text = "`r`n" +"`r`n" + "Installing Rustdesk... Please Wait"
 choco install rustdesk -y
 $ResultText.text = "`r`n" + "Finished Installing Rustdesk" + "`r`n" + "`r`n" + "Ready for Next Task"
 
+Write-Host "Installing Notepad++"
+$ResultText.text = "`r`n" +"`r`n" + "Installing Notepad++... Please Wait"
+choco install notepadplusplus.install -y
+$ResultText.text = "`r`n" + "Finished Installing Notepad++" + "`r`n" + "`r`n" + "Ready for Next Task"
+
 rem  Write-Host "Installing Malwarebytes"
 rem  $ResultText.text = "`r`n" +"`r`n" + "Installing Malwarebytes... Please Wait"
 rem  choco install malwarebytes -y
