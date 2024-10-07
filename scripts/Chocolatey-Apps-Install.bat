@@ -161,11 +161,6 @@ rem  $ResultText.text = "`r`n" +"`r`n" + "Installing FileZilla... Please Wait"
 rem  choco install filezilla -y
 rem  $ResultText.text = "`r`n" + "Finished Installing FileZilla" + "`r`n" + "`r`n" + "Ready for Next Task"
 
-Write-Host "Installing Malwarebytes 4.1.1.159"
-$ResultText.text = "`r`n" +"`r`n" + "Installing Malwarebytes 4.1.1.159... Please Wait"
-choco install malwarebytes -y
-$ResultText.text = "`r`n" + "Finished Installing Malwarebytes 4.1.1.159" + "`r`n" + "`r`n" + "Ready for Next Task"    
-
 rem  Write-Host "Installing HandBrake 1.3.2.20200505"
 rem  $ResultText.text = "`r`n" +"`r`n" + "Installing HandBrake 1.3.2.20200505... Please Wait"
 rem  choco install handbrake -y
