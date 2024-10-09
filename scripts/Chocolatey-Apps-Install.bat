@@ -127,11 +127,11 @@ $ResultText.text = "`r`n" + "Finished Installing  Office 365 Business" + "`r`n" 
 
 
 
-choco install etcher --version 1.19.21 -y
-choco install putty --version 0.81.0 -y
-choco install filezilla --version 3.67.1 -y
-choco install handbrake --version 1.8.2 -y
-choco install supportassist --version 3.14.2.45116 -y
+rem  choco install etcher --version 1.19.21 -y
+rem  choco install putty --version 0.81.0 -y
+rem  choco install filezilla --version 3.67.1 -y
+rem  choco install handbrake --version 1.8.2 -y
+rem  choco install supportassist --version 3.14.2.45116 -y
 
 
 
@@ -146,10 +146,10 @@ rem  $ResultText.text = "`r`n" +"`r`n" + "Installing Brave Browser... Please Wai
 rem  choco install brave -y
 rem  $ResultText.text = "`r`n" + "Finished Installing Brave Browser" + "`r`n" + "`r`n" + "Ready for Next Task"
 
-Write-Host "Installing iTunes"
-$ResultText.text = "`r`n" +"`r`n" + "Installing iTunes... Please Wait"
-choco install itunes -y
-$ResultText.text = "`r`n" + "Finished Installing iTunes" + "`r`n" + "`r`n" + "Ready for Next Task"
+rem  Write-Host "Installing iTunes"
+rem  $ResultText.text = "`r`n" +"`r`n" + "Installing iTunes... Please Wait"
+rem  choco install itunes -y
+rem  $ResultText.text = "`r`n" + "Finished Installing iTunes" + "`r`n" + "`r`n" + "Ready for Next Task"
 
 rem  Write-Host "Installing O&O Shutup"
 rem  $ResultText.text = "`r`n" +"`r`n" + "Installing O&O Shutup... Please Wait"
@@ -211,10 +211,10 @@ rem  $ResultText.text = "`r`n" +"`r`n" + "Installing Dell Command... Please Wait
 rem  choco install dellcommandupdate -y
 rem  $ResultText.text = "`r`n" + "Finished Installing Dell Command" + "`r`n" + "`r`n" + "Ready for Next Task"  
 
-Write-Host "Installing Dell SupportAssist"
-$ResultText.text = "`r`n" +"`r`n" + "Installing Dell SupportAssist... Please Wait"
-choco install supportassist -y
-$ResultText.text = "`r`n" + "Finished Installing Dell SupportAssist" + "`r`n" + "`r`n" + "Ready for Next Task"  
+rem  Write-Host "Installing Dell SupportAssist"
+rem  $ResultText.text = "`r`n" +"`r`n" + "Installing Dell SupportAssist... Please Wait"
+rem  choco install supportassist -y
+rem  $ResultText.text = "`r`n" + "Finished Installing Dell SupportAssist" + "`r`n" + "`r`n" + "Ready for Next Task"  
 
 rem  Write-Host "Installing Audacity"
 rem  $ResultText.text = "`r`n" +"`r`n" + "Installing Audacity... Please Wait"
