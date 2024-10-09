@@ -76,6 +76,11 @@ $ResultText.text = "`r`n" +"`r`n" + "Installing Rustdesk... Please Wait"
 choco install rustdesk --version 1.2.6 -y
 $ResultText.text = "`r`n" + "Finished Installing Rustdesk" + "`r`n" + "`r`n" + "Ready for Next Task"
 
+rem  Write-Host "Installing TeamViewer"
+rem  $ResultText.text = "`r`n" +"`r`n" + "Installing TeamViewer... Please Wait"
+rem  choco install teamviewer --version 15.58.5 -y
+rem  $ResultText.text = "`r`n" + "Finished Installing TeamViewer" + "`r`n" + "`r`n" + "Ready for Next Task"
+
 rem  Write-Host "Installing Notepad++"
 rem  $ResultText.text = "`r`n" +"`r`n" + "Installing Notepad++... Please Wait"
 rem  choco install notepadplusplus --version 8.7.0 -y
@@ -91,11 +96,6 @@ rem  $ResultText.text = "`r`n" +"`r`n" + "Installing Open-Shell... Please Wait"
 rem  choco install open-shell --version 4.4.191 -y
 rem  $ResultText.text = "`r`n" + "Finished Installing Open-Shell" + "`r`n" + "`r`n" + "Ready for Next Task"
 
-rem  Write-Host "Installing TeamViewer"
-rem  $ResultText.text = "`r`n" +"`r`n" + "Installing TeamViewer... Please Wait"
-rem  choco install teamviewer --version 15.58.5 -y
-rem  $ResultText.text = "`r`n" + "Finished Installing TeamViewer" + "`r`n" + "`r`n" + "Ready for Next Task"
-
 Write-Host "Installing 7-Zip"
 $ResultText.text = "`r`n" +"`r`n" + "Installing 7-Zip... Please Wait"
 choco install 7zip --version 24.8.0 -y
@@ -110,6 +110,11 @@ rem  Write-Host "Installing Rufus"
 rem  $ResultText.text = "`r`n" +"`r`n" + "Installing Rufus... Please Wait"
 rem  choco install rufus --version 4.5.0 -y
 rem  $ResultText.text = "`r`n" + "Finished Installing Rufus" + "`r`n" + "`r`n" + "Ready for Next Task"
+
+rem  Write-Host "Installing 123Etcher 1.6.0"
+rem  $ResultText.text = "`r`n" +"`r`n" + "Installing 123Etcher 1.6.0... Please Wait"
+rem  choco install etcher --version 1.19.21 -y
+rem  $ResultText.text = "`r`n" + "Finished Installing 123Etcher 1.6.0" + "`r`n" + "`r`n" + "Ready for Next Task"   
 
 Write-Host "Installing Google Drive for Desktop"
 $ResultText.text = "`r`n" +"`r`n" + "Installing Google Drive for Desktop... Please Wait"
@@ -127,12 +132,10 @@ $ResultText.text = "`r`n" + "Finished Installing  Office 365 Business" + "`r`n" 
 
 
 
-rem  choco install etcher --version 1.19.21 -y
+
 rem  choco install putty --version 0.81.0 -y
 rem  choco install filezilla --version 3.67.1 -y
 rem  choco install handbrake --version 1.8.2 -y
-rem  choco install supportassist --version 3.14.2.45116 -y
-
 
 
 
@@ -151,11 +154,6 @@ rem  $ResultText.text = "`r`n" +"`r`n" + "Installing iTunes... Please Wait"
 rem  choco install itunes -y
 rem  $ResultText.text = "`r`n" + "Finished Installing iTunes" + "`r`n" + "`r`n" + "Ready for Next Task"
 
-rem  Write-Host "Installing O&O Shutup"
-rem  $ResultText.text = "`r`n" +"`r`n" + "Installing O&O Shutup... Please Wait"
-rem  choco install shutup10 -y
-rem  $ResultText.text = "`r`n" + "Finished Installing O&O Shutup" + "`r`n" + "`r`n" + "Ready for Next Task"
-
 rem  Write-Host "Installing qBittorrent"
 rem  $ResultText.text = "`r`n" +"`r`n" + "Installing qBittorrent... Please Wait"
 rem  choco install qBittorrent -y
@@ -170,11 +168,6 @@ rem  Write-Host "Installing Tor Browser Bundle"
 rem  $ResultText.text = "`r`n" +"`r`n" + "Installing Tor Browser Bundle... Please Wait"
 rem  choco install tor-browser -y
 rem  $ResultText.text = "`r`n" + "Finished Installing Tor Browser Bundle" + "`r`n" + "`r`n" + "Ready for Next Task"
-
-rem  Write-Host "Installing 123Etcher 1.6.0"
-rem  $ResultText.text = "`r`n" +"`r`n" + "Installing 123Etcher 1.6.0... Please Wait"
-rem  choco install etcher -y
-rem  $ResultText.text = "`r`n" + "Finished Installing 123Etcher 1.6.0" + "`r`n" + "`r`n" + "Ready for Next Task"   
 
 rem  Write-Host "Installing PuTTY 0.76"
 rem  $ResultText.text = "`r`n" +"`r`n" + "Installing PuTTY 0.76... Please Wait"
@@ -210,11 +203,6 @@ rem  Write-Host "Installing Dell Command"
 rem  $ResultText.text = "`r`n" +"`r`n" + "Installing Dell Command... Please Wait"
 rem  choco install dellcommandupdate -y
 rem  $ResultText.text = "`r`n" + "Finished Installing Dell Command" + "`r`n" + "`r`n" + "Ready for Next Task"  
-
-rem  Write-Host "Installing Dell SupportAssist"
-rem  $ResultText.text = "`r`n" +"`r`n" + "Installing Dell SupportAssist... Please Wait"
-rem  choco install supportassist -y
-rem  $ResultText.text = "`r`n" + "Finished Installing Dell SupportAssist" + "`r`n" + "`r`n" + "Ready for Next Task"  
 
 rem  Write-Host "Installing Audacity"
 rem  $ResultText.text = "`r`n" +"`r`n" + "Installing Audacity... Please Wait"
