@@ -56,23 +56,38 @@ $ResultText.text = "`r`n" +"`r`n" + "Installing Adobe Acrobat Reader DC... Pleas
 choco install adobereader --version 2024.3.20112 -y
 $ResultText.text = "`r`n" + "Finished Installing Adobe Acrobat Reader DC" + "`r`n" + "`r`n" + "Ready for Next Task"
 
-
-
-
-
-
-
-
-
-
-
-
-
+Write-Host "Installing Google Chrome"
+$ResultText.text = "`r`n" +"`r`n" + "Installing Google Chrome... Please Wait"
 choco install googlechrome --version 129.0.6668.90 -y
+$ResultText.text = "`r`n" + "Finished Installing Google Chrome" + "`r`n" + "`r`n" + "Ready for Next Task"
+
+Write-Host "Installing VLC Media Player"
+$ResultText.text = "`r`n" +"`r`n" + "Installing VLC Media Player... Please Wait"
 choco install vlc --version 3.0.21 -y
+$ResultText.text = "`r`n" + "Finished Installing VLC Media Player" + "`r`n" + "`r`n" + "Ready for Next Task"
+
+Write-Host "Installing Zoom Client for Meetings"
+$ResultText.text = "`r`n" +"`r`n" + "Installing Zoom Client for Meetings... Please Wait"
 choco install zoom --version 6.2.3.47507 -y
+$ResultText.text = "`r`n" + "Finished Installing Zoom Client for Meetings" + "`r`n" + "`r`n" + "Ready for Next Task"
+
+Write-Host "Installing Rustdesk"
+$ResultText.text = "`r`n" +"`r`n" + "Installing Rustdesk... Please Wait"
 choco install rustdesk --version 1.2.6 -y
-choco install notepadplusplus --version 8.7.0 -y
+$ResultText.text = "`r`n" + "Finished Installing Rustdesk" + "`r`n" + "`r`n" + "Ready for Next Task"
+
+rem  Write-Host "Installing Notepad++"
+rem  $ResultText.text = "`r`n" +"`r`n" + "Installing Notepad++... Please Wait"
+rem  choco install notepadplusplus --version 8.7.0 -y
+rem  $ResultText.text = "`r`n" + "Finished Installing Notepad++" + "`r`n" + "`r`n" + "Ready for Next Task"
+
+
+
+
+
+
+
+
 choco install malwarebytes --version 5.2.0.112 -y
 choco install open-shell --version 4.4.191 -y
 choco install teamviewer --version 15.58.5 -y
@@ -94,42 +109,12 @@ choco install office365business --version 17830.20162 -y
 
 
 
-
-
-
-
-
-
-
-Write-Host "Installing Google Chrome"
-$ResultText.text = "`r`n" +"`r`n" + "Installing Google Chrome... Please Wait"
-choco install googlechrome -y
-$ResultText.text = "`r`n" + "Finished Installing Google Chrome" + "`r`n" + "`r`n" + "Ready for Next Task"
-
 rem  Write-Host "Installing Brave Browser"
 rem  $ResultText.text = "`r`n" +"`r`n" + "Installing Brave Browser... Please Wait"
 rem  choco install brave -y
 rem  $ResultText.text = "`r`n" + "Finished Installing Brave Browser" + "`r`n" + "`r`n" + "Ready for Next Task"
 
-Write-Host "Installing VLC Media Player"
-$ResultText.text = "`r`n" +"`r`n" + "Installing VLC Media Player... Please Wait"
-choco install vlc -y
-$ResultText.text = "`r`n" + "Finished Installing VLC Media Player" + "`r`n" + "`r`n" + "Ready for Next Task"
 
-Write-Host "Installing Zoom Client for Meetings"
-$ResultText.text = "`r`n" +"`r`n" + "Installing Zoom Client for Meetings... Please Wait"
-choco install zoom -y
-$ResultText.text = "`r`n" + "Finished Installing Zoom Client for Meetings" + "`r`n" + "`r`n" + "Ready for Next Task"
-
-Write-Host "Installing Rustdesk"
-$ResultText.text = "`r`n" +"`r`n" + "Installing Rustdesk... Please Wait"
-choco install rustdesk -y
-$ResultText.text = "`r`n" + "Finished Installing Rustdesk" + "`r`n" + "`r`n" + "Ready for Next Task"
-
-Write-Host "Installing Notepad++"
-$ResultText.text = "`r`n" +"`r`n" + "Installing Notepad++... Please Wait"
-choco install notepadplusplus.install -y
-$ResultText.text = "`r`n" + "Finished Installing Notepad++" + "`r`n" + "`r`n" + "Ready for Next Task"
 
 rem  Write-Host "Installing Malwarebytes"
 rem  $ResultText.text = "`r`n" +"`r`n" + "Installing Malwarebytes... Please Wait"
