@@ -81,26 +81,58 @@ rem  $ResultText.text = "`r`n" +"`r`n" + "Installing Notepad++... Please Wait"
 rem  choco install notepadplusplus --version 8.7.0 -y
 rem  $ResultText.text = "`r`n" + "Finished Installing Notepad++" + "`r`n" + "`r`n" + "Ready for Next Task"
 
+rem  Write-Host "Installing Malwarebytes"
+rem  $ResultText.text = "`r`n" +"`r`n" + "Installing Malwarebytes... Please Wait"
+rem  choco install malwarebytes --version 5.2.0.112 -y
+rem  $ResultText.text = "`r`n" + "Finished Installing Malwarebytes" + "`r`n" + "`r`n" + "Ready for Next Task"
 
+rem  Write-Host "Installing Open-Shell"
+rem  $ResultText.text = "`r`n" +"`r`n" + "Installing Open-Shell... Please Wait"
+rem  choco install open-shell --version 4.4.191 -y
+rem  $ResultText.text = "`r`n" + "Finished Installing Open-Shell" + "`r`n" + "`r`n" + "Ready for Next Task"
 
+rem  Write-Host "Installing TeamViewer"
+rem  $ResultText.text = "`r`n" +"`r`n" + "Installing TeamViewer... Please Wait"
+rem  choco install teamviewer --version 15.58.5 -y
+rem  $ResultText.text = "`r`n" + "Finished Installing TeamViewer" + "`r`n" + "`r`n" + "Ready for Next Task"
 
-
-
-
-
-choco install malwarebytes --version 5.2.0.112 -y
-choco install open-shell --version 4.4.191 -y
-choco install teamviewer --version 15.58.5 -y
+Write-Host "Installing 7-Zip"
+$ResultText.text = "`r`n" +"`r`n" + "Installing 7-Zip... Please Wait"
 choco install 7zip --version 24.8.0 -y
-choco install alldup --version 4.5.62 -y
-choco install rufus --version 4.5.0 -y
+$ResultText.text = "`r`n" + "Finished Installing 7-Zip" + "`r`n" + "`r`n" + "Ready for Next Task"
+
+rem  Write-Host "Installing AllDup"
+rem  $ResultText.text = "`r`n" +"`r`n" + "Installing AllDup... Please Wait"
+rem  choco install alldup --version 4.5.62 -y
+rem  $ResultText.text = "`r`n" + "Finished Installing AllDup" + "`r`n" + "`r`n" + "Ready for Next Task"
+
+rem  Write-Host "Installing Rufus"
+rem  $ResultText.text = "`r`n" +"`r`n" + "Installing Rufus... Please Wait"
+rem  choco install rufus --version 4.5.0 -y
+rem  $ResultText.text = "`r`n" + "Finished Installing Rufus" + "`r`n" + "`r`n" + "Ready for Next Task"
+
+Write-Host "Installing Google Drive for Desktop"
+$ResultText.text = "`r`n" +"`r`n" + "Installing Google Drive for Desktop... Please Wait"
+choco install googledrive --version 97.0.1 -y
+$ResultText.text = "`r`n" + "Finished Installing Google Drive for Desktop" + "`r`n" + "`r`n" + "Ready for Next Task"  
+
+Write-Host "Installing  Office 365 Business"
+$ResultText.text = "`r`n" +"`r`n" + "Installing  Office 365 Business... Please Wait"
+choco install office365business --version 17830.20162 -y
+$ResultText.text = "`r`n" + "Finished Installing  Office 365 Business" + "`r`n" + "`r`n" + "Ready for Next Task"   
+
+
+
+
+
+
+
 choco install etcher --version 1.19.21 -y
 choco install putty --version 0.81.0 -y
 choco install filezilla --version 3.67.1 -y
 choco install handbrake --version 1.8.2 -y
 choco install supportassist --version 3.14.2.45116 -y
-choco install googledrive --version 97.0.1 -y
-choco install office365business --version 17830.20162 -y
+
 
 
 
@@ -114,52 +146,15 @@ rem  $ResultText.text = "`r`n" +"`r`n" + "Installing Brave Browser... Please Wai
 rem  choco install brave -y
 rem  $ResultText.text = "`r`n" + "Finished Installing Brave Browser" + "`r`n" + "`r`n" + "Ready for Next Task"
 
-
-
-rem  Write-Host "Installing Malwarebytes"
-rem  $ResultText.text = "`r`n" +"`r`n" + "Installing Malwarebytes... Please Wait"
-rem  choco install malwarebytes -y
-rem  $ResultText.text = "`r`n" + "Finished Installing Malwarebytes" + "`r`n" + "`r`n" + "Ready for Next Task"
-
-rem  Write-Host "Installing Open-Shell"
-rem  $ResultText.text = "`r`n" +"`r`n" + "Installing Open-Shell... Please Wait"
-rem  choco install open-shell -y
-rem  $ResultText.text = "`r`n" + "Finished Installing Open-Shell" + "`r`n" + "`r`n" + "Ready for Next Task"
-
-rem  Write-Host "Installing TeamViewer"
-rem  $ResultText.text = "`r`n" +"`r`n" + "Installing TeamViewer... Please Wait"
-rem  choco install teamviewer -y
-rem  $ResultText.text = "`r`n" + "Finished Installing TeamViewer" + "`r`n" + "`r`n" + "Ready for Next Task"
-
-Write-Host "Installing 7-Zip"
-$ResultText.text = "`r`n" +"`r`n" + "Installing 7-Zip... Please Wait"
-choco install 7zip -y
-$ResultText.text = "`r`n" + "Finished Installing 7-Zip" + "`r`n" + "`r`n" + "Ready for Next Task"
-
 Write-Host "Installing iTunes"
 $ResultText.text = "`r`n" +"`r`n" + "Installing iTunes... Please Wait"
 choco install itunes -y
 $ResultText.text = "`r`n" + "Finished Installing iTunes" + "`r`n" + "`r`n" + "Ready for Next Task"
 
-rem  Write-Host "Installing AllDup"
-rem  $ResultText.text = "`r`n" +"`r`n" + "Installing AllDup... Please Wait"
-rem  choco install AllDup -y
-rem  $ResultText.text = "`r`n" + "Finished Installing AllDup" + "`r`n" + "`r`n" + "Ready for Next Task"
-
 rem  Write-Host "Installing O&O Shutup"
 rem  $ResultText.text = "`r`n" +"`r`n" + "Installing O&O Shutup... Please Wait"
 rem  choco install shutup10 -y
 rem  $ResultText.text = "`r`n" + "Finished Installing O&O Shutup" + "`r`n" + "`r`n" + "Ready for Next Task"
-
-rem  Write-Host "Installing Notepad++"
-rem  $ResultText.text = "`r`n" +"`r`n" + "Installing Notepad++... Please Wait"
-rem  choco install notepadplusplus -y
-rem  $ResultText.text = "`r`n" + "Finished Installing Notepad++" + "`r`n" + "`r`n" + "Ready for Next Task"
-
-rem  Write-Host "Installing Rufus"
-rem  $ResultText.text = "`r`n" +"`r`n" + "Installing Rufus... Please Wait"
-rem  choco install rufus -y
-rem  $ResultText.text = "`r`n" + "Finished Installing Rufus" + "`r`n" + "`r`n" + "Ready for Next Task"
 
 rem  Write-Host "Installing qBittorrent"
 rem  $ResultText.text = "`r`n" +"`r`n" + "Installing qBittorrent... Please Wait"
@@ -226,11 +221,6 @@ rem  $ResultText.text = "`r`n" +"`r`n" + "Installing Audacity... Please Wait"
 rem  choco install audacity -y
 rem  $ResultText.text = "`r`n" + "Finished Installing Audacity" + "`r`n" + "`r`n" + "Ready for Next Task"  
 
-Write-Host "Installing Google Drive for Desktop"
-$ResultText.text = "`r`n" +"`r`n" + "Installing Google Drive for Desktop... Please Wait"
-choco install google-drive-file-stream -y
-$ResultText.text = "`r`n" + "Finished Installing Google Drive for Desktop" + "`r`n" + "`r`n" + "Ready for Next Task"  
-
 rem Write-Host "Installing Winaero Tweaker"
 rem $ResultText.text = "`r`n" +"`r`n" + "Installing Winaero Tweaker... Please Wait"
 rem choco install winaero-tweaker -y
@@ -255,11 +245,6 @@ rem  Write-Host "Installing Sharex"
 rem  $ResultText.text = "`r`n" +"`r`n" + "Installing Sharex... Please Wait"
 rem  choco install sharex -y
 rem  $ResultText.text = "`r`n" + "Finished Installing Sharex" + "`r`n" + "`r`n" + "Ready for Next Task"
-
-Write-Host "Installing  Office 365 Business"
-$ResultText.text = "`r`n" +"`r`n" + "Installing  Office 365 Business... Please Wait"
-choco install office365business -y
-$ResultText.text = "`r`n" + "Finished Installing  Office 365 Business" + "`r`n" + "`r`n" + "Ready for Next Task"   
 
 $ResultText.text = "`r`n" + "Finished Installing Chocolaty and All Apps" + "`r`n" + "`r`n" + "Ready for Next Task"     
 }
