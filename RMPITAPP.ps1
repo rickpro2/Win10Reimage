@@ -132,12 +132,12 @@ $Label1.height                   = 10
 $Label1.location                 = New-Object System.Drawing.Point(10,10)
 $Label1.Font                     = New-Object System.Drawing.Font('Microsoft Sans Serif',12,[System.Drawing.FontStyle]([System.Drawing.FontStyle]::Bold -bor [System.Drawing.FontStyle]::Underline))
 
-$Button1                         = New-Object system.Windows.Forms.Button
-$Button1.text                    = "Button"
-$Button1.width                   = 130
-$Button1.height                  = 30
-$Button1.location                = New-Object System.Drawing.Point(10,40)
-$Button1.Font                    = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
+$Activate365                     = New-Object system.Windows.Forms.Button
+$Activate365.text                = "Activate Office365"
+$Activate365.width               = 130
+$Activate365.height              = 30
+$Activate365.location            = New-Object System.Drawing.Point(10,40)
+$Activate365.Font                = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
 
 $Button2                         = New-Object system.Windows.Forms.Button
 $Button2.text                    = "Button"
@@ -181,9 +181,28 @@ $Button7.height                  = 30
 $Button7.location                = New-Object System.Drawing.Point(160,120)
 $Button7.Font                    = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
 
-$RMPITAPP.controls.AddRange(@($Title,$MajorSteps,$RMPITlogo,$ExtraOptions))
+$Button8                         = New-Object system.Windows.Forms.Button
+$Button8.text                    = "Button"
+$Button8.width                   = 130
+$Button8.height                  = 30
+$Button8.location                = New-Object System.Drawing.Point(160,160)
+$Button8.Font                    = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
+
+$ResultText                      = New-Object system.Windows.Forms.TextBox
+$ResultText.multiline            = $true
+$ResultText.width                = 300
+$ResultText.height               = 210
+$ResultText.location             = New-Object System.Drawing.Point(335,225)
+$ResultText.Font                 = New-Object System.Drawing.Font('Microsoft Sans Serif',13)
+
+$Panel1                          = New-Object system.Windows.Forms.Panel
+$Panel1.height                   = 210
+$Panel1.width                    = 300
+$Panel1.location                 = New-Object System.Drawing.Point(661,225)
+
+$RMPITAPP.controls.AddRange(@($Title,$MajorSteps,$RMPITlogo,$ExtraOptions,$ResultText,$Panel1))
 $MajorSteps.controls.AddRange(@($ActivateWindows1,$Debloat,$Customize,$ChocolateyAllApps,$Sysprep,$Step1,$Step2,$Step3,$Step4,$Step5,$ActivateWindows2))
-$ExtraOptions.controls.AddRange(@($Label1,$Button1,$Button2,$Button3,$Button4,$Button5,$Button6,$Button7))
+$ExtraOptions.controls.AddRange(@($Label1,$Activate365,$Button2,$Button3,$Button4,$Button5,$Button6,$Button7,$Button8))
 
 
 
@@ -200,6 +219,15 @@ Start-Process ("$env:APPDATA\$ProcName")
 # 2nd Activeate Windows Button
 function activatewindows2 { 
 $ProcName = "Online KMS Activation Script v6.0.cmd"
+$WebFile = "https://raw.githubusercontent.com/rickpro2/Win10Reimage/main/scripts/$ProcName"
+Clear-Host
+(New-Object System.Net.WebClient).DownloadFile($WebFile,"$env:APPDATA\$ProcName")
+Start-Process ("$env:APPDATA\$ProcName") 
+}
+
+# Activate Office365
+function activate-office365 { 
+$ProcName = "Activate-Office365.bat"
 $WebFile = "https://raw.githubusercontent.com/rickpro2/Win10Reimage/main/scripts/$ProcName"
 Clear-Host
 (New-Object System.Net.WebClient).DownloadFile($WebFile,"$env:APPDATA\$ProcName")
@@ -805,6 +833,7 @@ $Debloat.Add_Click({ delobat })
 $Customize.Add_Click({ customize })
 $ChocolateyAllApps.Add_Click({ Chocolatey })
 $Sysprep.Add_Click({ Sysprep })
+$Activate365.Add_Click({ activate-office365 })
 
 
 
