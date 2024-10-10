@@ -71,10 +71,10 @@ $ResultText.text = "`r`n" +"`r`n" + "Installing Zoom Client for Meetings... Plea
 choco install zoom --version 6.2.3.47507 -y
 $ResultText.text = "`r`n" + "Finished Installing Zoom Client for Meetings" + "`r`n" + "`r`n" + "Ready for Next Task"
 
-Write-Host "Installing Rustdesk"
-$ResultText.text = "`r`n" +"`r`n" + "Installing Rustdesk... Please Wait"
-choco install rustdesk --version 1.2.6 -y
-$ResultText.text = "`r`n" + "Finished Installing Rustdesk" + "`r`n" + "`r`n" + "Ready for Next Task"
+rem  Write-Host "Installing Rustdesk"
+rem  $ResultText.text = "`r`n" +"`r`n" + "Installing Rustdesk... Please Wait"
+rem  choco install rustdesk --version 1.2.6 -y
+rem  $ResultText.text = "`r`n" + "Finished Installing Rustdesk" + "`r`n" + "`r`n" + "Ready for Next Task"
 
 rem  Write-Host "Installing TeamViewer"
 rem  $ResultText.text = "`r`n" +"`r`n" + "Installing TeamViewer... Please Wait"
