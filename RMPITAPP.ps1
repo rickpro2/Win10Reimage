@@ -1,28 +1,3 @@
-# Switch to Dark Theme
-function Darkmode { 
-Write-Host "Enabling Dark Mode"
-Set-ItemProperty -Path HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize -Name AppsUseLightTheme -Value 0
-Write-Host "Enabled Dark Mode"
-$ResultText.text = "`r`n" +"`r`n" + "Enabled Dark Mode"
-}
-
-# Switch to Light Theme
-function Lightmode { 
-Write-Host "Switching Back to Light Mode"
-Remove-ItemProperty -Path HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize -Name AppsUseLightTheme
-Write-Host "Enabled Light Mode"
-$ResultText.text = "`r`n" +"`r`n" + "Enabled Light Mode"    
-}
-
-
-Add-Type -Name Window -Namespace Console -MemberDefinition '
-[DllImport("Kernel32.dll")]
-public static extern IntPtr GetConsoleWindow();
-
-[DllImport("user32.dll")]
-public static extern bool ShowWindow(IntPtr hWnd, Int32 nCmdShow);'
-
-[Console.Window]::ShowWindow([Console.Window]::GetConsoleWindow(), 0)
 
 <# 
 .NAME
