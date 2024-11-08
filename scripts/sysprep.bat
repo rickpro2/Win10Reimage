@@ -18,6 +18,7 @@ copy /Y oemlogo.bmp %windir%\system32 > NUL
 move /Y unattend.xml %windir%\system32\sysprep > NUL
 copy /Y RunOnce.bat %appdata%\Microsoft\Windows\Start Menu\Programs\Startup > NUL
 copy /Y Welcome.VBS %appdata%\Microsoft\Windows\Start Menu\Programs\Startup > NUL
+copy /Y Welcome.VBS %ProgramData%\Microsoft\Windows\Start Menu\Programs\Startup > NUL
 copy /Y Welcome.bat %ProgramData%\Microsoft\Windows\Start Menu\Programs\Startup > NUL
 
 cd C:\TEMP
