@@ -71,10 +71,31 @@ $ResultText.text = "`r`n" +"`r`n" + "Installing Zoom Client for Meetings... Plea
 choco install zoom --version 6.2.3.47507 -y
 $ResultText.text = "`r`n" + "Finished Installing Zoom Client for Meetings" + "`r`n" + "`r`n" + "Ready for Next Task"
 
-rem  Write-Host "Installing Rustdesk"
-rem  $ResultText.text = "`r`n" +"`r`n" + "Installing Rustdesk... Please Wait"
-rem  choco install rustdesk --version 1.2.6 -y
-rem  $ResultText.text = "`r`n" + "Finished Installing Rustdesk" + "`r`n" + "`r`n" + "Ready for Next Task"
+Write-Host "Installing Rustdesk"
+$ResultText.text = "`r`n" +"`r`n" + "Installing Rustdesk... Please Wait"
+choco install rustdesk -y
+$ResultText.text = "`r`n" + "Finished Installing Rustdesk" + "`r`n" + "`r`n" + "Ready for Next Task"
+
+Write-Host "Installing 7-Zip"
+$ResultText.text = "`r`n" +"`r`n" + "Installing 7-Zip... Please Wait"
+choco install 7zip -y
+$ResultText.text = "`r`n" + "Finished Installing 7-Zip" + "`r`n" + "`r`n" + "Ready for Next Task"
+
+Write-Host "Installing  Office 365 Business"
+$ResultText.text = "`r`n" +"`r`n" + "Installing  Office 365 Business... Please Wait"
+choco install office365business -y
+$ResultText.text = "`r`n" + "Finished Installing  Office 365 Business" + "`r`n" + "`r`n" + "Ready for Next Task"  
+
+Write-Host "Installing Dell SupportAssist"
+$ResultText.text = "`r`n" +"`r`n" + "Installing Dell SupportAssist... Please Wait"
+choco install supportassist -y
+$ResultText.text = "`r`n" + "Finished Installing Dell SupportAssist" + "`r`n" + "`r`n" + "Ready for Next Task"  
+
+
+
+
+
+
 
 rem  Write-Host "Installing TeamViewer"
 rem  $ResultText.text = "`r`n" +"`r`n" + "Installing TeamViewer... Please Wait"
@@ -96,11 +117,6 @@ rem  $ResultText.text = "`r`n" +"`r`n" + "Installing Open-Shell... Please Wait"
 rem  choco install open-shell --version 4.4.191 -y
 rem  $ResultText.text = "`r`n" + "Finished Installing Open-Shell" + "`r`n" + "`r`n" + "Ready for Next Task"
 
-Write-Host "Installing 7-Zip"
-$ResultText.text = "`r`n" +"`r`n" + "Installing 7-Zip... Please Wait"
-choco install 7zip --version 24.8.0 -y
-$ResultText.text = "`r`n" + "Finished Installing 7-Zip" + "`r`n" + "`r`n" + "Ready for Next Task"
-
 rem  Write-Host "Installing AllDup"
 rem  $ResultText.text = "`r`n" +"`r`n" + "Installing AllDup... Please Wait"
 rem  choco install alldup --version 4.5.62 -y
@@ -116,33 +132,14 @@ rem  $ResultText.text = "`r`n" +"`r`n" + "Installing 123Etcher 1.6.0... Please W
 rem  choco install etcher --version 1.19.21 -y
 rem  $ResultText.text = "`r`n" + "Finished Installing 123Etcher 1.6.0" + "`r`n" + "`r`n" + "Ready for Next Task"   
 
-Write-Host "Installing Google Drive for Desktop"
-$ResultText.text = "`r`n" +"`r`n" + "Installing Google Drive for Desktop... Please Wait"
-choco install googledrive --version 97.0.1 -y
-$ResultText.text = "`r`n" + "Finished Installing Google Drive for Desktop" + "`r`n" + "`r`n" + "Ready for Next Task"  
-
-Write-Host "Installing  Office 365 Business"
-$ResultText.text = "`r`n" +"`r`n" + "Installing  Office 365 Business... Please Wait"
-choco install office365business --version 17830.20162 -y
-$ResultText.text = "`r`n" + "Finished Installing  Office 365 Business" + "`r`n" + "`r`n" + "Ready for Next Task"   
-
-
-
-
-
-
-
+rem  Write-Host "Installing Google Drive for Desktop"
+rem  $ResultText.text = "`r`n" +"`r`n" + "Installing Google Drive for Desktop... Please Wait"
+rem  choco install googledrive --version 97.0.1 -y
+rem  $ResultText.text = "`r`n" + "Finished Installing Google Drive for Desktop" + "`r`n" + "`r`n" + "Ready for Next Task"  
 
 rem  choco install putty --version 0.81.0 -y
 rem  choco install filezilla --version 3.67.1 -y
 rem  choco install handbrake --version 1.8.2 -y
-
-
-
-
-
-
-
 
 rem  Write-Host "Installing Brave Browser"
 rem  $ResultText.text = "`r`n" +"`r`n" + "Installing Brave Browser... Please Wait"
@@ -198,11 +195,6 @@ rem  Write-Host "Installing Adobe Creative Cloud Client"
 rem  $ResultText.text = "`r`n" +"`r`n" + "Installing Adobe Creative Cloud Client... Please Wait"
 rem  choco install adobe-creative-cloud -y
 rem  $ResultText.text = "`r`n" + "Finished Installing Adobe Creative Cloud Client" + "`r`n" + "`r`n" + "Ready for Next Task"  
-
-rem  Write-Host "Installing Dell Command"
-rem  $ResultText.text = "`r`n" +"`r`n" + "Installing Dell Command... Please Wait"
-rem  choco install dellcommandupdate -y
-rem  $ResultText.text = "`r`n" + "Finished Installing Dell Command" + "`r`n" + "`r`n" + "Ready for Next Task"  
 
 rem  Write-Host "Installing Audacity"
 rem  $ResultText.text = "`r`n" +"`r`n" + "Installing Audacity... Please Wait"
