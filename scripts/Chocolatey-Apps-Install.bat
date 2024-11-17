@@ -58,7 +58,7 @@ $ResultText.text = "`r`n" + "Finished Installing Adobe Acrobat Reader DC" + "`r`
 
 Write-Host "Installing Google Chrome"
 $ResultText.text = "`r`n" +"`r`n" + "Installing Google Chrome... Please Wait"
-choco install googlechrome --version 129.0.6668.90 -y
+choco install googlechrome -y
 $ResultText.text = "`r`n" + "Finished Installing Google Chrome" + "`r`n" + "`r`n" + "Ready for Next Task"
 
 Write-Host "Installing VLC Media Player"
@@ -90,6 +90,12 @@ Write-Host "Installing Dell SupportAssist"
 $ResultText.text = "`r`n" +"`r`n" + "Installing Dell SupportAssist... Please Wait"
 choco install supportassist -y
 $ResultText.text = "`r`n" + "Finished Installing Dell SupportAssist" + "`r`n" + "`r`n" + "Ready for Next Task"  
+
+
+
+
+
+
 
 
 
