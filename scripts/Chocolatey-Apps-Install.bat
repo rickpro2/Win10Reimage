@@ -38,22 +38,22 @@ choco feature enable -n=allowGlobalConfirmation
 
 Write-Host "Installing Chocolatey GUI"
 $ResultText.text = "`r`n" +"`r`n" + "Installing Chocolatey GUI... Please Wait"
-choco install chocolateygui --version 2.1.1 -y
+choco install chocolateygui -y
 $ResultText.text = "`r`n" + "Finished Installing Chocolatey GUI" + "`r`n" + "`r`n" + "Ready for Next Task"
 
 Write-Host "Installing Choco Cleaner (Script + Task)"
 $ResultText.text = "`r`n" +"`r`n" + "Installing Choco Cleaner (Script + Task)... Please Wait"
-choco install choco-cleaner --version 1.1.1 -y
+choco install choco-cleaner -y
 $ResultText.text = "`r`n" + "Finished Installing Choco Cleaner (Script + Task)" + "`r`n" + "`r`n" + "Ready for Next Task"
 
 Write-Host "Installing Choco Upgrade All (Script + Task)"
 $ResultText.text = "`r`n" +"`r`n" + "Installing Choco Upgrade All (Script + Task)... Please Wait"
-choco install choco-upgrade-all-at-startup --version 2023.5.26 -y
+choco install choco-upgrade-all-at-startup -y
 $ResultText.text = "`r`n" + "Finished Installing Choco Upgrade All (Script + Task)" + "`r`n" + "`r`n" + "Ready for Next Task"
 
 Write-Host "Installing Adobe Acrobat Reader DC"
 $ResultText.text = "`r`n" +"`r`n" + "Installing Adobe Acrobat Reader DC... Please Wait"
-choco install adobereader --version 2024.3.20112 -y
+choco install adobereader -y
 $ResultText.text = "`r`n" + "Finished Installing Adobe Acrobat Reader DC" + "`r`n" + "`r`n" + "Ready for Next Task"
 
 Write-Host "Installing Google Chrome"
@@ -68,7 +68,7 @@ $ResultText.text = "`r`n" + "Finished Installing VLC Media Player" + "`r`n" + "`
 
 Write-Host "Installing Zoom Client for Meetings"
 $ResultText.text = "`r`n" +"`r`n" + "Installing Zoom Client for Meetings... Please Wait"
-choco install zoom --version 6.2.3.47507 -y
+choco install zoom -y
 $ResultText.text = "`r`n" + "Finished Installing Zoom Client for Meetings" + "`r`n" + "`r`n" + "Ready for Next Task"
 
 Write-Host "Installing Rustdesk"
