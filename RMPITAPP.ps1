@@ -11,7 +11,7 @@ Add-Type -AssemblyName System.Windows.Forms
 [System.Windows.Forms.Application]::EnableVisualStyles()
 
 $RMPITAPP                        = New-Object system.Windows.Forms.Form
-$RMPITAPP.ClientSize             = New-Object System.Drawing.Point(972,666)
+$RMPITAPP.ClientSize             = New-Object System.Drawing.Point(1224,854)
 $RMPITAPP.text                   = "Windows 10 Debloat & System Helper By RMPIT LLC v.2.0"
 $RMPITAPP.TopMost                = $false
 $RMPITAPP.icon                   = "https://raw.githubusercontent.com/rickpro2/Win10Reimage/main/RMPIT_logo.png"
@@ -207,10 +207,9 @@ $Panel1.location                 = New-Object System.Drawing.Point(661,225)
 $contact                         = New-Object system.Windows.Forms.Label
 $contact.text                    = "Need Help?"
 $contact.AutoSize                = $true
-$contact.visible                 = $false
 $contact.width                   = 25
 $contact.height                  = 10
-$contact.location                = New-Object System.Drawing.Point(754,475)
+$contact.location                = New-Object System.Drawing.Point(724,621)
 $contact.Font                    = New-Object System.Drawing.Font('Microsoft Sans Serif',16)
 
 $RMPITAPP.controls.AddRange(@($Title,$MajorSteps,$RMPITlogo,$ExtraOptions,$ResultText,$Panel1,$contact))
