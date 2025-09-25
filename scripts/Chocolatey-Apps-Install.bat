@@ -36,6 +36,15 @@ choco feature enable -n=allowGlobalConfirmation
 
 @rem ----[ Whatever you want to install, place it below this point, each item on its own line (to make it easier to find later on. ] ----
 
+
+
+
+
+winget install -e --id Microsoft.Office
+
+
+
+
 Write-Host "Installing Chocolatey GUI"
 $ResultText.text = "`r`n" +"`r`n" + "Installing Chocolatey GUI... Please Wait"
 choco install chocolateygui -y
