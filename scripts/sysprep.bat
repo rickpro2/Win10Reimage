@@ -21,6 +21,10 @@ copy /Y Welcome.VBS %appdata%\Microsoft\Windows\Start Menu\Programs\Startup > NU
 copy /Y Welcome.VBS %ProgramData%\Microsoft\Windows\Start Menu\Programs\Startup > NUL
 copy /Y Welcome.bat %ProgramData%\Microsoft\Windows\Start Menu\Programs\Startup > NUL
 
+Mkdir C:\Scripts
+cd C:\Program Files\RMPIT\             
+COPY  /Y install-apps.cmd  C:\Scripts 
+
 cd C:\TEMP
 del /s /q c:\temp\*
 del /s /q c:\temp\Windows10SysPrepDebloater.ps1\*
