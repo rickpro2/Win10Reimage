@@ -16,8 +16,7 @@ REM * Add Rickie Synology Nas as a Network Option *
 REM ****************************************
 
 net use u: \\ProctorCloud1\Downloads\ /User:rproctor Kindergarten1! 
-pause
-timeout /t 10
+timeout /t 5
 
 REM ****************************************
 REM * Display seconds on the taskbar clock *
