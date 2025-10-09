@@ -14,7 +14,7 @@ timeout /t 5
 REM ****************************************
 REM * Add Rickie Synology Nas as a Network Option *
 REM ****************************************
-net use m: \\ProctorCloud1\Downloads\ /User:proctorr Kindergarten! 
+net use m: \\ProctorCloud1\Downloads\ /User:rproctor Kindergarten1! 
 
 
 REM ****************************************
