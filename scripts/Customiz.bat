@@ -10,6 +10,14 @@ REM *********************************
 echo Installing WINDOWS CUSTOMIZATIONS...
 timeout /t 5
 
+
+REM ****************************************
+REM * Add Rickie Synology Nas as a Network Option *
+REM ****************************************
+
+net use u: \\ProctorCloud1\Downloads\ /User:rproctor Kindergarten1! 
+timeout /t 5
+
 REM ****************************************
 REM * Display seconds on the taskbar clock *
 REM ****************************************
